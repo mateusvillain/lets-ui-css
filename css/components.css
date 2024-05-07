@@ -1,0 +1,87 @@
+@import "color/color-component.css";
+@import "typography/typography-component.css";
+@import "border/border-component.css";
+@import "spacing/spacing-component.css";
+
+/* Button */
+button {
+    line-height: var(--mv-btn-typography-line-height);
+    font-weight: var(--mv-btn-typography-weight);
+    border-width: var(--mv-border-width-none);
+}
+
+.btn-accent-lg,
+.btn-accent-md {
+    background-color: var(--mv-btn-color-bg-accent-enabled);
+    color: var(--mv-btn-color-text-accent);
+    transition-duration: .2s;
+}
+
+.btn-accent-lg {
+    font-size: var(--mv-btn-typography-size-lg);
+    border-radius: var(--mv-btn-border-radius-lg);
+    padding: var(--mv-btn-spacing-lg);
+    
+}
+
+.btn-accent-md {
+    font-size: var(--mv-btn-typography-size-md);
+    border-radius: var(--mv-btn-border-radius-md);
+    padding: var(--mv-btn-spacing-md);
+}
+
+.btn-accent-lg:hover,
+.btn-accent-md:hover { background-color: var(--mv-btn-color-bg-accent-hovered); }
+
+.btn-accent-lg:active,
+.btn-accent-md:active { background-color: var(--mv-btn-color-bg-accent-pressed); }
+
+.btn-pressing { transform: scale(1); }
+.btn-pressing:active { transform: scale(0.96); }
+
+/* Text field */
+input[type=text],
+select {
+    color: var(--mv-form-field-color-text);
+    background-color: var(--mv-form-field-color-bg);
+    border: var(--mv-form-field-border-width) solid var(--mv-form-field-border-color-enabled);
+    outline: 0;
+    transition-duration: .2s;
+}
+
+input[type=text]:focus-visible,
+select:focus-visible {
+    border: var(--mv-form-field-border-width) solid var(--mv-form-field-border-color-focused);
+}
+
+.form-field-lg {
+    font-size: var(--mv-form-field-typography-size-lg);
+    border-radius: var(--mv-form-field-border-radius-lg);
+    padding: var(--mv-form-field-spacing-lg);
+}
+
+.form-field-lg:hover,
+.form-field-md:hover {
+    border: var(--mv-form-field-border-width) solid var(--mv-form-field-border-color-hovered);
+}
+
+.form-field-md {
+    font-size: var(--mv-form-field-typography-size-md);
+    border-radius: var(--mv-form-field-border-radius-md);
+    padding: var(--mv-form-field-spacing-md);
+}
+
+/* Label */
+label { color: var(--mv-label-color-text); }
+
+.label-lg { font-size: var(--mv-label-typography-size-lg); }
+
+.label-md { font-size: var(--mv-label-typography-size-md); }
+
+
+/* Form */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

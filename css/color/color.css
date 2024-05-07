@@ -1,0 +1,228 @@
+@media screen and (prefers-color-scheme: light) {
+    :root {
+        /*
+
+            # README
+
+            Após definir as paletas de cores da marca,
+            adicione os valores nos campos abaixo para
+            definir corretamente as cores nos componentes.
+
+            Lembre-se que a cor base para dispositivos em
+            light mode é o 500. A adaptação para o dark
+            mode é feita automaticamente pela biblioteca.
+
+            Você pode utilizar uma das ferramentas abaixo
+            para criar a paleta:
+
+            https://colorbox.io
+            https://colors.eva.design
+
+        */
+        --mv-color-brand-primary-100: hsl(205, 100%, 95%);
+        --mv-color-brand-primary-200: hsl(206, 100%, 82%);
+        --mv-color-brand-primary-300: hsl(206, 96%, 72%);
+        --mv-color-brand-primary-400: hsl(207, 91%, 64%);
+        --mv-color-brand-primary-500: hsl(207, 86%, 57%);
+        --mv-color-brand-primary-600: hsl(208, 77%, 47%);
+        --mv-color-brand-primary-700: hsl(209, 77%, 43%);
+        --mv-color-brand-primary-800: hsl(209, 75%, 38%);
+
+        --mv-color-brand-secondary-100: hsl(205, 100%, 95%);
+        --mv-color-brand-secondary-200: hsl(206, 100%, 82%);
+        --mv-color-brand-secondary-300: hsl(206, 96%, 72%);
+        --mv-color-brand-secondary-400: hsl(207, 91%, 64%);
+        --mv-color-brand-secondary-500: hsl(207, 86%, 57%);
+        --mv-color-brand-secondary-600: hsl(208, 77%, 47%);
+        --mv-color-brand-secondary-700: hsl(209, 77%, 43%);
+        --mv-color-brand-secondary-800: hsl(209, 75%, 38%);
+        
+        --mv-color-global-blue-100: hsl(205, 100%, 95%);
+        --mv-color-global-blue-200: hsl(206, 100%, 82%);
+        --mv-color-global-blue-300: hsl(206, 96%, 72%);
+        --mv-color-global-blue-400: hsl(207, 91%, 64%);
+        --mv-color-global-blue-500: hsl(207, 86%, 57%);
+        --mv-color-global-blue-600: hsl(208, 77%, 47%);
+        --mv-color-global-blue-700: hsl(209, 77%, 43%);
+        --mv-color-global-blue-800: hsl(209, 75%, 38%);
+
+        --mv-color-global-gray-50: hsl(0, 0%, 100%);
+        --mv-color-global-gray-100: hsl(210, 17%, 98%);
+        --mv-color-global-gray-200: hsl(210, 16%, 93%);
+        --mv-color-global-gray-300: hsl(210, 14%, 89%);
+        --mv-color-global-gray-400: hsl(210, 14%, 83%);
+        --mv-color-global-gray-500: hsl(210, 11%, 71%);
+        --mv-color-global-gray-600: hsl(210, 7%, 56%);
+        --mv-color-global-gray-700: hsl(210, 9%, 31%);
+        --mv-color-global-gray-800: hsl(210, 10%, 23%);
+        --mv-color-global-gray-900: hsl(210, 7%, 12%);
+
+        --mv-color-global-green-100: hsl(131, 67%, 95%);
+        --mv-color-global-green-200: hsl(128, 71%, 82%);
+        --mv-color-global-green-300: hsl(129, 68%, 73%);
+        --mv-color-global-green-400: hsl(130, 61%, 64%);
+        --mv-color-global-green-500: hsl(130, 57%, 56%);
+        --mv-color-global-green-600: hsl(131, 50%, 50%);
+        --mv-color-global-green-700: hsl(131, 53%, 46%);
+        --mv-color-global-green-800: hsl(132, 52%, 35%);
+
+        --mv-color-global-orange-100: hsl(34, 100%, 95%);
+        --mv-color-global-orange-200: hsl(33, 100%, 83%);
+        --mv-color-global-orange-300: hsl(31, 100%, 65%);
+        --mv-color-global-orange-400: hsl(29, 100%, 58%);
+        --mv-color-global-orange-500: hsl(27, 98%, 54%);
+        --mv-color-global-orange-600: hsl(24, 94%, 50%);
+        --mv-color-global-orange-700: hsl(21, 90%, 48%);
+        --mv-color-global-orange-800: hsl(17, 87%, 45%);
+
+        --mv-color-global-pink-100: hsl(336, 100%, 97%);
+        --mv-color-global-pink-200: hsl(338, 91%, 87%);
+        --mv-color-global-pink-300: hsl(339, 90%, 81%);
+        --mv-color-global-pink-400: hsl(339, 88%, 74%);
+        --mv-color-global-pink-500: hsl(339, 82%, 67%);
+        --mv-color-global-pink-600: hsl(339, 76%, 59%);
+        --mv-color-global-pink-700: hsl(339, 67%, 52%);
+        --mv-color-global-pink-800: hsl(339, 69%, 38%);
+
+        --mv-color-global-red-100: hsl(0, 100%, 98%);
+        --mv-color-global-red-200: hsl(0, 100%, 89%);
+        --mv-color-global-red-300: hsl(0, 100%, 83%);
+        --mv-color-global-red-400: hsl(0, 100%, 76%);
+        --mv-color-global-red-500: hsl(0, 100%, 71%);
+        --mv-color-global-red-600: hsl(0, 94%, 65%);
+        --mv-color-global-red-700: hsl(0, 86%, 59%);
+        --mv-color-global-red-800: hsl(0, 65%, 48%);
+
+        --mv-color-global-teal-100: hsl(161, 79%, 95%);
+        --mv-color-global-teal-200: hsl(160, 85%, 87%);
+        --mv-color-global-teal-300: hsl(162, 78%, 77%);
+        --mv-color-global-teal-400: hsl(162, 72%, 65%);
+        --mv-color-global-teal-500: hsl(162, 68%, 54%);
+        --mv-color-global-teal-600: hsl(162, 73%, 46%);
+        --mv-color-global-teal-700: hsl(162, 87%, 35%);
+        --mv-color-global-teal-800: hsl(162, 88%, 26%);
+
+        --mv-color-global-violet-100: hsl(252, 100%, 97%);
+        --mv-color-global-violet-200: hsl(256, 100%, 87%);
+        --mv-color-global-violet-300: hsl(255, 94%, 79%);
+        --mv-color-global-violet-400: hsl(255, 93%, 72%);
+        --mv-color-global-violet-500: hsl(255, 91%, 67%);
+        --mv-color-global-violet-600: hsl(255, 86%, 63%);
+        --mv-color-global-violet-700: hsl(255, 67%, 55%);
+        --mv-color-global-violet-800: hsl(255, 53%, 50%);
+
+        --mv-color-global-yellow-100: hsl(50, 100%, 93%);
+        --mv-color-global-yellow-200: hsl(49, 100%, 80%);
+        --mv-color-global-yellow-300: hsl(48, 100%, 70%);
+        --mv-color-global-yellow-400: hsl(47, 100%, 62%);
+        --mv-color-global-yellow-500: hsl(45, 97%, 54%);
+        --mv-color-global-yellow-600: hsl(39, 100%, 48%);
+        --mv-color-global-yellow-700: hsl(35, 100%, 47%);
+        --mv-color-global-yellow-800: hsl(31, 100%, 45%);
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --mv-color-brand-primary-800: hsl(205, 100%, 95%);
+        --mv-color-brand-primary-700: hsl(206, 100%, 82%);
+        --mv-color-brand-primary-600: hsl(206, 96%, 72%);
+        --mv-color-brand-primary-500: hsl(207, 91%, 64%);
+        --mv-color-brand-primary-400: hsl(207, 86%, 57%);
+        --mv-color-brand-primary-300: hsl(208, 77%, 47%);
+        --mv-color-brand-primary-200: hsl(209, 77%, 43%);
+        --mv-color-brand-primary-100: hsl(209, 75%, 38%);
+
+        --mv-color-brand-secondary-800: hsl(205, 100%, 95%);
+        --mv-color-brand-secondary-700: hsl(206, 100%, 82%);
+        --mv-color-brand-secondary-600: hsl(206, 96%, 72%);
+        --mv-color-brand-secondary-500: hsl(207, 91%, 64%);
+        --mv-color-brand-secondary-400: hsl(207, 86%, 57%);
+        --mv-color-brand-secondary-300: hsl(208, 77%, 47%);
+        --mv-color-brand-secondary-200: hsl(209, 77%, 43%);
+        --mv-color-brand-secondary-100: hsl(209, 75%, 38%);
+
+        --mv-color-global-blue-800: hsl(205, 100%, 95%);
+        --mv-color-global-blue-700: hsl(206, 100%, 82%);
+        --mv-color-global-blue-600: hsl(206, 96%, 72%);
+        --mv-color-global-blue-500: hsl(207, 91%, 64%);
+        --mv-color-global-blue-400: hsl(207, 86%, 57%);
+        --mv-color-global-blue-300: hsl(208, 77%, 47%);
+        --mv-color-global-blue-200: hsl(209, 77%, 43%);
+        --mv-color-global-blue-100: hsl(209, 75%, 38%);
+
+        --mv-color-global-gray-900: hsl(0, 0%, 100%);
+        --mv-color-global-gray-800: hsl(210, 17%, 98%);
+        --mv-color-global-gray-700: hsl(210, 16%, 93%);
+        --mv-color-global-gray-600: hsl(210, 14%, 89%);
+        --mv-color-global-gray-500: hsl(210, 14%, 83%);
+        --mv-color-global-gray-400: hsl(210, 11%, 71%);
+        --mv-color-global-gray-300: hsl(210, 7%, 56%);
+        --mv-color-global-gray-200: hsl(210, 9%, 31%);
+        --mv-color-global-gray-100: hsl(210, 10%, 23%);
+        --mv-color-global-gray-50: hsl(210, 7%, 12%);
+
+        --mv-color-global-green-800: hsl(131, 67%, 95%);
+        --mv-color-global-green-700: hsl(128, 71%, 82%);
+        --mv-color-global-green-600: hsl(129, 68%, 73%);
+        --mv-color-global-green-500: hsl(130, 61%, 64%);
+        --mv-color-global-green-400: hsl(130, 57%, 56%);
+        --mv-color-global-green-300: hsl(131, 50%, 50%);
+        --mv-color-global-green-200: hsl(131, 53%, 46%);
+        --mv-color-global-green-100: hsl(132, 52%, 35%);
+
+        --mv-color-global-orange-800: hsl(34, 100%, 95%);
+        --mv-color-global-orange-700: hsl(33, 100%, 83%);
+        --mv-color-global-orange-600: hsl(31, 100%, 65%);
+        --mv-color-global-orange-500: hsl(29, 100%, 58%);
+        --mv-color-global-orange-400: hsl(27, 98%, 54%);
+        --mv-color-global-orange-300: hsl(24, 94%, 50%);
+        --mv-color-global-orange-200: hsl(21, 90%, 48%);
+        --mv-color-global-orange-100: hsl(17, 87%, 45%);
+
+        --mv-color-global-pink-800: hsl(336, 100%, 97%);
+        --mv-color-global-pink-700: hsl(338, 91%, 87%);
+        --mv-color-global-pink-600: hsl(339, 90%, 81%);
+        --mv-color-global-pink-500: hsl(339, 88%, 74%);
+        --mv-color-global-pink-400: hsl(339, 82%, 67%);
+        --mv-color-global-pink-300: hsl(339, 76%, 59%);
+        --mv-color-global-pink-200: hsl(339, 67%, 52%);
+        --mv-color-global-pink-100: hsl(339, 69%, 38%);
+
+        --mv-color-global-red-800: hsl(0, 100%, 98%);
+        --mv-color-global-red-700: hsl(0, 100%, 89%);
+        --mv-color-global-red-600: hsl(0, 100%, 83%);
+        --mv-color-global-red-500: hsl(0, 100%, 76%);
+        --mv-color-global-red-400: hsl(0, 100%, 71%);
+        --mv-color-global-red-300: hsl(0, 94%, 65%);
+        --mv-color-global-red-200: hsl(0, 86%, 59%);
+        --mv-color-global-red-100: hsl(0, 65%, 48%);
+
+        --mv-color-global-teal-800: hsl(161, 79%, 95%);
+        --mv-color-global-teal-700: hsl(160, 85%, 87%);
+        --mv-color-global-teal-600: hsl(162, 78%, 77%);
+        --mv-color-global-teal-500: hsl(162, 72%, 65%);
+        --mv-color-global-teal-400: hsl(162, 68%, 54%);
+        --mv-color-global-teal-300: hsl(162, 73%, 46%);
+        --mv-color-global-teal-200: hsl(162, 87%, 35%);
+        --mv-color-global-teal-100: hsl(162, 88%, 26%);
+
+        --mv-color-global-violet-800: hsl(252, 100%, 97%);
+        --mv-color-global-violet-700: hsl(256, 100%, 87%);
+        --mv-color-global-violet-600: hsl(255, 94%, 79%);
+        --mv-color-global-violet-500: hsl(255, 93%, 72%);
+        --mv-color-global-violet-400: hsl(255, 91%, 67%);
+        --mv-color-global-violet-300: hsl(255, 86%, 63%);
+        --mv-color-global-violet-200: hsl(255, 67%, 55%);
+        --mv-color-global-violet-100: hsl(255, 53%, 50%);
+
+        --mv-color-global-yellow-800: hsl(50, 100%, 93%);
+        --mv-color-global-yellow-700: hsl(49, 100%, 80%);
+        --mv-color-global-yellow-600: hsl(48, 100%, 70%);
+        --mv-color-global-yellow-500: hsl(47, 100%, 62%);
+        --mv-color-global-yellow-400: hsl(45, 97%, 54%);
+        --mv-color-global-yellow-300: hsl(39, 100%, 48%);
+        --mv-color-global-yellow-200: hsl(35, 100%, 47%);
+        --mv-color-global-yellow-100: hsl(31, 100%, 45%);
+    }
+}

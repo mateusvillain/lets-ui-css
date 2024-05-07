@@ -1,0 +1,18 @@
+@import "typography.css";
+
+:root {
+    /* Button */
+    --mv-btn-typography-family: var(--mv-typography-family-body);
+    --mv-btn-typography-line-height: var(--mv-typography-line-height-lg);
+    --mv-btn-typography-weight: var(--mv-typography-weight-medium);
+    --mv-btn-typography-size-lg: var(--mv-typography-scale-size-body-lg);
+    --mv-btn-typography-size-md: var(--mv-typography-scale-size-body-md);
+
+    /* Form field */
+    --mv-form-field-typography-size-lg: var(--mv-typography-scale-size-body-lg);
+    --mv-form-field-typography-size-md: var(--mv-typography-scale-size-body-md);
+
+    /* Label */
+    --mv-label-typography-size-lg: var(--mv-typography-scale-size-body-lg);
+    --mv-label-typography-size-md: var(--mv-typography-scale-size-body-md);
+}

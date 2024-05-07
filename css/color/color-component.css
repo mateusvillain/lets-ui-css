@@ -1,0 +1,24 @@
+:root {
+    /* Button */
+    --mv-btn-color-bg-accent-enabled: var(--mv-color-bg-main-accent-default);
+    --mv-btn-color-bg-accent-hovered: var(--mv-color-bg-main-accent-hovered);
+    --mv-btn-color-bg-accent-pressed: var(--mv-color-bg-main-accent-pressed);
+    --mv-btn-color-bg-accent-focused: var(--mv-btn-color-bg-accent-pressed);
+    --mv-btn-color-text-accent: var(--mv-color-gray-ethereal);
+
+    --mv-btn-color-bg-support-enabled: var(--mv-color-bg-main-support-default);
+    --mv-btn-color-bg-support-hovered: var(--mv-color-bg-main-support-hovered);
+    --mv-btn-color-bg-support-pressed: var(--mv-color-bg-main-support-pressed);
+    --mv-btn-color-bg-support-focused: var(--mv-btn-color-bg-support-pressed);
+    --mv-btn-color-text-support: var(--mv-color-gray-ethereal);
+
+    /* Form field */
+    --mv-form-field-color-text: var(--mv-color-text-dark);
+    --mv-form-field-color-bg: var(--mv-color-bg-neutral-light);
+    --mv-form-field-border-color-enabled: var(--mv-color-gray-light);
+    --mv-form-field-border-color-hovered: var(--mv-color-gray-soft);
+    --mv-form-field-border-color-focused: var(--mv-color-main-accent-hard);
+
+    /* Label */
+    --mv-label-color-text: var(--mv-color-text-dark);
+}

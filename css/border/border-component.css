@@ -1,0 +1,12 @@
+@import "border.css";
+
+:root {
+    /* Button */
+    --mv-btn-border-width: var(--mv-border-width-sm);
+    --mv-btn-border-radius-lg: var(--mv-border-radius-lg);
+    --mv-btn-border-radius-md: var(--mv-border-radius-md);
+
+    /* Form field */
+    --mv-form-field-border-radius-lg: var(--mv-border-radius-lg);
+    --mv-form-field-border-radius-md: var(--mv-border-radius-md);
+}
