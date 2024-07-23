@@ -1,13 +1,13 @@
 :root {
-    --mv-border-width-3xl: 16px;
-    --mv-border-width-2xl: 12px;
+    --mv-border-width-2xl: 16px;
+    --mv-border-width-xl: 12px;
     --mv-border-width-lg: 8px;
     --mv-border-width-md: 4px;
     --mv-border-width-sm: 2px;
     --mv-border-width-none: 0px;
 
-    --mv-border-radius-3xl: 16px;
-    --mv-border-radius-2xl: 12px;
+    --mv-border-radius-2xl: 16px;
+    --mv-border-radius-xl: 12px;
     --mv-border-radius-lg: 8px;
     --mv-border-radius-md: 4px;
     --mv-border-radius-sm: 2px;
