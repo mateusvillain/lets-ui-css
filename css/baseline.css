@@ -1,15 +1,15 @@
-@import "border/border.css";
-@import "color/color-semantic.css";
+@import "border.css";
+@import "color.css";
 @import "grid.css";
-@import "spacing/spacing.css";
-@import "typography/typography.css";
+@import "spacing.css";
+@import "typography.css";
 @import "components.css";
 
 html,
 body {
-    font-size: var(--mv-typography-scale-base);
-    background-color: var(--mv-color-bg-neutral-light);
-	color: var(--mv-color-text-dark);
+    font-size: var(--lui-typography-scale-base);
+    background-color: var(--lui-color-neutral-light-layer-bg-surface);
+	color: var(--lui-color-neutral-dark-content-text-darkest);
 }
 
 html,
@@ -17,7 +17,7 @@ body,
 input,
 select,
 button {
-	font-family: var(--mv-typography-family-body) !important;
+	font-family: var(--typography-main-font) !important;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -32,9 +32,9 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: var(--mv-spacing-0);
-	padding: var(--mv-spacing-0);
-	border: var(--mv-spacing-0);
+	margin: var(--lui-spacing-0);
+	padding: var(--lui-spacing-0);
+	border: var(--lui-spacing-0);
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;

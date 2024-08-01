@@ -1,82 +1,87 @@
-@import "color/color-component.css";
-@import "typography/typography-component.css";
-@import "border/border-component.css";
-@import "spacing/spacing-component.css";
+@import "color-semantic.css";
+@import "border.css";
+@import "spacing.css";
 
 /* Button */
 button {
-    line-height: var(--mv-btn-typography-line-height);
-    font-weight: var(--mv-btn-typography-weight);
-    border-width: var(--mv-border-width-none);
+    line-height: var(--lui-typography-line-height-lg);
+    font-weight: var(--lui-typography-weight-regular);
+    border-width: var(--lui-border-width-none);
 }
 
 .btn-accent-lg,
 .btn-accent-md {
-    background-color: var(--mv-btn-color-bg-accent-enabled);
-    color: var(--mv-btn-color-text-accent);
+    background-color: var(--lui-color-brand-accent-layer-state-enabled);
+    color: var(--lui-color-neutral-light-content-text-lightest);
     transition-duration: .2s;
 }
 
 .btn-accent-lg {
-    font-size: var(--mv-btn-typography-size-lg);
-    border-radius: var(--mv-btn-border-radius-lg);
-    padding: var(--mv-btn-spacing-lg);
+    font-size: var(--lui-typography-scale-size-body-lg);
+    border-radius: var(--lui-border-radius-lg);
+    padding: var(--lui-spacing-12);
     
 }
 
 .btn-accent-md {
-    font-size: var(--mv-btn-typography-size-md);
-    border-radius: var(--mv-btn-border-radius-md);
-    padding: var(--mv-btn-spacing-md);
+    font-size: var(--lui-typography-scale-size-body-md);
+    border-radius: var(--lui-border-radius-md);
+    padding: var(--lui-spacing-8);
 }
 
 .btn-accent-lg:hover,
-.btn-accent-md:hover { background-color: var(--mv-btn-color-bg-accent-hovered); }
+.btn-accent-md:hover { background-color: var(--lui-color-brand-accent-layer-state-hovered); }
 
 .btn-accent-lg:active,
-.btn-accent-md:active { background-color: var(--mv-btn-color-bg-accent-pressed); }
+.btn-accent-md:active { background-color: var(--lui-color-brand-accent-layer-state-pressed); }
 
 .btn-pressing { transform: scale(1); }
 .btn-pressing:active { transform: scale(0.96); }
 
-/* Text field */
+/* Fields */
+input[type=color],
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
 input[type=text],
+input[type=time],
+input[type=url],
 select {
-    color: var(--mv-form-field-color-text);
-    background-color: var(--mv-form-field-color-bg);
-    border: var(--mv-form-field-border-width) solid var(--mv-form-field-border-color-enabled);
+    color: var(--lui-color-neutral-dark-content-text-darkest);
+    background-color: var(--lui-color-neutral-light-layer-bg-surface);
+    border: var(--lui-spacing-2) solid var(--lui-color-neutral-dark-layer-border-enabled);
     outline: 0;
     transition-duration: .2s;
 }
 
+input[type=text]:hover,
+select:hover {
+    border: var(--lui-spacing-2) solid var(--lui-color-neutral-dark-layer-border-hovered);
+}
+
 input[type=text]:focus-visible,
 select:focus-visible {
-    border: var(--mv-form-field-border-width) solid var(--mv-form-field-border-color-focused);
+    border: var(--lui-spacing-2) solid var(--lui-color-brand-accent-layer-border-enabled);
 }
 
 .form-field-lg {
-    font-size: var(--mv-form-field-typography-size-lg);
-    border-radius: var(--mv-form-field-border-radius-lg);
-    padding: var(--mv-form-field-spacing-lg);
-}
-
-.form-field-lg:hover,
-.form-field-md:hover {
-    border: var(--mv-form-field-border-width) solid var(--mv-form-field-border-color-hovered);
+    font-size: var(--lui-typography-scale-size-body-lg);
+    border-radius: var(--lui-border-radius-lg);
+    padding: var(--lui-spacing-12);
 }
 
 .form-field-md {
-    font-size: var(--mv-form-field-typography-size-md);
-    border-radius: var(--mv-form-field-border-radius-md);
-    padding: var(--mv-form-field-spacing-md);
+    font-size: var(--lui-typography-scale-size-body-md);
+    border-radius: var(--lui-border-radius-md);
+    padding: var(--lui-spacing-8);
 }
 
 /* Label */
-label { color: var(--mv-label-color-text); }
-
-.label-lg { font-size: var(--mv-label-typography-size-lg); }
-
-.label-md { font-size: var(--mv-label-typography-size-md); }
+label     { color: var(--lui-color-neutral-dark-content-text-darkest); }
+.label-lg { font-size: var(--lui-typography-scale-size-body-lg); }
+.label-md { font-size: var(--lui-typography-scale-size-body-md); }
 
 
 /* Form */
