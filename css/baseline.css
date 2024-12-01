@@ -8,8 +8,6 @@
 html,
 body {
     font-size: var(--lui-typography-scale-base);
-    background-color: var(--lui-color-neutral-light-layer-bg-surface);
-	color: var(--lui-color-neutral-dark-content-text-darkest);
 }
 
 html,
@@ -17,7 +15,7 @@ body,
 input,
 select,
 button {
-	font-family: var(--typography-main-font) !important;
+	font-family: 'var(--typography-main-font)', Arial, Segoe UI, Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
 html, body, div, span, applet, object, iframe,
