@@ -5,17 +5,8 @@
 @import "typography.css";
 @import "components.css";
 
-html,
-body {
-    font-size: var(--lui-typography-scale-base);
-}
-
-html,
-body,
-input,
-select,
-button {
-	font-family: 'var(--typography-main-font)', Arial, Segoe UI, Tahoma, Geneva, Verdana, sans-serif !important;
+html, body {
+	color: var(--lui-color-neutral-dark-content-text-darkest);
 }
 
 html, body, div, span, applet, object, iframe,
@@ -37,6 +28,10 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+p {
+	margin-block-start: 0;
+    margin-block-end: 0;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -55,5 +50,104 @@ q:before, q:after {
 }
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
+	border-spacing: var(--lui-spacing-0);
+}
+
+/*  */
+
+.element {
+	background: red center/cover no-repeat; /* Fundo original */
+	width: 300px;
+	height: 200px;
+	transition: filter 0.3s ease; /* Suaviza a transição */
+}
+
+/* Escurece o fundo no hover */
+.element:hover {
+	filter: brightness(70%); /* Reduz o brilho para escurecer */
+}
+
+/*  */
+
+.delement {
+	position: relative; /* Necessário para posicionar o pseudo-elemento */
+	background: #7850f2 center/cover no-repeat; /* Fundo original */
+	width: 300px;
+	height: 200px;
+	overflow: hidden; /* Evita que o pseudo-elemento saia do elemento principal */
+	color: #fff;
+  }
+  
+  /* Pseudo-elemento para o filtro */
+  .delement::after {
+	content: ''; /* Garante que o pseudo-elemento seja exibido */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent; /* Nenhum filtro por padrão */
+	transition: background 0.3s ease; /* Suaviza a transição */
+	z-index: 1; /* Fica acima do conteúdo interno */
+  }
+  
+  /* Estado hover adiciona o filtro */
+  .delement:hover::after {
+	background: rgba(0, 0, 0, 0.3); /* Cor preta com opacidade */
+  }
+  
+
+  /*  */
+
+  .belement {
+	position: relative;
+	background: #7850f2 center/cover no-repeat;
+	color: #fff;
+	width: 300px;
+	height: 200px;
+	transition: background-color 0.3s ease;
+  }
+  
+  /* No hover, adiciona uma camada preta */
+  .belement:hover {
+	background-color: rgba(0, 0, 0, .2); /* Camada preta transparente */
+	mix-blend-mode: multiply; /* Mescla as cores */
+  }
+  
+  /*  */
+
+  .gelement {
+	background: #7850f2 center/cover no-repeat;
+	width: 300px;
+	height: 200px;
+	transition: background 0.3s ease;
+	color: #fff;
+	transition: filter 0.3s ease;
+  }
+  
+  /* No hover, adiciona gradiente escuro */
+  .gelement:hover {
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), #7850f2 center/cover no-repeat;
+	transition: background-color 0.3s ease;
+  }
+
+  /*  */
+
+  .qelement {
+	background: #7850f2 center/cover no-repeat;
+	color: #fff;
+	width: 300px;
+	height: 200px;
+	transition: box-shadow 0.3s ease;
+  }
+  
+  /* No hover, adiciona um sombreado escuro */
+  .qelement:hover {
+	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.24);
+  }
+
+div {
+	white-space: normal;
+    word-wrap: break-word; /* Força a quebra de palavras longas */
+    overflow-wrap: break-word; /* Compatível com navegadores modernos */
 }

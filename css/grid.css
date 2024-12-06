@@ -10,47 +10,69 @@
 
 .grid { grid-template-columns: repeat(1, 1fr); }
 
-/* Flex Container */
-.flex { display: flex; }
-.inline-flex { display: inline-flex; }
+/* ==========================
+   CONTÊINER FLEXÍVEL
+========================== */
+.flex {display: flex;}
+.inline-flex {display: inline-flex;}
 
-/* Flex Direction */
-.flex-row { flex-direction: row; }
-.flex-row-reverse { flex-direction: row-reverse; }
-.flex-column { flex-direction: column; }
-.flex-column-reverse { flex-direction: column-reverse; }
+.flex-row {flex-direction: row;} /* Padrão */
+.flex-row-reverse {flex-direction: row-reverse;}
+.flex-column {flex-direction: column;}
+.flex-column-reverse {flex-direction: column-reverse;}
 
-/* Flex Wrap */
-.flex-wrap { flex-wrap: wrap; }
-.flex-wrap-reverse { flex-wrap: wrap-reverse; }
-.flex-nowrap { flex-wrap: nowrap; }
+.flex-wrap {flex-wrap: wrap;}
+.flex-wrap-reverse {flex-wrap: wrap-reverse;}
+.flex-nowrap {flex-wrap: nowrap;} /* Padrão */
 
-/* Justify Content */
-.justify-start { justify-content: flex-start; }
-.justify-end { justify-content: flex-end; }
-.justify-center { justify-content: center; }
-.justify-between { justify-content: space-between; }
-.justify-around { justify-content: space-around; }
-.justify-evenly { justify-content: space-evenly; }
+.flex-justify-start {justify-content: flex-start;} /* Padrão */
+.flex-justify-end {justify-content: flex-end;}
+.flex-justify-center {justify-content: center;}
+.flex-justify-space-between {justify-content: space-between;}
+.flex-justify-space-around {justify-content: space-around;}
+.flex-justify-space-evenly {justify-content: space-evenly;}
 
-/* Align Items */
-.items-start { align-items: flex-start; }
-.items-end { align-items: flex-end; }
-.items-center { align-items: center; }
-.items-baseline { align-items: baseline; }
-.items-stretch { align-items: stretch; }
+.flex-align-start {align-items: flex-start;}
+.flex-align-end {align-items: flex-end;}
+.flex-align-center {align-items: center;}
+.flex-align-baseline {align-items: baseline;}
+.flex-align-stretch {align-items: stretch;} /* Padrão */
 
-/* Align Content */
-.content-start { align-content: flex-start; }
-.content-end { align-content: flex-end; }
-.content-center { align-content: center; }
-.content-between { align-content: space-between; }
-.content-around { align-content: space-around; }
-.content-stretch { align-content: stretch; }
+.flex-align-content-start {align-content: flex-start;}
+.flex-align-content-end {align-content: flex-end;}
+.flex-align-content-center {align-content: center;}
+.flex-align-content-space-between {align-content: space-between;}
+.flex-align-content-space-around {align-content: space-around;}
+.flex-align-content-stretch {align-content: stretch;} /* Padrão */
+
+/* ==========================
+   ITENS FLEXÍVEIS
+========================== */
+.flex-item-grow-0 {flex-grow: 0;} /* Padrão */
+.flex-item-grow-1 {flex-grow: 1;}
+
+.flex-item-shrink-0 {flex-shrink: 0;}
+.flex-item-shrink-1 {flex-shrink: 1;} /* Padrão */
+
+.flex-item-auto {flex: auto;} /* grow, shrink, basis automáticos */
+.flex-item-initial {flex: initial;} /* grow: 0, shrink: 1, basis: auto */
+.flex-item-none {flex: none;} /* grow: 0, shrink: 0, sem base */
+
+.flex-item-order-0 {order: 0;} /* Padrão */
+.flex-item-order-1 {order: 1;}
+.flex-item-order-2 {order: 2;}
+.flex-item-order-negative {order: -1;}
+
+.flex-self-auto {align-self: auto;} /* Padrão */
+.flex-self-start {align-self: flex-start;}
+.flex-self-end {align-self: flex-end;}
+.flex-self-center {align-self: center;}
+.flex-self-baseline {align-self: baseline;}
+.flex-self-stretch {align-self: stretch;}
 
 
 /* Mobile */
-@media only screen and (max-width: 719px) {
+@media (max-width: 719px) {
     .grid {
         margin: 0 16px;
         gap: 16px !important;
@@ -66,7 +88,7 @@
 }
 
 /* Tablet */
-@media only screen and (min-width: 720px) {
+@media (min-width: 720px) {
     .grid {
         margin: 0 auto;
         max-width: 640px;
@@ -79,7 +101,7 @@
 }
 
 /* Desktop */
-@media only screen and (min-width: 1280px) {
+@media (min-width: 1280px) {
     .grid {
         max-width: 840px;
     }

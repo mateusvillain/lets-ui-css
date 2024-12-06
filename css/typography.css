@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
 /* Global */
 :root {
     --lui-typography-family-heading: var(--typography-main-font);
@@ -79,112 +76,77 @@
     }
 }
 
+html,
+body {
+    font-size: var(--lui-typography-scale-base) !important;
+}
+
+html, body, .display, h1, h2, h3, h4, h5, h6, label {
+    font-family: var(--lui-typography-family-heading) !important;
+    line-height: var(--lui-typography-line-height-sm) !important;
+}
+
+p, input, select, button {
+    font-family: var(--lui-typography-family-body) !important;
+    line-height: var(--lui-typography-line-height-lg) !important;
+}
+
+.display, h1, h6, .text-weight-bold { font-weight: var(--lui-typography-weight-bold) !important; }
+h2, h3, h5, .text-weight-semibold { font-weight: var(--lui-typography-weight-semibold) !important; }
+h4, .text-weight-medium { font-weight: var(--lui-typography-weight-medium) !important; }
+.display, h1, h2, h3, h4, h5, h6, p { text-decoration: var(--lui-typography-decoration-style-none) !important; }
+.display, h1, h2, h3, h4, h5, p { text-transform: var(--lui-typography-transform-none) !important; }
+h4, p { letter-spacing: var(--lui-typography-tracking-none) !important; }
+p { font-weight: var(--lui-typography-weight-regular) !important; }
+h2, h3, h5 { letter-spacing: var(--lui-typography-tracking-sm) !important; }
+
 .display {
-    font-family: var(--lui-typography-family-heading);
-    font-size: var(--lui-typography-scale-size-display);
-    line-height: var(--lui-typography-line-height-sm);
-    font-weight: var(--lui-typography-weight-bold);
-    letter-spacing: var(--lui-typography-tracking-2xs);
-    text-decoration: var(--lui-typography-decoration-style-none);
-    text-transform: var(--lui-typography-transform-none);
+    font-size: var(--lui-typography-scale-size-display) !important;
+    letter-spacing: var(--lui-typography-tracking-2xs) !important;
 }
 
-h1.title {
-    font-family: var(--lui-typography-family-heading);
-    font-size: var(--lui-typography-scale-size-title);
-    line-height: var(--lui-typography-line-height-sm);
-    font-weight: var(--lui-typography-weight-bold);
-    letter-spacing: var(--lui-typography-tracking-xs);
-    text-decoration: var(--lui-typography-decoration-style-none);
-    text-transform: var(--lui-typography-transform-none);
+h1 {
+    font-size: var(--lui-typography-scale-size-title) !important;
+    letter-spacing: var(--lui-typography-tracking-xs) !important;
 }
 
-h2.subtitle {
-    font-family: var(--lui-typography-family-heading);
-    font-size: var(--lui-typography-scale-size-subtitle);
-    line-height: var(--lui-typography-line-height-sm);
-    font-weight: var(--lui-typography-weight-semibold);
-    letter-spacing: var(--lui-typography-tracking-sm);
-    text-decoration: var(--lui-typography-decoration-style-none);
-    text-transform: var(--lui-typography-transform-none);
+h2 {
+    font-size: var(--lui-typography-scale-size-subtitle) !important;
 }
 
-h3.headline {
-    font-family: var(--lui-typography-family-heading);
-    font-size: var(--lui-typography-scale-size-headline);
-    line-height: var(--lui-typography-line-height-sm);
-    font-weight: var(--lui-typography-weight-semibold);
-    letter-spacing: var(--lui-typography-tracking-sm);
-    text-decoration: var(--lui-typography-decoration-style-none);
-    text-transform: var(--lui-typography-transform-none);
+h3 {
+    font-size: var(--lui-typography-scale-size-headline) !important;
 }
 
-h4.subheadline {
-    font-family: var(--lui-typography-family-heading);
-    font-size: var(--lui-typography-scale-size-subheadline);
-    line-height: var(--lui-typography-line-height-sm);
-    font-weight: var(--lui-typography-weight-medium);
-    letter-spacing: var(--lui-typography-tracking-none);
-    text-decoration: var(--lui-typography-decoration-style-none);
-    text-transform: var(--lui-typography-transform-none);
+h4 {
+    font-size: var(--lui-typography-scale-size-subheadline) !important;
 }
 
-h5.block-title {
-    font-family: var(--lui-typography-family-heading);
-    font-size: var(--lui-typography-scale-size-block-title);
-    line-height: var(--lui-typography-line-height-sm);
-    font-weight: var(--lui-typography-weight-semibold);
-    letter-spacing: var(--lui-typography-tracking-sm);
-    text-decoration: var(--lui-typography-decoration-style-none);
-    text-transform: var(--lui-typography-transform-none);
+h5 {
+    font-size: var(--lui-typography-scale-size-block-title) !important;
 }
 
-h6.section-tag {
-    font-family: var(--lui-typography-family-heading);
-    font-size: var(--lui-typography-scale-size-section-tag);
-    line-height: var(--lui-typography-line-height-sm);
-    font-weight: var(--lui-typography-weight-bold);
-    letter-spacing: var(--lui-typography-tracking-xl);
-    text-decoration: var(--lui-typography-decoration-style-none);
-    text-transform: var(--lui-typography-transform-uppercase);
+h6 {
+    font-size: var(--lui-typography-scale-size-section-tag) !important;
+    letter-spacing: var(--lui-typography-tracking-xl) !important;
+    text-transform: var(--lui-typography-transform-uppercase) !important;
 }
 
-p.body-lg,
+.body-lg,
 span.body-lg {
-    font-family: var(--lui-typography-family-body);
-    font-size: var(--lui-typography-scale-size-body-lg);
-    line-height: var(--lui-typography-line-height-lg);
-    font-weight: var(--lui-typography-weight-regular);
-    letter-spacing: var(--lui-typography-tracking-none);
-    text-decoration: var(--lui-typography-decoration-style-none);
-    text-transform: var(--lui-typography-transform-none);
+    font-size: var(--lui-typography-scale-size-body-lg) !important;
 }
 
-p.body-md,
+p,
+.body-md,
 span.body-md {
-    font-family: var(--lui-typography-family-body);
-    font-size: var(--lui-typography-scale-size-body-md);
-    line-height: var(--lui-typography-line-height-lg);
-    font-weight: var(--lui-typography-weight-regular);
-    letter-spacing: var(--lui-typography-tracking-none);
-    text-decoration: var(--lui-typography-decoration-style-none);
-    text-transform: var(--lui-typography-transform-none);
+    font-size: var(--lui-typography-scale-size-body-md) !important;
 }
 
-p.body-sm,
+.body-sm,
 span.body-sm {
-    font-family: var(--lui-typography-family-body);
-    font-size: var(--lui-typography-scale-size-body-sm);
-    line-height: var(--lui-typography-line-height-lg);
-    font-weight: var(--lui-typography-weight-regular);
-    letter-spacing: var(--lui-typography-tracking-none);
-    text-decoration: var(--lui-typography-decoration-style-none);
-    text-transform: var(--lui-typography-transform-none);
+    font-size: var(--lui-typography-scale-size-body-sm) !important;
 }
-
-.text-weight-medium { font-weight: var(--lui-typography-weight-medium) }
-.text-weight-semibold { font-weight: var(--lui-typography-weight-semibold) }
-.text-weight-bold { font-weight: var(--lui-typography-weight-bold) }
 
 .text-style-italic { font-style: var(--lui-typography-style-italic) }
 

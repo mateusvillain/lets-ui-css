@@ -138,3 +138,48 @@
 
     --lui-color-neutral-dark-content-icon: var(--lui-color-neutral-dark-content-text-hard);
 }
+
+.action-caution {
+    background-color: var(--lui-color-feedback-caution-layer-state-enabled);
+    color: var(--lui-color-neutral-dark-content-text-darkest);
+}
+.action-caution:hover { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.24); }
+.action-caution:active { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4); }
+
+.bg-txt-bw-caution { border: var(--lui-border-width-1) solid var(--lui-color-feedback-caution-layer-border-enabled); }
+
+.bg-txt-accent {
+    background-color: var(--lui-color-brand-accent-layer-bg-surface);
+    color: var(--lui-color-neutral-light-content-text-lightest);
+}
+
+.bg-txt-caution,
+.bg-txt-bw-caution {
+    background-color: var(--lui-color-feedback-caution-layer-bg-surface);
+    color: var(--lui-color-feedback-caution-content-text-dark);
+}
+
+.bg-txt-danger {
+    background-color: var(--lui-color-feedback-danger-layer-bg-surface);
+    color: var(--lui-color-feedback-danger-content-text-dark);
+}
+
+.bg-txt-info {
+    background-color: var(--lui-color-feedback-info-layer-bg-surface);
+    color: var(--lui-color-feedback-info-content-text-dark);
+}
+
+.bg-txt-success {
+    background-color: var(--lui-color-feedback-success-layer-bg-surface);
+    color: var(--lui-color-feedback-success-content-text-dark);
+}
+
+.bg-txt-neutral-light {
+    background-color: var(--lui-color-neutral-light-layer-bg-surface);
+    color: var(--lui-color-feedback-success-content-text-dark);
+}
+
+.txt-neutral-light {
+    background: none;
+    color: var(--lui-color-neutral-dark-content-text-darkest);
+}

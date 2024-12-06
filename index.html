@@ -8,60 +8,79 @@
 
     <link rel="stylesheet" href="brand.css">
     <link rel="stylesheet" href="css/baseline.css">
+    <link rel="stylesheet" href="css/letsicons.css">
 </head>
-<body>
-    <div class="container">
+<body class="margin-t-b-40">
+    <div class="grid">
+
+        <a href="#" class="body-lg">Link</a>
+
+        <div class="cold-2">
+            <div class="alert bg-txt-bw-caution" role="alert">
+                <div class="alert-icon">
+                    <i class="icon-exclamation-fill" style="color: var(--lui-color-feedback-caution-content-icon-hard);"></i>
+                </div>
+                <div class="alert-body">
+                    <div class="alert-content">
+                        <p class="body-lg">Se o parágrafo não está quebrando dentro da div, pode ser que o comportamento padrão de quebra de linha tenha</p>
+                        <p class="body-lg">
+                            Se o parágrafo não está quebrando dentro da div, pode ser que o comportamento padrão de quebra de linha tenha sido alterado por meio de estilos CSS como white-space. Para garantir que o texto quebre ao atingir o final da div, você pode ajustar o CSS da seguinte maneira:
+                        </p>
+                    </div>
+                    <div class="alert-actions">
+                        <button class="">Text</button>
+                        <button class="action-caution btn-lg">Text</button>
+                        <button class="txt-neutral-light btn-lg">Text</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         
-        <div class="grid">
+        <div class="tag-md tag-md bg-txt-bw-caution">Em andamento</div>
 
-            <p class="display">D Design System</p>
-            <h1 class="title">1 Design System</h1>
-            <h2 class="subtitle">2 Design System</h1>
-            <h3 class="headline">3 Design System</h3>
-            <h4 class="subheadline">4 Design System</h4>
-            <h5 class="block-title">5 Design System</h5>
-            <h6 class="section-tag">6 Design System</h6>
+        <p class="display">Display</p>
+        <h1>1 Title</h1>
+        <h2 class="subtitle">2 Subtitle</h1>
+        <h3 class="headline">3 Headline</h3>
+        <h4 class="subheadline">4 Subheadline</h4>
+        <h5 class="block-title">5 Block title</h5>
+        <h6 class="section-tag">6 Section tag</h6>
+        <p class="body-lg">Body large</p>
+        <p class="body-md">Body medium</p>
+        <p class="body-sm">Body small</p>
 
-            <div class="col-d-6 col-t-4 col-m-1">
-                <button class="btn-accent-md btn-pressing">Text</button>
-                <button class="btn-accent-md btn-pressing">Text</button>
-                <button class="btn-accent-md btn-pressing">Text</button>
-            </div>
+        <div class="col-d-6 col-t-4 col-m-1">
+            <button class="btn-accent btn-md btn-pressing">Text</button>
+            <button class="btn-accent btn-md btn-pressing">Text</button>
+            <button class="btn-accent btn-md btn-pressing">Text</button>
+        </div>
 
-            <div class="form-group">
-                <label for="name" class="label-lg">Nome</label>
-                <select name="" id="" class="form-field-lg">
-                    <option value="a">aaaa</option>
-                    <option value="a">aaaa</option>
-                    <option value="a">aaaa</option>
-                    <option value="a">aaaa</option>
-                </select>
-            </div>
+        <div class="form-group">
+            <label for="asd" class="label-lg">Nome</label>
+            <select name="" id="" class="form-field-lg">
+                <option value="a">aaaa</option>
+                <option value="a">aaaa</option>
+                <option value="a">aaaa</option>
+                <option value="a">aaaa</option>
+            </select>
+        </div>
 
+        <div class="flex flex-column gap-16">
             <div class="form-group">
                 <label for="name" class="label-lg">Nome</label>
                 <input type="text" class="form-field-lg" name="" id="name" placeholder="Text">
             </div>
-
-            <div class="">
-                <button class="btn-accent-lg btn-pressing">TextTextTextText</button>
-            </div>
-
-        </div>
-
-        <div class="grid">
-            <div class="col-d-4 col-t-3 col-m-2">
-                <button class="btn-accent-lg btn-pressing">Text</button>
-                <button class="btn-accent-lg btn-pressing">Text</button>
-                <button class="btn-accent-lg btn-pressing">Text</button>
-                <button class="btn-accent-lg btn-pressing">Text</button>
-            </div>
-
-            <div class="">
-                <button class="col-d-4 col-t-3 col-m-2 btn-accent-lg btn-pressing">Text</button>
+            <div class="flex flex-justify-end">
+                <button class="btn-accent btn-lg">Text</button>
             </div>
         </div>
 
+        <div class="col-d-4 col-t-3 col-m-2">
+            <button class="btn-accent btn-lg btn-pressing fit-content">Text</button>
+            <button class="btn-accent btn-lg btn-pressing">Text</button>
+            <button class="btn-accent btn-lg">Text</button>
+            <button class="btn-accent btn-lg">Text</button>
+        </div>
     </div>
 </body>
 </html>
