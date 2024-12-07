@@ -70,9 +70,17 @@
 .flex-self-baseline {align-self: baseline;}
 .flex-self-stretch {align-self: stretch;}
 
+.content { width: 100%; }
+
+.body {
+    display: flex;
+    flex-direction: row;
+}
 
 /* Mobile */
 @media (max-width: 719px) {
+    .content { margin-top: var(--lui-spacing-16); }
+
     .grid {
         margin: 0 16px;
         gap: 16px !important;
@@ -89,6 +97,8 @@
 
 /* Tablet */
 @media (min-width: 720px) {
+    .content { margin-top: var(--lui-spacing-24); }
+
     .grid {
         margin: 0 auto;
         max-width: 640px;
@@ -102,9 +112,9 @@
 
 /* Desktop */
 @media (min-width: 1280px) {
-    .grid {
-        max-width: 840px;
-    }
+    .content { margin-top: var(--lui-spacing-40); }
+
+    .grid { max-width: 840px; }
   
     .col-d-1 { grid-template-columns: repeat(1, 1fr); }
     .col-d-2 { grid-template-columns: repeat(2, 1fr); }

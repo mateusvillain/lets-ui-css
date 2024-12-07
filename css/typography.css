@@ -78,7 +78,7 @@
 
 html,
 body {
-    font-size: var(--lui-typography-scale-base) !important;
+    font-size: var(--lui-typography-scale-size-body-lg) !important;
 }
 
 html, body, .display, h1, h2, h3, h4, h5, h6, label {
