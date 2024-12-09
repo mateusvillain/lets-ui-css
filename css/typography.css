@@ -48,8 +48,9 @@
     --lui-typography-weight-medium: 500;
     --lui-typography-weight-semibold: 600;
     --lui-typography-weight-bold: 700;
+
+    --lui-typography-scale-base: 1rem;
     
-    --lui-typography-scale-base: 14px; /* Definir o tamanho base do texto */
     --lui-typography-scale-size-display: calc(var(--lui-typography-scale-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base));
     --lui-typography-scale-size-title: calc(var(--lui-typography-scale-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base));
     --lui-typography-scale-size-subtitle: calc(var(--lui-typography-scale-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base));
@@ -64,21 +65,20 @@
 
 /* Mobile */
 @media only screen and (max-width: 1279px) {
-    :root {
-        --lui-typography-scale-size-base: 1.125;
+    :root { --lui-typography-scale-size-base: 1.125; }
+
+    html, body {
+        font-size: 14px !important;
     }
 }
 
 /* Desktop */
 @media only screen and (min-width: 1280px) {
-    :root {
-        --lui-typography-scale-size-base: 1.2;
-    }
-}
+    :root { --lui-typography-scale-size-base: 1.2; }
 
-html,
-body {
-    font-size: var(--lui-typography-scale-size-body-lg) !important;
+    html, body {
+        font-size: 16px !important;
+    }
 }
 
 html, body, .display, h1, h2, h3, h4, h5, h6, label {
