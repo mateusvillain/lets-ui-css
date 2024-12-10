@@ -10,6 +10,13 @@ Alert
 
 ====================
 */
+.alert {
+    display: flex;
+    gap: var(--lui-spacing-16);
+    padding: var(--lui-spacing-16);
+    border-radius: var(--lui-border-radius-8);
+}
+
 .alert-content {
     width: 100%;
     display: block;
@@ -178,12 +185,12 @@ Link
 
 ====================
 */
-a {
+a.link {
     color: var(--lui-color-brand-accent-layer-state-enabled);
     transition: filter 0.3s ease;
 }
-a:hover { filter: brightness(76%); }
-a:active { filter: brightness(52%); }
+a.link:hover { filter: brightness(76%); }
+a.link:active { filter: brightness(52%); }
 
 /* 
 ====================
@@ -348,11 +355,4 @@ Tag
     background: var(--lui-color-feedback-caution-layer-bg-surface);
     border: var(--lui-border-width-1) solid var(--lui-color-feedback-caution-layer-border-enabled);
     color: var(--lui-color-feedback-caution-content-text-dark);
-}
-
-.alert {
-    display: flex;
-    gap: var(--lui-spacing-16);
-    padding: var(--lui-spacing-16);
-    border-radius: var(--lui-border-radius-8);
 }
