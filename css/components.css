@@ -14,7 +14,7 @@ Alert
     display: flex;
     gap: var(--lui-spacing-16);
     padding: var(--lui-spacing-16);
-    border-radius: var(--lui-border-radius-8);
+    border-radius: var(--lui-border-radius-16);
 }
 
 .alert-content {
@@ -24,13 +24,11 @@ Alert
 }
 
 .alert-content p:first-child { margin-bottom: var(--lui-spacing-2); }
-
 .alert-content p:first-of-type { font-weight: var(--lui-typography-weight-bold) !important; }
 
 .alert-actions button:first-child { margin-right: var(--lui-spacing-16); }
 
-
-/* 
+/*
 ====================
 
 Breadcrumb
@@ -45,9 +43,7 @@ Breadcrumb
     margin: var(--lui-spacing-0);
 }
 
-.breadcrumb li a {
-    text-decoration: none;
-}
+.breadcrumb li a { text-decoration: none; }
 
 .breadcrumb li::after {
     content: "/";
@@ -61,7 +57,7 @@ Breadcrumb
 
 .breadcrumb li:last-child {
     color: var(--lui-color-neutral-light-content-text-soft);
-    pointer-events: none; /* Desativa link do último item */
+    cursor: default;
 }
 
 /* 
@@ -77,23 +73,17 @@ button {
     transition: box-shadow 0.3s ease;
 }
 
-.btn-accent,
-.btn-accent {
-    background-color: var(--lui-color-brand-accent-layer-state-enabled);
-    color: var(--lui-color-neutral-light-content-text-lightest);
-}
-
-.btn-lg {
+.btn-md {
     padding: var(--lui-spacing-12);
-    font-size: var(--lui-typography-scale-size-body-lg);
-    border-radius: var(--lui-border-radius-8);
+    font-size: var(--lui-typography-scale-size-body-md);
+    border-radius: var(--lui-border-radius-12);
     
 }
 
-.btn-md {
+.btn-sm {
     padding: var(--lui-spacing-8);
-    font-size: var(--lui-typography-scale-size-body-md);
-    border-radius: var(--lui-border-radius-4);
+    font-size: var(--lui-typography-scale-size-body-sm);
+    border-radius: var(--lui-border-radius-8);
 }
 
 .btn-accent:hover { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.24); }
@@ -111,7 +101,7 @@ Checkbox
 */
 .styled-checkbox input[type="checkbox"] {
     display: none;
-  }
+}
 
 /* Estilo do checkbox personalizado */
 .styled-checkbox {
@@ -123,11 +113,11 @@ Checkbox
 .styled-checkbox span {
     display: inline-block;
     position: relative;
-    border: var(--lui-border-width-1) solid var(--lui-color-neutral-light-layer-border-enabled);
-    border-radius: var(--lui-border-radius-2);
+    border: var(--lui-border-width-1) solid var(--lui-color-neutral-light-layer-border-stroke);
+    border-radius: var(--lui-border-radius-4);
     background-color: var(--lui-color-neutral-light-layer-bg-surface);
     margin-right: var(--lui-spacing-8);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .checkbox-lg { font-size: var(--lui-typography-scale-size-body-lg); }
@@ -143,16 +133,16 @@ Checkbox
 }
 
 .styled-checkbox span:hover {
-    background-color: var(--lui-color-neutral-light-layer-bg-cover);
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.24);
 }
 
 .styled-checkbox span:active {
-    background-color: var(--lui-color-neutral-light-layer-bg-container);
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
 }
 
 /* Estilo quando marcado */
 .styled-checkbox input[type="checkbox"]:checked + span {
-    background-color: var(--lui-color-brand-accent-layer-border-enabled);
+    background-color: var(--lui-color-brand-accent-layer-bg-container);
     border: 1px solid transparent;
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
@@ -173,7 +163,7 @@ Checkbox
     font-size: var(--lui-typography-scale-size-body-md);
     font-weight: var(--lui-typography-weight-bold);
     position: absolute;
-    top: 50%;
+    top: 56%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -186,7 +176,7 @@ Link
 ====================
 */
 a.link {
-    color: var(--lui-color-brand-accent-layer-state-enabled);
+    color: var(--lui-color-brand-accent-content-text-hard);
     transition: filter 0.3s ease;
 }
 a.link:hover { filter: brightness(76%); }
@@ -205,31 +195,31 @@ Fields
     gap: var(--lui-spacing-8);
 }
 
-input[type=color],
-input[type=email],
-input[type=number],
-input[type=password],
-input[type=search],
-input[type=tel],
-input[type=text],
-input[type=time],
-input[type=url],
+input[type="color"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
 select {
     color: var(--lui-color-neutral-dark-content-text-darkest);
     background-color: var(--lui-color-neutral-light-layer-bg-surface);
-    border: var(--lui-spacing-2) solid var(--lui-color-neutral-dark-layer-border-enabled);
-    outline: 0;
-    transition-duration: .2s;
+    border: var(--lui-spacing-2) solid var(--lui-color-neutral-dark-layer-border-stroke);
+    transition: filter 0.3s ease; /* Transição suave */
 }
 
-input[type=text]:hover,
+input[type="text"]:hover,
 select:hover {
-    border: var(--lui-spacing-2) solid var(--lui-color-neutral-dark-layer-border-hovered);
+    filter: brightness(76%);
 }
 
-input[type=text]:focus-visible,
-select:focus-visible {
-    border: var(--lui-spacing-2) solid var(--lui-color-brand-accent-layer-border-enabled);
+input[type="text"]:focus,
+select:focus {
+    border: var(--lui-spacing-2) solid var(--lui-color-brand-accent-layer-border-stroke) !important;
+    outline: none;
 }
 
 .form-field-lg {
@@ -355,4 +345,35 @@ Tag
     background: var(--lui-color-feedback-caution-layer-bg-surface);
     border: var(--lui-border-width-1) solid var(--lui-color-feedback-caution-layer-border-enabled);
     color: var(--lui-color-feedback-caution-content-text-dark);
+}
+
+/*  */
+
+.teste-btn {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    background-color: #F5F5F5; /* Cor do fundo */
+}
+
+/* Cria a borda usando ::before */
+.teste-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 4px solid #8733FF; /* Cor inicial da borda */
+    transition: filter 0.3s ease; /* Transição suave */
+}
+
+/* Escurece a borda no hover */
+.teste-btn:hover::before {
+    filter: brightness(0.8); /* Escurece no hover */
+}
+
+/* Escurece mais no active */
+.teste-btn:active::before {
+    filter: brightness(0.6); /* Escurece mais no active */
 }

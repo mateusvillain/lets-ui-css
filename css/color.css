@@ -4,14 +4,10 @@
     /* Brand */
     --lui-color-brand-accent-layer-bg-surface: var(--color-brand-1);
     --lui-color-brand-accent-layer-bg-cover: var(--color-brand-2);
-    --lui-color-brand-accent-layer-bg-container: var(--color-brand-3);
+    --lui-color-brand-accent-layer-bg-container: var(--color-brand-5);
 
-    --lui-color-brand-accent-layer-border-enabled: var(--color-brand-5);
-    --lui-color-brand-accent-layer-border-hovered: var(--color-brand-6);
-
-    --lui-color-brand-accent-layer-state-enabled: var(--color-brand-5);
-    --lui-color-brand-accent-layer-state-hovered: var(--color-brand-6);
-    --lui-color-brand-accent-layer-state-pressed: var(--color-brand-7);
+    --lui-color-brand-accent-layer-border-divisor: var(--color-brand-1);
+    --lui-color-brand-accent-layer-border-stroke: var(--color-brand-5);
 
     --lui-color-brand-accent-content-text-darkest: var(--color-brand-9);
     --lui-color-brand-accent-content-text-dark: var(--color-brand-8);
@@ -25,14 +21,10 @@
     /* Caution */
     --lui-color-feedback-caution-layer-bg-surface: var(--lui-color-solid-orange-1);
     --lui-color-feedback-caution-layer-bg-cover: var(--lui-color-solid-orange-2);
-    --lui-color-feedback-caution-layer-bg-container: var(--lui-color-solid-orange-3);
+    --lui-color-feedback-caution-layer-bg-container: var(--lui-color-solid-orange-5);
 
-    --lui-color-feedback-caution-layer-border-enabled: var(--lui-color-solid-orange-5);
-    --lui-color-feedback-caution-layer-border-hovered: var(--lui-color-solid-orange-6);
-
-    --lui-color-feedback-caution-layer-state-enabled: var(--lui-color-solid-orange-5);
-    --lui-color-feedback-caution-layer-state-hovered: var(--lui-color-solid-orange-6);
-    --lui-color-feedback-caution-layer-state-pressed: var(--lui-color-solid-orange-7);
+    --lui-color-feedback-caution-layer-border-divisor: var(--lui-color-solid-orange-1);
+    --lui-color-feedback-caution-layer-border-stroke: var(--lui-color-solid-orange-5);
 
     --lui-color-feedback-caution-content-text-darkest: var(--lui-color-solid-orange-9);
     --lui-color-feedback-caution-content-text-dark: var(--lui-color-solid-orange-8);
@@ -45,14 +37,10 @@
     /* Info */
     --lui-color-feedback-info-layer-bg-surface: var(--lui-color-solid-blue-1);
     --lui-color-feedback-info-layer-bg-cover: var(--lui-color-solid-blue-2);
-    --lui-color-feedback-info-layer-bg-container: var(--lui-color-solid-blue-3);
+    --lui-color-feedback-info-layer-bg-container: var(--lui-color-solid-blue-5);
 
-    --lui-color-feedback-info-layer-border-enabled: var(--lui-color-solid-blue-5);
-    --lui-color-feedback-info-layer-border-hovered: var(--lui-color-solid-blue-6);
-
-    --lui-color-feedback-info-layer-state-enabled: var(--lui-color-solid-blue-5);
-    --lui-color-feedback-info-layer-state-hovered: var(--lui-color-solid-blue-6);
-    --lui-color-feedback-info-layer-state-pressed: var(--lui-color-solid-blue-7);
+    --lui-color-feedback-info-layer-border-divisor: var(--lui-color-solid-blue-1);
+    --lui-color-feedback-info-layer-border-stroke: var(--lui-color-solid-blue-5);
 
     --lui-color-feedback-info-content-text-darkest: var(--lui-color-solid-blue-9);
     --lui-color-feedback-info-content-text-dark: var(--lui-color-solid-blue-8);
@@ -65,14 +53,10 @@
     /* Danger */
     --lui-color-feedback-danger-layer-bg-surface: var(--lui-color-solid-red-1);
     --lui-color-feedback-danger-layer-bg-cover: var(--lui-color-solid-red-2);
-    --lui-color-feedback-danger-layer-bg-container: var(--lui-color-solid-red-3);
+    --lui-color-feedback-danger-layer-bg-container: var(--lui-color-solid-red-5);
 
-    --lui-color-feedback-danger-layer-border-enabled: var(--lui-color-solid-red-5);
-    --lui-color-feedback-danger-layer-border-hovered: var(--lui-color-solid-red-6);
-
-    --lui-color-feedback-danger-layer-state-enabled: var(--lui-color-solid-red-5);
-    --lui-color-feedback-danger-layer-state-hovered: var(--lui-color-solid-red-6);
-    --lui-color-feedback-danger-layer-state-pressed: var(--lui-color-solid-red-7);
+    --lui-color-feedback-danger-layer-border-divisor: var(--lui-color-solid-red-1);
+    --lui-color-feedback-danger-layer-border-stroke: var(--lui-color-solid-red-5);
 
     --lui-color-feedback-danger-content-text-darkest: var(--lui-color-solid-red-9);
     --lui-color-feedback-danger-content-text-dark: var(--lui-color-solid-red-8);
@@ -85,14 +69,10 @@
     /* Success */
     --lui-color-feedback-success-layer-bg-surface: var(--lui-color-solid-green-1);
     --lui-color-feedback-success-layer-bg-cover: var(--lui-color-solid-green-2);
-    --lui-color-feedback-success-layer-bg-container: var(--lui-color-solid-green-3);
+    --lui-color-feedback-success-layer-bg-container: var(--lui-color-solid-green-5);
 
-    --lui-color-feedback-success-layer-border-enabled: var(--lui-color-solid-green-5);
-    --lui-color-feedback-success-layer-border-hovered: var(--lui-color-solid-green-6);
-
-    --lui-color-feedback-success-layer-state-enabled: var(--lui-color-solid-green-5);
-    --lui-color-feedback-success-layer-state-hovered: var(--lui-color-solid-green-6);
-    --lui-color-feedback-success-layer-state-pressed: var(--lui-color-solid-green-7);
+    --lui-color-feedback-success-layer-border-divisor: var(--lui-color-solid-green-1);
+    --lui-color-feedback-success-layer-border-stroke: var(--lui-color-solid-green-5);
 
     --lui-color-feedback-success-content-text-darkest: var(--lui-color-solid-green-9);
     --lui-color-feedback-success-content-text-dark: var(--lui-color-solid-green-8);
@@ -107,12 +87,8 @@
     --lui-color-neutral-light-layer-bg-cover: var(--lui-color-solid-gray-2);
     --lui-color-neutral-light-layer-bg-container: var(--lui-color-solid-gray-3);
 
-    --lui-color-neutral-light-layer-border-enabled: var(--lui-color-solid-gray-3);
-    --lui-color-neutral-light-layer-border-hovered: var(--lui-color-solid-gray-4);
-
-    --lui-color-neutral-light-layer-state-enabled: var(--lui-color-solid-gray-1);
-    --lui-color-neutral-light-layer-state-hovered: var(--lui-color-solid-gray-2);
-    --lui-color-neutral-light-layer-state-pressed: var(--lui-color-solid-gray-3);
+    --lui-color-neutral-light-layer-border-divisor: var(--lui-color-solid-gray-1);
+    --lui-color-neutral-light-layer-border-stroke: var(--lui-color-solid-gray-5);
 
     --lui-color-neutral-light-content-text-lightest: var(--lui-color-solid-gray-1);
     --lui-color-neutral-light-content-text-lighter: var(--lui-color-solid-gray-2);
@@ -123,14 +99,10 @@
     /* Neutral dark */
     --lui-color-neutral-dark-layer-bg-surface: var(--lui-color-solid-gray-9);
     --lui-color-neutral-dark-layer-bg-cover: var(--lui-color-solid-gray-8);
-    --lui-color-neutral-dark-layer-bg-container: var(--lui-color-solid-gray-7);
+    --lui-color-neutral-dark-layer-bg-container: var(--lui-color-solid-gray-5);
 
-    --lui-color-neutral-dark-layer-border-enabled: var(--lui-color-solid-gray-5);
-    --lui-color-neutral-dark-layer-border-hovered: var(--lui-color-solid-gray-6);
-
-    --lui-color-neutral-dark-layer-state-enabled: var(--lui-color-solid-gray-5);
-    --lui-color-neutral-dark-layer-state-hovered: var(--lui-color-solid-gray-6);
-    --lui-color-neutral-dark-layer-state-pressed: var(--lui-color-solid-gray-7);
+    --lui-color-neutral-dark-layer-border-divisor: var(--lui-color-solid-gray-1);
+    --lui-color-neutral-dark-layer-border-stroke: var(--lui-color-solid-gray-5);
 
     --lui-color-neutral-dark-content-text-darkest: var(--lui-color-solid-gray-9);
     --lui-color-neutral-dark-content-text-darker: var(--lui-color-solid-gray-8);
@@ -139,50 +111,57 @@
     --lui-color-neutral-dark-content-icon: var(--lui-color-neutral-dark-content-text-hard);
 }
 
+/* 
+====================
+
+Actions
+
+====================
+*/
+.action-accent {
+    background-color: var(--lui-color-brand-accent-layer-bg-container);
+    color: var(--lui-color-neutral-light-content-text-lightest);
+}
+.action-accent:hover { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.24); }
+.action-accent:active { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4); }
+
 .action-caution {
-    background-color: var(--lui-color-feedback-caution-layer-state-enabled);
+    background-color: var(--lui-color-feedback-caution-layer-bg-container);
     color: var(--lui-color-neutral-dark-content-text-darkest);
 }
 .action-caution:hover { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.24); }
 .action-caution:active { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4); }
 
 .action-danger {
-    background-color: var(--lui-color-feedback-danger-layer-state-enabled);
+    background-color: var(--lui-color-feedback-danger-layer-bg-container);
     color: var(--lui-color-neutral-light-content-text-lightest);
 }
 .action-danger:hover { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.24); }
 .action-danger:active { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4); }
 
 .action-info {
-    background-color: var(--lui-color-feedback-info-layer-state-enabled);
+    background-color: var(--lui-color-feedback-info-layer-bg-container);
     color: var(--lui-color-neutral-dark-content-text-darkest);
 }
 .action-info:hover { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.24); }
 .action-info:active { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4); }
 
 .action-success {
-    background-color: var(--lui-color-feedback-success-layer-state-enabled);
+    background-color: var(--lui-color-feedback-success-layer-bg-container);
     color: var(--lui-color-neutral-dark-content-text-darkest);
 }
 .action-success:hover { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.24); }
 .action-success:active { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4); }
 
-.action-accent {
-    background-color: var(--lui-color-brand-accent-layer-state-enabled);
-    color: var(--lui-color-neutral-light-content-text-lightest);
-}
-.action-accent:hover { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.24); }
-.action-accent:active { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4); }
-
 .action-neutral-dark {
-    background-color: var(--lui-color-neutral-dark-layer-state-enabled);
+    background-color: var(--lui-color-neutral-dark-layer-bg-container);
     color: var(--lui-color-neutral-light-content-text-lightest);
 }
 .action-neutral-dark:hover { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.24); }
 .action-neutral-dark:active { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4); }
 
 .action-neutral-light {
-    background-color: var(--lui-color-neutral-light-layer-state-enabled);
+    background-color: var(--lui-color-neutral-light-layer-bg-container);
     color: var(--lui-color-neutral-dark-content-text-darkest);
 }
 .action-neutral-light:hover { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.24); }
@@ -195,15 +174,36 @@
 .action-transparent:hover { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.24); }
 .action-transparent:active { box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4); }
 
+/* 
+=======================
 
+Backgrounds and borders
 
+=======================
+*/
+.bg-txt-bw-caution {
+    border: var(--lui-border-width-1) solid var(--lui-color-feedback-caution-layer-border-stroke);
+}
 
+.bg-txt-bw-danger {
+    border: var(--lui-border-width-1) solid var(--lui-color-feedback-danger-layer-border-stroke);
+}
 
-.bg-txt-bw-caution { border: var(--lui-border-width-1) solid var(--lui-color-feedback-caution-layer-border-enabled); }
-.bg-txt-bw-danger { border: var(--lui-border-width-1) solid var(--lui-color-feedback-danger-layer-border-enabled); }
-.bg-txt-bw-info { border: var(--lui-border-width-1) solid var(--lui-color-feedback-info-layer-border-enabled); }
-.bg-txt-bw-success { border: var(--lui-border-width-1) solid var(--lui-color-feedback-success-layer-border-enabled); }
+.bg-txt-bw-info {
+    border: var(--lui-border-width-1) solid var(--lui-color-feedback-info-layer-border-stroke);
+}
 
+.bg-txt-bw-success {
+    border: var(--lui-border-width-1) solid var(--lui-color-feedback-success-layer-border-stroke);
+}
+
+/* 
+====================
+
+Backgrounds
+
+====================
+*/
 .bg-txt-accent {
     background-color: var(--lui-color-brand-accent-layer-bg-surface);
     color: var(--lui-color-neutral-light-content-text-lightest);
@@ -238,6 +238,13 @@
     color: var(--lui-color-feedback-success-content-text-dark);
 }
 
+/* 
+====================
+
+Texts
+
+====================
+*/
 .txt-neutral-light {
     background: none;
     color: var(--lui-color-neutral-dark-content-text-darkest);
