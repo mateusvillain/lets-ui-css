@@ -1,0 +1,36 @@
+{
+  "source": [
+    "tokens/**/*.json"
+  ],
+  "log": {
+    "verbosity": "default"
+  },
+  "preprocessors": [
+    "tokens-studio"
+  ],
+  "platforms": {
+    "css": {
+      "buildPath": "dist/",
+      "transformGroup": "tokens-studio",
+      "transforms": [
+        "name/kebab"
+      ],
+      "files": [
+        {
+          "destination": "variables.css",
+          "format": "css/variables"
+        }
+      ]
+    },
+    "scss": {
+      "buildPath": "build/scss/",
+      "prefix": "",
+      "files": [
+        {
+          "destination": "variables.scss",
+          "format": "scss/variables"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+	"name": "@zip-js/zip-js",
+	"version": "2.7.59",
+	"exports": {
+		".": "./index.js",
+		"./data-uri": "./lib/zip-data-uri.js"
+	},
+	"lint": {
+		"exclude": [
+			"dist/*.js",
+			"*-inline.js",
+			"tests/vendor/*.js",
+			"index.cjs",
+			"index.min.js"
+		]
+	}
+}

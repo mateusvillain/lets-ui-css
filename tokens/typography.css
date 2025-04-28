@@ -49,6 +49,8 @@
     --lui-typography-weight-semibold: 600;
     --lui-typography-weight-bold: 700;
 
+    --lui-typography-scale-mobile-base: 14px;
+    --lui-typography-scale-desktop-base: 16px;
     --lui-typography-scale-base: 1rem;
     
     --lui-typography-scale-size-display: calc(var(--lui-typography-scale-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base));
@@ -68,7 +70,7 @@
     :root { --lui-typography-scale-size-base: 1.125; }
 
     html, body {
-        font-size: 14px !important;
+        font-size: var(--lui-typography-scale-mobile-base) !important;
     }
 }
 
@@ -77,7 +79,7 @@
     :root { --lui-typography-scale-size-base: 1.2; }
 
     html, body {
-        font-size: 16px !important;
+        font-size: var(--lui-typography-scale-desktop-base) !important;
     }
 }
 
