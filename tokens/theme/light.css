@@ -1,4 +1,6 @@
 :root {
+    color-scheme: light;
+    
     --lui-color-solid-blue-1: hsl(204, 100%, 96%);
     --lui-color-solid-blue-2: hsl(205, 95%, 85%);
     --lui-color-solid-blue-3: hsl(206, 94%, 74%);

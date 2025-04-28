@@ -1,18 +1,3 @@
-/* Grid */
-.grid,
-.col-d-1, .col-d-2, .col-d-3, .col-d-4, .col-d-5, .col-d-6,
-.col-t-1, .col-t-2, .col-t-3, .col-t-4,
-.col-m-1, .col-m-2 {
-    display: grid;
-    gap: 24px;
-    transition-duration: .2s;
-}
-
-.grid { grid-template-columns: repeat(1, 1fr); }
-
-/* ==========================
-   CONTÊINER FLEXÍVEL
-========================== */
 .flex {display: flex;}
 .inline-flex {display: inline-flex;}
 
@@ -45,9 +30,6 @@
 .flex-align-content-space-around {align-content: space-around;}
 .flex-align-content-stretch {align-content: stretch;} /* Padrão */
 
-/* ==========================
-   ITENS FLEXÍVEIS
-========================== */
 .flex-item-grow-0 {flex-grow: 0;} /* Padrão */
 .flex-item-grow-1 {flex-grow: 1;}
 
@@ -69,57 +51,3 @@
 .flex-self-center {align-self: center;}
 .flex-self-baseline {align-self: baseline;}
 .flex-self-stretch {align-self: stretch;}
-
-.content { width: 100%; }
-
-.body {
-    display: flex;
-    flex-direction: row;
-}
-
-/* Mobile */
-@media (max-width: 719px) {
-    .content { margin-top: var(--lui-spacing-16); }
-
-    .grid {
-        margin: 0 16px;
-        gap: 16px !important;
-    }
-
-    .col-m-1 { grid-template-columns: repeat(1, 1fr); }
-    .col-m-2 { grid-template-columns: repeat(2, 1fr); }
-
-    .col-m-1,
-    .col-m-2 {
-        gap: 16px;
-    }
-}
-
-/* Tablet */
-@media (min-width: 720px) {
-    .content { margin-top: var(--lui-spacing-24); }
-
-    .grid {
-        margin: 0 auto;
-        max-width: 640px;
-    }
-
-    .col-t-1 { grid-template-columns: repeat(1, 1fr); }
-    .col-t-2 { grid-template-columns: repeat(2, 1fr); }
-    .col-t-3 { grid-template-columns: repeat(3, 1fr); }
-    .col-t-4 { grid-template-columns: repeat(4, 1fr); }
-}
-
-/* Desktop */
-@media (min-width: 1280px) {
-    .content { margin-top: var(--lui-spacing-40); }
-
-    .grid { max-width: 840px; }
-  
-    .col-d-1 { grid-template-columns: repeat(1, 1fr); }
-    .col-d-2 { grid-template-columns: repeat(2, 1fr); }
-    .col-d-3 { grid-template-columns: repeat(3, 1fr); }
-    .col-d-4 { grid-template-columns: repeat(4, 1fr); }
-    .col-d-5 { grid-template-columns: repeat(5, 1fr); }
-    .col-d-6 { grid-template-columns: repeat(6, 1fr); }
-}

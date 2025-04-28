@@ -4,213 +4,232 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Document</title>
+    <title>Let's UI</title>
 
-    <link rel="stylesheet" href="brand.css">
-    <link rel="stylesheet" href="css/baseline.css">
-    <link rel="stylesheet" href="css/letsicons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="base/baseline.css">
 </head>
 <body>
-    <div class="body">
-        <nav class="navbar" aria-label="Primary Navigation">
+    <!-- Conteúdo principal -->
+    <div class="layout">
+
+        <header class="header">
+            <div style="background-color: #eee; width: 120px; height: 32px; border-radius: var(--lui-border-radius-8);"></div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li class="nav-active">Page title</li>
+                    <li><a href="#">Page title</a></li>
+                    <li><a href="#">Page title</a></li>
+                    <li><a href="#">Page title</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <button class="icon-button btn-light" aria-label="Fechar alerta">
+                    <i class="icon-circle-close-regular"></i>
+                </button>
+                <button class="icon-button btn-light" aria-label="Fechar alerta">
+                    <i class="icon-circle-close-regular"></i>
+                </button>
+                <button class="icon-button btn-light" aria-label="Fechar alerta">
+                    <i class="icon-circle-close-regular"></i>
+                </button>
+                <button class="menu-toggle" popovertarget="mobile-menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </header>
+        
+        <!-- Sidebar (visível apenas em desktop) -->
+        <nav class="navbar" aria-label="Menu principal">
             <div class="nav">
-                <img src="logo.png" alt="">
                 <div class="nav-section">
                     <h6>Section name</h6>
                     <ul>
-                        <li style="width: 100%;"><div class="nav-menu menu-active">Menu</div></li>
-                        <li><a href="#"><div class="nav-menu">Menu</div></a></li>
-                        <li><a href="#"><div class="nav-menu">Menu</div></a></li>
-                        <li><a href="#"><div class="nav-menu">Menu</div></a></li>
-                        <li><a href="#"><div class="nav-menu">Menu</div></a></li>
-                        <li><a href="#"><div class="nav-menu">Menu</div></a></li>
-                        <li><a href="#"><div class="nav-menu">Menu</div></a></li>
-                        <li><a href="#"><div class="nav-menu">Menu</div></a></li>
+                        <li class="menu-active">Menu 0</li>
+                        <li><a href="#">Menu 1</a></li>
+                        <li><a href="#">Menu 2</a></li>
+                        <li><a href="#">Menu 3</a></li>
                     </ul>
                 </div>
                 <div class="nav-section">
                     <h6>Section name</h6>
                     <ul>
-                        <li style="width: 100%;"><div class="nav-menu menu-active">Menu</div></li>
-                        <li><a href="#"><div class="nav-menu">Menu</div></a></li>
-                        <li><a href="#"><div class="nav-menu">Menu</div></a></li>
-                        <li><a href="#"><div class="nav-menu">Menu</div></a></li>
-                        <li><a href="#"><div class="nav-menu">Menu</div></a></li>
-                        <li><a href="#"><div class="nav-menu">Menu</div></a></li>
-                        <li><a href="#"><div class="nav-menu">Menu</div></a></li>
-                        <li><a href="#"><div class="nav-menu">Menu</div></a></li>
+                        <li><a href="#">Menu 4</a></li>
+                        <li><a href="#">Menu 5</a></li>
+                        <li><a href="#">Menu 6</a></li>
+                        <li><a href="#">Menu 7</a></li>
+                        <li><a href="#">Menu 8</a></li>
+                        <li><a href="#">Menu 9</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-    
-        <div class="content">
+
+        <!-- Conteúdo da página -->
+        <div class="main-content">
             <div class="grid">
+                <p class="display col-lg-12 col-md-12 col-sm-4">Display</p>
+                <h1 class="title col-lg-12 col-md-12 col-sm-4">1 Title</h1>
+                <h2 class="headline col-lg-12 col-md-12 col-sm-4">2 Headline</h2>
+                <h3 class="subtitle col-lg-12 col-md-12 col-sm-4">3 Subtitle</h3>
+                <h4 class="block-title col-lg-12 col-md-12 col-sm-4">4 Block title</h4>
+                <h5 class="subheadline col-lg-12 col-md-12 col-sm-4">5 Subheadline</h5>
+                <h6 class="section-tag col-lg-12 col-md-12 col-sm-4">6 Section tag</h6>
+                <p class="body-lg col-lg-12 col-md-12 col-sm-4">Body large</p>
+                <p class="body-md col-lg-12 col-md-12 col-sm-4">Body medium</p>
+                <p class="body-sm col-lg-12 col-md-12 col-sm-4">Body small</p>
+            </div>
 
-                <div class="col-d-4">
-                    <label class="styled-checkbox checkbox-md">
-                        <input type="checkbox">
-                        <span></span>
-                        Checkbox
-                    </label>
-                    <label class="styled-checkbox checkbox-md">
-                        <input type="checkbox">
-                        <span></span>
-                        Checkbox
-                    </label>
-                    <label class="styled-checkbox checkbox-md">
-                        <input type="checkbox">
-                        <span></span>
-                        Checkbox
-                    </label>
-                    <label class="styled-checkbox checkbox-md">
-                        <input type="checkbox">
-                        <span></span>
-                        Checkbox
-                    </label>
+            <div class="grid">
+                <div class="alert bd-caution col-lg-12 col-md-12 col-sm-4" role="alert">
+                    <div class="alert-content">
+                        <i class="alert-icon icon-exclamation-fill" aria-hidden="true"></i>
+                        <div class="alert-text">
+                            <p>Alert title</p>
+                            <p>Se o parágrafo não está quebrando dentro da div, pode ser que o comportamento padrão de quebra de linha tenha sido alterado por meio de estilos CSS como white-space.</p>
+                        </div>
+                        <button class="icon-button btn-light" aria-label="Fechar alerta">
+                            <i class="icon-circle-close-regular"></i>
+                        </button>
+                    </div>
+                    <div class="alert-actions">
+                        <button class="btn btn-secondary btn-md">Text</button>
+                        <button class="btn btn-primary btn-md">Text</button>
+                    </div>
                 </div>
+            </div>
+        
+            <div class="grid">
+                <div class="alert bd-danger col-lg-4" role="alert">
+                    <div class="alert-content">
+                        <i class="alert-icon icon-circle-danger-fill" aria-hidden="true"></i>
+                        <div class="alert-text">
+                            <p>Alert title</p>
+                            <p>Se o parágrafo não está quebrando dentro da div, pode ser que o comportamento padrão de quebra de linha tenha sido alterado por meio de estilos CSS como white-space.</p>
+                        </div>
+                        <button class="icon-button" aria-label="Fechar alerta">
+                            <i class="icon-circle-close-regular"></i>
+                        </button>
+                    </div>
+                    <div class="alert-actions">
+                        <button class="btn btn-secondary btn-md">Text</button>
+                        <button class="btn btn-primary btn-md">Text</button>
+                    </div>
+                </div>
+        
+                <div class="alert bd-info col-lg-4" role="alert">
+                    <div class="alert-content">
+                        <i class="alert-icon icon-circle-info-fill" aria-hidden="true"></i>
+                        <div class="alert-text">
+                            <p>Alert title</p>
+                            <p>Se o parágrafo não está quebrando dentro da div, pode ser que o comportamento padrão de quebra de linha tenha sido alterado por meio de estilos CSS como white-space.</p>
+                        </div>
+                        <button class="icon-button" aria-label="Fechar alerta">
+                            <i class="icon-circle-close-regular"></i>
+                        </button>
+                    </div>
+                    <div class="alert-actions">
+                        <button class="btn btn-secondary btn-md">Text</button>
+                        <button class="btn btn-primary btn-md">Text</button>
+                    </div>
+                </div>
+        
+                <div class="alert bd-success col-lg-4" role="alert">
+                    <div class="alert-content">
+                        <i class="alert-icon icon-circle-check-fill" aria-hidden="true"></i>
+                        <div class="alert-text">
+                            <p>Alert title</p>
+                            <p>Se o parágrafo não está quebrando dentro da div, pode ser que o comportamento padrão de quebra de linha tenha sido alterado por meio de estilos CSS como white-space.</p>
+                        </div>
+                    </div>
+                    <div class="alert-actions">
+                        <button class="btn btn-secondary btn-md">Text</button>
+                        <button class="btn btn-primary btn-md">Text</button>
+                    </div>
+                </div>
+            </div>
 
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li><a class="link" href="#">Page 1</a></li>
-                        <li><a class="link" href="#">Page 2</a></li>
-                        <li aria-current="page">Page 3</li>
-                    </ol>
-                </nav>
-        
-                <a class="link" href="#">Link</a>
-        
-                <div class="col-d-4">
-                    <button class="action-caution btn-md btn-pressing">Text</button>
-                    <button class="action-success btn-md">Text</button>
-                    <button class="action-info btn-md">Text</button>
-                    <button class="action-danger btn-md">Text</button>
-                    <button class="action-accent btn-md">Text</button>
-                    <button class="action-neutral-dark btn-md">Text</button>
-                    <button class="action-neutral-light btn-md">Text</button>
-                    <button class="action-transparent btn-md btn-pressing">Text</button>
-                    <button class="icon-button">
-                        <i class="icon-exclamation-fill"></i>
-                    </button>
+            <div class="grid">
+                <div class="col-lg-1 col-md-1 col-sm-1">
+                    <button class="btn btn-md btn-primary">Button</button>
                 </div>
-        
-                <div class="col-d-1">
-                    <div class="alert bg-txt-bw-caution" role="alert">
-                        <div class="alert-icon">
-                            <i class="icon-exclamation-fill" style="color: var(--lui-color-feedback-caution-content-icon-hard);"></i>
-                        </div>
-                        <div class="alert-body">
-                            <div class="alert-content">
-                                <p class="">Se o parágrafo não está quebrando dentro da div, pode ser que o comportamento padrão de quebra de linha tenha</p>
-                                <p class="">
-                                    Se o parágrafo não está quebrando dentro da div, pode ser que o comportamento padrão de quebra de linha tenha sido alterado por meio de estilos CSS como white-space.
-                                </p>
-                            </div>
-                            <div class="alert-actions">
-                                <button class="action-caution btn-md">Text</button>
-                                <button class="action-transparent btn-md">Text</button>
-                            </div>
-                        </div>
-                        <button class="icon-button">
-                            <i class="icon-circle-close-regular"></i>
-                        </button>
-                    </div>
-                    <div class="alert bg-txt-bw-danger" role="alert">
-                        <div class="alert-icon">
-                            <i class="icon-circle-danger-fill" style="color: var(--lui-color-feedback-danger-content-icon-hard);"></i>
-                        </div>
-                        <div class="alert-body">
-                            <div class="alert-content">
-                                <p class="">Se o parágrafo não está quebrando dentro da div</p>
-                                <p class="">
-                                    Se o parágrafo não está quebrando dentro da div sido alterado por meio de estilos CSS como white-space.
-                                </p>
-                            </div>
-                            <div class="alert-actions">
-                                <button class="action-danger btn-md">Text</button>
-                                <button class="action-transparent btn-md">Text</button>
-                            </div>
-                        </div>
-                        <button class="icon-button">
-                            <i class="icon-circle-close-regular"></i>
-                        </button>
-                    </div>
-                    <div class="alert bg-txt-bw-info" role="alert">
-                        <div class="alert-icon">
-                            <i class="icon-circle-info-fill" style="color: var(--lui-color-feedback-info-content-icon-hard);"></i>
-                        </div>
-                        <div class="alert-body">
-                            <div class="alert-content">
-                                <p class="">Se o parágrafo não está quebrando dentro da div, pode ser que o comportamento padrão de quebra de linha tenha</p>
-                                <p class="">
-                                    Se o parágrafo não está quebrando dentro da div, pode ser que o comportamento padrão de quebra de linha tenha sido alterado por meio de estilos CSS como white-space. Para garantir que o texto quebre ao atingir o final da div, você pode ajustar o CSS da seguinte maneira:
-                                </p>
-                            </div>
-                            <div class="alert-actions">
-                                <button class="action-info btn-md">Text</button>
-                                <button class="action-transparent btn-md">Text</button>
-                            </div>
-                        </div>
-                        <button class="icon-button">
-                            <i class="icon-circle-close-regular"></i>
-                        </button>
-                    </div>
-                    <div class="alert bg-txt-bw-success" role="alert">
-                        <div class="alert-icon">
-                            <i class="icon-circle-check-fill" style="color: var(--lui-color-feedback-success-content-icon-hard);"></i>
-                        </div>
-                        <div class="alert-body">
-                            <div class="alert-content">
-                                <p class="">Se o parágrafo não está quebrando dentro da div, pode ser que o comportamento padrão de quebra de linha tenha</p>
-                                <p class="">
-                                    Se o parágrafo não está quebrando dentro da div, pode ser que o comportamento padrão de quebra de linha tenha sido alterado por meio de estilos CSS como white-space. Para garantir que o texto quebre ao atingir o final da div, você pode ajustar o CSS da seguinte maneira:
-                                </p>
-                            </div>
-                            <div class="alert-actions">
-                                <button class="action-success btn-md">Text</button>
-                                <button class="action-transparent btn-md">Text</button>
-                            </div>
-                        </div>
-                        <button class="icon-button">
-                            <i class="icon-circle-close-regular"></i>
-                        </button>
-                    </div>
+                <div class="col-lg-1 col-md-1 col-sm-1">
+                    <button class="btn btn-md btn-secondary">Button</button>
                 </div>
-                
-                <div class="tag-md tag-md bg-txt-bw-caution">Em andamento</div>
-        
-                <p class="display">Display</p>
-                <h1 class="title">1 Title</h1>
-                <h2 class="headline">2 Headline</h2>
-                <h3 class="subtitle">3 Subtitle</h3>
-                <h4 class="block-title">4 Block title</h4>
-                <h5 class="subheadline">5 Subheadline</h5>
-                <h6 class="section-tag">6 Section tag</h6>
-                <p class="body-lg">Body large</p>
-                <p>Body medium</p>
-                <p class="body-sm">Body small</p>
-        
-                <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <select name="nome" id="" class="form-field-md">
-                        <option value="a">aaaa</option>
-                        <option value="a">aaaa</option>
-                        <option value="a">aaaa</option>
-                        <option value="a">aaaa</option>
-                    </select>
+                <div class="col-lg-1 col-md-1 col-sm-1">
+                    <button class="btn btn-md btn-tertiary">Button</button>
                 </div>
-        
-                <div class="flex flex-column gap-16">
+                <div class="col-lg-1 col-md-1 col-sm-1">
+                    <button class="btn btn-md btn-success">Button</button>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1">
+                    <button class="btn btn-md btn-danger">Button</button>
+                </div>
+            </div>
+
+            <div>
+                <h2>Form title</h2>
+                <p class="body-lg">Description text</p>
+            </div>
+            <div class="grid">
+                <div class="col-lg-4">
                     <div class="form-group">
-                        <label for="name">Nome</label>
-                        <input type="text" class="form-field-md" name="" id="name" placeholder="Text">
+                        <label for="select" class="form-size-lg">Select</label>
+                        <select id="select" class="form-size-lg">
+                            <option value="a">Opção 1</option>
+                            <option value="b">Opção 2</option>
+                            <option value="c">Opção 3</option>
+                            <option value="d">Opção 4</option>
+                        </select>
                     </div>
-                    <div class="flex flex-justify-end">
-                        <button class="btn-accent btn-md">Text</button>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label for="name" class="form-size-lg">Nome</label>
+                        <input type="text" class="form-size-lg" id="name" placeholder="Placeholder">
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <label class="col-lg-4">
+                    <div class="form-checkbox check-size-lg">
+                        <input type="checkbox" id="inlineCheckbox1" value="option1" checked>
+                        <label>Checkbox default</label>
+                    </div>
+                </label>
+                <div class="col-lg-4">
+                    <div class="form-checkbox check-size-md">
+                        <input type="checkbox" id="inlineCheckbox1" value="option1" checked>
+                        <label>Checkbox default</label>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-checkbox check-size-md">
+                        <input type="checkbox" id="inlineCheckbox1" value="option1" checked disabled>
+                        <label>Checkbox default</label>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Menu mobile (inicialmente oculto) -->
+    <div popover id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-header">
+            <p class="text-weight-bold">Page title</p>
+        </div>
+        <nav class="mobile-nav">
+            <ul class="menu-items">
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Menu</a></li>
+            </ul>
+        </nav>
     </div>
 </body>
 </html>

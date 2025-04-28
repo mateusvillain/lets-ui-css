@@ -1,0 +1,175 @@
+@import "theme/light.css";
+@import "theme/dark.css";
+
+:root {
+    /* Brand */
+    --lui-color-brand-accent-layer-bg-surface: var(--color-brand-1);
+    --lui-color-brand-accent-layer-bg-cover: var(--color-brand-2);
+    --lui-color-brand-accent-layer-bg-container: var(--color-brand-5);
+
+    --lui-color-brand-accent-layer-border-divisor: var(--color-brand-1);
+    --lui-color-brand-accent-layer-border-stroke: var(--color-brand-5);
+
+    --lui-color-brand-accent-content-text-heading: var(--color-brand-9);
+    --lui-color-brand-accent-content-text-body: var(--color-brand-8);
+
+    --lui-color-brand-accent-content-icon-default: var(--color-brand-5);
+    --lui-color-brand-accent-content-icon-contrast: var(--color-brand-1)
+
+    /* Feedback */
+    /* Caution */
+    --lui-color-feedback-caution-layer-bg-surface: var(--lui-color-solid-orange-1);
+    --lui-color-feedback-caution-layer-bg-cover: var(--lui-color-solid-orange-2);
+    --lui-color-feedback-caution-layer-bg-container: var(--lui-color-solid-orange-5);
+
+    --lui-color-feedback-caution-layer-border-divisor: var(--lui-color-solid-orange-1);
+    --lui-color-feedback-caution-layer-border-stroke: var(--lui-color-solid-orange-5);
+
+    --lui-color-feedback-caution-content-text-heading: var(--lui-color-solid-orange-9);
+    --lui-color-feedback-caution-content-text-body: var(--lui-color-solid-orange-8);
+
+    --lui-color-feedback-caution-content-icon-default: var(--lui-color-solid-orange-5);
+    --lui-color-feedback-caution-content-icon-contrast: var(--lui-color-solid-orange-1);
+
+    /* Info */
+    --lui-color-feedback-info-layer-bg-surface: var(--lui-color-solid-blue-1);
+    --lui-color-feedback-info-layer-bg-cover: var(--lui-color-solid-blue-2);
+    --lui-color-feedback-info-layer-bg-container: var(--lui-color-solid-blue-5);
+
+    --lui-color-feedback-info-layer-border-divisor: var(--lui-color-solid-blue-1);
+    --lui-color-feedback-info-layer-border-stroke: var(--lui-color-solid-blue-5);
+
+    --lui-color-feedback-info-content-text-heading: var(--lui-color-solid-blue-9);
+    --lui-color-feedback-info-content-text-body: var(--lui-color-solid-blue-8);
+
+    --lui-color-feedback-info-content-icon-default: var(--lui-color-solid-blue-5);
+    --lui-color-feedback-info-content-icon-contrast: var(--lui-color-solid-blue-1);
+
+    /* Danger */
+    --lui-color-feedback-danger-layer-bg-surface: var(--lui-color-solid-red-1);
+    --lui-color-feedback-danger-layer-bg-cover: var(--lui-color-solid-red-2);
+    --lui-color-feedback-danger-layer-bg-container: var(--lui-color-solid-red-5);
+
+    --lui-color-feedback-danger-layer-border-divisor: var(--lui-color-solid-red-1);
+    --lui-color-feedback-danger-layer-border-stroke: var(--lui-color-solid-red-5);
+
+    --lui-color-feedback-danger-content-text-heading: var(--lui-color-solid-red-9);
+    --lui-color-feedback-danger-content-text-body: var(--lui-color-solid-red-8);
+
+    --lui-color-feedback-danger-content-icon-default: var(--lui-color-solid-red-5);
+    --lui-color-feedback-danger-content-icon-contrast: var(--lui-color-solid-red-1);
+
+    /* Success */
+    --lui-color-feedback-success-layer-bg-surface: var(--lui-color-solid-green-1);
+    --lui-color-feedback-success-layer-bg-cover: var(--lui-color-solid-green-2);
+    --lui-color-feedback-success-layer-bg-container: var(--lui-color-solid-green-5);
+
+    --lui-color-feedback-success-layer-border-divisor: var(--lui-color-solid-green-1);
+    --lui-color-feedback-success-layer-border-stroke: var(--lui-color-solid-green-5);
+
+    --lui-color-feedback-success-content-text-heading: var(--lui-color-solid-green-9);
+    --lui-color-feedback-success-content-text-body: var(--lui-color-solid-green-8);
+
+    --lui-color-feedback-success-content-icon-default: var(--lui-color-solid-green-5);
+    --lui-color-feedback-success-content-icon-contrast: var(--lui-color-solid-green-1);
+
+    /* Neutral light */
+    --lui-color-neutral-light-layer-bg-surface: var(--lui-color-solid-gray-1);
+    --lui-color-neutral-light-layer-bg-cover: var(--lui-color-solid-gray-2);
+    --lui-color-neutral-light-layer-bg-container: var(--lui-color-solid-gray-3);
+
+    --lui-color-neutral-light-layer-border-divisor: var(--lui-color-solid-gray-3);
+    --lui-color-neutral-light-layer-border-stroke: var(--lui-color-solid-gray-5);
+
+    --lui-color-neutral-light-content-text-heading: var(--lui-color-solid-gray-2);
+    --lui-color-neutral-light-content-text-body: var(--lui-color-solid-gray-1);
+
+    --lui-color-neutral-light-content-icon: var(--lui-color-neutral-light-content-text-lightest);
+
+    /* Neutral dark */
+    --lui-color-neutral-dark-layer-bg-surface: var(--lui-color-solid-gray-9);
+    --lui-color-neutral-dark-layer-bg-cover: var(--lui-color-solid-gray-8);
+    --lui-color-neutral-dark-layer-bg-container: var(--lui-color-solid-gray-5);
+
+    --lui-color-neutral-dark-layer-border-divisor: var(--lui-color-solid-gray-1);
+    --lui-color-neutral-dark-layer-border-stroke: var(--lui-color-solid-gray-5);
+
+    --lui-color-neutral-dark-content-text-heading: var(--lui-color-solid-gray-9);
+    --lui-color-neutral-dark-content-text-body: var(--lui-color-solid-gray-8);
+
+    --lui-color-neutral-dark-content-icon: var(--lui-color-neutral-dark-content-text-hard);
+}
+
+/* 
+=======================
+
+Backgrounds and borders
+
+=======================
+*/
+.bd-caution { border-color: var(--lui-color-feedback-caution-layer-border-stroke); }
+.bd-danger { border-color: var(--lui-color-feedback-danger-layer-border-stroke); }
+.bd-info { border-color: var(--lui-color-feedback-info-layer-border-stroke); }
+.bd-success { border-color: var(--lui-color-feedback-success-layer-border-stroke); }
+
+/* 
+====================
+
+Border
+
+====================
+*/
+
+
+/* 
+====================
+
+Backgrounds
+
+====================
+*/
+.bg-txt-accent {
+    background-color: var(--lui-color-brand-accent-layer-bg-surface);
+    color: var(--lui-color-neutral-light-content-text-lightest);
+}
+
+.bg-txt-caution,
+.bg-txt-bw-caution {
+    background-color: var(--lui-color-feedback-caution-layer-bg-surface);
+    color: var(--lui-color-feedback-caution-content-text-dark);
+}
+
+.bg-txt-danger,
+.bg-txt-bw-danger {
+    background-color: var(--lui-color-feedback-danger-layer-bg-surface);
+    color: var(--lui-color-feedback-danger-content-text-dark);
+}
+
+.bg-txt-info,
+.bg-txt-bw-info {
+    background-color: var(--lui-color-feedback-info-layer-bg-surface);
+    color: var(--lui-color-feedback-info-content-text-dark);
+}
+
+.bg-txt-success,
+.bg-txt-bw-success {
+    background-color: var(--lui-color-feedback-success-layer-bg-surface);
+    color: var(--lui-color-feedback-success-content-text-dark);
+}
+
+.bg-txt-neutral-light {
+    background-color: var(--lui-color-neutral-light-layer-bg-surface);
+    color: var(--lui-color-feedback-success-content-text-dark);
+}
+
+/* 
+====================
+
+Texts
+
+====================
+*/
+.txt-neutral-light {
+    background: none;
+    color: var(--lui-color-neutral-dark-content-text-darkest);
+}

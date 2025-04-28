@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'letsicons';
-  src:  url('../fonts/letsicons.eot?9fzsrf');
-  src:  url('../fonts/letsicons.eot?9fzsrf#iefix') format('embedded-opentype'),
-    url('../fonts/letsicons.ttf?9fzsrf') format('truetype'),
-    url('../fonts/letsicons.woff?9fzsrf') format('woff'),
-    url('../fonts/letsicons.svg?9fzsrf#letsicons') format('svg');
+  src:  url('./../fonts/letsicons.eot?9fzsrf');
+  src:  url('./../fonts/letsicons.eot?9fzsrf#iefix') format('embedded-opentype'),
+    url('./../fonts/letsicons.ttf?9fzsrf') format('truetype'),
+    url('./../fonts/letsicons.woff?9fzsrf') format('woff'),
+    url('./../fonts/letsicons.svg?9fzsrf#letsicons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;

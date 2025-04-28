@@ -1,0 +1,190 @@
+/*
+========================
+
+General
+
+========================
+*/
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lui-spacing-8);
+}
+
+label {
+    color: var(--lui-color-neutral-dark-content-text-darkest);
+}
+
+input.form-size-lg,
+select.form-size-lg,
+label.form-size-lg,
+.check-size-lg,
+.form-checkbox.check-size-lg input:checked::after {
+    font-size: var(--lui-typography-scale-size-body-lg);
+}
+
+input.form-size-md,
+select.form-size-md,
+label.form-size-md,
+.check-size-md,
+.form-checkbox.check-size-md input:checked::after {
+    font-size: var(--lui-typography-scale-size-body-md);
+}
+
+/*
+========================
+
+Input fields
+Select
+
+========================
+*/
+
+input[type="color"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+select {
+    color: var(--lui-color-neutral-dark-content-text-darkest);
+    background-color: var(--lui-color-neutral-light-layer-bg-surface);
+    border: var(--lui-border-width-1) solid var(--lui-color-neutral-light-layer-border-divisor);
+    transition: all 0.2s ease-in-out;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+input[type="color"]:hover,
+input[type="email"]:hover,
+input[type="number"]:hover,
+input[type="password"]:hover,
+input[type="search"]:hover,
+input[type="tel"]:hover,
+input[type="text"]:hover,
+input[type="time"]:hover,
+input[type="url"]:hover,
+select:hover {
+    border: var(--lui-border-width-1) solid var(--lui-color-neutral-light-layer-border-stroke);
+}
+
+input[type="color"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+select:focus {
+    border: var(--lui-border-width-1) solid var(--lui-color-brand-accent-layer-bg-container);
+    box-shadow: 0 0 0 3px rgba(135, 51, 255, 0.32);
+    box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44 / 0.32);
+    outline: none;
+}
+
+input.form-size-lg,
+select.form-size-lg {
+    border-radius: var(--lui-border-radius-8);
+    padding: var(--lui-spacing-12);
+    height: 48px;
+}
+
+input.form-size-md,
+select.form-size-md {
+    border-radius: var(--lui-border-radius-4);
+    padding: var(--lui-spacing-8);
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M16%2019.5858L7.70711%2011.2929L6.29289%2012.7071L16%2022.4142L25.7071%2012.7071L24.2929%2011.2929L16%2019.5858Z%22%20fill%3D%22%23131519%22/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+}
+
+select.form-size-lg {
+    background-position: right var(--lui-spacing-12) center;
+}
+
+select.form-size-md {
+    background-position: right var(--lui-spacing-8) center;
+}
+
+/*
+========================
+
+Checkbox
+
+========================
+*/
+
+.form-checkbox.check-size-lg input[type="checkbox"] {
+    width: var(--lui-spacing-20);
+    height: var(--lui-spacing-20);
+}
+
+.form-checkbox.check-size-md input[type="checkbox"] {
+    width: var(--lui-spacing-16);
+    height: var(--lui-spacing-16);
+}
+
+input[type="checkbox"],
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: var(--lui-spacing-8);
+    cursor: pointer;
+    user-select: none;
+    margin: var(--lui-spacing-0);
+    padding: var(--lui-spacing-0);
+}
+  
+.form-checkbox input {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--lui-color-neutral-light-layer-bg-surface);
+    border: var(--lui-border-width-1) solid var(--lui-color-neutral-light-layer-border-divisor);
+    border-radius: var(--lui-border-width-4);
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s ease;
+}
+  
+.form-checkbox input:checked {
+    background-color: var(--lui-color-brand-accent-layer-bg-container);
+    border-color: var(--lui-color-brand-accent-layer-bg-container);
+}
+  
+.form-checkbox input:checked::after {
+    font-family: 'letsicons';
+    content: '\e902';
+    color: var(--lui-color-neutral-light-layer-bg-surface);
+    font-weight: var(--lui-typography-weight-bold);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+.form-checkbox input:hover {
+    border-color: var(--lui-color-brand-accent-layer-bg-container);
+}
+  
+.form-checkbox input:focus {
+    border: var(--lui-border-width-1) solid var(--lui-color-brand-accent-layer-bg-container);
+    box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44 / 0.32);
+    outline: none;
+}
+  
+.form-checkbox input:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}

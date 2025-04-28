@@ -58,9 +58,9 @@
     --lui-typography-scale-size-block-title: calc(var(--lui-typography-scale-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base));
     --lui-typography-scale-size-subheadline: calc(var(--lui-typography-scale-base) * var(--lui-typography-scale-size-base));
     --lui-typography-scale-size-section-tag: calc(var(--lui-typography-scale-base) / var(--lui-typography-scale-size-base));
-    --lui-typography-scale-size-body-lg: calc(var(--lui-typography-scale-base) * var(--lui-typography-scale-size-base));
-    --lui-typography-scale-size-body-md: var(--lui-typography-scale-base);
-    --lui-typography-scale-size-body-sm: calc(var(--lui-typography-scale-base) / var(--lui-typography-scale-size-base));
+    --lui-typography-scale-size-body-lg: var(--lui-typography-scale-base);
+    --lui-typography-scale-size-body-md: calc(var(--lui-typography-scale-base) / var(--lui-typography-scale-size-base));
+    --lui-typography-scale-size-body-sm: calc(var(--lui-typography-scale-base) / var(--lui-typography-scale-size-base) / var(--lui-typography-scale-size-base));
 }
 
 /* Mobile */
@@ -81,52 +81,54 @@
     }
 }
 
+html, body, .display, h1, h2, h3, h4, h5, h6, label, p, input, select, button {
+    font-family: var(--font-family) !important;
+}
+
 html, body, .display, h1, h2, h3, h4, h5, h6, label {
-    font-family: var(--lui-typography-family-heading) !important;
     line-height: var(--lui-typography-line-height-sm) !important;
 }
 
 p, input, select, button {
-    font-family: var(--lui-typography-family-body) !important;
     line-height: var(--lui-typography-line-height-lg) !important;
 }
 
-.display, .title, .section-tag, .text-weight-bold { font-weight: var(--lui-typography-weight-bold) !important; }
-.headline, .block-title, .text-weight-semibold { font-weight: var(--lui-typography-weight-semibold) !important; }
-.subheadline, .text-weight-medium { font-weight: var(--lui-typography-weight-medium) !important; }
-.display, .title, .subtitle, .headline, .subheadline, .block-title, .section-tag, p { text-decoration: var(--lui-typography-decoration-style-none) !important; }
-.display, .title, .subtitle, .headline, .subheadline, .block-title, p { text-transform: var(--lui-typography-transform-none) !important; }
-.subheadline, p { letter-spacing: var(--lui-typography-tracking-none) !important; }
+.display, h1, h6, .text-weight-bold { font-weight: var(--lui-typography-weight-bold) !important; }
+h2, h3, h5, .text-weight-semibold { font-weight: var(--lui-typography-weight-semibold) !important; }
+h4, .text-weight-medium { font-weight: var(--lui-typography-weight-medium) !important; }
+.display, h1, h2, h3, h4, h5, h6, p { text-decoration: var(--lui-typography-decoration-style-none) !important; }
+.display, h1, h2, h3, h4, h5, p { text-transform: var(--lui-typography-transform-none) !important; }
+h4, p { letter-spacing: var(--lui-typography-tracking-none) !important; }
 p { font-weight: var(--lui-typography-weight-regular) !important; }
-.subtitle, h3, h5 { letter-spacing: var(--lui-typography-tracking-sm) !important; }
+h2, h3, h5 { letter-spacing: var(--lui-typography-tracking-sm) !important; }
 
 .display {
     font-size: var(--lui-typography-scale-size-display) !important;
     letter-spacing: var(--lui-typography-tracking-2xs) !important;
 }
 
-.title {
+h1 {
     font-size: var(--lui-typography-scale-size-title) !important;
     letter-spacing: var(--lui-typography-tracking-xs) !important;
 }
 
-.subtitle {
+h2 {
     font-size: var(--lui-typography-scale-size-subtitle) !important;
 }
 
-.headline {
+h3 {
     font-size: var(--lui-typography-scale-size-headline) !important;
 }
 
-.subheadline {
+h4 {
     font-size: var(--lui-typography-scale-size-subheadline) !important;
 }
 
-.block-title {
+h5 {
     font-size: var(--lui-typography-scale-size-block-title) !important;
 }
 
-.section-tag {
+h6 {
     font-size: var(--lui-typography-scale-size-section-tag) !important;
     letter-spacing: var(--lui-typography-tracking-xl) !important;
     text-transform: var(--lui-typography-transform-uppercase) !important;
@@ -137,7 +139,6 @@ span.body-lg {
     font-size: var(--lui-typography-scale-size-body-lg) !important;
 }
 
-p,
 .body-md,
 span.body-md {
     font-size: var(--lui-typography-scale-size-body-md) !important;
@@ -154,49 +155,3 @@ span.body-sm {
 .text-decoration-line-through { text-decoration: var(--lui-typography-decoration-line-through) }
 
 .text-transform-uppercase { text-transform: var(--lui-typography-transform-uppercase) }
-
-
-
-/* Estilização básica do input */
-    .input-wrapper {
-      position: relative;
-      display: inline-block;
-    }
-
-    .input-wrapper input {
-      position: relative;
-      z-index: 1; /* Mantém o input acima da borda */
-      width: 300px;
-      height: 40px;
-      padding: 0 10px;
-      font-size: 16px;
-      background-color: #fff;
-      border: none; /* Remove bordas nativas */
-      border-radius: 4px; /* Arredondamento */
-      outline: none; /* Remove o highlight azul padrão */
-      box-shadow: inset 0 0 0 0px transparent; /* Shadow inicial para evitar estilos extras */
-    }
-
-    /* Pseudo-elemento para a borda */
-    .input-wrapper::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border: 2px solid #8733FF; /* Cor padrão da borda */
-      border-radius: 4px; /* Mesmo arredondamento do input */
-      transition: filter 0.3s ease; /* Suaviza a transição */
-      pointer-events: none; /* Ignora eventos de mouse */
-    }
-
-    /* Hover no input */
-    .input-wrapper:hover::before {
-      filter: brightness(0.8); /* Escurece a borda no hover */
-    }
-
-    /* Foco no input */
-    .input-wrapper input:focus + ::before {
-      filter: brightness(0.6); /* Escurece ainda mais no foco */
-    }

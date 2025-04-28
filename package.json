@@ -1,0 +1,19 @@
+{
+  "name": "lets-ui-css",
+  "version": "0.0.0",
+  "description": "Let's UI é uma biblioteca de estilos e componentes CSS focada em praticidade, consistência e personalização. Inspirada em sistemas de design modernos, ela oferece uma base sólida para criar interfaces acessíveis, responsivas e escaláveis, sem depender de JavaScript.",
+  "keywords": [
+    "lets-ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "lets-ui-css"
+  },
+  "license": "ISC",
+  "author": "Mateus Villain",
+  "type": "commonjs",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
