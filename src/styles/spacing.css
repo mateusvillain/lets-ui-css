@@ -1,27 +1,3 @@
-:root {
-    --lui-spacing-0: 0px;
-    --lui-spacing-2: 2px;
-    --lui-spacing-4: 4px;
-    --lui-spacing-8: 8px;
-    --lui-spacing-12: 12px;
-    --lui-spacing-16: 16px;
-    --lui-spacing-20: 20px;
-    --lui-spacing-24: 24px;
-    --lui-spacing-28: 28px;
-    --lui-spacing-32: 32px;
-    --lui-spacing-36: 36px;
-    --lui-spacing-40: 40px;
-    --lui-spacing-48: 48px;
-    --lui-spacing-52: 52px;
-    --lui-spacing-56: 56px;
-    --lui-spacing-60: 60px;
-    --lui-spacing-64: 64px;
-    --lui-spacing-68: 68px;
-    --lui-spacing-72: 72px;
-    --lui-spacing-76: 76px;
-    --lui-spacing-80: 80px;
-}
-
 .gap-0  { gap: var(--lui-spacing-0) }
 .gap-2  { gap: var(--lui-spacing-2) }
 .gap-4  { gap: var(--lui-spacing-4) }

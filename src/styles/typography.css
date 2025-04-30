@@ -1,7 +1,7 @@
 /* Global */
 :root {
-    --lui-typography-family-heading: var(--typography-main-font);
-    --lui-typography-family-body: var(--typography-support-font);
+    --lui-typography-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --lui-typography-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
     --lui-typography-style-normal: normal;
     --lui-typography-style-italic: italic;
@@ -83,8 +83,12 @@
     }
 }
 
-html, body, .display, h1, h2, h3, h4, h5, h6, label, p, input, select, button {
-    font-family: var(--font-family) !important;
+.display, h1, h2, h3, h4, h5, h6, label {
+    font-family: var(--lui-typography-family-heading) !important;
+}
+
+body, p, input, select, button {
+    font-family: var(--lui-typography-family-body) !important;
 }
 
 html, body, .display, h1, h2, h3, h4, h5, h6, label {

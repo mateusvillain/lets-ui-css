@@ -1,0 +1,120 @@
+button {
+	&.btn {
+		position: relative;
+		overflow: hidden;
+		font-weight: var(--lui-typography-weight-regular);
+		border: var(--lui-spacing-0);
+		outline: var(--lui-spacing-0);
+		background-color: transparent;
+		transition: all 0.2s ease-in-out;
+		z-index: 0;
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-color: inherit;
+			z-index: -1;
+			transition: filter 0.2s ease-in-out;
+		}
+		&:hover {
+			&::before {
+				filter: brightness(0.76);
+			}
+		}
+		&:active {
+			outline: var(--lui-border-width-2) solid transparent;
+			outline-offset: var(--lui-border-width-2);
+			&::before {
+				filter: brightness(0.6);
+			}
+			&:not(:disabled) {
+				transform: scale(0.98);
+			}
+		}
+		&:disabled {
+			cursor: not-allowed;
+			opacity: 0.4;
+			&::before {
+				background-color: var(--lui-color-brand-accent-layer-bg-container);
+				filter: none;
+			}
+		}
+	}
+	&.btn-md {
+		padding: var(--lui-spacing-12);
+		font-size: var(--lui-typography-scale-size-body-lg);
+		border-radius: var(--lui-border-radius-12);
+	}
+	&.btn-sm {
+		padding: var(--lui-spacing-8);
+		font-size: var(--lui-typography-scale-size-body-md);
+		border-radius: var(--lui-border-radius-8);
+	}
+	&.btn-primary {
+		color: var(--lui-color-button-primary-text);
+		&::before {
+			background-color: var(--lui-color-button-primary-background);
+		}
+		&:focus {
+			box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44 / 0.32);
+		}
+	}
+	&.btn-secondary {
+		color: var(--lui-color-button-secondary-text);
+		&::before {
+			background-color: var(--lui-color-button-secondary-background);
+		}
+		&:focus {
+			box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+		}
+	}
+	&.btn-tertiary {
+		color: var(--lui-color-button-tertiary-text);
+		&::before {
+			content: '';
+			position: absolute;
+			background-color: var(--lui-color-neutral-dark-layer-bg-surface);
+			inset: 0;
+			opacity: 0;
+			transition: opacity 0.2s;
+			z-index: -1;
+		}
+		&:hover {
+			&::before {
+				opacity: 0.24;
+			}
+		}
+		&:active {
+			&::before {
+				opacity: 0.4;
+			}
+		}
+		&:focus {
+			box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+		}
+	}
+	&.btn-danger {
+		color: var(--lui-color-button-danger-text);
+		&::before {
+			background-color: var(--lui-color-button-danger-background);
+		}
+		&:focus {
+			box-shadow: 0 0 0 3px rgba(238, 67, 67, 0.3);
+		}
+	}
+	&.btn-success {
+		color: var(--lui-color-button-tertiary-text);
+		&::before {
+			background-color: var(--lui-color-button-success-background);
+		}
+		&:focus {
+			box-shadow: 0 0 0 3px rgba(87, 238, 67, 0.3);
+		}
+	}
+}
+button.btn-primary, 
+button.btn-secondary, 
+button.btn-danger, 
+button.btn-success {
+	background-color: transparent;
+}

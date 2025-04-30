@@ -33,38 +33,31 @@ button.btn-sm {
 }
 
 /* Variants */
-button.btn-primary,
-button.btn-secondary,
-button.btn-danger {
-    color: var(--lui-color-neutral-light-content-text-body);
-}
-
-button.btn-tertiary,
-button.btn-success {
-    color: var(--lui-color-neutral-dark-content-text-body);
-}
-
-button.btn-primary::before {
-    background-color: var(--lui-color-brand-accent-layer-bg-container);
-}
-
-button.btn-secondary::before {
-    background-color: var(--lui-color-neutral-dark-layer-bg-container);
-}
-
-button.btn-danger::before {
-    background-color: var(--lui-color-feedback-danger-layer-bg-container);
-}
-
-button.btn-success::before {
-    background-color: var(--lui-color-feedback-success-layer-bg-container);
-}
-
 button.btn-primary, 
 button.btn-secondary, 
 button.btn-danger, 
 button.btn-success {
       background-color: transparent;
+}
+
+button.btn-primary {
+    color: var(--lui-color-button-primary-text);
+}
+
+button.btn-primary::before {
+    background-color: var(--lui-color-button-primary-background);
+}
+
+button.btn-secondary {
+    color: var(--lui-color-button-secondary-text);
+}
+
+button.btn-secondary::before {
+    background-color: var(--lui-color-button-secondary-background);
+}
+
+button.btn-tertiary {
+    color: var(--lui-color-button-tertiary-text);
 }
 
 button.btn-tertiary::before {
@@ -77,7 +70,22 @@ button.btn-tertiary::before {
     z-index: -1;
 }
 
-/* States */
+button.btn-danger {
+    color: var(--lui-color-button-danger-text);
+}
+
+button.btn-danger::before {
+    background-color: var(--lui-color-button-danger-background);
+}
+
+button.btn-success {
+    color: var(--lui-color-button-tertiary-text);
+}
+
+button.btn-success::before {
+    background-color: var(--lui-color-button-success-background);
+}
+
 button.btn:hover::before {
     filter: brightness(0.76);
 }

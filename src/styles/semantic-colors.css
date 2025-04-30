@@ -1,20 +1,19 @@
-@import "theme/light.css";
-@import "theme/dark.css";
+@import './variables.css';
 
 :root {
     /* Brand */
-    --lui-color-brand-accent-layer-bg-surface: var(--color-brand-1);
-    --lui-color-brand-accent-layer-bg-cover: var(--color-brand-2);
-    --lui-color-brand-accent-layer-bg-container: var(--color-brand-5);
+    --lui-color-brand-accent-layer-bg-surface: var(--lui-color-letsui-1);
+    --lui-color-brand-accent-layer-bg-cover: var(--lui-color-letsui-2);
+    --lui-color-brand-accent-layer-bg-container: var(--lui-color-letsui-5);
 
-    --lui-color-brand-accent-layer-border-divisor: var(--color-brand-1);
-    --lui-color-brand-accent-layer-border-stroke: var(--color-brand-5);
+    --lui-color-brand-accent-layer-border-divisor: var(--lui-color-letsui-1);
+    --lui-color-brand-accent-layer-border-stroke: var(--lui-color-letsui-5);
 
-    --lui-color-brand-accent-content-text-heading: var(--color-brand-9);
-    --lui-color-brand-accent-content-text-body: var(--color-brand-8);
+    --lui-color-brand-accent-content-text-heading: var(--lui-color-letsui-9);
+    --lui-color-brand-accent-content-text-body: var(--lui-color-letsui-8);
 
-    --lui-color-brand-accent-content-icon-default: var(--color-brand-5);
-    --lui-color-brand-accent-content-icon-contrast: var(--color-brand-1);
+    --lui-color-brand-accent-content-icon-default: var(--lui-color-letsui-5);
+    --lui-color-brand-accent-content-icon-contrast: var(--lui-color-letsui-1);
 
     /* Feedback */
     /* Caution */

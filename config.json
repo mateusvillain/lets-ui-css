@@ -23,7 +23,7 @@
       ]
     },
     "scss": {
-      "buildPath": "build/scss/",
+      "buildPath": "dist/",
       "prefix": "",
       "files": [
         {

@@ -1,6 +1,6 @@
 @import './alert.css';
 @import './breadcrumb.css';
-@import './button.css';
+@import './button/button.css';
 @import './checkbox.css';
 @import './fields.css';
 @import './icon-button.css';

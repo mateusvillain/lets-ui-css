@@ -21,7 +21,7 @@ const sd = new StyleDictionary({
     scss: {
       transformGroup: 'tokens-studio',
       transforms: ['name/kebab'],
-      buildPath: 'build/',
+      buildPath: 'dist/',
       files: [
         {
           destination: 'variables.scss',

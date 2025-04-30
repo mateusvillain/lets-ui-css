@@ -1,22 +1,4 @@
-:root {
-    --lui-border-width-24: 24px;
-    --lui-border-width-16: 16px;
-    --lui-border-width-12: 12px;
-    --lui-border-width-8: 8px;
-    --lui-border-width-4: 4px;
-    --lui-border-width-2: 2px;
-    --lui-border-width-1: 1px;
-    --lui-border-width-0: 0px;
-
-    --lui-border-radius-circle: 999px;
-    --lui-border-radius-24: 24px;
-    --lui-border-radius-16: 16px;
-    --lui-border-radius-12: 12px;
-    --lui-border-radius-8: 8px;
-    --lui-border-radius-4: 4px;
-    --lui-border-radius-2: 2px;
-    --lui-border-radius-0: 0px;
-}
+@import './variables.css';
 
 .bw-24 { border-width: var(--lui-border-width-24); }
 .bw-16 { border-width: var(--lui-border-width-16); }
