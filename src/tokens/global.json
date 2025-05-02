@@ -60,6 +60,18 @@
           "value": "16",
           "type": "borderWidth"
         }
+      },
+      "button": {
+        "radius": {
+          "md": {
+            "value": "{lui.brand.border.radius.md}",
+            "type": "borderRadius"
+          },
+          "sm": {
+            "value": "{lui.brand.border.radius.sm}",
+            "type": "borderRadius"
+          }
+        }
       }
     },
     "spacing": {
@@ -183,6 +195,74 @@
         "bold": {
           "value": "700",
           "type": "fontWeights"
+        }
+      },
+      "line-height": {
+        "lg": {
+          "value": "1.5",
+          "type": "lineHeights"
+        },
+        "md": {
+          "value": "1.2",
+          "type": "lineHeights"
+        },
+        "sm": {
+          "value": "1.125",
+          "type": "lineHeights"
+        }
+      },
+      "tracking": {
+        "tightest": {
+          "value": "-2px",
+          "type": "letterSpacing"
+        },
+        "tighter": {
+          "value": "-1px",
+          "type": "letterSpacing"
+        },
+        "default": {
+          "value": "0",
+          "type": "letterSpacing"
+        },
+        "wider": {
+          "value": "1px",
+          "type": "letterSpacing"
+        },
+        "widest": {
+          "value": "2px",
+          "type": "letterSpacing"
+        }
+      },
+      "case": {
+        "none": {
+          "value": "none",
+          "type": "textCase"
+        },
+        "uppercase": {
+          "value": "uppercase",
+          "type": "textCase"
+        },
+        "lowercase": {
+          "value": "lowercase",
+          "type": "textCase"
+        },
+        "capitalize": {
+          "value": "capitalize",
+          "type": "textCase"
+        }
+      },
+      "decoration": {
+        "none": {
+          "value": "none",
+          "type": "textDecoration"
+        },
+        "underline": {
+          "value": "underline",
+          "type": "textDecoration"
+        },
+        "line-through": {
+          "value": "line-through",
+          "type": "textDecoration"
         }
       }
     },
@@ -562,5 +642,45 @@
         }
       }
     }
+  },
+  "display": {
+    "value": "{title}*{lui.brand.typography.scale.base}",
+    "type": "fontSizes"
+  },
+  "title": {
+    "value": "{headline}*{lui.brand.typography.scale.base}",
+    "type": "fontSizes"
+  },
+  "headline": {
+    "value": "{subtitle}*{lui.brand.typography.scale.base}",
+    "type": "fontSizes"
+  },
+  "subtitle": {
+    "value": "{block-title}*{lui.brand.typography.scale.base}",
+    "type": "fontSizes"
+  },
+  "block-title": {
+    "value": "{subheadline}*{lui.brand.typography.scale.base}",
+    "type": "fontSizes"
+  },
+  "subheadline": {
+    "value": "{body-lg}*{lui.brand.typography.scale.base}",
+    "type": "fontSizes"
+  },
+  "overtitle": {
+    "value": "{lui.brand.typography.size.base}/{lui.brand.typography.scale.base}",
+    "type": "fontSizes"
+  },
+  "body-lg": {
+    "value": "{lui.brand.typography.size.base}",
+    "type": "fontSizes"
+  },
+  "body-md": {
+    "value": "{lui.brand.typography.size.base}/{lui.brand.typography.scale.base}",
+    "type": "fontSizes"
+  },
+  "body-sm": {
+    "value": "{body-md}/{lui.brand.typography.scale.base}",
+    "type": "fontSizes"
   }
 }

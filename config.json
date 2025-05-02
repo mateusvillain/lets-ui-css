@@ -1,6 +1,6 @@
 {
   "source": [
-    "tokens/**/*.json"
+    "src/tokens/**/*.json"
   ],
   "log": {
     "verbosity": "default"
@@ -10,7 +10,7 @@
   ],
   "platforms": {
     "css": {
-      "buildPath": "dist/",
+      "buildPath": "src/tokens/",
       "transformGroup": "tokens-studio",
       "transforms": [
         "name/kebab"
@@ -23,7 +23,7 @@
       ]
     },
     "scss": {
-      "buildPath": "dist/",
+      "buildPath": "src/tokens/",
       "prefix": "",
       "files": [
         {

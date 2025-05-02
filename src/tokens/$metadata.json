@@ -1,7 +1,12 @@
 {
   "tokenSetOrder": [
+    "global",
     "mode/light",
     "mode/dark",
-    "global"
+    "letsui/core",
+    "letsui/light",
+    "letsui/dark",
+    "letsui/desktop",
+    "letsui/mobile"
   ]
 }

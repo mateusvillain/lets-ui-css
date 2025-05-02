@@ -1,0 +1,38 @@
+{
+  "lui": {
+    "brand": {
+      "typography": {
+        "font-family": {
+          "heading": {
+            "value": "Inter",
+            "type": "fontFamilies"
+          },
+          "body": {
+            "value": "Inter",
+            "type": "fontFamilies"
+          }
+        }
+      },
+      "border": {
+        "radius": {
+          "lg": {
+            "value": "{lui.border.radius.16}",
+            "type": "borderRadius"
+          },
+          "md": {
+            "value": "{lui.border.radius.12}",
+            "type": "borderRadius"
+          },
+          "sm": {
+            "value": "{lui.border.radius.8}",
+            "type": "borderRadius"
+          },
+          "xs": {
+            "value": "{lui.border.radius.4}",
+            "type": "borderRadius"
+          }
+        }
+      }
+    }
+  }
+}

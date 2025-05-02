@@ -1,0 +1,20 @@
+{
+  "lui": {
+    "brand": {
+      "typography": {
+        "size": {
+          "base": {
+            "value": "14",
+            "type": "fontSizes"
+          }
+        },
+        "scale": {
+          "base": {
+            "value": "1.125",
+            "type": "fontSizes"
+          }
+        }
+      }
+    }
+  }
+}

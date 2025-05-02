@@ -228,44 +228,6 @@
           "value": "#edd6ff",
           "type": "color"
         }
-      },
-      "letsui": {
-        "1": {
-          "value": "#25097A",
-          "type": "color"
-        },
-        "2": {
-          "value": "#351093",
-          "type": "color"
-        },
-        "3": {
-          "value": "#4D19B7",
-          "type": "color"
-        },
-        "4": {
-          "value": "#6825DB",
-          "type": "color"
-        },
-        "5": {
-          "value": "#8733FF",
-          "type": "color"
-        },
-        "6": {
-          "value": "#AB66FF",
-          "type": "color"
-        },
-        "7": {
-          "value": "#C184FF",
-          "type": "color"
-        },
-        "8": {
-          "value": "#D9ADFF",
-          "type": "color"
-        },
-        "9": {
-          "value": "#EDD6FF",
-          "type": "color"
-        }
       }
     }
   }
