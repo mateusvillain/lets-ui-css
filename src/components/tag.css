@@ -17,5 +17,5 @@
 .tag-caution {
     background: var(--lui-color-feedback-caution-layer-bg-surface);
     border: var(--lui-border-width-1) solid var(--lui-color-feedback-caution-layer-border-enabled);
-    color: var(--lui-color-feedback-caution-content-text-dark);
+    color: var(--lui-color-feedback-caution-content-text-body);
 }
