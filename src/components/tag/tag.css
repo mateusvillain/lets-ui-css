@@ -1,0 +1,55 @@
+.tag-sm,
+.tag-md,
+.tag-lg {
+  width: fit-content;
+  line-height: var(--lui-typography-line-height-lg);
+}
+
+.tag-circle {
+  border-radius: var(--lui-border-radius-circle) !important;
+}
+
+.tag-sm {
+  padding: var(--lui-spacing-2) var(--lui-spacing-8);
+  font-size: var(--lui-typography-scale-size-body-sm);
+  border-radius: var(--lui-border-radius-8);
+}
+
+.tag-md {
+  padding: var(--lui-spacing-4) var(--lui-spacing-8);
+  font-size: var(--lui-typography-scale-size-body-md);
+  border-radius: var(--lui-border-radius-12);
+}
+
+.tag-lg {
+  padding: var(--lui-spacing-8) var(--lui-spacing-12);
+  font-size: var(--lui-typography-scale-size-body-lg);
+  border-radius: var(--lui-border-radius-16);
+}
+
+.tag-primary {
+  color: var(--lui-color-brand-accent-content-text-body);
+  background: var(--lui-color-brand-accent-layer-bg-surface);
+}
+
+.tag-caution {
+  color: var(--lui-color-feedback-caution-content-text-body);
+  background: var(--lui-color-feedback-caution-layer-bg-surface);
+}
+
+.tag-danger {
+  color: var(--lui-color-feedback-danger-content-text-body);
+  background: var(--lui-color-feedback-danger-layer-bg-surface);
+}
+
+.tag-success {
+  color: var(--lui-color-feedback-success-content-text-body);
+  background: var(--lui-color-feedback-success-layer-bg-surface);
+}
+
+.tag-neutral {
+  color: var(--lui-color-neutral-dark-content-text-body);
+  background: var(--lui-color-neutral-light-layer-bg-container);
+}
+
+/*# sourceMappingURL=tag.css.map */

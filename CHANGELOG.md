@@ -1,3 +1,13 @@
+## 0.9.0
+
+## Added
+
+- New variants for tag:
+    - Primary
+    - Danger
+    - Success
+    - Neutral
+
 ## 0.8.2
 
 ### Added
