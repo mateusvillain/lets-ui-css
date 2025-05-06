@@ -1,6 +1,16 @@
+## 0.10.0
+
+### Added
+
+- Elevation tokens:
+    - Base
+    - Floating
+    - Overlay
+- Card
+
 ## 0.9.0
 
-## Added
+### Added
 
 - New variants for tag:
     - Primary

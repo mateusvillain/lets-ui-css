@@ -1,0 +1,4 @@
+.elevation-base { box-shadow: var(--lui-elevation-base); }
+.elevation-hovered { box-shadow: var(--lui-elevation-hovered); }
+.elevation-floating { box-shadow: var(--lui-elevation-floating); }
+.elevation-overlay { box-shadow: var(--lui-elevation-overlay); }
