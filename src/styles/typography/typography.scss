@@ -1,0 +1,133 @@
+@import '../../../node_modules/modularscale-sass/stylesheets/modularscale';
+@import '../../tokens/variables.scss';
+
+$lui-typography-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$lui-typography-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+:root {
+    --lui-typography-family-heading: #{$lui-typography-family-heading};
+    --lui-typography-family-body: #{$lui-typography-family-body};
+}
+
+$modularscale: (
+    base: 1rem,
+    ratio: 1.125,
+    720px: (
+        base: 1rem,
+        ratio: 1.125,
+    ),
+    1280px: (
+        base: 1rem,
+        ratio: 1.2,
+    ),
+);
+
+/* Mobile */
+@media only screen and (max-width: 1279px) {
+    $lui-brand-typography-size-base: 14px;
+
+    :root {
+        --lui-brand-typography-size-base: #{$lui-brand-typography-size-base};
+    }
+
+  html, body {
+      font-size: $lui-brand-typography-size-base !important;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1280px) {
+    $lui-brand-typography-size-base: 16px;
+
+    :root {
+        --lui-brand-typography-size-base: #{$lui-brand-typography-size-base};
+    }
+
+  html, body {
+      font-size: $lui-brand-typography-size-base !important;
+  }
+}
+
+.display, .title, .headline, .subtitle,
+.block-title, .subheadline, .overtitle,
+h1, h2, h3, h4, h5, h6, label {
+  font-family: #{$lui-typography-family-heading} !important;
+}
+
+body, p, input, select, button,
+.body-lg, .body-md, .body-sm {
+  font-family: #{$lui-typography-family-body} !important;
+}
+
+.display, .title, .headline, .subtitle, .block-title, .subheadline, .overtitle {
+  line-height: $lui-typography-line-height-md !important;
+}
+
+p, input, select, button, label, .body-lg, .body-md, .body-sm {
+  line-height: $lui-typography-line-height-lg !important;
+}
+
+.display {
+  @include ms-respond(font-size,6);
+  font-weight: $lui-typography-weight-light !important;
+}
+
+.title {
+  @include ms-respond(font-size,5);
+  letter-spacing: $lui-typography-tracking-tighter !important;
+}
+
+.headline {
+  @include ms-respond(font-size,4);
+}
+
+.subtitle {
+  @include ms-respond(font-size,3);
+}
+
+.block-title {
+  @include ms-respond(font-size,2);
+  font-weight: $lui-typography-weight-medium !important;
+}
+
+.subheadline {
+  @include ms-respond(font-size,1);
+}
+
+.overtitle {
+  letter-spacing: $lui-typography-tracking-wider !important;
+  text-transform: $lui-typography-case-uppercase !important;
+}
+
+.body-lg {
+  @include ms-respond(font-size,0);
+}
+
+.body-md,
+.overtitle {
+  @include ms-respond(font-size,-1);
+}
+
+.body-sm {
+  @include ms-respond(font-size,-2);
+}
+
+.title, .headline, .overtitle {
+  font-weight: $lui-typography-weight-semibold !important;
+}
+
+.txt-bold {
+  font-weight: $lui-typography-weight-bold !important;
+}
+
+.txt-underline {
+  text-decoration: $lui-typography-decoration-underline
+}
+
+.txt-line-through {
+  text-decoration: $lui-typography-decoration-line-through
+}
+
+.txt-uppercase {
+  text-transform: $lui-typography-case-uppercase
+}

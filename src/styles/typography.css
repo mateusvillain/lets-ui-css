@@ -1,163 +1,92 @@
-/* Global */
 :root {
-    --lui-typography-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --lui-typography-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
-    --lui-typography-style-normal: normal;
-    --lui-typography-style-italic: italic;
-
-    --lui-typography-transform-none: none;
-    --lui-typography-transform-uppercase: uppercase;
-    --lui-typography-transform-lowercase: lowercase;
-    --lui-typography-transform-capitalize: capitalize;
-
-    --lui-typography-decoration-none: none;
-    --lui-typography-decoration-underline: underline;
-    --lui-typography-decoration-underline-dotted: dotted underline;
-    --lui-typography-decoration-underline-dashed: dashed underline;
-    --lui-typography-decoration-underline-wavy: wavy underline;
-    --lui-typography-decoration-overline: overline;
-    --lui-typography-decoration-overline-dotted: dotted overline;
-    --lui-typography-decoration-overline-dashed: dashed overline;
-    --lui-typography-decoration-overline-wavy: wavy overline;
-    --lui-typography-decoration-underline-overline: underline overline;
-    --lui-typography-decoration-line-through: line-through;
-    --lui-typography-decoration-underline-double: underline double;
-    --lui-typography-decoration-underline-dotted-double: dotted underline double;
-    --lui-typography-decoration-underline-dashed-double: dashed underline double;
-    --lui-typography-decoration-underline-wavy-double: wavy underline double;
-    --lui-typography-decoration-overline-double: overline double;
-    --lui-typography-decoration-underline-overline-double: underline overline double;
-    --lui-typography-decoration-line-through-double: line-through double;
-
-    --lui-typography-decoration-thickness-2xl: 4px;
-    --lui-typography-decoration-thickness-lg: 2px;
-
-    --lui-typography-tracking-2xl: 2px;
-    --lui-typography-tracking-xl: 1px;
-    --lui-typography-tracking-lg: 0.5px;
-    --lui-typography-tracking-none: 0;
-    --lui-typography-tracking-sm: -0.5px;
-    --lui-typography-tracking-xs: -1px;
-    --lui-typography-tracking-2xs: -2px;
-    
-    --lui-typography-line-height-lg: 1.5;
-    --lui-typography-line-height-sm: 1.2;
-    
-    --lui-typography-weight-regular: 400;
-    --lui-typography-weight-medium: 500;
-    --lui-typography-weight-semibold: 600;
-    --lui-typography-weight-bold: 700;
-
-    --lui-typography-scale-mobile-base: 14px;
-    --lui-typography-scale-desktop-base: 16px;
-    --lui-typography-scale-base: 1rem;
-    
-    --lui-typography-scale-size-display: calc(var(--lui-typography-scale-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base));
-    --lui-typography-scale-size-title: calc(var(--lui-typography-scale-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base));
-    --lui-typography-scale-size-subtitle: calc(var(--lui-typography-scale-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base));
-    --lui-typography-scale-size-headline: calc(var(--lui-typography-scale-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base));
-    --lui-typography-scale-size-block-title: calc(var(--lui-typography-scale-base) * var(--lui-typography-scale-size-base) * var(--lui-typography-scale-size-base));
-    --lui-typography-scale-size-subheadline: calc(var(--lui-typography-scale-base) * var(--lui-typography-scale-size-base));
-    --lui-typography-scale-size-section-tag: calc(var(--lui-typography-scale-base) / var(--lui-typography-scale-size-base));
-    --lui-typography-scale-size-body-lg: var(--lui-typography-scale-base);
-    --lui-typography-scale-size-body-md: calc(var(--lui-typography-scale-base) / var(--lui-typography-scale-size-base));
-    --lui-typography-scale-size-body-sm: calc(var(--lui-typography-scale-base) / var(--lui-typography-scale-size-base) / var(--lui-typography-scale-size-base));
+  --lui-typography-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --lui-typography-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 /* Mobile */
 @media only screen and (max-width: 1279px) {
-    :root { --lui-typography-scale-size-base: 1.125; }
+  :root {
+      --lui-brand-typography-size-base: 14px;
+      --lui-typography-scale-size-base: 1.125;
+  }
 
-    html, body {
-        font-size: var(--lui-typography-scale-mobile-base) !important;
-    }
+  html, body {
+      font-size: var(--lui-brand-typography-size-base) !important;
+  }
 }
 
 /* Desktop */
 @media only screen and (min-width: 1280px) {
-    :root { --lui-typography-scale-size-base: 1.2; }
+  :root {
+      --lui-brand-typography-size-base: 16px;
+      --lui-typography-scale-size-base: 1.2;
+  }
 
-    html, body {
-        font-size: var(--lui-typography-scale-desktop-base) !important;
-    }
+  html, body {
+      font-size: var(--lui-brand-typography-size-base) !important;
+  }
 }
 
-.display, h1, h2, h3, h4, h5, h6, label {
-    font-family: var(--lui-typography-family-heading) !important;
+.display, .title, .headline, .subtitle,
+.block-title, .subheadline, .overtitle,
+h1, h2, h3, h4, h5, h6, label {
+  font-family: var(--lui-typography-family-heading) !important;
 }
 
-body, p, input, select, button {
-    font-family: var(--lui-typography-family-body) !important;
+body, p, input, select, button,
+.body-lg, .body-md, .body-sm {
+  font-family: var(--lui-typography-family-body) !important;
 }
 
-html, body, .display, h1, h2, h3, h4, h5, h6, label {
-    line-height: var(--lui-typography-line-height-sm) !important;
+.display, .title, .headline, .subtitle, .block-title, .subheadline, .overtitle {
+  line-height: var(--lui-typography-line-height-md) !important;
 }
 
-p, input, select, button {
-    line-height: var(--lui-typography-line-height-lg) !important;
+p, input, select, button, label, .body-lg, .body-md, .body-sm {
+  line-height: var(--lui-typography-line-height-lg) !important;
 }
-
-.display, h1, h6, .text-weight-bold { font-weight: var(--lui-typography-weight-bold) !important; }
-h2, h3, h5, .text-weight-semibold { font-weight: var(--lui-typography-weight-semibold) !important; }
-h4, .text-weight-medium { font-weight: var(--lui-typography-weight-medium) !important; }
-.display, h1, h2, h3, h4, h5, h6, p { text-decoration: var(--lui-typography-decoration-style-none) !important; }
-.display, h1, h2, h3, h4, h5, p { text-transform: var(--lui-typography-transform-none) !important; }
-h4, p { letter-spacing: var(--lui-typography-tracking-none) !important; }
-p { font-weight: var(--lui-typography-weight-regular) !important; }
-h2, h3, h5 { letter-spacing: var(--lui-typography-tracking-sm) !important; }
 
 .display {
-    font-size: var(--lui-typography-scale-size-display) !important;
-    letter-spacing: var(--lui-typography-tracking-2xs) !important;
+  font-weight: var(--lui-typography-weight-light) !important;
 }
 
-h1 {
-    font-size: var(--lui-typography-scale-size-title) !important;
-    letter-spacing: var(--lui-typography-tracking-xs) !important;
+.txt-bold {
+  font-weight: var(--lui-typography-weight-bold) !important;
 }
 
-h2 {
-    font-size: var(--lui-typography-scale-size-subtitle) !important;
+.title, .headline, .overtitle {
+  font-weight: var(--lui-typography-weight-semibold) !important;
 }
 
-h3 {
-    font-size: var(--lui-typography-scale-size-headline) !important;
+.block-title {
+  font-weight: var(--lui-typography-weight-medium) !important;
 }
 
-h4 {
-    font-size: var(--lui-typography-scale-size-subheadline) !important;
+.display {
+  letter-spacing: var(--lui-typography-tracking-tightest) !important;
 }
 
-h5 {
-    font-size: var(--lui-typography-scale-size-block-title) !important;
+.title {
+  letter-spacing: var(--lui-typography-tracking-tighter) !important;
 }
 
-h6 {
-    font-size: var(--lui-typography-scale-size-section-tag) !important;
-    letter-spacing: var(--lui-typography-tracking-xl) !important;
-    text-transform: var(--lui-typography-transform-uppercase) !important;
+.overtitle {
+  letter-spacing: var(--lui-typography-tracking-wider) !important;
+  text-transform: var(--lui-typography-case-uppercase) !important;
 }
 
-.body-lg,
-span.body-lg {
-    font-size: var(--lui-typography-scale-size-body-lg) !important;
+.txt-italic {
+  font-style: var(--lui-typography-style-italic)
 }
 
-.body-md,
-span.body-md {
-    font-size: var(--lui-typography-scale-size-body-md) !important;
+.txt-underline {
+  text-decoration: var(--lui-typography-decoration-underline)
 }
 
-.body-sm,
-span.body-sm {
-    font-size: var(--lui-typography-scale-size-body-sm) !important;
+.txt-line-through {
+  text-decoration: var(--lui-typography-decoration-line-through)
 }
 
-.text-style-italic { font-style: var(--lui-typography-style-italic) }
-
-.text-decoration-underline { text-decoration: var(--lui-typography-decoration-underline) }
-.text-decoration-line-through { text-decoration: var(--lui-typography-decoration-line-through) }
-
-.text-transform-uppercase { text-transform: var(--lui-typography-transform-uppercase) }
+.txt-uppercase {
+  text-transform: var(--lui-typography-case-uppercase)
+}

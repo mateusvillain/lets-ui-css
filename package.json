@@ -21,6 +21,7 @@
     "style-dictionary": "^4.4.0"
   },
   "devDependencies": {
+    "modularscale-sass": "^3.0.10",
     "sass": "^1.87.0"
   }
 }

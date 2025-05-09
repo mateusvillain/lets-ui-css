@@ -1,0 +1,200 @@
+:root {
+  --lui-typography-family-heading: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --lui-typography-family-body: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+/* Mobile */
+@media only screen and (max-width: 1279px) {
+  :root {
+    --lui-brand-typography-size-base: 14px;
+  }
+  html, body {
+    font-size: 14px !important;
+  }
+}
+/* Desktop */
+@media only screen and (min-width: 1280px) {
+  :root {
+    --lui-brand-typography-size-base: 16px;
+  }
+  html, body {
+    font-size: 16px !important;
+  }
+}
+.display, .title, .headline, .subtitle,
+.block-title, .subheadline, .overtitle,
+h1, h2, h3, h4, h5, h6, label {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol !important;
+}
+
+body, p, input, select, button,
+.body-lg, .body-md, .body-sm {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol !important;
+}
+
+.display, .title, .headline, .subtitle, .block-title, .subheadline, .overtitle {
+  line-height: 1.2 !important;
+}
+
+p, input, select, button, label, .body-lg, .body-md, .body-sm {
+  line-height: 1.5 !important;
+}
+
+.display {
+  font-size: 2.0272865295rem;
+  font-weight: 300 !important;
+}
+@media (min-width: 720px) and (max-width: 1280px) {
+  .display {
+    font-size: calc(2.0272865295rem + 0.9586974705 * (100vw - 720px) / 560);
+  }
+}
+@media (min-width: 1280px) {
+  .display {
+    font-size: 2.985984rem;
+  }
+}
+
+.title {
+  font-size: 1.8020324707rem;
+  letter-spacing: -1px !important;
+}
+@media (min-width: 720px) and (max-width: 1280px) {
+  .title {
+    font-size: calc(1.8020324707rem + 0.6862875293 * (100vw - 720px) / 560);
+  }
+}
+@media (min-width: 1280px) {
+  .title {
+    font-size: 2.48832rem;
+  }
+}
+
+.headline {
+  font-size: 1.6018066406rem;
+}
+@media (min-width: 720px) and (max-width: 1280px) {
+  .headline {
+    font-size: calc(1.6018066406rem + 0.4717933594 * (100vw - 720px) / 560);
+  }
+}
+@media (min-width: 1280px) {
+  .headline {
+    font-size: 2.0736rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.423828125rem;
+}
+@media (min-width: 720px) and (max-width: 1280px) {
+  .subtitle {
+    font-size: calc(1.423828125rem + 0.304171875 * (100vw - 720px) / 560);
+  }
+}
+@media (min-width: 1280px) {
+  .subtitle {
+    font-size: 1.728rem;
+  }
+}
+
+.block-title {
+  font-size: 1.265625rem;
+  font-weight: 500 !important;
+}
+@media (min-width: 720px) and (max-width: 1280px) {
+  .block-title {
+    font-size: calc(1.265625rem + 0.174375 * (100vw - 720px) / 560);
+  }
+}
+@media (min-width: 1280px) {
+  .block-title {
+    font-size: 1.44rem;
+  }
+}
+
+.subheadline {
+  font-size: 1.125rem;
+}
+@media (min-width: 720px) and (max-width: 1280px) {
+  .subheadline {
+    font-size: calc(1.125rem + 0.075 * (100vw - 720px) / 560);
+  }
+}
+@media (min-width: 1280px) {
+  .subheadline {
+    font-size: 1.2rem;
+  }
+}
+
+.overtitle {
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+}
+
+.body-lg {
+  font-size: 1rem;
+}
+@media (min-width: 720px) and (max-width: 1280px) {
+  .body-lg {
+    font-size: calc(1rem + 0 * (100vw - 720px) / 560);
+  }
+}
+@media (min-width: 1280px) {
+  .body-lg {
+    font-size: 1rem;
+  }
+}
+
+.body-md,
+.overtitle {
+  font-size: 0.8888888889rem;
+}
+@media (min-width: 720px) and (max-width: 1280px) {
+  .body-md,
+  .overtitle {
+    font-size: calc(0.8888888889rem + -0.0555555556 * (100vw - 720px) / 560);
+  }
+}
+@media (min-width: 1280px) {
+  .body-md,
+  .overtitle {
+    font-size: 0.8333333333rem;
+  }
+}
+
+.body-sm {
+  font-size: 0.7901234568rem;
+}
+@media (min-width: 720px) and (max-width: 1280px) {
+  .body-sm {
+    font-size: calc(0.7901234568rem + -0.0956790123 * (100vw - 720px) / 560);
+  }
+}
+@media (min-width: 1280px) {
+  .body-sm {
+    font-size: 0.6944444444rem;
+  }
+}
+
+.title, .headline, .overtitle {
+  font-weight: 600 !important;
+}
+
+.txt-bold {
+  font-weight: 700 !important;
+}
+
+.txt-underline {
+  text-decoration: underline;
+}
+
+.txt-line-through {
+  text-decoration: line-through;
+}
+
+.txt-uppercase {
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=typography.css.map */
