@@ -1,3 +1,11 @@
+## 0.11.0
+
+### Added
+- New modular scale system using [modularscale-sass](https://github.com/modularscale/modularscale-sass)
+
+### Fixed
+- Correct path to variables.css in style files
+
 ## 0.10.0
 
 ### Added
