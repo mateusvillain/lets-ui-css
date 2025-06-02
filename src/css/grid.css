@@ -1,9 +1,8 @@
-.layout {
+.layout, .grid {
     display: grid;
 }
 
 .grid {
-    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 16px;
     margin-bottom: 24px;
@@ -48,7 +47,6 @@
   
 @media (min-width: 1280px) {
     .layout {
-        display: grid;
         grid-template-areas:
           "header header"
           "sidebar content";

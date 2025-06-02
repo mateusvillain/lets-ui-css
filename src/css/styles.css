@@ -1,4 +1,4 @@
-@import './../tokens/variables.css';
+@import './../../tokens/variables.css';
 @import "./reset.css";
 @import "./flexbox.css";
 @import './border.css';
@@ -6,4 +6,4 @@
 @import './letsicons.css';
 @import './semantic-colors.css';
 @import './spacing.css';
-@import './typography/typography.css';
+@import './typography.css';

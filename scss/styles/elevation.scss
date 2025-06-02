@@ -1,0 +1,14 @@
+@use '../../tokens/variables';
+
+.elevation-base {
+    box-shadow: $lui-elevation-base;
+}
+.elevation-hovered {
+    box-shadow: $lui-elevation-hovered;
+}
+.elevation-floating {
+    box-shadow: $lui-elevation-floating;
+}
+.elevation-overlay {
+    box-shadow: $lui-elevation-overlay;
+}

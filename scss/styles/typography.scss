@@ -1,5 +1,5 @@
-@import '../../../node_modules/modularscale-sass/stylesheets/modularscale';
-@import '../../tokens/variables.scss';
+@import '../../tokens/variables';
+@import '../../node_modules/modularscale-sass/stylesheets/modularscale';
 
 $lui-typography-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $lui-typography-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";

@@ -1,11 +1,11 @@
 @import './alert.css';
 @import './breadcrumb.css';
-@import './button/button.css';
-@import './card/card.css';
+@import './button.css';
+@import './card.css';
 @import './checkbox.css';
 @import './fields.css';
 @import './icon-button.css';
 @import './link.css';
 @import './navbar.css';
-@import './tag/tag.css';
+@import './tag.css';
 @import './nav.css';

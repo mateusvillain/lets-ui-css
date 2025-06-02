@@ -1,5 +1,3 @@
-@import './../tokens/variables.css';
-
 :root {
     /* Brand */
     --lui-color-brand-accent-layer-bg-surface: var(--lui-color-letsui-1);

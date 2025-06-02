@@ -10,9 +10,9 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: var(--lui-spacing-0);
-	padding: var(--lui-spacing-0);
-	border: var(--lui-spacing-0);
+	margin: 0;
+	padding: 0;
+	border: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -21,13 +21,16 @@ p {
 	margin-block-start: 0;
     margin-block-end: 0;
 }
-/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-ol, ul { list-style: none; }
-blockquote, q { quotes: none; }
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
@@ -35,10 +38,5 @@ q:before, q:after {
 }
 table {
 	border-collapse: collapse;
-	border-spacing: var(--lui-spacing-0);
-}
-div {
-	white-space: normal;
-    word-wrap: break-word; /* Força a quebra de palavras longas */
-    overflow-wrap: break-word; /* Compatível com navegadores modernos */
+	border-spacing: 0;
 }

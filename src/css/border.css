@@ -1,5 +1,3 @@
-@import './../tokens/variables.css';
-
 .bw-24 { border-width: var(--lui-border-width-24); }
 .bw-16 { border-width: var(--lui-border-width-16); }
 .bw-12 { border-width: var(--lui-border-width-12); }

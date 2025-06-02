@@ -1,3 +1,5 @@
+@use '../../tokens/variables';
+
 .card {
     background-color: var(--lui-color-neutral-light-layer-bg-surface);
     border-radius: var(--lui-border-radius-16);
