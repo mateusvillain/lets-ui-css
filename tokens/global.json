@@ -658,11 +658,11 @@
             }
           },
           "border": {
-            "surface": {
+            "divisor": {
               "value": "{lui.color.gray.5}",
               "type": "color"
             },
-            "cover": {
+            "stroke": {
               "value": "{lui.color.gray.6}",
               "type": "color"
             }

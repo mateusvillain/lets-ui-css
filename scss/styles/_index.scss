@@ -1,5 +1,7 @@
 /* Let's UI Styles */
 @charset "utf-8";
 
-@forward 'border.scss';
-@forward 'typography.scss';
+@forward 'reset';
+@forward 'flexbox';
+@forward 'grid';
+@forward 'typography';

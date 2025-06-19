@@ -8,16 +8,32 @@
   border-style: solid;
   background-color: $lui-color-neutral-light-background-surface;
 
+  &.bc-caution {
+    border-color: $lui-color-caution-border-stroke;
+  }
+
   &.bc-caution i.alert-icon {
     color: $lui-color-caution-icon-hard;
+  }
+
+  &.bc-danger {
+    border-color: $lui-color-danger-border-stroke;
   }
 
   &.bc-danger i.alert-icon {
     color: $lui-color-danger-icon-hard;
   }
 
+  &.bc-info {
+    border-color: $lui-color-info-border-stroke;
+  }
+
   &.bc-info i.alert-icon {
     color: $lui-color-info-icon-hard;
+  }
+
+  &.bc-success {
+    border-color: $lui-color-success-border-stroke;
   }
 
   &.bc-success i.alert-icon {
