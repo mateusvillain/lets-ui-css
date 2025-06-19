@@ -75,93 +75,143 @@
       }
     },
     "spacing": {
-      "0": {
-        "value": "0",
-        "type": "spacing"
+      "fixed": {
+        "0": {
+          "value": "0",
+          "type": "spacing"
+        },
+        "2": {
+          "value": "2px",
+          "type": "spacing"
+        },
+        "4": {
+          "value": "4",
+          "type": "spacing"
+        },
+        "8": {
+          "value": "8",
+          "type": "spacing"
+        },
+        "12": {
+          "value": "12",
+          "type": "spacing"
+        },
+        "16": {
+          "value": "16",
+          "type": "spacing"
+        },
+        "20": {
+          "value": "20",
+          "type": "spacing"
+        },
+        "24": {
+          "value": "24",
+          "type": "spacing"
+        },
+        "32": {
+          "value": "32",
+          "type": "spacing"
+        },
+        "40": {
+          "value": "40",
+          "type": "spacing"
+        },
+        "48": {
+          "value": "48",
+          "type": "spacing"
+        },
+        "56": {
+          "value": "56",
+          "type": "spacing"
+        },
+        "64": {
+          "value": "64",
+          "type": "spacing"
+        },
+        "72": {
+          "value": "72",
+          "type": "spacing"
+        },
+        "80": {
+          "value": "80",
+          "type": "spacing"
+        }
       },
-      "2": {
-        "value": "2",
-        "type": "spacing"
+      "fluid": {
+        "50": {
+          "value": "0.5vw",
+          "type": "spacing"
+        },
+        "100": {
+          "value": "1vw",
+          "type": "spacing"
+        },
+        "200": {
+          "value": "2vw",
+          "type": "spacing"
+        },
+        "250": {
+          "value": "2.5vw",
+          "type": "spacing"
+        },
+        "300": {
+          "value": "3vw",
+          "type": "spacing"
+        },
+        "400": {
+          "value": "4vw",
+          "type": "spacing"
+        },
+        "500": {
+          "value": "5vw",
+          "type": "spacing"
+        },
+        "600": {
+          "value": "6vw",
+          "type": "spacing"
+        }
       },
-      "4": {
-        "value": "4",
-        "type": "spacing"
-      },
-      "8": {
-        "value": "8",
-        "type": "spacing"
-      },
-      "12": {
-        "value": "12",
-        "type": "spacing"
-      },
-      "16": {
-        "value": "16",
-        "type": "spacing"
-      },
-      "20": {
-        "value": "20",
-        "type": "spacing"
-      },
-      "24": {
-        "value": "24",
-        "type": "spacing"
-      },
-      "28": {
-        "value": "28",
-        "type": "spacing"
-      },
-      "32": {
-        "value": "32",
-        "type": "spacing"
-      },
-      "36": {
-        "value": "36",
-        "type": "spacing"
-      },
-      "40": {
-        "value": "40",
-        "type": "spacing"
-      },
-      "44": {
-        "value": "44",
-        "type": "spacing"
-      },
-      "48": {
-        "value": "48",
-        "type": "spacing"
-      },
-      "52": {
-        "value": "52",
-        "type": "spacing"
-      },
-      "56": {
-        "value": "56",
-        "type": "spacing"
-      },
-      "60": {
-        "value": "60",
-        "type": "spacing"
-      },
-      "64": {
-        "value": "64",
-        "type": "spacing"
-      },
-      "68": {
-        "value": "68",
-        "type": "spacing"
-      },
-      "72": {
-        "value": "72",
-        "type": "spacing"
-      },
-      "76": {
-        "value": "76",
-        "type": "spacing"
-      },
-      "80": {
-        "value": "80",
-        "type": "spacing"
+      "scale": {
+        "25": {
+          "value": "0.25rem",
+          "type": "spacing"
+        },
+        "50": {
+          "value": "0.5rem",
+          "type": "spacing"
+        },
+        "87": {
+          "value": "0.875rem",
+          "type": "spacing"
+        },
+        "100": {
+          "value": "1rem",
+          "type": "spacing"
+        },
+        "150": {
+          "value": "1.5rem",
+          "type": "spacing"
+        },
+        "200": {
+          "value": "2rem",
+          "type": "spacing"
+        },
+        "250": {
+          "value": "2.5rem",
+          "type": "spacing"
+        },
+        "300": {
+          "value": "3rem",
+          "type": "spacing"
+        },
+        "400": {
+          "value": "4rem",
+          "type": "spacing"
+        },
+        "500": {
+          "value": "5rem",
+          "type": "spacing"
+        }
       }
     },
     "opacity": {
@@ -199,48 +249,6 @@
         "bold": {
           "value": "700",
           "type": "fontWeights"
-        }
-      },
-      "font-size": {
-        "display": {
-          "value": "{lui.typography.font-size.title}*{lui.brand.typography.scale.base}",
-          "type": "fontSizes"
-        },
-        "title": {
-          "value": "{lui.typography.font-size.headline}*{lui.brand.typography.scale.base}",
-          "type": "fontSizes"
-        },
-        "headline": {
-          "value": "{lui.typography.font-size.subtitle}*{lui.brand.typography.scale.base}",
-          "type": "fontSizes"
-        },
-        "subtitle": {
-          "value": "{lui.typography.font-size.block-title}*{lui.brand.typography.scale.base}",
-          "type": "fontSizes"
-        },
-        "block-title": {
-          "value": "{lui.typography.font-size.subheadline}*{lui.brand.typography.scale.base}",
-          "type": "fontSizes"
-        },
-        "subheadline": {
-          "value": "{lui.typography.font-size.body-lg}*{lui.brand.typography.scale.base}",
-          "type": "fontSizes"
-        },
-        "overtitle": {
-          "value": "{lui.brand.typography.size.base}/{lui.brand.typography.scale.base}",
-          "type": "fontSizes"
-        },
-        "body-lg": {
-          "value": "{lui.brand.typography.size.base}",
-          "type": "fontSizes"
-        },
-        "body-md": {
-          "value": "{lui.brand.typography.size.base}/{lui.brand.typography.scale.base}",
-          "type": "fontSizes"
-        },
-        "body-sm": {
-          "value": "{lui.typography.font-size.body-md}/{lui.brand.typography.scale.base}",
-          "type": "fontSizes"
         }
       },
       "line-height": {
@@ -308,9 +316,9 @@
           "value": {
             "fontFamily": "{lui.brand.typography.font-family.heading}",
             "fontWeight": "{lui.typography.weight.light}",
-            "fontSize": "{lui.typography.font-size.display}",
+            "fontSize": "{lui.brand.typography.font-size.3xl}",
             "lineHeight": "{lui.typography.line-height.md}",
-            "letterSpacing": "{lui.typography.tracking.tightest}",
+            "letterSpacing": "{lui.typography.tracking.default}",
             "textDecoration": "{lui.typography.decoration.none}",
             "textCase": "{lui.typography.case.none}"
           },
@@ -320,9 +328,9 @@
           "value": {
             "fontFamily": "{lui.brand.typography.font-family.heading}",
             "fontWeight": "{lui.typography.weight.semibold}",
-            "fontSize": "{lui.typography.font-size.title}",
+            "fontSize": "{lui.brand.typography.font-size.2xl}",
             "lineHeight": "{lui.typography.line-height.md}",
-            "letterSpacing": "{lui.typography.tracking.tighter}",
+            "letterSpacing": "{lui.typography.tracking.default}",
             "textDecoration": "{lui.typography.decoration.none}",
             "textCase": "{lui.typography.case.none}"
           },
@@ -332,7 +340,7 @@
           "value": {
             "fontFamily": "{lui.brand.typography.font-family.heading}",
             "fontWeight": "{lui.typography.weight.semibold}",
-            "fontSize": "{lui.typography.font-size.headline}",
+            "fontSize": "{lui.brand.typography.font-size.1xl}",
             "lineHeight": "{lui.typography.line-height.md}",
             "letterSpacing": "{lui.typography.tracking.default}",
             "textDecoration": "{lui.typography.decoration.none}",
@@ -344,7 +352,7 @@
           "value": {
             "fontFamily": "{lui.brand.typography.font-family.heading}",
             "fontWeight": "{lui.typography.weight.regular}",
-            "fontSize": "{lui.typography.font-size.subtitle}",
+            "fontSize": "{lui.brand.typography.font-size.lg}",
             "lineHeight": "{lui.typography.line-height.md}",
             "letterSpacing": "{lui.typography.tracking.default}",
             "textDecoration": "{lui.typography.decoration.none}",
@@ -356,7 +364,7 @@
           "value": {
             "fontFamily": "{lui.brand.typography.font-family.heading}",
             "fontWeight": "{lui.typography.weight.medium}",
-            "fontSize": "{lui.typography.font-size.block-title}",
+            "fontSize": "{lui.brand.typography.font-size.md}",
             "lineHeight": "{lui.typography.line-height.md}",
             "letterSpacing": "{lui.typography.tracking.default}",
             "textDecoration": "{lui.typography.decoration.none}",
@@ -368,7 +376,7 @@
           "value": {
             "fontFamily": "{lui.brand.typography.font-family.heading}",
             "fontWeight": "{lui.typography.weight.regular}",
-            "fontSize": "{lui.typography.font-size.subheadline}",
+            "fontSize": "{lui.brand.typography.font-size.sm}",
             "lineHeight": "{lui.typography.line-height.md}",
             "letterSpacing": "{lui.typography.tracking.default}",
             "textDecoration": "{lui.typography.decoration.none}",
@@ -380,7 +388,7 @@
           "value": {
             "fontFamily": "{lui.brand.typography.font-family.heading}",
             "fontWeight": "{lui.typography.weight.semibold}",
-            "fontSize": "{lui.typography.font-size.overtitle}",
+            "fontSize": "{lui.brand.typography.font-size.2xs}",
             "lineHeight": "{lui.typography.line-height.md}",
             "letterSpacing": "{lui.typography.tracking.default}",
             "textDecoration": "{lui.typography.decoration.none}",
@@ -391,8 +399,8 @@
         "body-lg": {
           "value": {
             "fontFamily": "{lui.brand.typography.font-family.body}",
-            "fontWeight": "{lui.typography.weight.bold}",
-            "fontSize": "{lui.typography.font-size.body-lg}",
+            "fontWeight": "{lui.typography.weight.regular}",
+            "fontSize": "{lui.brand.typography.font-size.1xs}",
             "lineHeight": "{lui.typography.line-height.lg}",
             "letterSpacing": "{lui.typography.tracking.default}",
             "textDecoration": "{lui.typography.decoration.none}",
@@ -403,8 +411,8 @@
         "body-md": {
           "value": {
             "fontFamily": "{lui.brand.typography.font-family.body}",
-            "fontWeight": "{lui.typography.weight.bold}",
-            "fontSize": "{lui.typography.font-size.body-md}",
+            "fontWeight": "{lui.typography.weight.regular}",
+            "fontSize": "{lui.brand.typography.font-size.2xs}",
             "lineHeight": "{lui.typography.line-height.lg}",
             "letterSpacing": "{lui.typography.tracking.default}",
             "textDecoration": "{lui.typography.decoration.none}",
@@ -415,8 +423,8 @@
         "body-sm": {
           "value": {
             "fontFamily": "{lui.brand.typography.font-family.body}",
-            "fontWeight": "{lui.typography.weight.bold}",
-            "fontSize": "{lui.typography.font-size.body-sm}",
+            "fontWeight": "{lui.typography.weight.regular}",
+            "fontSize": "{lui.brand.typography.font-size.3xs}",
             "lineHeight": "{lui.typography.line-height.lg}",
             "letterSpacing": "{lui.typography.tracking.default}",
             "textDecoration": "{lui.typography.decoration.none}",

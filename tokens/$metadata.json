@@ -5,8 +5,6 @@
     "mode/dark",
     "letsui/core",
     "letsui/light",
-    "letsui/dark",
-    "letsui/desktop",
-    "letsui/mobile"
+    "letsui/dark"
   ]
 }
