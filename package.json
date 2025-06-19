@@ -15,6 +15,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js",
     "sass-styles": "sass --watch scss/styles/:src/styles/ --no-source-map",
     "sass-components": "sass --watch scss/components/:src/components/ --no-source-map"
   },

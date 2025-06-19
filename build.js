@@ -4,13 +4,13 @@ import StyleDictionary from 'style-dictionary';
 register(StyleDictionary);
 
 const sd = new StyleDictionary({
-  source: ['src/tokens/**/*.json'],
+  source: ['./tokens/**/*.json'],
   preprocessors: ['tokens-studio'],
   platforms: {
     css: {
       transformGroup: 'tokens-studio',
       transforms: ['name/kebab'],
-      buildPath: 'src/tokens/',
+      buildPath: './tokens/',
       files: [
         {
           destination: 'variables.css',
@@ -21,7 +21,7 @@ const sd = new StyleDictionary({
     scss: {
       transformGroup: 'tokens-studio',
       transforms: ['name/kebab'],
-      buildPath: 'src/tokens/',
+      buildPath: './tokens/',
       files: [
         {
           destination: 'variables.scss',
