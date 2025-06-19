@@ -16,8 +16,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node build.js",
-    "sass-styles": "sass --watch scss/styles/:src/styles/ --no-source-map",
-    "sass-components": "sass --watch scss/components/:src/components/ --no-source-map"
+    "sass": "sass scss/letsui.scss src/letsui.css --style=expanded && sass scss/letsui.scss src/letsui.min.css --style=compressed --no-source-map",
+    "sass-watch": "sass scss/letsui.scss src/letsui.css --style=expanded && sass scss/letsui.scss src/letsui.min.css --style=compressed --no-source-map --watch"
   },
   "dependencies": {
     "@tokens-studio/sd-transforms": "^1.3.0",
