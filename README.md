@@ -16,23 +16,6 @@ Let's UI is built using only **HTML** and **CSS** — no external dependencies, 
 
 3. Start using and adapting it to your needs!
 
-## Next steps
-### Foundation to create
-- [ ] Expand the color palette for Dark Mode
-- [ ] Create opacity tokens
-- [ ] Create a custom icon family
-
-### Components to development
-- [ ] Drawer
-- [ ] Menu
-- [ ] Modal
-- [ ] Switch
-- [ ] Tabs
-- [ ] Textarea
-
-### Documentation
-- [ ] Complete component documentation in Figma
-
 ## License
 This project is licensed under the MIT License.
 Feel free to use, modify, and contribute!

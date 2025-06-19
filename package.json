@@ -1,6 +1,6 @@
 {
   "name": "lets-ui-css",
-  "version": "0.0.0",
+  "version": "0.11.0",
   "description": "Let's UI é uma biblioteca de estilos e componentes CSS focada em praticidade, consistência e personalização. Inspirada em sistemas de design modernos, ela oferece uma base sólida para criar interfaces acessíveis, responsivas e escaláveis, sem depender de JavaScript.",
   "keywords": [
     "lets-ui"
