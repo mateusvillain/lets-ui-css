@@ -1,0 +1,32 @@
+@use '../../tokens/variables' as *;
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: $lui-spacing-fixed-0;
+  margin: $lui-spacing-fixed-0;
+
+  li {
+    a {
+      text-decoration: none;
+    }
+
+    &::after {
+      content: "/";
+      margin: $lui-spacing-fixed-0 $lui-spacing-fixed-8;
+      color: $lui-color-neutral-light-text-body;
+    }
+
+    &:last-child {
+      &::after {
+        content: "";
+
+        /* Remove a barra do último item */
+      }
+
+      color: $lui-color-neutral-light-text-body;
+      cursor: default;
+    }
+  }
+}

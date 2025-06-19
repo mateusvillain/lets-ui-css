@@ -1,0 +1,14 @@
+@use '../../tokens/variables' as *;
+
+a.link {
+  color: var(--lui-color-brand-accent-content-text-hard);
+  transition: filter 0.3s ease;
+
+  &:hover {
+    filter: brightness(76%);
+  }
+
+  &:active {
+    filter: brightness(52%);
+  }
+}

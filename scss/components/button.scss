@@ -1,12 +1,12 @@
-@use '../../tokens/variables';
+@use '../../tokens/variables' as *;
 
 button {
 	&.btn {
 		position: relative;
 		overflow: hidden;
-		font-weight: var(--lui-typography-weight-regular);
-		border: var(--lui-spacing-0);
-		outline: var(--lui-spacing-0);
+		font-weight: $lui-typography-weight-regular;
+		border: $lui-spacing-fixed-0;
+		outline: $lui-spacing-fixed-0;
 		background-color: transparent;
 		transition: all 0.2s ease-in-out;
 		z-index: 0;
@@ -24,8 +24,8 @@ button {
 			}
 		}
 		&:active {
-			outline: var(--lui-border-width-2) solid transparent;
-			outline-offset: var(--lui-border-width-2);
+			outline: $lui-border-width-2 solid transparent;
+			outline-offset: $lui-border-width-2;
 			&::before {
 				filter: brightness(0.6);
 			}
@@ -37,45 +37,45 @@ button {
 			cursor: not-allowed;
 			opacity: 0.4;
 			&::before {
-				background-color: var(--lui-color-brand-accent-layer-bg-container);
+				background-color: $lui-color-brand-accent-background-container;
 				filter: none;
 			}
 		}
 	}
-	&.btn-md {
-		padding: var(--lui-spacing-12);
-		font-size: var(--lui-typography-scale-size-body-lg);
-		border-radius: var(--lui-border-radius-12);
+	&.btn-lg {
+		padding: $lui-spacing-fixed-12;
+		font: $lui-typography-scale-body-lg;
+		border-radius: $lui-border-radius-12;
 	}
-	&.btn-sm {
-		padding: var(--lui-spacing-8);
-		font-size: var(--lui-typography-scale-size-body-md);
-		border-radius: var(--lui-border-radius-8);
+	&.btn-md {
+		padding: $lui-spacing-fixed-8;
+		font: $lui-typography-scale-body-md;
+		border-radius: $lui-border-radius-8;
 	}
 	&.btn-primary {
-		color: var(--lui-color-button-primary-text);
+		color: $lui-color-button-primary-text;
 		&::before {
-			background-color: var(--lui-color-button-primary-background);
+			background-color: $lui-color-button-primary-background;
 		}
 		&:focus {
 			box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44 / 0.32);
 		}
 	}
 	&.btn-secondary {
-		color: var(--lui-color-button-secondary-text);
+		color: $lui-color-button-secondary-text;
 		&::before {
-			background-color: var(--lui-color-button-secondary-background);
+			background-color: $lui-color-button-secondary-background;
 		}
 		&:focus {
 			box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
 		}
 	}
 	&.btn-tertiary {
-		color: var(--lui-color-button-tertiary-text);
+		color: $lui-color-button-tertiary-text;
 		&::before {
 			content: '';
 			position: absolute;
-			background-color: var(--lui-color-neutral-dark-layer-bg-surface);
+			background-color: $lui-color-neutral-dark-background-surface;
 			inset: 0;
 			opacity: 0;
 			transition: opacity 0.2s;
@@ -96,18 +96,18 @@ button {
 		}
 	}
 	&.btn-danger {
-		color: var(--lui-color-button-danger-text);
+		color: $lui-color-button-danger-text;
 		&::before {
-			background-color: var(--lui-color-button-danger-background);
+			background-color: $lui-color-button-danger-background;
 		}
 		&:focus {
 			box-shadow: 0 0 0 3px rgba(238, 67, 67, 0.3);
 		}
 	}
 	&.btn-success {
-		color: var(--lui-color-button-tertiary-text);
+		color: $lui-color-button-tertiary-text;
 		&::before {
-			background-color: var(--lui-color-button-success-background);
+			background-color: $lui-color-button-success-background;
 		}
 		&:focus {
 			box-shadow: 0 0 0 3px rgba(87, 238, 67, 0.3);
