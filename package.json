@@ -1,23 +1,45 @@
 {
   "name": "lets-ui-css",
   "version": "0.11.0",
-  "description": "Let's UI é uma biblioteca de estilos e componentes CSS focada em praticidade, consistência e personalização. Inspirada em sistemas de design modernos, ela oferece uma base sólida para criar interfaces acessíveis, responsivas e escaláveis, sem depender de JavaScript.",
+  "description": "A fluid and multi-brand design system for web projects.",
   "keywords": [
-    "lets-ui"
+    "css",
+    "sass",
+    "scss",
+    "clamp",
+    "container",
+    "flexbox",
+    "responsive",
+    "design system",
+    "framework",
+    "figma"
   ],
   "repository": {
     "type": "git",
-    "url": "lets-ui-css"
+    "url": "https://github.com/mateusvillain/lets-ui-css.git"
   },
-  "license": "ISC",
-  "author": "Mateus Villain",
+  "license": "MIT",
+  "author": {
+    "name": "Mateus Villain",
+    "email": "mateus@mateusvillain.com",
+    "url": "https://mateusvillain.com"
+  },
   "type": "module",
-  "main": "index.html",
+  "main": "scss/letsui.scss",
+  "style": "src/letsui.css",
+  "files": [
+    "scss/letsui.scss",
+    "src/letsui.css",
+    "src/letsui.min.css"
+  ],
+  "bugs": {
+    "url": "https://github.com/mateusvillain/lets-ui-css/issues"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node build.js",
-    "sass": "sass scss/letsui.scss src/letsui.css --style=expanded && sass scss/letsui.scss src/letsui.min.css --style=compressed --no-source-map",
-    "sass-watch": "sass scss/letsui.scss src/letsui.css --style=expanded && sass scss/letsui.scss src/letsui.min.css --style=compressed --no-source-map --watch"
+    "tokens": "node build.js",
+    "css": "sass scss/letsui.scss src/letsui.css --style=expanded && sass scss/letsui.scss src/letsui.min.css --style=compressed --no-source-map",
+    "css-watch": "sass scss/letsui.scss src/letsui.css --style=expanded && sass scss/letsui.scss src/letsui.min.css --style=compressed --no-source-map --watch"
   },
   "dependencies": {
     "@tokens-studio/sd-transforms": "^1.3.0",
