@@ -1,63 +1,118 @@
-.flex {display: flex;}
-.inline-flex {display: inline-flex;}
+// Display
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
 
-/* Direction */
-.flex-row {flex-direction: row;}
-.flex-row-reverse {flex-direction: row-reverse;}
-.flex-column {flex-direction: column;}
-.flex-column-reverse {flex-direction: column-reverse;}
+// Direction
+$flex-directions: (
+  row, row-reverse,
+  column, column-reverse
+);
 
-/* Wrap */
-.flex-wrap {flex-wrap: wrap;}
-.flex-wrap-reverse {flex-wrap: wrap-reverse;}
-.flex-nowrap {flex-wrap: nowrap;} 
+@each $dir in $flex-directions {
+  .flex-#{$dir} {
+    flex-direction: $dir;
+  }
+}
 
-/* Justify */
-.flex-justify-start {justify-content: flex-start;}
-.flex-justify-end {justify-content: flex-end;}
-.flex-justify-center {justify-content: center;}
-.flex-justify-space-between {justify-content: space-between;}
-.flex-justify-space-around {justify-content: space-around;}
-.flex-justify-space-evenly {justify-content: space-evenly;}
+// Wrap
+$flex-wraps: (
+  wrap, wrap-reverse, nowrap
+);
 
-/* Align Items */
-.flex-align-start {align-items: flex-start;}
-.flex-align-end {align-items: flex-end;}
-.flex-align-center {align-items: center;}
-.flex-align-baseline {align-items: baseline;}
-.flex-align-stretch {align-items: stretch;}
+@each $wrap in $flex-wraps {
+  .flex-#{$wrap} {
+    flex-wrap: $wrap;
+  }
+}
 
-/* Align Content */
-.flex-align-content-start {align-content: flex-start;}
-.flex-align-content-end {align-content: flex-end;}
-.flex-align-content-center {align-content: center;}
-.flex-align-content-space-between {align-content: space-between;}
-.flex-align-content-space-around {align-content: space-around;}
-.flex-align-content-stretch {align-content: stretch;}
+// Justify Content
+$justify-content: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  space-between: space-between,
+  space-around: space-around,
+  space-evenly: space-evenly
+);
 
-/* Grow */
-.flex-item-grow-0 {flex-grow: 0;}
-.flex-item-grow-1 {flex-grow: 1;}
+@each $key, $value in $justify-content {
+  .flex-justify-#{$key} {
+    justify-content: $value;
+  }
+}
 
-/* Shrink */
-.flex-item-shrink-0 {flex-shrink: 0;}
-.flex-item-shrink-1 {flex-shrink: 1;}
+// Align Items
+$align-items: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  baseline: baseline,
+  stretch: stretch
+);
 
-/* Flex */
-.flex-item-auto {flex: auto;} /* grow, shrink, basis automáticos */
-.flex-item-initial {flex: initial;} /* grow: 0, shrink: 1, basis: auto */
-.flex-item-none {flex: none;} /* grow: 0, shrink: 0, no base */
+@each $key, $value in $align-items {
+  .flex-align-#{$key} {
+    align-items: $value;
+  }
+}
 
-/* Order */
-.flex-item-order-0 {order: 0;}
-.flex-item-order-1 {order: 1;}
-.flex-item-order-2 {order: 2;}
-.flex-item-order-negative {order: -1;}
+// Align Content
+$align-content: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  space-between: space-between,
+  space-around: space-around,
+  stretch: stretch
+);
 
-/* Align Self */
-.flex-self-auto {align-self: auto;}
-.flex-self-start {align-self: flex-start;}
-.flex-self-end {align-self: flex-end;}
-.flex-self-center {align-self: center;}
-.flex-self-baseline {align-self: baseline;}
-.flex-self-stretch {align-self: stretch;}
+@each $key, $value in $align-content {
+  .flex-align-content-#{$key} {
+    align-content: $value;
+  }
+}
+
+// Flex Grow
+@for $i from 0 through 1 {
+  .flex-item-grow-#{$i} {
+    flex-grow: $i;
+  }
+}
+
+// Flex Shrink
+@for $i from 0 through 1 {
+  .flex-item-shrink-#{$i} {
+    flex-shrink: $i;
+  }
+}
+
+// Flex Shorthand
+.flex-item-auto    { flex: auto; }
+.flex-item-initial { flex: initial; }
+.flex-item-none    { flex: none; }
+
+// Order
+@for $i from 0 through 2 {
+  .flex-item-order-#{$i} {
+    order: $i;
+  }
+}
+.flex-item-order-negative {
+  order: -1;
+}
+
+// Align Self
+$align-self: (
+  auto: auto,
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  baseline: baseline,
+  stretch: stretch
+);
+
+@each $key, $value in $align-self {
+  .flex-self-#{$key} {
+    align-self: $value;
+  }
+}
