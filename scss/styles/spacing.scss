@@ -1,0 +1,133 @@
+@use '../../tokens/variables' as *;
+
+$spacings: (
+  2: $lui-spacing-fixed-2,
+  4: $lui-spacing-fixed-4,
+  8: $lui-spacing-fixed-8,
+  16: $lui-spacing-fixed-16,
+  20: $lui-spacing-fixed-20,
+  24: $lui-spacing-fixed-24,
+  32: $lui-spacing-fixed-32,
+  40: $lui-spacing-fixed-40,
+  48: $lui-spacing-fixed-48,
+  56: $lui-spacing-fixed-56,
+  64: $lui-spacing-fixed-64,
+  72: $lui-spacing-fixed-72,
+  80: $lui-spacing-fixed-80
+);
+
+@each $key, $value in $spacings {
+  // Margin classes
+  .m-#{$key} {
+    margin: $value $value;
+  }
+
+  .my-#{$key} {
+    margin: $value 0;
+  }
+
+  .mx-#{$key} {
+    margin: 0 $value;
+  }
+  
+  .mt-#{$key} {
+    margin-top: $value;
+  }
+
+  .mb-#{$key} {
+    margin-bottom: $value;
+  }
+
+  .ml-#{$key} {
+    margin-left: $value;
+  }
+
+  .mr-#{$key} {
+    margin-right: $value;
+  }
+
+  // Padding classes
+  .p-#{$key} {
+    padding: $value $value;
+  }
+
+  .py-#{$key} {
+    padding: $value 0;
+  }
+
+  .px-#{$key} {
+    padding: 0 $value;
+  }
+  
+  .pt-#{$key} {
+    padding-top: $value;
+  }
+
+  .pb-#{$key} {
+    padding-bottom: $value;
+  }
+
+  .pl-#{$key} {
+    padding-left: $value;
+  }
+
+  .pr-#{$key} {
+    padding-right: $value;
+  }
+
+  // Gap classes
+  .g-#{$key} {
+    gap: $value;
+  }
+
+  .gy-#{$key} {
+    row-gap: $value;
+  }
+
+  .gx-#{$key} {
+    column-gap: $value;
+  }
+
+  // Width classes
+  .w-#{$key} {
+    width: $value;
+  }
+
+  .min-w-#{$key} {
+    min-width: $value;
+  }
+
+  .max-w-#{$key} {
+    max-width: $value;
+  }
+
+  // Height classes
+  .h-#{$key} {
+    height: $value;
+  }
+
+  .min-h-#{$key} {
+    min-height: $value;
+  }
+
+  .max-h-#{$key} {
+    max-height: $value;
+  }
+
+  // Position
+  .top-#{$key} {
+    top: $value;
+  }
+
+  .right-#{$key} {
+    right: $value;
+  }
+
+  .bottom-#{$key} {
+    bottom: $value;
+  }
+
+  .left-#{$key} {
+    left: $value;
+  }
+}
