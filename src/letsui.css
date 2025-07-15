@@ -234,9 +234,9 @@ table {
 
 .grid {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px;
-  margin-bottom: 24px;
-  align-items: start; /* Alinha todos os itens pelo topo */
+  gap: clamp(1rem, 2vw, 2rem);
+  margin-bottom: clamp(1rem, 2vw, 2rem);
+  align-items: start;
 }
 
 .grid:last-of-type {
@@ -245,7 +245,7 @@ table {
 
 @media (max-width: 1279px) {
   .main-content {
-    padding: 16px;
+    padding: 1rem;
   }
 }
 @media (max-width: 719px) {
@@ -284,24 +284,6 @@ table {
   .col-md-6 {
     grid-column: span 6;
   }
-  .col-md-7 {
-    grid-column: span 7;
-  }
-  .col-md-8 {
-    grid-column: span 8;
-  }
-  .col-md-9 {
-    grid-column: span 9;
-  }
-  .col-md-10 {
-    grid-column: span 10;
-  }
-  .col-md-11 {
-    grid-column: span 11;
-  }
-  .col-md-12 {
-    grid-column: span 12;
-  }
 }
 @media (min-width: 1280px) {
   .layout {
@@ -320,7 +302,7 @@ table {
   }
   .main-content {
     grid-area: content;
-    padding: 24px 80px;
+    padding: 2rem 5vw;
   }
   .col-lg-1 {
     grid-column: span 1;

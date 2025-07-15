@@ -1,21 +1,23 @@
+@use '../../tokens/variables' as *;
+
 .layout, .grid {
     display: grid;
 }
 
 .grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
-    margin-bottom: 24px;
-    align-items: start; /* Alinha todos os itens pelo topo */
+    gap: clamp($lui-spacing-scale-100, $lui-spacing-fluid-200, $lui-spacing-scale-200);
+    margin-bottom: clamp($lui-spacing-scale-100, $lui-spacing-fluid-200, $lui-spacing-scale-200);
+    align-items: start;
 }
 
 .grid:last-of-type {
-    margin-bottom: 0;
+    margin-bottom: $lui-spacing-fixed-0;
 }
 
 @media (max-width: 1279px) {
     .main-content {
-        padding: 16px;
+        padding: $lui-spacing-scale-100;
     }
 }
 
@@ -37,12 +39,6 @@
     .col-md-4  { grid-column: span 4; }
     .col-md-5  { grid-column: span 5; }
     .col-md-6  { grid-column: span 6; }
-    .col-md-7  { grid-column: span 7; }
-    .col-md-8  { grid-column: span 8; }
-    .col-md-9  { grid-column: span 9; }
-    .col-md-10 { grid-column: span 10; }
-    .col-md-11 { grid-column: span 11; }
-    .col-md-12 { grid-column: span 12; }
 }
   
 @media (min-width: 1280px) {
@@ -51,23 +47,23 @@
           "header header"
           "sidebar content";
         grid-template-columns: 280px 1fr;
-        grid-template-rows: 64px 1fr;
+        grid-template-rows: $lui-spacing-fixed-64 1fr;
     }
     
     .header {
         grid-area: header;
         position: sticky;
-        top: 0;
+        top: $lui-spacing-fixed-0;
     }
 
     .navbar {
-        margin-top: 64px;
+        margin-top: $lui-spacing-fixed-64;
         position: fixed;
       }
 
     .main-content {
         grid-area: content;
-        padding: 24px 80px;
+        padding: $lui-spacing-scale-200 $lui-spacing-fluid-500;
     }
 
     .col-lg-1  { grid-column: span 1; }
