@@ -47,18 +47,6 @@
         "4": {
           "value": "4",
           "type": "borderWidth"
-        },
-        "8": {
-          "value": "8",
-          "type": "borderWidth"
-        },
-        "12": {
-          "value": "12",
-          "type": "borderWidth"
-        },
-        "16": {
-          "value": "16",
-          "type": "borderWidth"
         }
       },
       "button": {
