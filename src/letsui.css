@@ -340,12 +340,10 @@ table {
 }
 
 .grid {
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: clamp(1rem, 2vw, 2rem);
   margin-bottom: clamp(1rem, 2vw, 2rem);
   align-items: start;
 }
-
 .grid:last-of-type {
   margin-bottom: 0;
 }
@@ -356,6 +354,9 @@ table {
   }
 }
 @media (max-width: 719px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
   .col-sm-1 {
     grid-column: span 1;
   }
@@ -369,9 +370,9 @@ table {
     grid-column: span 4;
   }
 }
-@media (min-width: 720px) {
+@media (min-width: 720px) and (max-width: 1279px) {
   .grid {
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(8, 1fr);
   }
   .col-md-1 {
     grid-column: span 1;
@@ -391,8 +392,17 @@ table {
   .col-md-6 {
     grid-column: span 6;
   }
+  .col-md-7 {
+    grid-column: span 7;
+  }
+  .col-md-8 {
+    grid-column: span 8;
+  }
 }
 @media (min-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
   .layout {
     grid-template-areas: "header header" "sidebar content";
     grid-template-columns: 280px 1fr;
@@ -1881,15 +1891,15 @@ table {
 }
 
 .body-lg {
-  font: 400 clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem)/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 400 1rem/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .body-md {
-  font: 400 clamp(0.778rem, 0.7623rem + 0.0786vw, 0.833rem)/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 400 0.833rem/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .body-sm {
-  font: 400 clamp(0.691rem, 0.6901rem + 0.0043vw, 0.694rem)/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 400 0.694rem/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .display, .title, .headline, .subtitle, .block-title, .subheadline, .overtitle,
@@ -2045,12 +2055,12 @@ button.btn:disabled::before {
 }
 button.btn-lg {
   padding: 12px;
-  font: 400 clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem)/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 400 1rem/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   border-radius: 12px;
 }
 button.btn-md {
   padding: 8px;
-  font: 400 clamp(0.778rem, 0.7623rem + 0.0786vw, 0.833rem)/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 400 0.833rem/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   border-radius: 8px;
 }
 button.btn-primary {
@@ -2170,11 +2180,11 @@ label {
 }
 
 input.form-size-lg, select.form-size-lg, label.form-size-lg, .check-size-lg, .form-checkbox.check-size-lg input:checked::after {
-  font: 400 clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem)/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 400 1rem/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 input.form-size-md, select.form-size-md, label.form-size-md, .check-size-md, .form-checkbox.check-size-md input:checked::after {
-  font: 400 clamp(0.778rem, 0.7623rem + 0.0786vw, 0.833rem)/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 400 0.833rem/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 input[type=color], input[type=email], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url] {
@@ -2623,19 +2633,19 @@ a.link:active {
 
 .tag-sm {
   padding: 2px 8px;
-  font: 400 clamp(0.691rem, 0.6901rem + 0.0043vw, 0.694rem)/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 400 0.694rem/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   border-radius: 8px;
 }
 
 .tag-md {
   padding: 4px 8px;
-  font: 400 clamp(0.778rem, 0.7623rem + 0.0786vw, 0.833rem)/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 400 0.833rem/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   border-radius: 12px;
 }
 
 .tag-lg {
   padding: 8px 12px;
-  font: 400 clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem)/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 400 1rem/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   border-radius: 16px;
 }
 
