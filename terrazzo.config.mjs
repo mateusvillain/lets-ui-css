@@ -3,20 +3,29 @@ import css from "@terrazzo/plugin-css";
 import sass from "@terrazzo/plugin-sass";
 
 export default defineConfig({
-  tokens: [
-    './tokens/brand/colors.json',
-    './tokens/brand/foundation.json',
-    './tokens/global/primitive.json',
-    './tokens/global/semantic.json',
-    './tokens/global/colors.json'
-  ],
+  tokens: ["./letsui.resolver.json"],
   outDir: './dist/',
   plugins: [
     css({
       filename: "tokens.css",
+      baseScheme: "light dark",
       modeSelectors: [
-        { mode: "light", selectors: ["@media (prefers-color-scheme: light)"] },
-        { mode: "dark", selectors: ["@media (prefers-color-scheme: dark)"] },
+        {
+          mode: "light",
+          selectors: [
+            "@media (prefers-color-scheme: light)",
+            '[data-theme="light"]'
+          ],
+          scheme: "light",
+        },
+        {
+          mode: "dark",
+          selectors: [
+            "@media (prefers-color-scheme: dark)",
+            '[data-theme="dark"]'
+          ],
+          scheme: "dark",
+        },
       ],
     }),
     sass({
