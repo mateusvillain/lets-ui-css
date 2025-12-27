@@ -1,0 +1,24 @@
+{
+  "name": "My DS",
+  "version": "2025.10",
+  "sets": {
+    "brand": {
+      "$description": "Brand tokens for Let's UI design system",
+      "sources": [
+        { "$ref": "./tokens/brand/foundation.json" },
+        { "$ref": "./tokens/brand/colors.json" }
+      ]
+    },
+    "global": {
+      "sources": [
+        { "$ref": "./tokens/letsui/primitive.json" },
+        { "$ref": "./tokens/letsui/semantic.json" },
+        { "$ref": "./tokens/letsui/colors.json" }
+      ]
+    }
+  },
+  "resolutionOrder": [
+    { "$ref": "#/sets/brand" },
+    { "$ref": "#/sets/global" }
+  ]
+}

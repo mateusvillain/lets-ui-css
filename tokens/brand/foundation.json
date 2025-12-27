@@ -1,0 +1,136 @@
+{
+  "lui": {
+    "brand": {
+      "opacity": {
+        "disabled": {
+          "$type": "number",
+          "$value": 0.4
+        }
+      },
+      "typography": {
+        "font-family": {
+          "$type": "fontFamily",
+          "heading": {
+            "$value": [
+              "-apple-system",
+              "BlinkMacSystemFont",
+              "Segoe UI",
+              "Roboto",
+              "Oxygen",
+              "Ubuntu",
+              "Cantarell",
+              "Helvetica Neue",
+              "Arial",
+              "sans-serif",
+              "Apple Color Emoji",
+              "Segoe UI Emoji",
+              "Segoe UI Symbol"
+            ],
+            "description": "Default font for heading texts"
+          },
+          "body": {
+            "$value": [
+              "-apple-system",
+              "BlinkMacSystemFont",
+              "Segoe UI",
+              "Roboto",
+              "Oxygen",
+              "Ubuntu",
+              "Cantarell",
+              "Helvetica Neue",
+              "Arial",
+              "sans-serif",
+              "Apple Color Emoji",
+              "Segoe UI Emoji",
+              "Segoe UI Symbol"
+            ],
+            "description": "Default font for body texts"
+          }
+        },
+        "font-size": {
+          "$type": "string",
+          "3xs": {
+            "$value": "clamp(0.691rem, 0.6901rem + 0.0043vw, 0.694rem)"
+          },
+          "2xs": {
+            "$value": "clamp(0.778rem, 0.7623rem + 0.0786vw, 0.833rem)"
+          },
+          "1xs": {
+            "$value": "clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem)"
+          },
+          "sm": {
+            "$value": "clamp(0.984rem, 0.9223rem + 0.3086vw, 1.2rem)"
+          },
+          "md": {
+            "$value": "clamp(1.107rem, 1.0119rem + 0.4757vw, 1.44rem)"
+          },
+          "lg": {
+            "$value": "clamp(1.246rem, 1.1083rem + 0.6886vw, 1.728rem)"
+          },
+          "1xl": {
+            "$value": "clamp(1.402rem, 1.21rem + 0.96vw, 2.074rem)"
+          },
+          "2xl": {
+            "$value": "clamp(1.577rem, 1.3167rem + 1.3014vw, 2.488rem)"
+          },
+          "3xl": {
+            "$value": "clamp(2.245rem, 1.6579rem + 2.9357vw, 4.3rem)"
+          }
+        },
+        "weight": {
+          "$type": "fontWeight",
+          "display": {
+            "$value": "{lui.typography.weight.light}"
+          },
+          "title": {
+            "$value": "{lui.typography.weight.semibold}"
+          },
+          "headline": {
+            "$value": "{lui.typography.weight.semibold}"
+          },
+          "subtitle": {
+            "$value": "{lui.typography.weight.regular}"
+          },
+          "block-title": {
+            "$value": "{lui.typography.weight.medium}"
+          },
+          "subheadline": {
+            "$value": "{lui.typography.weight.regular}"
+          },
+          "overtitle": {
+            "$value": "{lui.typography.weight.semibold}"
+          }
+        }
+      },
+      "border": {
+        "radius": {
+          "$type": "dimension",
+          "1xs": {
+            "$value": {
+              "value": 4,
+              "unit": "px"
+            }
+          },
+          "sm": {
+            "$value": {
+              "value": 8,
+              "unit": "px"
+            }
+          },
+          "md": {
+            "$value": {
+              "value": 12,
+              "unit": "px"
+            }
+          },
+          "lg": {
+            "$value": {
+              "value": 16,
+              "unit": "px"
+            }
+          }
+        }
+      }
+    }
+  }
+}
