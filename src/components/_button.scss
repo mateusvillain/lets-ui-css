@@ -1,0 +1,73 @@
+@use '../foundations/_border.tokens' as *;
+@use '../foundations/_color.tokens' as *;
+@use '../foundations/_spacing.tokens' as *;
+@use '../foundations/_typography.tokens' as *;
+
+button {
+	&.btn {
+		position: relative;
+		overflow: hidden;
+		font-weight: #{$weight-regular};
+		border: #{$space-0};
+		outline: #{$space-0};
+		background-color: transparent;
+		transition: all 0.2s ease-in-out;
+		z-index: 0;
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-color: inherit;
+			z-index: -1;
+			transition: filter 0.2s ease-in-out;
+		}
+		&:hover {
+			&::before {
+				filter: brightness(0.76);
+			}
+		}
+		&:active {
+			outline: #{$border-2} solid transparent;
+			outline-offset: #{$border-2};
+			&::before {
+				filter: brightness(0.6);
+			}
+			&:not(:disabled) {
+				transform: scale(0.98);
+			}
+		}
+		&:disabled {
+			cursor: not-allowed;
+			opacity: 0.4;
+			&::before {
+				background-color: #{$accent-bg-container};
+				filter: none;
+			}
+		}
+	}
+	&.btn-lg {
+		padding: #{$space-16};
+		// font: $typography-scale-body-lg;
+		border-radius: #{$radius-lg};
+	}
+	&.btn-md {
+		padding: #{$space-8};
+		// font: $typography-scale-body-md;
+		border-radius: #{$radius-md};
+	}
+	&.btn-primary {
+		color: #fff;
+		&::before {
+			background-color: #{$accent-bg-container};
+		}
+		&:focus {
+			box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44 / 0.32);
+		}
+	}
+}
+button.btn-primary, 
+button.btn-secondary, 
+button.btn-danger, 
+button.btn-success {
+	background-color: transparent;
+}

@@ -1,0 +1,8 @@
+@use './elevation.tokens' as *;
+
+:root {
+  --elevation-base: #{$elevation-base};
+  --elevation-hovered: #{$elevation-hovered};
+  --elevation-floating: #{$elevation-floating};
+  --elevation-overlay: #{$elevation-overlay};
+}

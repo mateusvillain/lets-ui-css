@@ -1,0 +1,39 @@
+@use './typography.tokens' as *;
+
+:root {
+  --font-body: #{$font-body};
+  --font-heading: #{$font-heading};
+
+  --text-1xs: #{$text-1xs};
+  --text-2xs: #{$text-2xs};
+  --text-3xs: #{$text-3xs};
+  --text-sm: #{$text-sm};
+  --text-md: #{$text-md};
+  --text-lg: #{$text-lg};
+  --text-1xl: #{$text-1xl};
+  --text-2xl: #{$text-2xl};
+  --text-3xl: #{$text-3xl};
+
+  --weight-regular: #{$weight-regular};
+  --weight-medium: #{$weight-medium};
+  --weight-semibold: #{$weight-semibold};
+  --weight-bold: #{$weight-bold};
+
+  --leading-sm: #{$leading-sm};
+  --leading-md: #{$leading-md};
+  --leading-lg: #{$leading-lg};
+
+  --tracking-default: #{$tracking-default};
+  --tracking-tighter: #{$tracking-tighter};
+  --tracking-tightest: #{$tracking-tightest};
+  --tracking-wider: #{$tracking-wider};
+  --tracking-widest: #{$tracking-widest};
+
+  --text-lowercase: #{$text-lowercase};
+  --text-uppercase: #{$text-uppercase};
+  --text-case-none: #{$text-case-none};
+
+  --text-underline: #{$text-underline};
+  --text-line-through: #{$text-line-through};
+  --text-decoration-none: #{$text-decoration-none};
+}

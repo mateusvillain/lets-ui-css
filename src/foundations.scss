@@ -1,1 +1,6 @@
-@use 'foundations/index'
+@use './foundations/border';
+@use './foundations/color';
+@use './foundations/spacing';
+@use './foundations/typography';
+@use './foundations/opacity';
+@use './foundations/elevation';

@@ -1,0 +1,11 @@
+@use './opacity.tokens' as *;
+
+:root {
+  --opacity-0: #{$opacity-0};
+  --opacity-100: #{$opacity-100};
+  --opacity-disabled: #{$opacity-disabled};
+  --opacity-hidden: #{$opacity-hidden};
+  --opacity-visible: #{$opacity-visible};
+
+  --brand-opacity-disabled: #{$brand-opacity-disabled};
+}

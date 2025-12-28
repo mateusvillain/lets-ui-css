@@ -1,0 +1,11 @@
+@use '../../dist/tokens.scss' as tokens;
+@use 'tokens' as token;
+
+$opacity-0: tokens.token('lui.opacity.0');
+$opacity-100: tokens.token('lui.opacity.100');
+$opacity-disabled: tokens.token('lui.opacity.disabled');
+$opacity-hidden: tokens.token('lui.opacity.hidden');
+$opacity-visible: tokens.token('lui.opacity.visible');
+
+/* brand */
+$brand-opacity-disabled: tokens.token('lui.brand.opacity.disabled');
