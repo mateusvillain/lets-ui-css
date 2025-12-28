@@ -1,0 +1,5 @@
+@use '../foundations/radius.scss' as radius;
+
+.button {
+  border-radius: radius.$radius-1xs;
+}

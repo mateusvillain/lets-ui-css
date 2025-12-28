@@ -1,0 +1,6 @@
+@use "sass:map";
+@use "../dist/tokens.scss" as raw;
+
+@function token($name) {
+  @return map.get(raw.$token-values, $name);
+}
