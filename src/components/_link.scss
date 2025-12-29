@@ -1,0 +1,18 @@
+@use '../../dist/tokens.scss' as tokens;
+
+a.link {
+  @include tokens.typography(
+  'lui.typography.scale.display',
+  'dark'
+);
+  color: tokens('lui.color.accent.link.default');
+  transition: filter 0.3s ease;
+
+  &:hover {
+    filter: brightness(76%);
+  }
+
+  &:active {
+    filter: brightness(52%);
+  }
+}
