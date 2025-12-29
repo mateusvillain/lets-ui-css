@@ -2,6 +2,7 @@
 @use '../foundations/_color.tokens' as *;
 @use '../foundations/_spacing.tokens' as *;
 @use '../foundations/_typography.tokens' as *;
+@use '../foundations/_opacity.tokens' as *;
 
 button {
 	&.btn {
@@ -38,7 +39,7 @@ button {
 		}
 		&:disabled {
 			cursor: not-allowed;
-			opacity: 0.4;
+			opacity: #{$brand-opacity-disabled};
 			&::before {
 				background-color: #{$accent-bg-container};
 				filter: none;
@@ -62,6 +63,58 @@ button {
 		}
 		&:focus {
 			box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44 / 0.32);
+		}
+	}
+	&.btn-secondary {
+		color: #{$neutral-dark-text-body};
+		&::before {
+			background-color: #{$neutral-light-bg-container};
+		}
+		&:focus {
+			box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+		}
+	}
+	&.btn-tertiary {
+		color: #{$neutral-light-text-body};
+		&::before {
+			content: '';
+			position: absolute;
+			background-color: #{$neutral-dark-bg-surface};
+			inset: 0;
+			opacity: 0;
+			transition: opacity 0.2s;
+			z-index: -1;
+		}
+		&:hover {
+			&::before {
+				opacity: 0.24;
+			}
+		}
+		&:active {
+			&::before {
+				opacity: 0.4;
+			}
+		}
+		&:focus {
+			box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+		}
+	}
+	&.btn-danger {
+		color: #{$neutral-light-text-body};
+		&::before {
+			background-color: #{$danger-bg-container};
+		}
+		&:focus {
+			box-shadow: 0 0 0 3px rgba(238, 67, 67, 0.3);
+		}
+	}
+	&.btn-success {
+		color: #{$neutral-light-text-body};
+		&::before {
+			background-color: #{$success-bg-container};
+		}
+		&:focus {
+			box-shadow: 0 0 0 3px rgba(87, 238, 67, 0.3);
 		}
 	}
 }
