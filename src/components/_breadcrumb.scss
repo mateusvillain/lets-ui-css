@@ -1,0 +1,31 @@
+@use '../foundations/_color.tokens' as *;
+@use '../foundations/_spacing.tokens' as *;
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: #{$space-0};
+  margin: #{$space-0};
+
+  li {
+    a {
+      text-decoration: none;
+    }
+
+    &::after {
+      content: "/";
+      margin: #{$space-0} #{$space-8};
+      color: #{$neutral-light-text-body};
+    }
+
+    &:last-child {
+      &::after {
+        content: "";
+      }
+
+      color: #{$neutral-light-text-body};
+      cursor: default;
+    }
+  }
+}
