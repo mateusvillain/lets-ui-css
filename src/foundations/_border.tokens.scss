@@ -1,4 +1,4 @@
-@use '../../dist/tokens.scss' as tokens;
+@use '../../dist/letsui.tokens.scss' as tokens;
 @use 'tokens' as token;
 
 $radius-1xs: tokens.token('lui.border.radius.1xs');
