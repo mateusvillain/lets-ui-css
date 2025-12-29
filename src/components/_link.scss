@@ -1,11 +1,7 @@
-@use '../../dist/tokens.scss' as tokens;
+@use '../foundations/_color.tokens' as *;
 
 a.link {
-  @include tokens.typography(
-  'lui.typography.scale.display',
-  'dark'
-);
-  color: tokens('lui.color.accent.link.default');
+  color: #{$accent-link-default};
   transition: filter 0.3s ease;
 
   &:hover {
