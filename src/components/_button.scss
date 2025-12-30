@@ -1,7 +1,7 @@
 @use '../foundations/_border' as *;
-@use '../foundations/_color.tokens' as *;
-@use '../foundations/_spacing.tokens' as *;
-@use '../foundations/_typography.tokens' as *;
+@use '../foundations/_color' as *;
+@use '../foundations/_spacing' as *;
+@use '../foundations/_typography' as *;
 @use '../foundations/_opacity' as *;
 
 button {
