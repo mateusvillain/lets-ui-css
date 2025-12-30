@@ -7,7 +7,7 @@ export default defineConfig({
   outDir: './dist/',
   plugins: [
     css({
-      filename: "tokens.css",
+      filename: "letsui.tokens.css",
       baseScheme: "light dark",
       modeSelectors: [
         {
@@ -29,7 +29,7 @@ export default defineConfig({
       ],
     }),
     sass({
-      filename: "tokens.scss",
+      filename: "letsui.tokens.scss",
     }),
   ],
 });
