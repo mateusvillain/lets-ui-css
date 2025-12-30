@@ -1,19 +1,34 @@
 @use './border.tokens' as *;
 
-:root {
-  --radius-1xs: #{$radius-1xs};
-  --radius-sm: #{$radius-sm};
-  --radius-md: #{$radius-md};
-  --radius-lg: #{$radius-lg};
-  --radius-circle: #{$radius-circle};
-  --radius-none: #{$radius-none};
+.radius-{
+  &1xs {
+    border-radius: $radius-1xs;
+  }
+  &sm {
+    border-radius: $radius-sm;
+  }
+  &md {
+    border-radius: $radius-md;
+  }
+  &lg {
+    border-radius: $radius-lg;
+  }
+  &circle {
+    border-radius: $radius-circle;
+  }
+  &none {
+    border-radius: $radius-none;
+  }
+}
 
-  --border-0: #{$border-0};
-  --border-1: #{$border-1};
-  --border-2: #{$border-2};
-
-  --brand-radius-1xs: #{$brand-radius-1xs};
-  --brand-radius-sm: #{$brand-radius-sm};
-  --brand-radius-md: #{$brand-radius-md};
-  --brand-radius-lg: #{$brand-radius-lg};
+.border-{
+  &0 {
+    border-width: $border-0;
+  }
+  &1 {
+    border-width: $border-1;
+  }
+  &2 {
+    border-width: $border-2;
+  }
 }
