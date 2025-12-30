@@ -36,16 +36,20 @@
     "url": "https://github.com/mateusvillain/lets-ui-css/issues"
   },
   "scripts": {
-    "build": "tz build",
-    "build:css": "sass src/foundations.scss dist/foundations.css --no-source-map && sass src/components.scss dist/components.css --no-source-map",
-    "build:foundations": "sass src/foundations.scss dist/foundations.css --no-source-map",
-    "watch:css": "sass --watch src:dist --no-source-map"
+    "tokens": "tz build",
+    "tokens:css": "npm run tokens && npm run css && npm run css:minify",
+    "css": "sass src/index.scss dist/letsui.css",
+    "css:minify": "postcss dist/letsui.css --use cssnano --output dist/letsui.min.css",
+    "css:watch": "sass --watch src/index.scss dist/letsui.css --no-source-map"
   },
   "devDependencies": {
     "@terrazzo/cli": "^2.0.0-alpha.7",
     "@terrazzo/plugin-css": "^2.0.0-alpha.7",
     "@terrazzo/plugin-sass": "^2.0.0-alpha.7",
+    "cssnano": "^7.1.2",
     "modularscale-sass": "^3.0.10",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
     "sass": "^1.87.0"
   }
 }
