@@ -1,8 +1,8 @@
-@use '../foundations/_border.tokens' as *;
+@use '../foundations/_border' as *;
 @use '../foundations/_color.tokens' as *;
 @use '../foundations/_spacing.tokens' as *;
 @use '../foundations/_typography.tokens' as *;
-@use '../foundations/_opacity.tokens' as *;
+@use '../foundations/_opacity' as *;
 
 button {
 	&.btn {
@@ -39,7 +39,7 @@ button {
 		}
 		&:disabled {
 			cursor: not-allowed;
-			opacity: #{$brand-opacity-disabled};
+			opacity: #{$opacity-disabled};
 			&::before {
 				background-color: #{$accent-bg-container};
 				filter: none;
