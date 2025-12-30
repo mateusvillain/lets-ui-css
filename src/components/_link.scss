@@ -1,4 +1,4 @@
-@use '../foundations/_color.tokens' as *;
+@use '../foundations/_color' as *;
 
 a.link {
   color: #{$accent-link-default};
