@@ -1,0 +1,83 @@
+@use '../foundations/_border' as *;
+@use '../foundations/_color' as *;
+@use '../foundations/_spacing' as *;
+@use '../foundations/_opacity' as *;
+
+.icon-button {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: #{$radius-md};
+  place-self: start;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  z-index: 0;
+
+  &.lg {
+    max-width: #{$space-40} !important;
+    max-height: #{$space-40} !important;
+    padding: #{$space-8} !important;
+    > i {
+      font-size: 1.5rem;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: -1;
+  }
+
+  &.light {
+    &::before {
+      background-color: #{$neutral-dark-bg-surface};
+    }
+
+    i::before {
+      color: #{$neutral-dark-bg-surface};
+    }
+  }
+
+  &.dark {
+    &::before {
+      background-color: #{$neutral-light-bg-surface};
+    }
+
+    i::before {
+      color: #{$neutral-light-bg-surface};
+    }
+  }
+
+  &:hover::before {
+    opacity: 0.24;
+  }
+
+  &:active:not(:disabled)::before {
+    opacity: 0.4;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active:not(:disabled)::before, &:focus {
+    border-radius: #{$radius-lg};
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: #{$opacity-disabled};
+
+    &::before {
+      opacity: 0;
+      filter: none;
+    }
+  }
+}
