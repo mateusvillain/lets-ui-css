@@ -1,7 +1,0 @@
-@use '../../dist/letsui.tokens.scss' as tokens;
-@use 'tokens' as token;
-
-$elevation-base: tokens.token('lui.elevation.base');
-$elevation-hovered: tokens.token('lui.elevation.hovered');
-$elevation-floating: tokens.token('lui.elevation.floating');
-$elevation-overlay: tokens.token('lui.elevation.overlay');

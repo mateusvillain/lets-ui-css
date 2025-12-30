@@ -1,4 +1,29 @@
-@use './spacing.tokens' as *;
+@use '../../dist/letsui.tokens.scss' as tokens;
+@use 'tokens' as token;
+
+// fixed
+$space-0: tokens.token('lui.spacing.fixed.0');
+$space-8: tokens.token('lui.spacing.fixed.8');
+$space-16: tokens.token('lui.spacing.fixed.16');
+$space-24: tokens.token('lui.spacing.fixed.24');
+$space-32: tokens.token('lui.spacing.fixed.32');
+$space-40: tokens.token('lui.spacing.fixed.40');
+
+// fluid
+$space-fluid-2: tokens.token('lui.spacing.fluid.2');
+$space-fluid-4: tokens.token('lui.spacing.fluid.4');
+$space-fluid-8: tokens.token('lui.spacing.fluid.8');
+$space-fluid-12: tokens.token('lui.spacing.fluid.12');
+$space-fluid-16: tokens.token('lui.spacing.fluid.16');
+$space-fluid-20: tokens.token('lui.spacing.fluid.20');
+$space-fluid-24: tokens.token('lui.spacing.fluid.24');
+$space-fluid-32: tokens.token('lui.spacing.fluid.32');
+$space-fluid-40: tokens.token('lui.spacing.fluid.40');
+$space-fluid-48: tokens.token('lui.spacing.fluid.48');
+$space-fluid-56: tokens.token('lui.spacing.fluid.56');
+$space-fluid-64: tokens.token('lui.spacing.fluid.64');
+$space-fluid-72: tokens.token('lui.spacing.fluid.72');
+$space-fluid-80: tokens.token('lui.spacing.fluid.80');
 
 // .m-f-0  geral
 // .mt-f-0 top
@@ -8,530 +33,505 @@
 // .mx-f-0 left right
 // .my-f-0 top bottom
 
-.m {
-  &fx {
+.m- {
+  &fx- {
     &0 {
-      margin: #{$space-0};
+      margin: $space-0;
     }
     &8 {
-      margin: #{$space-8};
+      margin: $space-8;
     }
     &16 {
-      margin: #{$space-16};
+      margin: $space-16;
     }
     &24 {
-      margin: #{$space-24};
+      margin: $space-24;
     }
     &32 {
-      margin: #{$space-32};
+      margin: $space-32;
     }
     &40 {
-      margin: #{$space-40};
+      margin: $space-40;
     }
   }
-  &fl {
+  &fl- {
     &2 {
-      margin: #{$space-fluid-2};
+      margin: $space-fluid-2;
     }
     &4 {
-      margin: #{$space-fluid-4};
+      margin: $space-fluid-4;
     }
     &8 {
-      margin: #{$space-fluid-8};
+      margin: $space-fluid-8;
     }
     &12 {
-      margin: #{$space-fluid-12};
+      margin: $space-fluid-12;
     }
     &16 {
-      margin: #{$space-fluid-16};
+      margin: $space-fluid-16;
     }
     &20 {
-      margin: #{$space-fluid-20};
+      margin: $space-fluid-20;
     }
     &24 {
-      margin: #{$space-fluid-24};
+      margin: $space-fluid-24;
     }
     &32 {
-      margin: #{$space-fluid-32};
+      margin: $space-fluid-32;
     }
     &40 {
-      margin: #{$space-fluid-40};
+      margin: $space-fluid-40;
     }
     &48 {
-      margin: #{$space-fluid-48};
+      margin: $space-fluid-48;
     }
     &56 {
-      margin: #{$space-fluid-56};
+      margin: $space-fluid-56;
     }
     &64 {
-      margin: #{$space-fluid-64};
+      margin: $space-fluid-64;
     }
     &72 {
-      margin: #{$space-fluid-72};
+      margin: $space-fluid-72;
     }
     &80 {
-      margin: #{$space-fluid-80};
+      margin: $space-fluid-80;
     }
   }
-  &t {
-    &fx {
+  &t- {
+    &fx- {
       &0 {
-        margin-top: #{$space-0};
+        margin-top: $space-0;
       }
       &8 {
-        margin-top: #{$space-8};
+        margin-top: $space-8;
       }
       &16 {
-        margin-top: #{$space-16};
+        margin-top: $space-16;
       }
       &24 {
-        margin-top: #{$space-24};
+        margin-top: $space-24;
       }
       &32 {
-        margin-top: #{$space-32};
+        margin-top: $space-32;
       }
       &40 {
-        margin-top: #{$space-40};
+        margin-top: $space-40;
       }
     }
-    &fl {
+    &fl- {
       &2 {
-        margin-top: #{$space-fluid-2};
+        margin-top: $space-fluid-2;
       }
       &4 {
-        margin-top: #{$space-fluid-4};
+        margin-top: $space-fluid-4;
       }
       &8 {
-        margin-top: #{$space-fluid-8};
+        margin-top: $space-fluid-8;
       }
       &12 {
-        margin-top: #{$space-fluid-12};
+        margin-top: $space-fluid-12;
       }
       &16 {
-        margin-top: #{$space-fluid-16};
+        margin-top: $space-fluid-16;
       }
       &20 {
-        margin-top: #{$space-fluid-20};
+        margin-top: $space-fluid-20;
       }
       &24 {
-        margin-top: #{$space-fluid-24};
+        margin-top: $space-fluid-24;
       }
       &32 {
-        margin-top: #{$space-fluid-32};
+        margin-top: $space-fluid-32;
       }
       &40 {
-        margin-top: #{$space-fluid-40};
+        margin-top: $space-fluid-40;
       }
       &48 {
-        margin-top: #{$space-fluid-48};
+        margin-top: $space-fluid-48;
       }
       &56 {
-        margin-top: #{$space-fluid-56};
+        margin-top: $space-fluid-56;
       }
       &64 {
-        margin-top: #{$space-fluid-64};
+        margin-top: $space-fluid-64;
       }
       &72 {
-        margin-top: #{$space-fluid-72};
+        margin-top: $space-fluid-72;
       }
       &80 {
-        margin-top: #{$space-fluid-80};
+        margin-top: $space-fluid-80;
       }
     }
   }
-  &b {
-    &fx {
+  &b- {
+    &fx- {
       &0 {
-        margin-bottom: #{$space-0};
+        margin-bottom: $space-0;
       }
       &8 {
-        margin-bottom: #{$space-8};
+        margin-bottom: $space-8;
       }
       &16 {
-        margin-bottom: #{$space-16};
+        margin-bottom: $space-16;
       }
       &24 {
-        margin-bottom: #{$space-24};
+        margin-bottom: $space-24;
       }
       &32 {
-        margin-bottom: #{$space-32};
+        margin-bottom: $space-32;
       }
       &40 {
-        margin-bottom: #{$space-40};
+        margin-bottom: $space-40;
       }
     }
-    &fl {
+    &fl- {
       &2 {
-        margin-bottom: #{$space-fluid-2};
+        margin-bottom: $space-fluid-2;
       }
       &4 {
-        margin-bottom: #{$space-fluid-4};
+        margin-bottom: $space-fluid-4;
       }
       &8 {
-        margin-bottom: #{$space-fluid-8};
+        margin-bottom: $space-fluid-8;
       }
       &12 {
-        margin-bottom: #{$space-fluid-12};
+        margin-bottom: $space-fluid-12;
       }
       &16 {
-        margin-bottom: #{$space-fluid-16};
+        margin-bottom: $space-fluid-16;
       }
       &20 {
-        margin-bottom: #{$space-fluid-20};
+        margin-bottom: $space-fluid-20;
       }
       &24 {
-        margin-bottom: #{$space-fluid-24};
+        margin-bottom: $space-fluid-24;
       }
       &32 {
-        margin-bottom: #{$space-fluid-32};
+        margin-bottom: $space-fluid-32;
       }
       &40 {
-        margin-bottom: #{$space-fluid-40};
+        margin-bottom: $space-fluid-40;
       }
       &48 {
-        margin-bottom: #{$space-fluid-48};
+        margin-bottom: $space-fluid-48;
       }
       &56 {
-        margin-bottom: #{$space-fluid-56};
+        margin-bottom: $space-fluid-56;
       }
       &64 {
-        margin-bottom: #{$space-fluid-64};
+        margin-bottom: $space-fluid-64;
       }
       &72 {
-        margin-bottom: #{$space-fluid-72};
+        margin-bottom: $space-fluid-72;
       }
       &80 {
-        margin-bottom: #{$space-fluid-80};
+        margin-bottom: $space-fluid-80;
       }
     }
   }
-  &l {
-    &fx {
+  &l- {
+    &fx- {
       &0 {
-        margin-left: #{$space-0};
+        margin-left: $space-0;
       }
       &8 {
-        margin-left: #{$space-8};
+        margin-left: $space-8;
       }
       &16 {
-        margin-left: #{$space-16};
+        margin-left: $space-16;
       }
       &24 {
-        margin-left: #{$space-24};
+        margin-left: $space-24;
       }
       &32 {
-        margin-left: #{$space-32};
+        margin-left: $space-32;
       }
       &40 {
-        margin-left: #{$space-40};
+        margin-left: $space-40;
       }
     }
-    &fl {
+    &fl- {
       &2 {
-        margin-left: #{$space-fluid-2};
+        margin-left: $space-fluid-2;
       }
       &4 {
-        margin-left: #{$space-fluid-4};
+        margin-left: $space-fluid-4;
       }
       &8 {
-        margin-left: #{$space-fluid-8};
+        margin-left: $space-fluid-8;
       }
       &12 {
-        margin-left: #{$space-fluid-12};
+        margin-left: $space-fluid-12;
       }
       &16 {
-        margin-left: #{$space-fluid-16};
+        margin-left: $space-fluid-16;
       }
       &20 {
-        margin-left: #{$space-fluid-20};
+        margin-left: $space-fluid-20;
       }
       &24 {
-        margin-left: #{$space-fluid-24};
+        margin-left: $space-fluid-24;
       }
       &32 {
-        margin-left: #{$space-fluid-32};
+        margin-left: $space-fluid-32;
       }
       &40 {
-        margin-left: #{$space-fluid-40};
+        margin-left: $space-fluid-40;
       }
       &48 {
-        margin-left: #{$space-fluid-48};
+        margin-left: $space-fluid-48;
       }
       &56 {
-        margin-left: #{$space-fluid-56};
+        margin-left: $space-fluid-56;
       }
       &64 {
-        margin-left: #{$space-fluid-64};
+        margin-left: $space-fluid-64;
       }
       &72 {
-        margin-left: #{$space-fluid-72};
+        margin-left: $space-fluid-72;
       }
       &80 {
-        margin-left: #{$space-fluid-80};
+        margin-left: $space-fluid-80;
       }
     }
   }
-  &r {
-    &fx {
+  &r- {
+    &fx- {
       &0 {
-        margin-right: #{$space-0};
+        margin-right: $space-0;
       }
       &8 {
-        margin-right: #{$space-8};
+        margin-right: $space-8;
       }
       &16 {
-        margin-right: #{$space-16};
+        margin-right: $space-16;
       }
       &24 {
-        margin-right: #{$space-24};
+        margin-right: $space-24;
       }
       &32 {
-        margin-right: #{$space-32};
+        margin-right: $space-32;
       }
       &40 {
-        margin-right: #{$space-40};
+        margin-right: $space-40;
       }
     }
-    &fl {
+    &fl- {
       &2 {
-        margin-right: #{$space-fluid-2};
+        margin-right: $space-fluid-2;
       }
       &4 {
-        margin-right: #{$space-fluid-4};
+        margin-right: $space-fluid-4;
       }
       &8 {
-        margin-right: #{$space-fluid-8};
+        margin-right: $space-fluid-8;
       }
       &12 {
-        margin-right: #{$space-fluid-12};
+        margin-right: $space-fluid-12;
       }
       &16 {
-        margin-right: #{$space-fluid-16};
+        margin-right: $space-fluid-16;
       }
       &20 {
-        margin-right: #{$space-fluid-20};
+        margin-right: $space-fluid-20;
       }
       &24 {
-        margin-right: #{$space-fluid-24};
+        margin-right: $space-fluid-24;
       }
       &32 {
-        margin-right: #{$space-fluid-32};
+        margin-right: $space-fluid-32;
       }
       &40 {
-        margin-right: #{$space-fluid-40};
+        margin-right: $space-fluid-40;
       }
       &48 {
-        margin-right: #{$space-fluid-48};
+        margin-right: $space-fluid-48;
       }
       &56 {
-        margin-right: #{$space-fluid-56};
+        margin-right: $space-fluid-56;
       }
       &64 {
-        margin-right: #{$space-fluid-64};
+        margin-right: $space-fluid-64;
       }
       &72 {
-        margin-right: #{$space-fluid-72};
+        margin-right: $space-fluid-72;
       }
       &80 {
-        margin-right: #{$space-fluid-80};
+        margin-right: $space-fluid-80;
       }
     }
   }
-  &x {
-    &fx {
+  &x- {
+    &fx- {
       &0 {
-        margin-left: #{$space-0};
-        margin-right: #{$space-0};
+        margin-left: $space-0;
+        margin-right: $space-0;
       }
       &8 {
-        margin-left: #{$space-8};
-        margin-right: #{$space-8};
+        margin-left: $space-8;
+        margin-right: $space-8;
       }
       &16 {
-        margin-left: #{$space-16};
-        margin-right: #{$space-16};
+        margin-left: $space-16;
+        margin-right: $space-16;
       }
       &24 {
-        margin-left: #{$space-24};
-        margin-right: #{$space-24};
+        margin-left: $space-24;
+        margin-right: $space-24;
       }
       &32 {
-        margin-left: #{$space-32};
-        margin-right: #{$space-32};
+        margin-left: $space-32;
+        margin-right: $space-32;
       }
       &40 {
-        margin-left: #{$space-40};
-        margin-right: #{$space-40};
+        margin-left: $space-40;
+        margin-right: $space-40;
       }
     }
-    &fl {
+    &fl- {
       &2 {
-        margin-left: #{$space-fluid-2};
-        margin-right: #{$space-fluid-2};
+        margin-left: $space-fluid-2;
+        margin-right: $space-fluid-2;
       }
       &4 {
-        margin-left: #{$space-fluid-4};
-        margin-right: #{$space-fluid-4};
+        margin-left: $space-fluid-4;
+        margin-right: $space-fluid-4;
       }
       &8 {
-        margin-left: #{$space-fluid-8};
-        margin-right: #{$space-fluid-8};
+        margin-left: $space-fluid-8;
+        margin-right: $space-fluid-8;
       }
       &12 {
-        margin-left: #{$space-fluid-12};
-        margin-right: #{$space-fluid-12};
+        margin-left: $space-fluid-12;
+        margin-right: $space-fluid-12;
       }
       &16 {
-        margin-left: #{$space-fluid-16};
-        margin-right: #{$space-fluid-16};
+        margin-left: $space-fluid-16;
+        margin-right: $space-fluid-16;
       }
       &20 {
-        margin-left: #{$space-fluid-20};
-        margin-right: #{$space-fluid-20};
+        margin-left: $space-fluid-20;
+        margin-right: $space-fluid-20;
       }
       &24 {
-        margin-left: #{$space-fluid-24};
-        margin-right: #{$space-fluid-24};
+        margin-left: $space-fluid-24;
+        margin-right: $space-fluid-24;
       }
       &32 {
-        margin-left: #{$space-fluid-32};
-        margin-right: #{$space-fluid-32};
+        margin-left: $space-fluid-32;
+        margin-right: $space-fluid-32;
       }
       &40 {
-        margin-left: #{$space-fluid-40};
-        margin-right: #{$space-fluid-40};
+        margin-left: $space-fluid-40;
+        margin-right: $space-fluid-40;
       }
       &48 {
-        margin-left: #{$space-fluid-48};
-        margin-right: #{$space-fluid-48};
+        margin-left: $space-fluid-48;
+        margin-right: $space-fluid-48;
       }
       &56 {
-        margin-left: #{$space-fluid-56};
-        margin-right: #{$space-fluid-56};
+        margin-left: $space-fluid-56;
+        margin-right: $space-fluid-56;
       }
       &64 {
-        margin-left: #{$space-fluid-64};
-        margin-right: #{$space-fluid-64};
+        margin-left: $space-fluid-64;
+        margin-right: $space-fluid-64;
       }
       &72 {
-        margin-left: #{$space-fluid-72};
-        margin-right: #{$space-fluid-72};
+        margin-left: $space-fluid-72;
+        margin-right: $space-fluid-72;
       }
       &80 {
-        margin-left: #{$space-fluid-80};
-        margin-right: #{$space-fluid-80};
+        margin-left: $space-fluid-80;
+        margin-right: $space-fluid-80;
       }
     }
   }
-  &y {
-    &fx {
+  &y- {
+    &fx- {
       &0 {
-        margin-top: #{$space-0};
-        margin-bottom: #{$space-0};
+        margin-top: $space-0;
+        margin-bottom: $space-0;
       }
       &8 {
-        margin-top: #{$space-8};
-        margin-bottom: #{$space-8};
+        margin-top: $space-8;
+        margin-bottom: $space-8;
       }
       &16 {
-        margin-top: #{$space-16};
-        margin-bottom: #{$space-16};
+        margin-top: $space-16;
+        margin-bottom: $space-16;
       }
       &24 {
-        margin-top: #{$space-24};
-        margin-bottom: #{$space-24};
+        margin-top: $space-24;
+        margin-bottom: $space-24;
       }
       &32 {
-        margin-top: #{$space-32};
-        margin-bottom: #{$space-32};
+        margin-top: $space-32;
+        margin-bottom: $space-32;
       }
       &40 {
-        margin-top: #{$space-40};
-        margin-bottom: #{$space-40};
+        margin-top: $space-40;
+        margin-bottom: $space-40;
       }
     }
-    &fl {
+    &fl- {
       &2 {
-        margin-top: #{$space-fluid-2};
-        margin-bottom: #{$space-fluid-2};
+        margin-top: $space-fluid-2;
+        margin-bottom: $space-fluid-2;
       }
       &4 {
-        margin-top: #{$space-fluid-4};
-        margin-bottom: #{$space-fluid-4};
+        margin-top: $space-fluid-4;
+        margin-bottom: $space-fluid-4;
       }
       &8 {
-        margin-top: #{$space-fluid-8};
-        margin-bottom: #{$space-fluid-8};
+        margin-top: $space-fluid-8;
+        margin-bottom: $space-fluid-8;
       }
       &12 {
-        margin-top: #{$space-fluid-12};
-        margin-bottom: #{$space-fluid-12};
+        margin-top: $space-fluid-12;
+        margin-bottom: $space-fluid-12;
       }
       &16 {
-        margin-top: #{$space-fluid-16};
-        margin-bottom: #{$space-fluid-16};
+        margin-top: $space-fluid-16;
+        margin-bottom: $space-fluid-16;
       }
       &20 {
-        margin-top: #{$space-fluid-20};
-        margin-bottom: #{$space-fluid-20};
+        margin-top: $space-fluid-20;
+        margin-bottom: $space-fluid-20;
       }
       &24 {
-        margin-top: #{$space-fluid-24};
-        margin-bottom: #{$space-fluid-24};
+        margin-top: $space-fluid-24;
+        margin-bottom: $space-fluid-24;
       }
       &32 {
-        margin-top: #{$space-fluid-32};
-        margin-bottom: #{$space-fluid-32};
+        margin-top: $space-fluid-32;
+        margin-bottom: $space-fluid-32;
       }
       &40 {
-        margin-top: #{$space-fluid-40};
-        margin-bottom: #{$space-fluid-40};
+        margin-top: $space-fluid-40;
+        margin-bottom: $space-fluid-40;
       }
       &48 {
-        margin-top: #{$space-fluid-48};
-        margin-bottom: #{$space-fluid-48};
+        margin-top: $space-fluid-48;
+        margin-bottom: $space-fluid-48;
       }
       &56 {
-        margin-top: #{$space-fluid-56};
-        margin-bottom: #{$space-fluid-56};
+        margin-top: $space-fluid-56;
+        margin-bottom: $space-fluid-56;
       }
       &64 {
-        margin-top: #{$space-fluid-64};
-        margin-bottom: #{$space-fluid-64};
+        margin-top: $space-fluid-64;
+        margin-bottom: $space-fluid-64;
       }
       &72 {
-        margin-top: #{$space-fluid-72};
-        margin-bottom: #{$space-fluid-72};
+        margin-top: $space-fluid-72;
+        margin-bottom: $space-fluid-72;
       }
       &80 {
-        margin-top: #{$space-fluid-80};
-        margin-bottom: #{$space-fluid-80};
+        margin-top: $space-fluid-80;
+        margin-bottom: $space-fluid-80;
       }
     }
   }
-}
-
-
-:root {
-  --space-0: #{$space-0};
-  --space-8: #{$space-8};
-  --space-16: #{$space-16};
-  --space-24: #{$space-24};
-  --space-32: #{$space-32};
-  --space-40: #{$space-40};
-
-  --space-fluid-2: #{$space-fluid-2};
-  --space-fluid-4: #{$space-fluid-4};
-  --space-fluid-8: #{$space-fluid-8};
-  --space-fluid-12: #{$space-fluid-12};
-  --space-fluid-16: #{$space-fluid-16};
-  --space-fluid-20: #{$space-fluid-20};
-  --space-fluid-24: #{$space-fluid-24};
-  --space-fluid-32: #{$space-fluid-32};
-  --space-fluid-40: #{$space-fluid-40};
-  --space-fluid-48: #{$space-fluid-48};
-  --space-fluid-56: #{$space-fluid-56};
-  --space-fluid-64: #{$space-fluid-64};
-  --space-fluid-72: #{$space-fluid-72};
-  --space-fluid-80: #{$space-fluid-80};
 }

@@ -1,6 +1,0 @@
-@use '../../dist/letsui.tokens.scss' as tokens;
-@use 'tokens' as token;
-
-$opacity-disabled: tokens.token('lui.opacity.disabled');
-$opacity-hidden: tokens.token('lui.opacity.hidden');
-$opacity-visible: tokens.token('lui.opacity.visible');

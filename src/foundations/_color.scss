@@ -1,148 +1,136 @@
-@use './color.tokens' as *;
+@use '../../dist/letsui.tokens.scss' as tokens;
+@use 'tokens' as token;
 
-@use './color.tokens' as *;
+$brand-1: tokens.token('lui.brand.color.1');
+$brand-2: tokens.token('lui.brand.color.2');
+$brand-3: tokens.token('lui.brand.color.3');
+$brand-4: tokens.token('lui.brand.color.4');
+$brand-5: tokens.token('lui.brand.color.5');
+$brand-6: tokens.token('lui.brand.color.6');
+$brand-7: tokens.token('lui.brand.color.7');
+$brand-8: tokens.token('lui.brand.color.8');
+$brand-9: tokens.token('lui.brand.color.9');
 
-:root {
-  // brand
-  --brand-1: #{$brand-1};
-  --brand-2: #{$brand-2};
-  --brand-3: #{$brand-3};
-  --brand-4: #{$brand-4};
-  --brand-5: #{$brand-5};
-  --brand-6: #{$brand-6};
-  --brand-7: #{$brand-7};
-  --brand-8: #{$brand-8};
-  --brand-9: #{$brand-9};
+$accent-bg-surface: tokens.token('lui.color.accent.background.surface');
+$accent-bg-container: tokens.token('lui.color.accent.background.container');
+$accent-border-divisor: tokens.token('lui.color.accent.border.divisor');
+$accent-border-stroke: tokens.token('lui.color.accent.border.stroke');
+$accent-text-heading: tokens.token('lui.color.accent.text.heading');
+$accent-text-body: tokens.token('lui.color.accent.text.body');
+$accent-icon-default: tokens.token('lui.color.accent.icon.default');
+$accent-icon-contrast: tokens.token('lui.color.accent.icon.contrast');
+$accent-link-default: tokens.token('lui.color.accent.link.default');
+$accent-link-visited: tokens.token('lui.color.accent.link.visited');
 
-  // accent
-  --accent-bg-surface: #{$accent-bg-surface};
-  --accent-bg-container: #{$accent-bg-container};
-  --accent-border-divisor: #{$accent-border-divisor};
-  --accent-border-stroke: #{$accent-border-stroke};
-  --accent-text-heading: #{$accent-text-heading};
-  --accent-text-body: #{$accent-text-body};
-  --accent-icon-default: #{$accent-icon-default};
-  --accent-icon-contrast: #{$accent-icon-contrast};
-  --accent-link-default: #{$accent-link-default};
-  --accent-link-visited: #{$accent-link-visited};
+$info-bg-surface: tokens.token('lui.color.info.background.surface');
+$info-bg-container: tokens.token('lui.color.info.background.container');
+$info-border-divisor: tokens.token('lui.color.info.border.divisor');
+$info-border-stroke: tokens.token('lui.color.info.border.stroke');
+$info-text-heading: tokens.token('lui.color.info.text.heading');
+$info-text-body: tokens.token('lui.color.info.text.body');
+$info-icon-default: tokens.token('lui.color.info.icon.default');
+$info-icon-contrast: tokens.token('lui.color.info.icon.contrast');
 
-  // info
-  --info-bg-surface: #{$info-bg-surface};
-  --info-bg-container: #{$info-bg-container};
-  --info-border-divisor: #{$info-border-divisor};
-  --info-border-stroke: #{$info-border-stroke};
-  --info-text-heading: #{$info-text-heading};
-  --info-text-body: #{$info-text-body};
-  --info-icon-default: #{$info-icon-default};
-  --info-icon-contrast: #{$info-icon-contrast};
+$danger-bg-surface: tokens.token('lui.color.danger.background.surface');
+$danger-bg-container: tokens.token('lui.color.danger.background.container');
+$danger-border-divisor: tokens.token('lui.color.danger.border.divisor');
+$danger-border-stroke: tokens.token('lui.color.danger.border.stroke');
+$danger-text-heading: tokens.token('lui.color.danger.text.heading');
+$danger-text-body: tokens.token('lui.color.danger.text.body');
+$danger-text-error: tokens.token('lui.color.danger.text.error');
+$danger-icon-default: tokens.token('lui.color.danger.icon.default');
+$danger-icon-contrast: tokens.token('lui.color.danger.icon.contrast');
 
-  // danger
-  --danger-bg-surface: #{$danger-bg-surface};
-  --danger-bg-container: #{$danger-bg-container};
-  --danger-border-divisor: #{$danger-border-divisor};
-  --danger-border-stroke: #{$danger-border-stroke};
-  --danger-text-heading: #{$danger-text-heading};
-  --danger-text-body: #{$danger-text-body};
-  --danger-text-error: #{$danger-text-error};
-  --danger-icon-default: #{$danger-icon-default};
-  --danger-icon-contrast: #{$danger-icon-contrast};
+$success-bg-surface: tokens.token('lui.color.success.background.surface');
+$success-bg-container: tokens.token('lui.color.success.background.container');
+$success-border-divisor: tokens.token('lui.color.success.border.divisor');
+$success-border-stroke: tokens.token('lui.color.success.border.stroke');
+$success-text-heading: tokens.token('lui.color.success.text.heading');
+$success-text-body: tokens.token('lui.color.success.text.body');
+$success-icon-default: tokens.token('lui.color.success.icon.default');
+$success-icon-contrast: tokens.token('lui.color.success.icon.contrast');
 
-  // success
-  --success-bg-surface: #{$success-bg-surface};
-  --success-bg-container: #{$success-bg-container};
-  --success-border-divisor: #{$success-border-divisor};
-  --success-border-stroke: #{$success-border-stroke};
-  --success-text-heading: #{$success-text-heading};
-  --success-text-body: #{$success-text-body};
-  --success-icon-default: #{$success-icon-default};
-  --success-icon-contrast: #{$success-icon-contrast};
+$caution-bg-surface: tokens.token('lui.color.caution.background.surface');
+$caution-bg-container: tokens.token('lui.color.caution.background.container');
+$caution-border-divisor: tokens.token('lui.color.caution.border.divisor');
+$caution-border-stroke: tokens.token('lui.color.caution.border.stroke');
+$caution-text-title: tokens.token('lui.color.caution.text.title');
+$caution-text-body: tokens.token('lui.color.caution.text.body');
+$caution-icon-default: tokens.token('lui.color.caution.icon.default');
+$caution-icon-contrast: tokens.token('lui.color.caution.icon.contrast');
 
-  // caution
-  --caution-bg-surface: #{$caution-bg-surface};
-  --caution-bg-container: #{$caution-bg-container};
-  --caution-border-divisor: #{$caution-border-divisor};
-  --caution-border-stroke: #{$caution-border-stroke};
-  --caution-text-title: #{$caution-text-title};
-  --caution-text-body: #{$caution-text-body};
-  --caution-icon-default: #{$caution-icon-default};
-  --caution-icon-contrast: #{$caution-icon-contrast};
+$neutral-light-bg-surface: tokens.token('lui.color.neutral.light.background.surface');
+$neutral-light-bg-container: tokens.token('lui.color.neutral.light.background.container');
+$neutral-light-border-divisor: tokens.token('lui.color.neutral.light.border.divisor');
+$neutral-light-border-stroke: tokens.token('lui.color.neutral.light.border.stroke');
+$neutral-light-text-heading: tokens.token('lui.color.neutral.light.text.heading');
+$neutral-light-text-body: tokens.token('lui.color.neutral.light.text.body');
+$neutral-light-icon-default: tokens.token('lui.color.neutral.light.icon.default');
 
-  // neutral light
-  --neutral-light-bg-surface: #{$neutral-light-bg-surface};
-  --neutral-light-bg-container: #{$neutral-light-bg-container};
-  --neutral-light-border-divisor: #{$neutral-light-border-divisor};
-  --neutral-light-border-stroke: #{$neutral-light-border-stroke};
-  --neutral-light-text-heading: #{$neutral-light-text-heading};
-  --neutral-light-text-body: #{$neutral-light-text-body};
-  --neutral-light-icon-default: #{$neutral-light-icon-default};
+$neutral-dark-bg-surface: tokens.token('lui.color.neutral.dark.background.surface');
+$neutral-dark-bg-container: tokens.token('lui.color.neutral.dark.background.container');
+$neutral-dark-border-divisor: tokens.token('lui.color.neutral.dark.border.divisor');
+$neutral-dark-border-stroke: tokens.token('lui.color.neutral.dark.border.stroke');
+$neutral-dark-text-heading: tokens.token('lui.color.neutral.dark.text.heading');
+$neutral-dark-text-body: tokens.token('lui.color.neutral.dark.text.body');
+$neutral-dark-icon-default: tokens.token('lui.color.neutral.dark.icon.default');
 
-  // neutral dark
-  --neutral-dark-bg-surface: #{$neutral-dark-bg-surface};
-  --neutral-dark-bg-container: #{$neutral-dark-bg-container};
-  --neutral-dark-border-divisor: #{$neutral-dark-border-divisor};
-  --neutral-dark-border-stroke: #{$neutral-dark-border-stroke};
-  --neutral-dark-text-heading: #{$neutral-dark-text-heading};
-  --neutral-dark-text-body: #{$neutral-dark-text-body};
-  --neutral-dark-icon-default: #{$neutral-dark-icon-default};
+$blue-1: tokens.token('lui.color.blue.1');
+$blue-2: tokens.token('lui.color.blue.2');
+$blue-3: tokens.token('lui.color.blue.3');
+$blue-4: tokens.token('lui.color.blue.4');
+$blue-5: tokens.token('lui.color.blue.5');
+$blue-6: tokens.token('lui.color.blue.6');
+$blue-7: tokens.token('lui.color.blue.7');
+$blue-8: tokens.token('lui.color.blue.8');
+$blue-9: tokens.token('lui.color.blue.9');
 
-  // palettes
-  --blue-1: #{$blue-1};
-  --blue-2: #{$blue-2};
-  --blue-3: #{$blue-3};
-  --blue-4: #{$blue-4};
-  --blue-5: #{$blue-5};
-  --blue-6: #{$blue-6};
-  --blue-7: #{$blue-7};
-  --blue-8: #{$blue-8};
-  --blue-9: #{$blue-9};
+$gray-1: tokens.token('lui.color.gray.1');
+$gray-2: tokens.token('lui.color.gray.2');
+$gray-3: tokens.token('lui.color.gray.3');
+$gray-4: tokens.token('lui.color.gray.4');
+$gray-5: tokens.token('lui.color.gray.5');
+$gray-6: tokens.token('lui.color.gray.6');
+$gray-7: tokens.token('lui.color.gray.7');
+$gray-8: tokens.token('lui.color.gray.8');
+$gray-9: tokens.token('lui.color.gray.9');
 
-  --gray-1: #{$gray-1};
-  --gray-2: #{$gray-2};
-  --gray-3: #{$gray-3};
-  --gray-4: #{$gray-4};
-  --gray-5: #{$gray-5};
-  --gray-6: #{$gray-6};
-  --gray-7: #{$gray-7};
-  --gray-8: #{$gray-8};
-  --gray-9: #{$gray-9};
+$green-1: tokens.token('lui.color.green.1');
+$green-2: tokens.token('lui.color.green.2');
+$green-3: tokens.token('lui.color.green.3');
+$green-4: tokens.token('lui.color.green.4');
+$green-5: tokens.token('lui.color.green.5');
+$green-6: tokens.token('lui.color.green.6');
+$green-7: tokens.token('lui.color.green.7');
+$green-8: tokens.token('lui.color.green.8');
+$green-9: tokens.token('lui.color.green.9');
 
-  --green-1: #{$green-1};
-  --green-2: #{$green-2};
-  --green-3: #{$green-3};
-  --green-4: #{$green-4};
-  --green-5: #{$green-5};
-  --green-6: #{$green-6};
-  --green-7: #{$green-7};
-  --green-8: #{$green-8};
-  --green-9: #{$green-9};
+$orange-1: tokens.token('lui.color.orange.1');
+$orange-2: tokens.token('lui.color.orange.2');
+$orange-3: tokens.token('lui.color.orange.3');
+$orange-4: tokens.token('lui.color.orange.4');
+$orange-5: tokens.token('lui.color.orange.5');
+$orange-6: tokens.token('lui.color.orange.6');
+$orange-7: tokens.token('lui.color.orange.7');
+$orange-8: tokens.token('lui.color.orange.8');
+$orange-9: tokens.token('lui.color.orange.9');
 
-  --orange-1: #{$orange-1};
-  --orange-2: #{$orange-2};
-  --orange-3: #{$orange-3};
-  --orange-4: #{$orange-4};
-  --orange-5: #{$orange-5};
-  --orange-6: #{$orange-6};
-  --orange-7: #{$orange-7};
-  --orange-8: #{$orange-8};
-  --orange-9: #{$orange-9};
+$red-1: tokens.token('lui.color.red.1');
+$red-2: tokens.token('lui.color.red.2');
+$red-3: tokens.token('lui.color.red.3');
+$red-4: tokens.token('lui.color.red.4');
+$red-5: tokens.token('lui.color.red.5');
+$red-6: tokens.token('lui.color.red.6');
+$red-7: tokens.token('lui.color.red.7');
+$red-8: tokens.token('lui.color.red.8');
+$red-9: tokens.token('lui.color.red.9');
 
-  --red-1: #{$red-1};
-  --red-2: #{$red-2};
-  --red-3: #{$red-3};
-  --red-4: #{$red-4};
-  --red-5: #{$red-5};
-  --red-6: #{$red-6};
-  --red-7: #{$red-7};
-  --red-8: #{$red-8};
-  --red-9: #{$red-9};
-
-  --violet-1: #{$violet-1};
-  --violet-2: #{$violet-2};
-  --violet-3: #{$violet-3};
-  --violet-4: #{$violet-4};
-  --violet-5: #{$violet-5};
-  --violet-6: #{$violet-6};
-  --violet-7: #{$violet-7};
-  --violet-8: #{$violet-8};
-  --violet-9: #{$violet-9};
-}
+$violet-1: tokens.token('lui.color.violet.1');
+$violet-2: tokens.token('lui.color.violet.2');
+$violet-3: tokens.token('lui.color.violet.3');
+$violet-4: tokens.token('lui.color.violet.4');
+$violet-5: tokens.token('lui.color.violet.5');
+$violet-6: tokens.token('lui.color.violet.6');
+$violet-7: tokens.token('lui.color.violet.7');
+$violet-8: tokens.token('lui.color.violet.8');
+$violet-9: tokens.token('lui.color.violet.9');

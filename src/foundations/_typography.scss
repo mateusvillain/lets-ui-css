@@ -1,39 +1,45 @@
-@use './typography.tokens' as *;
+@use '../../dist/letsui.tokens.scss' as tokens;
+@use 'tokens' as token;
 
-:root {
-  --font-body: #{$font-body};
-  --font-heading: #{$font-heading};
+// family
+$font-body: tokens.token('lui.brand.typography.font-family.body');
+$font-heading: tokens.token('lui.brand.typography.font-family.heading');
 
-  --text-1xs: #{$text-1xs};
-  --text-2xs: #{$text-2xs};
-  --text-3xs: #{$text-3xs};
-  --text-sm: #{$text-sm};
-  --text-md: #{$text-md};
-  --text-lg: #{$text-lg};
-  --text-1xl: #{$text-1xl};
-  --text-2xl: #{$text-2xl};
-  --text-3xl: #{$text-3xl};
+// size
+$text-1xs: tokens.token('lui.brand.typography.font-size.1xs');
+$text-2xs: tokens.token('lui.brand.typography.font-size.2xs');
+$text-3xs: tokens.token('lui.brand.typography.font-size.3xs');
+$text-sm: tokens.token('lui.brand.typography.font-size.sm');
+$text-md: tokens.token('lui.brand.typography.font-size.md');
+$text-lg: tokens.token('lui.brand.typography.font-size.lg');
+$text-1xl: tokens.token('lui.brand.typography.font-size.1xl');
+$text-2xl: tokens.token('lui.brand.typography.font-size.2xl');
+$text-3xl: tokens.token('lui.brand.typography.font-size.3xl');
 
-  --weight-regular: #{$weight-regular};
-  --weight-medium: #{$weight-medium};
-  --weight-semibold: #{$weight-semibold};
-  --weight-bold: #{$weight-bold};
+// weight
+$weight-regular: tokens.token('lui.typography.weight.regular');
+$weight-medium: tokens.token('lui.typography.weight.medium');
+$weight-semibold: tokens.token('lui.typography.weight.semibold');
+$weight-bold: tokens.token('lui.typography.weight.bold');
 
-  --leading-sm: #{$leading-sm};
-  --leading-md: #{$leading-md};
-  --leading-lg: #{$leading-lg};
+// line-height
+$leading-sm: tokens.token('lui.typography.line-height.sm');
+$leading-md: tokens.token('lui.typography.line-height.md');
+$leading-lg: tokens.token('lui.typography.line-height.lg');
 
-  --tracking-default: #{$tracking-default};
-  --tracking-tighter: #{$tracking-tighter};
-  --tracking-tightest: #{$tracking-tightest};
-  --tracking-wider: #{$tracking-wider};
-  --tracking-widest: #{$tracking-widest};
+// tracking
+$tracking-default: tokens.token('lui.typography.tracking.default');
+$tracking-tighter: tokens.token('lui.typography.tracking.tighter');
+$tracking-tightest: tokens.token('lui.typography.tracking.tightest');
+$tracking-wider: tokens.token('lui.typography.tracking.wider');
+$tracking-widest: tokens.token('lui.typography.tracking.widest');
 
-  --text-lowercase: #{$text-lowercase};
-  --text-uppercase: #{$text-uppercase};
-  --text-case-none: #{$text-case-none};
+// case
+$text-lowercase: tokens.token('lui.typography.case.lowercase');
+$text-uppercase: tokens.token('lui.typography.case.uppercase');
+$text-case-none: tokens.token('lui.typography.case.none');
 
-  --text-underline: #{$text-underline};
-  --text-line-through: #{$text-line-through};
-  --text-decoration-none: #{$text-decoration-none};
-}
+// decoration
+$text-underline: tokens.token('lui.typography.decoration.underline');
+$text-line-through: tokens.token('lui.typography.decoration.line-through');
+$text-decoration-none: tokens.token('lui.typography.decoration.none');
