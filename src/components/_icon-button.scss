@@ -2,6 +2,7 @@
 @use '../foundations/_color' as *;
 @use '../foundations/_spacing' as *;
 @use '../foundations/_opacity' as *;
+@use 'sass:map';
 
 .icon-button {
   position: relative;
@@ -73,7 +74,7 @@
 
   &:disabled {
     cursor: not-allowed;
-    opacity: #{$opacity-disabled};
+    opacity: map.get($opacity, disabled);
 
     &::before {
       opacity: 0;

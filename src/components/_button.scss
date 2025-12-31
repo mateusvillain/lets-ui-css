@@ -3,12 +3,13 @@
 @use '../foundations/_spacing' as *;
 @use '../foundations/_typography' as *;
 @use '../foundations/_opacity' as *;
+@use 'sass:map';
 
 button {
 	&.btn {
 		position: relative;
 		overflow: hidden;
-		font-weight: #{$weight-regular};
+		font-weight: map.get($weight, regular);
 		border: #{$space-0};
 		outline: #{$space-0};
 		background-color: transparent;
@@ -39,7 +40,7 @@ button {
 		}
 		&:disabled {
 			cursor: not-allowed;
-			opacity: #{$opacity-disabled};
+			opacity: map.get($opacity, disabled);
 			&::before {
 				background-color: #{$accent-bg-container};
 				filter: none;
