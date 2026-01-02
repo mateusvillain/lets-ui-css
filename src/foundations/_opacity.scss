@@ -1,18 +1,11 @@
-@use '../../dist/letsui.tokens.scss' as tokens;
-@use 'tokens' as token;
+@use './../../core/opacity/opacity.functions' as *;
 
-$opacity-disabled: tokens.token('lui.opacity.disabled');
-$opacity-hidden: tokens.token('lui.opacity.hidden');
-$opacity-visible: tokens.token('lui.opacity.visible');
+$opacity-states: hidden, disabled, visible;
 
 .opacity- {
-  &hidden {
-    opacity: $opacity-disabled;
-  }
-  &disabled {
-    opacity: $opacity-disabled;
-  }
-  &visible {
-    opacity: $opacity-visible;
+  @each $state in $opacity-states {
+    &#{$state} {
+      opacity: opacity($state);
+    }
   }
 }
