@@ -1,17 +1,17 @@
-@use '../foundations/_border' as *;
-@use '../foundations/_color' as *;
-@use '../foundations/_spacing' as *;
-@use '../foundations/_typography' as *;
-@use '../foundations/_opacity' as *;
 @use 'sass:map';
+@use '../../core/border/border.functions' as *;
+@use '../../core/color/color.functions' as *;
+@use '../../core/spacing/spacing.functions' as *;
+@use '../../core/typography/typography.functions' as *;
+@use '../../core/opacity/opacity.functions' as *;
 
 button {
 	&.btn {
 		position: relative;
 		overflow: hidden;
-		font-weight: map.get($weight, regular);
-		border: #{$space-0};
-		outline: #{$space-0};
+		font-weight: weight(regular);
+		border: fixed(0);
+		outline: fixed(0);
 		background-color: transparent;
 		transition: all 0.2s ease-in-out;
 		z-index: 0;
@@ -29,8 +29,8 @@ button {
 			}
 		}
 		&:active {
-			outline: #{$border-2} solid transparent;
-			outline-offset: #{$border-2};
+			outline: width(2) solid transparent;
+			outline-offset: width(2);
 			&::before {
 				filter: brightness(0.6);
 			}
@@ -40,49 +40,49 @@ button {
 		}
 		&:disabled {
 			cursor: not-allowed;
-			opacity: map.get($opacity, disabled);
+			opacity: opacity(disabled);
 			&::before {
-				background-color: #{$accent-bg-container};
+				background-color: bg(container, accent);
 				filter: none;
 			}
 		}
 	}
 	&.btn-lg {
-		padding: #{$space-16};
+		padding: fixed(16);
 		// font: $typography-scale-body-lg;
-		border-radius: #{$radius-lg};
+		border-radius: radius(lg);
 	}
 	&.btn-md {
-		padding: #{$space-8};
+		padding: fixed(8);
 		// font: $typography-scale-body-md;
-		border-radius: #{$radius-md};
+		border-radius: radius(md);
 	}
 	&.btn-primary {
-		color: #fff;
+		color: text(inverse);
 		&::before {
-			background-color: #{$accent-bg-container};
+			background-color: bg(container, accent);
 		}
 		&:focus {
 			box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44 / 0.32);
 		}
 	}
 	&.btn-secondary {
-		color: #{$neutral-dark-text-body};
+		color: text(body);
 		&::before {
-			background-color: #{$neutral-light-bg-container};
+			background-color: bg(container, neutral)
 		}
 		&:focus {
 			box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
 		}
 	}
 	&.btn-tertiary {
-		color: #{$neutral-light-text-body};
+		color: text(inverse);
 		&::before {
 			content: '';
 			position: absolute;
-			background-color: #{$neutral-dark-bg-surface};
+			background-color: bg(container, neutral);
 			inset: 0;
-			opacity: 0;
+			opacity: opacity(hidden);
 			transition: opacity 0.2s;
 			z-index: -1;
 		}
@@ -101,18 +101,18 @@ button {
 		}
 	}
 	&.btn-danger {
-		color: #{$neutral-light-text-body};
+		color: text(inverse);
 		&::before {
-			background-color: #{$danger-bg-container};
+			background-color: bg(container, danger);
 		}
 		&:focus {
 			box-shadow: 0 0 0 3px rgba(238, 67, 67, 0.3);
 		}
 	}
 	&.btn-success {
-		color: #{$neutral-light-text-body};
+		color: text(inverse);
 		&::before {
-			background-color: #{$success-bg-container};
+			background-color: bg(container, success);
 		}
 		&:focus {
 			box-shadow: 0 0 0 3px rgba(87, 238, 67, 0.3);

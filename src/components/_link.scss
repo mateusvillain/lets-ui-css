@@ -1,7 +1,7 @@
-@use '../foundations/_color' as *;
+@use '../../core/color/color.functions' as *;
 
 a.link {
-  color: #{$accent-link-default};
+  color: text(link);
   transition: filter 0.3s ease;
 
   &:hover {

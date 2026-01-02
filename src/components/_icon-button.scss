@@ -1,8 +1,8 @@
-@use '../foundations/_border' as *;
-@use '../foundations/_color' as *;
-@use '../foundations/_spacing' as *;
-@use '../foundations/_opacity' as *;
 @use 'sass:map';
+@use '../../core/border/border.functions' as *;
+@use '../../core/color/color.functions' as *;
+@use '../../core/spacing/spacing.functions' as *;
+@use '../../core/opacity/opacity.functions' as *;
 
 .icon-button {
   position: relative;
@@ -12,16 +12,16 @@
   align-items: center;
   background: transparent;
   border: none;
-  border-radius: #{$radius-md};
+  border-radius: radius(md);
   place-self: start;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   z-index: 0;
 
   &.lg {
-    max-width: #{$space-40} !important;
-    max-height: #{$space-40} !important;
-    padding: #{$space-8} !important;
+    max-width: fixed(40) !important;
+    max-height: fixed(40) !important;
+    padding: fixed(8) !important;
     > i {
       font-size: 1.5rem;
     }
@@ -31,28 +31,18 @@
     content: '';
     position: absolute;
     inset: 0;
-    opacity: 0;
+    opacity: opacity(hidden);
     transition: opacity 0.2s;
     z-index: -1;
   }
 
   &.light {
     &::before {
-      background-color: #{$neutral-dark-bg-surface};
+      background-color: bg(surface, neutral);
     }
 
     i::before {
-      color: #{$neutral-dark-bg-surface};
-    }
-  }
-
-  &.dark {
-    &::before {
-      background-color: #{$neutral-light-bg-surface};
-    }
-
-    i::before {
-      color: #{$neutral-light-bg-surface};
+      color: icon(neutral);
     }
   }
 
@@ -69,15 +59,15 @@
   }
 
   &:active:not(:disabled)::before, &:focus {
-    border-radius: #{$radius-lg};
+    border-radius: radius(lg);
   }
 
   &:disabled {
     cursor: not-allowed;
-    opacity: map.get($opacity, disabled);
+    opacity: opacity(disabled);
 
     &::before {
-      opacity: 0;
+      opacity: opacity(hidden);
       filter: none;
     }
   }

@@ -1,12 +1,12 @@
-@use '../foundations/_color' as *;
-@use '../foundations/_spacing' as *;
+@use '../../core/color/color.functions' as *;
+@use '../../core/spacing/spacing.functions' as *;
 
 .breadcrumb {
   display: flex;
   align-items: center;
   list-style: none;
-  padding: #{$space-0};
-  margin: #{$space-0};
+  padding: fixed(0);
+  margin: fixed(0);
 
   li {
     a {
@@ -15,8 +15,8 @@
 
     &::after {
       content: "/";
-      margin: #{$space-0} #{$space-8};
-      color: #{$neutral-light-text-body};
+      margin: fixed(0) fixed(8);
+      color: text(body);
     }
 
     &:last-child {
@@ -24,7 +24,7 @@
         content: "";
       }
 
-      color: #{$neutral-light-text-body};
+      color: text(body);
       cursor: default;
     }
   }
