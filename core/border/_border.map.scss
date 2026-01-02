@@ -1,0 +1,18 @@
+@use 'sass:map';
+@use '../../dist/letsui.tokens.scss' as *;
+
+$border: (
+  radius: (
+    1xs: token('lui.border.radius.1xs'),
+    sm: token('lui.border.radius.sm'),
+    md: token('lui.border.radius.md'),
+    lg: token('lui.border.radius.lg'),
+    circle: token('lui.border.radius.circle'),
+    none: token('lui.border.radius.none')
+  ),
+  width: (
+    0: token('lui.border.width.0'),
+    1: token('lui.border.width.1'),
+    2: token('lui.border.width.2')
+  )
+);
