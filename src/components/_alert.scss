@@ -1,0 +1,77 @@
+@use '../../core/border/border.functions' as *;
+@use '../../core/color/color.functions' as *;
+@use '../../core/spacing/spacing.functions' as *;
+@use '../../core/typography/typography.functions' as *;
+@use 'sass:map';
+
+.alert {
+  gap: fixed(16);
+  padding: fixed(16);
+  border-radius: radius(lg);
+  border-width: width(2);
+  border-style: solid;
+  background-color: bg(surface, neutral);
+
+  &.bc-caution {
+    border-color: stroke(caution);
+  }
+
+  &.bc-caution i.alert-icon {
+    color: icon(caution);
+  }
+
+  &.bc-danger {
+    border-color: stroke(danger);
+  }
+
+  &.bc-danger i.alert-icon {
+    color: icon(danger);
+  }
+
+  &.bc-info {
+    border-color: stroke(info);
+  }
+
+  &.bc-info i.alert-icon {
+    color: icon(info);
+  }
+
+  &.bc-success {
+    border-color: stroke(success);
+  }
+
+  &.bc-success i.alert-icon {
+    color: icon(success);
+  }
+}
+
+.alert-content, .alert-actions {
+  display: flex;
+}
+
+.alert-content {
+  gap: fixed(16);
+}
+
+.alert-text {
+  margin-bottom: fixed(24);
+  width: 100%;
+
+  p {
+    &:first-child {
+      margin-bottom: fluid(2);
+    }
+
+    &:first-of-type {
+      font-weight: weight(bold) !important;
+    }
+  }
+}
+
+.alert-actions {
+  justify-content: flex-end;
+
+  button:first-child {
+    margin-right: fixed(16);
+  }
+}
