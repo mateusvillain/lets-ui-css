@@ -1,0 +1,8 @@
+@use 'sass:map';
+@use '../../dist/letsui.tokens.scss' as *;
+
+$opacity: (
+  disabled: token('lui.opacity.disabled'),
+  hidden: token('lui.opacity.hidden'),
+  visible: token('lui.opacity.visible')
+);
