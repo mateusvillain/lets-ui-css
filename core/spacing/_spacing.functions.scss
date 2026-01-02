@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "./spacing.map" as space;
+
+@function fixed($size) {
+  $value: map.get(space.$space, fixed, $size);
+
+  @if $value == null {
+    @error 'Invalid fixed spacing: "#{$size}"';
+  }
+
+  @return $value;
+}
+
+@function fluid($size) {
+  $value: map.get(space.$space, fluid, $size);
+
+  @if $value == null {
+    @error 'Invalid fluid spacing: "#{$size}"';
+  }
+
+  @return $value;
+}

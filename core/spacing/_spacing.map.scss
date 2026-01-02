@@ -1,0 +1,29 @@
+@use 'sass:map';
+@use '../../dist/letsui.tokens.scss' as *;
+
+$space: (
+  fixed: (
+    0: token('lui.spacing.fixed.0'),
+    8: token('lui.spacing.fixed.8'),
+    16: token('lui.spacing.fixed.16'),
+    24: token('lui.spacing.fixed.24'),
+    32: token('lui.spacing.fixed.32'),
+    40: token('lui.spacing.fixed.40')
+  ),
+  fluid: (
+    2: token('lui.spacing.fluid.2'),
+    4: token('lui.spacing.fluid.4'),
+    8: token('lui.spacing.fluid.8'),
+    12: token('lui.spacing.fluid.12'),
+    16: token('lui.spacing.fluid.16'),
+    20: token('lui.spacing.fluid.20'),
+    24: token('lui.spacing.fluid.24'),
+    32: token('lui.spacing.fluid.32'),
+    40: token('lui.spacing.fluid.40'),
+    48: token('lui.spacing.fluid.48'),
+    56: token('lui.spacing.fluid.56'),
+    64: token('lui.spacing.fluid.64'),
+    72: token('lui.spacing.fluid.72'),
+    80: token('lui.spacing.fluid.80')
+  )
+)
