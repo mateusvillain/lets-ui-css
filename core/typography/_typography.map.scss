@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use '../../dist/letsui.tokens.scss' as *;
+
+$typography: (
+  font: (
+    heading: token('lui.brand.typography.font-family.heading'),
+    body: token('lui.brand.typography.font-family.body')
+  ),
+
+  weight: (
+    regular: token('lui.typography.weight.regular'),
+    medium: token('lui.typography.weight.medium'),
+    semibold: token('lui.typography.weight.semibold'),
+    bold: token('lui.typography.weight.bold')
+  ),
+
+  case: (
+    none: token('lui.typography.case.none'),
+    lowercase: token('lui.typography.case.lowercase'),
+    uppercase: token('lui.typography.case.uppercase')
+  ),
+
+  decoration: (
+    none: token('lui.typography.decoration.none'),
+    underline: token('lui.typography.decoration.underline'),
+    line-through: token('lui.typography.decoration.line-through')
+  )
+);

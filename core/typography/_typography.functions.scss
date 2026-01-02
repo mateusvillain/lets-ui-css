@@ -1,0 +1,42 @@
+@use "sass:map";
+@use "./typography.map" as text;
+
+@function font($font) {
+  $value: map.get(text.$typography, font, $font);
+
+  @if $value == null {
+    @error 'Invalid font-family: "#{$font}"';
+  }
+
+  @return $value;
+}
+
+@function weight($weight) {
+  $value: map.get(text.$typography, weight, $weight);
+
+  @if $value == null {
+    @error 'Invalid font-weight: "#{$weight}"';
+  }
+
+  @return $value;
+}
+
+@function case($case) {
+  $value: map.get(text.$typography, case, $case);
+
+  @if $value == null {
+    @error 'Invalid text-case: "#{$case}"';
+  }
+
+  @return $value;
+}
+
+@function decoration($decoration) {
+  $value: map.get(text.$typography, decoration, $decoration);
+
+  @if $value == null {
+    @error 'Invalid text-decoration: "#{$decoration}"';
+  }
+
+  @return $value;
+}
