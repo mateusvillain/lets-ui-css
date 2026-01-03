@@ -1,7 +1,17 @@
-@use '../../dist/letsui.tokens.scss' as tokens;
-@use 'tokens' as token;
+@use '../../dist/letsui.tokens.scss' as *;
+@use 'sass:map';
 
-$elevation-base: tokens.token('lui.elevation.base');
-$elevation-hovered: tokens.token('lui.elevation.hovered');
-$elevation-floating: tokens.token('lui.elevation.floating');
-$elevation-overlay: tokens.token('lui.elevation.overlay');
+$elevation: (
+    base: token('lui.elevation.base'),
+    hovered: token('lui.elevation.hovered'),
+    floating: token('lui.elevation.floating'),
+    overlay: token('lui.elevation.overlay')
+);
+
+@function elevation($key) {
+  @return map.get($elevation, $key);
+}
+
+.base {
+    box-shadow: elevation(base);
+}
