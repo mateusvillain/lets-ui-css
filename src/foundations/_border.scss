@@ -1,51 +1,19 @@
-@use '../../dist/letsui.tokens.scss' as tokens;
-@use 'tokens' as token;
+@use './../../core/border/border.functions' as *;
 
-$radius-1xs: tokens.token('lui.border.radius.1xs');
-$radius-sm: tokens.token('lui.border.radius.sm');
-$radius-md: tokens.token('lui.border.radius.md');
-$radius-lg: tokens.token('lui.border.radius.lg');
-$radius-circle: tokens.token('lui.border.radius.circle');
-$radius-none: tokens.token('lui.border.radius.none');
+$radius-values: 1xs, sm, md, lg, circle, none;
 
-$border-0: tokens.token('lui.border.width.0');
-$border-1: tokens.token('lui.border.width.1');
-$border-2: tokens.token('lui.border.width.2');
-
-$brand-radius-1xs: tokens.token('lui.brand.border.radius.1xs');
-$brand-radius-sm: tokens.token('lui.brand.border.radius.sm');
-$brand-radius-md: tokens.token('lui.brand.border.radius.md');
-$brand-radius-lg: tokens.token('lui.brand.border.radius.lg');
-
-.radius-{
-  &1xs {
-    border-radius: $radius-1xs;
-  }
-  &sm {
-    border-radius: $radius-sm;
-  }
-  &md {
-    border-radius: $radius-md;
-  }
-  &lg {
-    border-radius: $radius-lg;
-  }
-  &circle {
-    border-radius: $radius-circle;
-  }
-  &none {
-    border-radius: $radius-none;
+.radius- {
+  @each $border-radius in $radius-values {
+    &#{$border-radius} {
+      border-radius: radius($border-radius);
+    }
   }
 }
 
-.border-{
-  &0 {
-    border-width: $border-0;
-  }
-  &1 {
-    border-width: $border-1;
-  }
-  &2 {
-    border-width: $border-2;
+.border- {
+  @for $i from 0 through 2 {
+    &#{$i} {
+      border-width: width($i);
+    }
   }
 }
