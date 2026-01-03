@@ -313,7 +313,7 @@
             "fontFamily": "{lui.brand.typography.font-family.heading}",
             "fontSize": { "value": 16, "unit": "px" },
             "fontWeight": "{lui.brand.typography.weight.display}",
-            "lineHeight": "{lui.typography.line-height.md}",
+            "lineHeight": "{lui.brand.typography.line-height.heading}",
             "letterSpacing": "{lui.typography.tracking.default}"
           }
         },
@@ -322,7 +322,7 @@
             "fontFamily": "{lui.brand.typography.font-family.heading}",
             "fontSize": { "value": 16, "unit": "px" },
             "fontWeight": "{lui.brand.typography.weight.title}",
-            "lineHeight": "{lui.typography.line-height.md}",
+            "lineHeight": "{lui.brand.typography.line-height.heading}",
             "letterSpacing": "{lui.typography.tracking.default}"
           }
         },
@@ -331,7 +331,7 @@
             "fontFamily": "{lui.brand.typography.font-family.heading}",
             "fontSize": { "value": 16, "unit": "px" },
             "fontWeight": "{lui.brand.typography.weight.headline}",
-            "lineHeight": "{lui.typography.line-height.md}",
+            "lineHeight": "{lui.brand.typography.line-height.heading}",
             "letterSpacing": "{lui.typography.tracking.default}"
           }
         },
@@ -340,7 +340,7 @@
             "fontFamily": "{lui.brand.typography.font-family.heading}",
             "fontSize": { "value": 16, "unit": "px" },
             "fontWeight": "{lui.brand.typography.weight.subtitle}",
-            "lineHeight": "{lui.typography.line-height.md}",
+            "lineHeight": "{lui.brand.typography.line-height.heading}",
             "letterSpacing": "{lui.typography.tracking.default}"
           }
         },
@@ -349,7 +349,7 @@
             "fontFamily": "{lui.brand.typography.font-family.heading}",
             "fontSize": { "value": 16, "unit": "px" },
             "fontWeight": "{lui.brand.typography.weight.block-title}",
-            "lineHeight": "{lui.typography.line-height.md}",
+            "lineHeight": "{lui.brand.typography.line-height.heading}",
             "letterSpacing": "{lui.typography.tracking.default}"
           }
         },
@@ -358,7 +358,7 @@
             "fontFamily": "{lui.brand.typography.font-family.heading}",
             "fontSize": { "value": 16, "unit": "px" },
             "fontWeight": "{lui.brand.typography.weight.subheadline}",
-            "lineHeight": "{lui.typography.line-height.md}",
+            "lineHeight": "{lui.brand.typography.line-height.heading}",
             "letterSpacing": "{lui.typography.tracking.default}"
           }
         },
@@ -367,7 +367,7 @@
             "fontFamily": "{lui.brand.typography.font-family.heading}",
             "fontSize": { "value": 16, "unit": "px" },
             "fontWeight": "{lui.brand.typography.weight.overtitle}",
-            "lineHeight": "{lui.typography.line-height.md}",
+            "lineHeight": "{lui.brand.typography.line-height.heading}",
             "letterSpacing": "{lui.typography.tracking.default}",
             "textCase": "{lui.typography.case.uppercase}"
           }
@@ -378,7 +378,7 @@
               "fontFamily": "{lui.brand.typography.font-family.body}",
               "fontSize": { "value": 16, "unit": "px" },
               "fontWeight": "{lui.typography.weight.regular}",
-              "lineHeight": "{lui.typography.line-height.lg}",
+              "lineHeight": "{lui.brand.typography.line-height.body}",
               "letterSpacing": "{lui.typography.tracking.default}"
             }
           },
@@ -387,7 +387,7 @@
               "fontFamily": "{lui.brand.typography.font-family.body}",
               "fontSize": { "value": 16, "unit": "px" },
               "fontWeight": "{lui.typography.weight.regular}",
-              "lineHeight": "{lui.typography.line-height.lg}",
+              "lineHeight": "{lui.brand.typography.line-height.body}",
               "letterSpacing": "{lui.typography.tracking.default}"
             }
           },
@@ -396,7 +396,7 @@
               "fontFamily": "{lui.brand.typography.font-family.body}",
               "fontSize": { "value": 16, "unit": "px" },
               "fontWeight": "{lui.typography.weight.regular}",
-              "lineHeight": "{lui.typography.line-height.lg}",
+              "lineHeight": "{lui.brand.typography.line-height.body}",
               "letterSpacing": "{lui.typography.tracking.default}"
             }
           }
