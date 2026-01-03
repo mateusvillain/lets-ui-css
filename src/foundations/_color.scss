@@ -1,54 +1,21 @@
+@use 'sass:map';
 @use '../../dist/letsui.tokens.scss' as *;
-@use '../../core/color/color.functions' as *;
+// @use '../../core/color/color.functions' as *;
+@use '../../core/color/color.map' as *;
 
-$primitive-colors: blue, gray, green, orange, red, violet;
-
-@each $colors in $primitive-colors {
-  .#{"#{$colors}"}- {
-    @for $i from 1 through 9 {
-      &#{$i} {
-        color: color($colors, $i)
-      }
+@each $group, $scales in map.get($color, primitive) {
+  @each $step, $value in $scales {
+    .#{"#{$group}"}-#{$step} {
+      // color: $value;
+      color: color($group, $step);
     }
   }
 }
 
-// $accent-bg-surface: token('lui.color.accent.background.surface');
-// $accent-bg-container: token('lui.color.accent.background.container');
-// $accent-border-stroke: token('lui.color.accent.border.stroke');
-// $accent-icon-default: token('lui.color.accent.icon.default');
-// $accent-link-default: token('lui.color.accent.link.default');
-// $accent-link-visited: token('lui.color.accent.link.visited');
-
-// $info-bg-surface: token('lui.color.info.background.surface');
-// $info-bg-container: token('lui.color.info.background.container');
-// $info-border-stroke: token('lui.color.info.border.stroke');
-// $info-icon-default: token('lui.color.info.icon.default');
-
-// $danger-bg-surface: token('lui.color.danger.background.surface');
-// $danger-bg-container: token('lui.color.danger.background.container');
-// $danger-border-stroke: token('lui.color.danger.border.stroke');
-// $danger-text-error: token('lui.color.danger.text.error');
-// $danger-icon-default: token('lui.color.danger.icon.default');
-
-// $success-bg-surface: token('lui.color.success.background.surface');
-// $success-bg-container: token('lui.color.success.background.container');
-// $success-border-stroke: token('lui.color.success.border.stroke');
-// $success-icon-default: token('lui.color.success.icon.default');
-
-// $caution-bg-surface: token('lui.color.caution.background.surface');
-// $caution-bg-container: token('lui.color.caution.background.container');
-// $caution-border-stroke: token('lui.color.caution.border.stroke');
-// $caution-icon-default: token('lui.color.caution.icon.default');
-
-// $neutral-bg-surface: token('lui.color.neutral.background.surface');
-// $neutral-bg-container: token('lui.color.neutral.background.container');
-// $neutral-border-stroke: token('lui.color.neutral.border.stroke');
-// $neutral-icon-default: token('lui.color.neutral.icon.default');
-
-// $neutral-dark-bg-container: token('lui.color.neutral.background.container');
-// $neutral-dark-border-divisor: token('lui.color.neutral.border.divisor');
-// $neutral-dark-border-stroke: token('lui.color.neutral.border.stroke');
-// $neutral-dark-text-heading: token('lui.color.neutral.text.heading');
-// $neutral-dark-text-body: token('lui.color.neutral.text.body');
-// $neutral-dark-icon-default: token('lui.color.neutral.icon.default');
+@each $category, $property in map.get($color, semantic, bg) {
+  @each $role, $value in $property {
+    .bg-#{#{$category}-#{$role}} {
+      background-color: #{$value};
+    }
+  }
+}
