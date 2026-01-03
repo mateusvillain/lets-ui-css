@@ -1,9 +1,9 @@
+@use 'sass:map';
 @use './../../core/border/border.functions' as *;
-
-$radius-values: 1xs, sm, md, lg, circle, none;
+@use './../../core/border/border.map' as *;
 
 .radius- {
-  @each $border-radius in $radius-values {
+  @each $border-radius, $value in map.get($border, radius) {
     &#{$border-radius} {
       border-radius: radius($border-radius);
     }
