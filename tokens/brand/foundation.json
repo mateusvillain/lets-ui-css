@@ -77,6 +77,15 @@
             "$value": "clamp(2.245rem, 1.6579rem + 2.9357vw, 4.3rem)"
           }
         },
+        "line-height": {
+          "$type": "number",
+          "heading": {
+            "$value": 1.2
+          },
+          "body": {
+            "$value": 1.5
+          }
+        },
         "weight": {
           "$type": "fontWeight",
           "display": {
