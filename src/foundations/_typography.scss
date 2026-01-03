@@ -1,45 +1,58 @@
-@use '../../dist/letsui.tokens.scss' as tokens;
-@use 'tokens' as token;
+@use 'sass:map';
+@use "sass:list";
+@use '../../dist/letsui.tokens.scss' as *;
+@use '../../core/typography/typography.functions' as *;
 
-// family
-$font-body: tokens.token('lui.brand.typography.font-family.body');
-$font-heading: tokens.token('lui.brand.typography.font-family.heading');
+$type-scales: (
+  display: (
+    heading, 3xl, regular, none
+  ),
+  title: (
+    heading, 2xl, bold, none
+  ),
+  headline: (
+    heading, 1xl, semibold, none
+  ),
+  block-title: (
+    heading, md, medium, none
+  ),
+  subtitle: (
+    heading, lg, regular, none
+  ),
+  subheadline: (
+    heading, sm, regular, none
+  ),
+  overtitle: (
+    heading, 3xs, medium, uppercase
+  ),
+  body-lg: (
+    body, 1xs, regular, none
+  ),
+  body-md: (
+    body, 2xs, regular, none
+  ),
+  body-sm: (
+    body, 3xs, regular, none
+  )
+);
 
-// size
-$text-1xs: tokens.token('lui.brand.typography.font-size.1xs');
-$text-2xs: tokens.token('lui.brand.typography.font-size.2xs');
-$text-3xs: tokens.token('lui.brand.typography.font-size.3xs');
-$text-sm: tokens.token('lui.brand.typography.font-size.sm');
-$text-md: tokens.token('lui.brand.typography.font-size.md');
-$text-lg: tokens.token('lui.brand.typography.font-size.lg');
-$text-1xl: tokens.token('lui.brand.typography.font-size.1xl');
-$text-2xl: tokens.token('lui.brand.typography.font-size.2xl');
-$text-3xl: tokens.token('lui.brand.typography.font-size.3xl');
+$font-weights: regular, medium, semibold, bold;
 
-// weight
-$weight-regular: tokens.token('lui.typography.weight.regular');
-$weight-medium: tokens.token('lui.typography.weight.medium');
-$weight-semibold: tokens.token('lui.typography.weight.semibold');
-$weight-bold: tokens.token('lui.typography.weight.bold');
+@mixin font-scales($family, $size, $weight, $case) {
+  font: weight($weight) size($size)/line-height($family) font($family);
+  text-transform: case($case);
+}
 
-// line-height
-$leading-sm: tokens.token('lui.typography.line-height.sm');
-$leading-md: tokens.token('lui.typography.line-height.md');
-$leading-lg: tokens.token('lui.typography.line-height.lg');
+@each $name, $values in $type-scales {
+  .#{$name} {
+    @include font-scales(list.nth($values, 1), list.nth($values, 2), list.nth($values, 3), list.nth($values, 4));
+  }
+}
 
-// tracking
-$tracking-default: tokens.token('lui.typography.tracking.default');
-$tracking-tighter: tokens.token('lui.typography.tracking.tighter');
-$tracking-tightest: tokens.token('lui.typography.tracking.tightest');
-$tracking-wider: tokens.token('lui.typography.tracking.wider');
-$tracking-widest: tokens.token('lui.typography.tracking.widest');
-
-// case
-$text-lowercase: tokens.token('lui.typography.case.lowercase');
-$text-uppercase: tokens.token('lui.typography.case.uppercase');
-$text-case-none: tokens.token('lui.typography.case.none');
-
-// decoration
-$text-underline: tokens.token('lui.typography.decoration.underline');
-$text-line-through: tokens.token('lui.typography.decoration.line-through');
-$text-decoration-none: tokens.token('lui.typography.decoration.none');
+.text- {
+  @each $weights in $font-weights {
+    &#{$weights} {
+      font-weight: weight($weights);
+    }
+  }
+}
