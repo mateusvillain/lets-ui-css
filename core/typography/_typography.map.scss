@@ -24,5 +24,22 @@ $typography: (
     none: token('lui.typography.decoration.none'),
     underline: token('lui.typography.decoration.underline'),
     line-through: token('lui.typography.decoration.line-through')
+  ),
+
+  size: (
+    3xl: token('lui.brand.typography.font-size.3xl'),
+    2xl: token('lui.brand.typography.font-size.2xl'),
+    1xl: token('lui.brand.typography.font-size.1xl'),
+    lg: token('lui.brand.typography.font-size.lg'),
+    md: token('lui.brand.typography.font-size.md'),
+    sm: token('lui.brand.typography.font-size.sm'),
+    1xs: token('lui.brand.typography.font-size.1xs'),
+    2xs: token('lui.brand.typography.font-size.2xs'),
+    3xs: token('lui.brand.typography.font-size.3xs')
+  ),
+
+  line-height: (
+    heading: token('lui.brand.typography.line-height.heading'),
+    body: token('lui.brand.typography.line-height.body')
   )
 );

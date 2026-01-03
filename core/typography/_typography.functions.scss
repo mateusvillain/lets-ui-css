@@ -11,6 +11,16 @@
   @return $value;
 }
 
+@function line-height($line-height) {
+  $value: map.get(text.$typography, line-height, $line-height);
+
+  @if $value == null {
+    @error 'Invalid line-height: "#{$line-height}"';
+  }
+
+  @return $value;
+}
+
 @function weight($weight) {
   $value: map.get(text.$typography, weight, $weight);
 
@@ -36,6 +46,16 @@
 
   @if $value == null {
     @error 'Invalid text-decoration: "#{$decoration}"';
+  }
+
+  @return $value;
+}
+
+@function size($size) {
+  $value: map.get(text.$typography, size, $size);
+
+  @if $value == null {
+    @error 'Invalid font-size: "#{$size}"';
   }
 
   @return $value;
