@@ -1,9 +1,8 @@
 @use './../../core/opacity/opacity.functions' as *;
-
-$opacity-states: hidden, disabled, visible;
+@use './../../core/opacity/opacity.map' as *;
 
 .opacity- {
-  @each $state in $opacity-states {
+  @each $state, $value in $opacity {
     &#{$state} {
       opacity: opacity($state);
     }
