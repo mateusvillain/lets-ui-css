@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "./elevation.map" as elevation;
+
+@function elevation($layer) {
+  $value: map.get(elevation.$elevation, $layer);
+
+  @if $value == null {
+    @error 'Invalid elevation: "#{$layer}"';
+  }
+
+  @return $value;
+}
