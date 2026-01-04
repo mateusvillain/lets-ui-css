@@ -1,6 +1,0 @@
-@use "sass:map";
-@use "../../dist/letsui.tokens.scss" as raw;
-
-@function token($name) {
-  @return map.get(raw.$token-values, $name);
-}
