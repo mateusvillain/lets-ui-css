@@ -1,8 +1,4 @@
-@use 'sass:map';
-@use '../../core/border/border.functions' as *;
-@use '../../core/color/color.functions' as *;
-@use '../../core/spacing/spacing.functions' as *;
-@use '../../core/opacity/opacity.functions' as *;
+@use '../utilities/functions' as *;
 
 .icon-button {
   position: relative;

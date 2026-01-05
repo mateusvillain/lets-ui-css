@@ -1,8 +1,4 @@
-@use '../../core/border/border.functions' as *;
-@use '../../core/color/color.functions' as *;
-@use '../../core/spacing/spacing.functions' as *;
-@use '../../core/typography/typography.functions' as *;
-@use 'sass:map';
+@use '../utilities/functions' as *;
 
 .alert {
   gap: fixed(16);

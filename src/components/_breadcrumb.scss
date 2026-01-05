@@ -1,5 +1,4 @@
-@use '../../core/color/color.functions' as *;
-@use '../../core/spacing/spacing.functions' as *;
+@use '../utilities/functions' as *;
 
 .breadcrumb {
   display: flex;
