@@ -1,0 +1,20 @@
+@use '../../dist/letsui.tokens.scss' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/tokens.map' as *;
+
+@each $name, $value in $breakpoint {
+  .show-#{$name} {
+    display: none;
+
+    @media (min-width: $value) {
+      display: block;
+    }
+  }
+  .hide-#{$name} {
+    display: block;
+
+    @media (min-width: $value) {
+      display: none;
+    }
+  }
+}
