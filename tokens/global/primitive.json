@@ -164,29 +164,6 @@
             "$value": "line-through"
           }
       }
-    },
-    "grid": {
-      "column": {
-        "$type": "number",
-        "lg": {
-          "$value": 12
-        },
-        "md": {
-          "$value": 8
-        },
-        "sm": {
-          "$value": 4
-        }
-      },
-      "breakpoint": {
-        "$type": "dimension",
-        "lg": {
-          "$value": { "value": 1280, "unit": "px" }
-        },
-        "md": {
-          "$value": { "value": 720, "unit": "px" }
-        }
-      }
     }
   }
 }
