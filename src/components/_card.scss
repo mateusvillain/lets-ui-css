@@ -1,0 +1,48 @@
+@use 'sass:map';
+@use '../utilities/functions' as *;
+
+.card {
+  background-color: bg(surface, neutral);
+  border-radius: radius(lg);
+  overflow: hidden;
+  &-cover {
+    & img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &-body {
+    padding: fixed(24);
+    display: flex;
+    flex-direction: column;
+    gap: fixed(8);
+    > {
+      .card-actions {
+        margin-top: fixed(16);
+        display: flex;
+        flex-direction: row-reverse;
+        gap: fixed(16);
+      }
+    }
+  }
+  &-cover,
+  &-cover {
+    > img {
+      max-height: 240px;
+    }
+  }
+  &-border {
+    border: width(1) solid stroke(neutral);
+  }
+}
+
+// .card-elevation {
+//   box-shadow: $lui-elevation-base
+// }
+
+// .card-interaction {
+//   transition: all 0.2s ease-in-out;
+//   &:hover {
+//     box-shadow: $lui-elevation-hovered
+//   }
+// }
