@@ -112,7 +112,7 @@
 }
 
 @function elevation($layer) {
-  $value: map.get(elevation.$elevation, $layer);
+  $value: map.get(tokens.$elevation, $layer);
 
   @if $value == null {
     @error 'Invalid elevation: "#{$layer}"';
