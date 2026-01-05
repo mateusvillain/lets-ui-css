@@ -1,0 +1,113 @@
+$flex-display: (
+  flex: flex,
+  inline-flex: inline-flex
+);
+
+@each $class, $value in $flex-display {
+  .#{$class} {
+    display: $value;
+  }
+}
+
+$flex-direction: (
+  row: row,
+  row-reverse: row-reverse,
+  col: column,
+  col-reverse: column-reverse
+);
+
+@each $name, $value in $flex-direction {
+  .flex-#{$name} {
+    flex-direction: $value;
+  }
+}
+
+$flex-wrap: (
+  wrap: wrap,
+  nowrap: nowrap,
+  wrap-reverse: wrap-reverse
+);
+
+@each $name, $value in $flex-wrap {
+  .flex-#{$name} {
+    flex-wrap: $value;
+  }
+}
+
+$justify: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly
+);
+
+@each $name, $value in $justify {
+  .justify-#{$name} {
+    justify-content: $value;
+  }
+}
+
+$items: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  stretch: stretch,
+  baseline: baseline
+);
+
+@each $name, $value in $items {
+  .items-#{$name} {
+    align-items: $value;
+  }
+}
+
+$content: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  between: space-between,
+  around: space-around
+);
+
+@each $name, $value in $content {
+  .content-#{$name} {
+    align-content: $value;
+  }
+}
+
+$self: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  stretch: stretch
+);
+
+@each $name, $value in $self {
+  .self-#{$name} {
+    align-self: $value;
+  }
+}
+
+$grow: (
+  0: 0,
+  1: 1
+);
+
+@each $name, $value in $grow {
+  .flex-grow-#{$name} {
+    flex-grow: $value;
+  }
+}
+
+$shrink: (
+  0: 0,
+  1: 1
+);
+
+@each $name, $value in $shrink {
+  .flex-shrink-#{$name} {
+    flex-shrink: $value;
+  }
+}
