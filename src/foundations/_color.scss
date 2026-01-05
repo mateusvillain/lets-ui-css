@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use '../../dist/letsui.tokens.scss' as *;
-@use '../../core/color/color.functions' as *;
-@use '../../core/color/color.map' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/tokens.map' as *;
 
 @each $group, $scales in map.get($color, primitive) {
   @each $step, $value in $scales {

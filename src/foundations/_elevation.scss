@@ -1,6 +1,5 @@
-@use './../../core/elevation/elevation.functions' as *;
-@use './../../core/elevation/elevation.map' as *;
-@use 'sass:map';
+@use './../utilities/functions' as *;
+@use './../utilities/tokens.map' as *;
 
 .elevation- {
   @each $layers, $value in $elevation {

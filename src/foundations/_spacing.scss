@@ -1,5 +1,5 @@
 @use "sass:meta";
-@use '../../core/spacing/spacing.functions' as *;
+@use '../utilities/functions' as *;
 
 $spacing-fixed: (0, 8, 16, 24, 32, 40);
 $spacing-fluid: (2, 4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 72, 80);

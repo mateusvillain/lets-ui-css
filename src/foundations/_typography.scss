@@ -1,7 +1,6 @@
-@use 'sass:map';
 @use "sass:list";
 @use '../../dist/letsui.tokens.scss' as *;
-@use '../../core/typography/typography.functions' as *;
+@use '../utilities/functions' as *;
 
 $type-scales: (
   display: (

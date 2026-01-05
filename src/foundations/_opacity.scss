@@ -1,5 +1,5 @@
-@use './../../core/opacity/opacity.functions' as *;
-@use './../../core/opacity/opacity.map' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/tokens.map' as *;
 
 .opacity- {
   @each $state, $value in $opacity {
