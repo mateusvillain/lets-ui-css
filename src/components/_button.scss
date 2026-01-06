@@ -1,6 +1,6 @@
 @use "sass:list";
 @use '../utilities/functions' as *;
-@use '../foundations/typography' as *;
+@use '../utilities/mixins' as *;
 
 button {
 	&.btn {
