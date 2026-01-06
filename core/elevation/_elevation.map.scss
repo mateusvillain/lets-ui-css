@@ -1,9 +1,0 @@
-@use 'sass:map';
-@use '../../dist/letsui.tokens.scss' as *;
-
-$elevation: (
-  base: token('lui.elevation.base'),
-  hovered: token('lui.elevation.hovered'),
-  floating: token('lui.elevation.floating'),
-  overlay: token('lui.elevation.overlay')
-);
