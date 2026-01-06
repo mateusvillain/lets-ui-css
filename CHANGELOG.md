@@ -1,3 +1,10 @@
+## 0.13.1
+
+### Changed
+- Ajustado o mixin `font` nos componentes `Tag` e nos componentes de formulário.
+- Removido o map de `scales` do arquivo `typography.scss` e movido para dentro de `tokens.map`.
+- Reduzida a altura da `navbar` conforme o tamanho do `header`.
+
 ## 0.13.0
 
 ### Changed
