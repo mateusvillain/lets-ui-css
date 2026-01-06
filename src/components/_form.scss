@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use '../utilities/functions' as *;
 @use '../utilities/tokens.map' as *;
+@use '../utilities/mixins' as *;
 
 .form-group {
   display: flex;
@@ -13,11 +14,11 @@ label {
 }
 
 input.form-size-lg, select.form-size-lg, label.form-size-lg, .check-size-lg, .form-checkbox.check-size-lg input:checked::after {
-  font: font-scale(body-lg);
+  @include font-scale(body-lg);
 }
 
 input.form-size-md, select.form-size-md, label.form-size-md, .check-size-md, .form-checkbox.check-size-md input:checked::after {
-  font: font-scale(body-md);
+  @include font-scale(body-md);
 }
 
 input {

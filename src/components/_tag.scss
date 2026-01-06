@@ -1,5 +1,7 @@
 @use 'sass:map';
 @use '../utilities/functions' as *;
+@use '../utilities/tokens.map' as *;
+@use '../utilities/mixins' as *;
 
 %tag-base {
   width: fit-content;
@@ -17,19 +19,19 @@
 
 @mixin tag-size($py, $px, $font, $radius) {
   padding: $py $px;
-  font: $font;
+  @include font-scale($font);
   border-radius: $radius;
 }
 
 .tag- {
   &sm {
-    @include tag-size(fluid(2), fixed(8), font-scale(body-sm), radius(sm));
+    @include tag-size(fluid(2), fixed(8), body-sm, radius(sm));
   }
   &md {
-    @include tag-size(fluid(4), fixed(8), font-scale(body-md), radius(md));
+    @include tag-size(fluid(4), fixed(8), body-md, radius(md));
   }
   &lg {
-    @include tag-size(fixed(8), fixed(16), font-scale(body-lg), radius(lg));
+    @include tag-size(fixed(8), fixed(16), body-lg, radius(lg));
   }
   &circle {
     border-radius: radius(circle) !important;
