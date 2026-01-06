@@ -1,0 +1,68 @@
+@use 'sass:map';
+@use '../utilities/functions' as *;
+
+%tag-base {
+  width: fit-content;
+  line-height: line-height(body);
+  display: inline-flex;
+  align-items: center;
+  gap: fluid(4);
+}
+
+.tag-sm,
+.tag-md,
+.tag-lg {
+  @extend %tag-base;
+}
+
+@mixin tag-size($py, $px, $font, $radius) {
+  padding: $py $px;
+  font: $font;
+  border-radius: $radius;
+}
+
+.tag- {
+  &sm {
+    @include tag-size(fluid(2), fixed(8), font-scale(body-sm), radius(sm));
+  }
+  &md {
+    @include tag-size(fluid(4), fixed(8), font-scale(body-md), radius(md));
+  }
+  &lg {
+    @include tag-size(fixed(8), fixed(16), font-scale(body-lg), radius(lg));
+  }
+  &circle {
+    border-radius: radius(circle) !important;
+  }
+}
+
+// Mapa de variantes para reduzir repetição e facilitar adição futura
+$tag-variants: (
+  primary: (
+    text: text(body),
+    bg: bg(surface, accent)
+  ),
+  caution: (
+    text: text(body),
+    bg: bg(surface, caution)
+  ),
+  danger:  (
+    text: text(body),
+    bg: bg(surface, danger)
+  ),
+  success: (
+    text: text(body),
+    bg: bg(surface, success)
+  ),
+  neutral: (
+    text: text(body),
+    bg: bg(surface, neutral)
+  )
+);
+
+@each $name, $colors in $tag-variants {
+  .tag-#{$name} {
+    color: map.get($colors, text);
+    background: map.get($colors, bg);
+  }
+}
