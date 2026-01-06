@@ -1,3 +1,16 @@
+## 0.13.0
+
+### Changed
+- Migrated from Style Dictionary to Terrazzo
+- Defined new breakpoints and increased the grid size
+
+### Added
+- Created a resolver file to support themes and brands
+- Added `functions`, `maps` and `mixins` directories
+
+### Removed
+- Removed grid tokens
+
 ## 0.12.0
 
 ### Added
