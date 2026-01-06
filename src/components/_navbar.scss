@@ -1,14 +1,19 @@
 @use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+$navbar-height: 71px;
 
 .navbar {
-  top: 0;
+  position: fixed;
+  margin-top: $navbar-height;
+  top: fixed(0);
   width: 280px;
   min-width: 280px;
   max-width: 280px;
-  height: 100vh;
+  height: calc(100vh - $navbar-height);
   line-height: 1.5rem;
   overflow-y: auto;
-  border-right: 1px solid #eee;
+  border-right: 1px solid stroke(neutral);
   grid-area: sidebar;
 
   img {
@@ -76,10 +81,12 @@
 .navbar {
   h6 {
     color: text(heading);
+    @include font-scale(overtitle);
   }
 
   a {
     color: text(body);
+    @include font-scale(body-lg);
     text-decoration: none;
   }
 }
