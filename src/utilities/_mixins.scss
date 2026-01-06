@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use './tokens.map' as tokens;
+@use './tokens.map' as *;
 @use './functions' as *;
 
 // Flexbox
@@ -123,4 +123,17 @@
   -moz-user-select: none;    /* Firefox */
   -ms-user-select: none;     /* IE10+/Edge */
   user-select: none;         /* Standard */
+}
+
+// Font Scale
+//  @include font-scale($scale-name);
+@mixin font-scale($scale-name) {
+  $scale: map.get($typography, scales, $scale-name);
+
+  font: weight(map.get($scale, weight))
+        size(map.get($scale, size)) /
+        line-height(map.get($scale, family))
+        font(map.get($scale, family));
+
+  text-transform: case(map.get($scale, case));
 }
