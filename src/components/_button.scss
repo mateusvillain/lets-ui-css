@@ -1,4 +1,6 @@
+@use "sass:list";
 @use '../utilities/functions' as *;
+@use '../foundations/typography' as *;
 
 button {
 	&.btn {
@@ -44,12 +46,12 @@ button {
 	}
 	&.btn-lg {
 		padding: fixed(16);
-		// font: $typography-scale-body-lg;
+		@include font-scale(body-lg);
 		border-radius: radius(lg);
 	}
 	&.btn-md {
 		padding: fixed(8);
-		// font: $typography-scale-body-md;
+		@include font-scale(body-md);
 		border-radius: radius(md);
 	}
 	&.btn-primary {
