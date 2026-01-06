@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
 @use '../utilities/tokens.map' as *;
 
 %flex-row { display: flex; }
@@ -29,17 +30,10 @@
   justify-content: space-between;
   padding: fixed(16);
   background-color: bg(surface, neutral);
-  border-bottom: width(1) solid #eee;
+  border-bottom: width(1) solid stroke(neutral);
   position: sticky;
   top: fixed(0);
   grid-area: header;
-}
-
-@media (min-width: calc(map.get($breakpoint, md) + 1px)) {
-  .navbar {
-    position: fixed;
-    margin-top: 69px;
-  }
 }
 
 .desktop-nav ul {
