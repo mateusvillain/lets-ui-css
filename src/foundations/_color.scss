@@ -3,6 +3,11 @@
 @use '../utilities/functions' as *;
 @use '../utilities/tokens.map' as *;
 
+body {
+  background-color: bg(surface, neutral);
+  color: text(body);
+}
+
 @each $group, $scales in map.get($color, primitive) {
   @each $step, $value in $scales {
     .#{"#{$group}"}-#{$step} {
