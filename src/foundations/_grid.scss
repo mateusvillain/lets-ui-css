@@ -3,6 +3,11 @@
 @use '../utilities/functions' as *;
 @use '../utilities/tokens.map' as *;
 
+// Layout helpers: valores locais para header/sidebar/content
+$lui-header-height: 72px;
+$lui-sidebar-width: 280px;
+$lui-content-max-width: 1200px;
+
 @each $name, $value in $breakpoint {
   .show-#{$name} {
     display: none;
@@ -112,25 +117,32 @@
 @media (max-width: map.get($breakpoint, md)) {
   .main-content {
     padding: fixed(16);
+    /* On small screens the sidebar becomes part of the flow, so remove left margin */
+    margin-left: 0;
+    max-width: none;
   }
+
+  /* Header remains fixed but typically smaller on mobile; keep height spacing */
+  .header { height: $lui-header-height; }
+  .sidebar { position: static; width: auto; }
 }
+
+// .main-content{
+//   max-width: $lui-content-max-width;
+//   margin-left: auto;
+//   margin-right: auto;
+//   padding-left: fixed(16);
+//   padding-right: fixed(16);
+// }
 
 // Desktop
 @media (min-width: calc(map.get($breakpoint, md) + 1px)) {
-  .header {
-    grid-area: header;
-    position: sticky;
-    top: fixed(0);
-  }
-
-  .navbar {
-    position: fixed;
-    margin-top: fluid(40);
-  }
-
   .main-content {
     grid-area: content;
-    padding: fluid(24) fluid(80);
+    /* keep space for fixed header and sidebar */
+    padding: fluid(40);
+    /* ensure main content doesn't overlap the fixed sidebar */
+    margin-left: $lui-sidebar-width;
   }
 
   .grid {
