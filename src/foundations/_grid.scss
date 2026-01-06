@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../../dist/letsui.tokens.scss' as *;
 @use '../utilities/functions' as *;
 @use '../utilities/tokens.map' as *;
@@ -16,5 +17,129 @@
     @media (min-width: $value) {
       display: none;
     }
+  }
+}
+
+.layout, .grid {
+  display: grid;
+}
+
+.grid {
+  // grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  margin-bottom: clamp(fluid(16), fluid(32), fluid(32));
+  align-items: start;
+  &:last-of-type {
+    margin-bottom: fixed(0);
+  }
+}
+
+// Extra small
+@media (max-width: calc(map.get($breakpoint, sm) - 1px)) {
+  .col {
+    @for $i from 1 through 4 {
+      &-1xs-#{$i} {
+        grid-column: span $i;
+      }
+    }
+  }
+
+  .grid {
+    gap: clamp(0.75rem, 0.75rem + 1.25vw, 1rem);
+  }
+}
+
+// Small
+@media (min-width: map.get($breakpoint, sm)) and (max-width: calc(map.get($breakpoint, md) - 1px)) {
+  .col {
+    @for $i from 1 through 8 {
+      &-sm-#{$i} {
+        grid-column: span $i;
+      }
+    }
+  }
+
+  .grid {
+    gap: clamp(0.75rem, 0.5705rem + 0.8949vw, 1rem);
+  }
+}
+
+// Medium
+@media (min-width: map.get($breakpoint, md)) and (max-width: calc(map.get($breakpoint, lg) - 1px)) {
+  .col {
+    @for $i from 1 through 12 {
+      &-md-#{$i} {
+        grid-column: span $i;
+      }
+    }
+  }
+
+  .grid {
+    gap: clamp(1.25rem, 0.4961rem + 1.5686vw, 1.5rem);
+  }
+}
+
+// Large
+@media (min-width: map.get($breakpoint, lg)) and (max-width: calc(map.get($breakpoint, 1xl) - 1px)) {
+  .col {
+    @for $i from 1 through 12 {
+      &-lg-#{$i} {
+        grid-column: span $i;
+      }
+    }
+  }
+
+  .grid {
+    gap: clamp(1.25rem, 0.2549rem + 1.5564vw, 1.5rem);
+  }
+}
+
+// Extra large
+@media (min-width: map.get($breakpoint, 1xl)) {
+  .col {
+    @for $i from 1 through 12 {
+      &-1xl-#{$i} {
+        grid-column: span $i;
+      }
+    }
+  }
+
+  .grid {
+    gap: clamp(1.25rem, 0.4961rem + 1.5686vw, 1.5rem);
+  }
+}
+
+// Mobile
+@media (max-width: map.get($breakpoint, md)) {
+  .main-content {
+    padding: fixed(16);
+  }
+}
+
+// Desktop
+@media (min-width: calc(map.get($breakpoint, md) + 1px)) {
+  .header {
+    grid-area: header;
+    position: sticky;
+    top: fixed(0);
+  }
+
+  .navbar {
+    position: fixed;
+    margin-top: fluid(40);
+  }
+
+  .main-content {
+    grid-area: content;
+    padding: fluid(24) fluid(80);
+  }
+
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .layout {
+    grid-template-areas:
+      "header header"
+      "sidebar content";
   }
 }
