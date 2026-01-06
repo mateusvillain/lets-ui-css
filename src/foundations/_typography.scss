@@ -1,55 +1,139 @@
 @use "sass:list";
+@use 'sass:map';
 @use '../../dist/letsui.tokens.scss' as *;
 @use '../utilities/functions' as *;
+@use '../utilities/tokens.map' as *;
 
 $type-scales: (
   display: (
-    heading, 3xl, regular, none
+    family: heading,
+    size: 3xl,
+    weight: regular,
+    case: none
   ),
   title: (
-    heading, 2xl, bold, none
+    family: heading,
+    size: 2xl,
+    weight: bold,
+    case: none
   ),
   headline: (
-    heading, 1xl, semibold, none
-  ),
-  block-title: (
-    heading, md, medium, none
+    family: heading,
+    size: 1xl,
+    weight: semibold,
+    case: none
   ),
   subtitle: (
-    heading, lg, regular, none
+    family: heading,
+    size: lg,
+    weight: regular,
+    case: none
+  ),
+  block-title: (
+    family: heading,
+    size: md,
+    weight: medium,
+    case: none
   ),
   subheadline: (
-    heading, sm, regular, none
+    family: heading,
+    size: sm,
+    weight: regular,
+    case: none
   ),
   overtitle: (
-    heading, 3xs, medium, uppercase
+    family: heading,
+    size: 3xs,
+    weight: medium,
+    case: uppercase
   ),
   body-lg: (
-    body, 1xs, regular, none
+    family: body,
+    size: 1xs,
+    weight: regular,
+    case: none
   ),
   body-md: (
-    body, 2xs, regular, none
+    family: body,
+    size: 2xs,
+    weight: regular,
+    case: none
   ),
   body-sm: (
-    body, 3xs, regular, none
+    family: body,
+    size: 3xs,
+    weight: regular,
+    case: none
   )
 );
 
-$font-weights: regular, medium, semibold, bold;
+@mixin font-scale($scale-name) {
+  $scale: map.get($type-scales, $scale-name);
 
-@mixin font-scales($family, $size, $weight, $case) {
-  font: weight($weight) size($size)/line-height($family) font($family);
-  text-transform: case($case);
+  font: weight(map.get($scale, weight))
+        size(map.get($scale, size)) /
+        line-height(map.get($scale, family))
+        font(map.get($scale, family));
+
+  text-transform: case(map.get($scale, case));
 }
-
 @each $name, $values in $type-scales {
   .#{$name} {
-    @include font-scales(list.nth($values, 1), list.nth($values, 2), list.nth($values, 3), list.nth($values, 4));
+    @include font-scale($name);
   }
 }
 
+// $type-scales: (
+//   display: (
+//     heading, 3xl, regular, none
+//   ),
+//   title: (
+//     heading, 2xl, bold, none
+//   ),
+//   headline: (
+//     heading, 1xl, semibold, none
+//   ),
+//   block-title: (
+//     heading, md, medium, none
+//   ),
+//   subtitle: (
+//     heading, lg, regular, none
+//   ),
+//   subheadline: (
+//     heading, sm, regular, none
+//   ),
+//   overtitle: (
+//     heading, 3xs, medium, uppercase
+//   ),
+//   body-lg: (
+//     body, 1xs, regular, none
+//   ),
+//   body-md: (
+//     body, 2xs, regular, none
+//   ),
+//   body-sm: (
+//     body, 3xs, regular, none
+//   )
+// );
+
+// @mixin font-scales($family, $size, $weight, $case) {
+//   font: weight($weight) size($size)/line-height($family) font($family);
+//   text-transform: case($case);
+// }
+
+// @each $name, $values in $type-scales {
+//   .#{$name} {
+//     @include font-scales(
+//       list.nth($values, 1),
+//       list.nth($values, 2),
+//       list.nth($values, 3),
+//       list.nth($values, 4)
+//     );
+//   }
+// }
+
 .text- {
-  @each $weights in $font-weights {
+  @each $weights, $value in map.get($typography, weight) {
     &#{$weights} {
       font-weight: weight($weights);
     }
