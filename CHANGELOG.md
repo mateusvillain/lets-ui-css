@@ -1,3 +1,14 @@
+## 0.14.0
+
+### Added
+- Created a `disabled` state **mixin** for consistent disabled styles.
+- Added `surface` and `container` variants for the `Tag` component.
+
+### Changed
+- Moved `Checkbox` and `Select` components into their own files.
+- Updated `Button` padding for `large` and `medium` sizes to use **fluid** spacing.
+- Improved Sass structure and rules in `form.scss` for better maintainability.
+
 ## 0.13.2
 
 ### Changed
