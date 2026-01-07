@@ -1,3 +1,8 @@
+## 0.13.2
+
+### Changed
+- Adjusted the hover and active states of the `Navbar` component.
+
 ## 0.13.1
 
 ### Changed
