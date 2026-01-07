@@ -1,176 +1,67 @@
+@use "sass:list";
 @use 'sass:map';
 @use '../utilities/functions' as *;
 @use '../utilities/tokens.map' as *;
 @use '../utilities/mixins' as *;
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: fixed(8);
+  @include flex(column, stretch, flex-start, fixed(8), nowrap);
 }
 
 label {
   color: text(heading);
 }
 
-input.form-size-lg, select.form-size-lg, label.form-size-lg, .check-size-lg, .form-checkbox.check-size-lg input:checked::after {
-  @include font-scale(body-lg);
+$types: color, email, number, password, search, tel, text, time, url;
+$selectors: ();
+$size: (
+  lg: (
+    padding: fluid(12),
+    radius: radius(sm),
+    scale: body-lg
+  ),
+  md: (
+    padding: fixed(8),
+    radius: radius(1xs),
+    scale: body-md
+  )
+);
+
+@each $type in $types {
+  $selectors: list.append($selectors, 'input[type="#{$type}"]', comma);
 }
 
-input.form-size-md, select.form-size-md, label.form-size-md, .check-size-md, .form-checkbox.check-size-md input:checked::after {
-  @include font-scale(body-md);
-}
-
-input {
-  &[type="color"], &[type="email"], &[type="number"], &[type="password"], &[type="search"], &[type="tel"], &[type="text"], &[type="time"], &[type="url"] {
-    color: text(heading);
-    background-color: bg(surface, neutral);
-    border: width(1) solid border(divisor);
-    transition: all 0.2s ease-in-out;
-    line-height: 1;
-    box-sizing: border-box;
-  }
-}
-
-select {
-  color: text(heading);
+#{$selectors} {
+  color: text(body);
   background-color: bg(surface, neutral);
   border: width(1) solid border(divisor);
   transition: all 0.2s ease-in-out;
   line-height: 1;
   box-sizing: border-box;
-}
 
-input {
-  &[type="color"]:hover, &[type="email"]:hover, &[type="number"]:hover, &[type="password"]:hover, &[type="search"]:hover, &[type="tel"]:hover, &[type="text"]:hover, &[type="time"]:hover, &[type="url"]:hover {
+  &:hover {
     border: width(1) solid stroke(neutral);
   }
-}
 
-select:hover {
-  border: width(1) solid stroke(neutral);
-}
-
-input {
-  &[type="color"]:focus, &[type="email"]:focus, &[type="number"]:focus, &[type="password"]:focus, &[type="search"]:focus, &[type="tel"]:focus, &[type="text"]:focus, &[type="time"]:focus, &[type="url"]:focus {
+  &:focus {
     border: width(1) solid bg(container, accent);
-    box-shadow: 0 0 0 3px rgba(135, 51, 255, 0.32);
     box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44 / 0.32);
     outline: none;
   }
 }
 
-select:focus {
-  border: width(1) solid bg(container, accent);
-  box-shadow: 0 0 0 3px rgba(135, 51, 255, 0.32);
-  box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44 / 0.32);
-  outline: none;
-}
-
-input.form-size-lg, select.form-size-lg {
-  border-radius: radius(sm);
-  padding: fluid(12);
-  height: 48px;
-}
-
-input.form-size-md {
-  border-radius: radius(1xs);
-  padding: fixed(8);
-}
-
-select {
-  &.form-size-md {
-    border-radius: radius(1xs);
-    padding: fixed(8);
+@each $key, $props in $size {
+  input.form-size-#{$key},
+  select.form-size-#{$key} {
+    border-radius: map.get($props, radius);
+    padding: map.get($props, padding);
   }
 
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M16%2019.5858L7.70711%2011.2929L6.29289%2012.7071L16%2022.4142L25.7071%2012.7071L24.2929%2011.2929L16%2019.5858Z%22%20fill%3D%22%23131519%22/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: 1.25rem;
-
-  &.form-size-lg {
-    background-position: right fluid(12) center;
-  }
-
-  &.form-size-md {
-    background-position: right fixed(8) center;
-  }
-}
-
-/* Checkbox */
-.form-checkbox {
-  &.check-size-lg input[type="checkbox"] {
-    width: fixed(24);
-    height: fixed(24);
-  }
-
-  &.check-size-md input[type="checkbox"] {
-    width: fixed(16);
-    height: fixed(16);
-  }
-}
-
-input[type="checkbox"] {
-  display: flex;
-  align-items: center;
-  gap: fixed(8);
-  cursor: pointer;
-  user-select: none;
-  margin: fixed(0);
-  padding: fixed(0);
-}
-
-.form-checkbox {
-  display: flex;
-  align-items: center;
-  gap: fixed(8);
-  cursor: pointer;
-  user-select: none;
-  margin: fixed(0);
-  padding: fixed(0);
-
-  input {
-    appearance: none;
-    -webkit-appearance: none;
-    background-color: bg(surface, neutral);
-    border: width(1) solid border(divisor);
-    border-radius: radius(1xs);
-    display: inline-block;
-    position: relative;
-    transition: all 0.2s ease;
-
-    &:checked {
-      background-color: bg(container, accent);
-      border-color: bg(container, accent);
-
-      &::after {
-        font-family: 'letsicons' !important;
-        content: '\e902';
-        color: bg(surface, neutral);
-        font-weight: weight(bold);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    &:hover {
-      border-color: bg(container, accent);
-    }
-
-    &:focus {
-      border: width(1) solid bg(container, accent);
-      box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44 / 0.32);
-      outline: none;
-    }
-
-    &:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-    }
+  input.form-size-#{$key},
+  select.form-size-#{$key},
+  label.form-size-#{$key},
+  .check-size-#{$key},
+  .form-checkbox.check-size-#{$key} input:checked::after {
+    @include font-scale(map.get($props, scale));
   }
 }
