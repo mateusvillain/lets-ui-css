@@ -45,12 +45,12 @@ button {
 		}
 	}
 	&.btn-lg {
-		padding: fixed(16);
+		padding: fluid(12) fluid(16);
 		@include font-scale(body-lg);
 		border-radius: radius(lg);
 	}
 	&.btn-md {
-		padding: fixed(8);
+		padding: fluid(8) fluid(12);
 		@include font-scale(body-md);
 		border-radius: radius(md);
 	}
