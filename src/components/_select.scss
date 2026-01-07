@@ -1,0 +1,49 @@
+@use 'sass:map';
+@use '../utilities/functions' as *;
+@use '../utilities/tokens.map' as *;
+@use '../utilities/mixins' as *;
+
+select {
+  color: text(heading);
+  background-color: bg(surface, neutral);
+  border: width(1) solid border(divisor);
+  transition: all 0.2s ease-in-out;
+  line-height: 1;
+  box-sizing: border-box;
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M16%2019.5858L7.70711%2011.2929L6.29289%2012.7071L16%2022.4142L25.7071%2012.7071L24.2929%2011.2929L16%2019.5858Z%22%20fill%3D%22%23131519%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &:hover {
+    border: width(1) solid stroke(neutral);
+  }
+
+  &:focus {
+    border: width(1) solid stroke(accent);
+    box-shadow: 0 0 0 3px rgba(135, 51, 255, 0.32);
+    box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44 / 0.32);
+    outline: none;
+  }
+
+  @include disabled;
+
+  &.form-size-md {
+    border-radius: radius(1xs);
+    padding: fixed(8);
+  }
+
+  
+  $size: (
+    lg: right fluid(12) center,
+    md: right fixed(8) center
+  );
+
+  @each $key, $prop in $size {
+    &.form-size-#{$key} {
+      background-position: $prop
+    }
+  }
+}
