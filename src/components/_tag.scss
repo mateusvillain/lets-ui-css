@@ -25,46 +25,71 @@
 
 .tag- {
   &sm {
-    @include tag-size(fluid(2), fixed(8), body-sm, radius(sm));
+    @include tag-size(fluid(2), fluid(8), body-sm, radius(sm));
   }
   &md {
-    @include tag-size(fluid(4), fixed(8), body-md, radius(md));
+    @include tag-size(fluid(4), fluid(8), body-md, radius(md));
   }
   &lg {
-    @include tag-size(fixed(8), fixed(16), body-lg, radius(lg));
+    @include tag-size(fluid(8), fluid(12), body-lg, radius(lg));
   }
   &circle {
     border-radius: radius(circle) !important;
   }
 }
 
-// Mapa de variantes para reduzir repetição e facilitar adição futura
-$tag-variants: (
-  primary: (
-    text: text(body),
-    bg: bg(surface, accent)
+$variants: (
+  surface: (
+    primary: (
+      text: text(body),
+      bg: bg(surface, accent)
+    ),
+    caution: (
+      text: text(body),
+      bg: bg(surface, caution)
+    ),
+    danger:  (
+      text: text(body),
+      bg: bg(surface, danger)
+    ),
+    success: (
+      text: text(body),
+      bg: bg(surface, success)
+    ),
+    neutral: (
+      text: text(body),
+      bg: bg(surface, neutral)
+    )
   ),
-  caution: (
-    text: text(body),
-    bg: bg(surface, caution)
-  ),
-  danger:  (
-    text: text(body),
-    bg: bg(surface, danger)
-  ),
-  success: (
-    text: text(body),
-    bg: bg(surface, success)
-  ),
-  neutral: (
-    text: text(body),
-    bg: bg(surface, neutral)
+  container: (
+    primary: (
+      text: text(inverse),
+      bg: bg(container, accent)
+    ),
+    caution: (
+      text: text(inverse),
+      bg: bg(container, caution)
+    ),
+    danger:  (
+      text: text(inverse),
+      bg: bg(container, danger)
+    ),
+    success: (
+      text: text(inverse),
+      bg: bg(container, success)
+    ),
+    neutral: (
+      text: text(body),
+      bg: bg(container, neutral)
+    )
   )
 );
 
-@each $name, $colors in $tag-variants {
-  .tag-#{$name} {
-    color: map.get($colors, text);
-    background: map.get($colors, bg);
+@each $type in (surface, container) {
+  @each $name, $colors in map.get($variants, $type) {
+    .tag-#{$type}-#{$name} {
+      color: map.get($colors, text);
+      background: map.get($colors, bg);
+    }
   }
 }
