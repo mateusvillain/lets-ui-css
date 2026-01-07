@@ -137,3 +137,11 @@
 
   text-transform: case(map.get($scale, case));
 }
+
+@mixin disabled {
+  &:disabled,
+  &[aria-disabled='true'] {
+    opacity: opacity(disabled);
+    cursor: not-allowed;
+  }
+}
