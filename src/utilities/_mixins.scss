@@ -22,6 +22,39 @@
   }
 }
 
+// States
+//  @include states(hover, active, size, color);
+@mixin states(
+  $hover: 0.76,
+  $active: 0.6,
+  $size: 3px,
+  $color: rgba(0, 0, 0, 0.3)
+) {
+  &:not([aria-disabled="true"]):not(.is-disabled) {
+    &:hover {
+      filter: brightness($hover);
+    }
+
+    &:active {
+      filter: brightness($active);
+    }
+    
+    &:focus-visible {
+      outline: 0;
+      box-shadow: 0 0 0 $size $color;
+    }
+  }
+
+  &:disabled,
+  &.is-disabled,
+  &[aria-disabled='true'] {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: opacity(disabled);
+    text-decoration: none;
+  }
+}
+
 // Centering
 //  @include center(axis);
 //  axis: both | x | y
@@ -140,8 +173,11 @@
 
 @mixin disabled {
   &:disabled,
+  &.disabled,
   &[aria-disabled='true'] {
-    opacity: opacity(disabled);
+    pointer-events: none;
     cursor: not-allowed;
+    opacity: opacity(disabled);
+    text-decoration: none;
   }
 }
