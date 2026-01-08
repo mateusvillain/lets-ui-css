@@ -1,16 +1,13 @@
 @use '../utilities/functions' as *;
 @use '../utilities/mixins' as *;
 
-$navbar-height: 71px;
-
 .navbar {
   position: fixed;
-  margin-top: $navbar-height;
   top: fixed(0);
   width: 280px;
   min-width: 280px;
   max-width: 280px;
-  height: calc(100vh - $navbar-height);
+  height: 100vh;
   line-height: 1.5rem;
   overflow-y: auto;
   border-right: 1px solid stroke(neutral);
