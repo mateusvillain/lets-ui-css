@@ -1,0 +1,56 @@
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+$arrow-size: 4px;
+$background: bg(container, overlay);
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  background: $background;
+  color: text(inverse);
+  padding: fluid(2) fixed(8);
+  border-radius: radius(1xs);
+  @include font-scale(body-sm);
+  white-space: nowrap;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: fixed(0);
+    height: fixed(0);
+    border-style: solid;
+  }
+
+  &--top::after {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: $arrow-size;
+    border-color: transparent transparent $background transparent;
+  }
+
+  &--bottom::after {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: $arrow-size;
+    border-color: $background transparent transparent transparent;
+  }
+
+  &--left::after {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: $arrow-size;
+    border-color: transparent $background transparent transparent;
+  }
+
+  &--right::after {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: $arrow-size;
+    border-color: transparent transparent transparent $background;
+  }
+}
