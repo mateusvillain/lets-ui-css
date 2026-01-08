@@ -1,14 +1,9 @@
 @use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
 
 a.link {
   color: text(link);
   transition: filter 0.3s ease;
 
-  &:hover {
-    filter: brightness(76%);
-  }
-
-  &:active {
-    filter: brightness(52%);
-  }
+  @include states(0.76, 0.6, 2px, stroke(accent));
 }
