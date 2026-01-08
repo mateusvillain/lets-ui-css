@@ -1,4 +1,23 @@
+@use "sass:list";
+@use 'sass:map';
 @use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+$icon-button-size: (
+  lg: (
+    fixed(40),
+    fixed(8)
+  ),
+  md: (
+    fixed(32),
+    fixed(8)
+  )
+);
+
+$size-lg: list.nth(map.get($icon-button-size, lg), 1);
+$gap-lg: list.nth(map.get($icon-button-size, lg), 2);
+$size-md: list.nth(map.get($icon-button-size, md), 1);
+$gap-md: list.nth(map.get($icon-button-size, md), 2);
 
 .icon-button {
   position: relative;
@@ -13,14 +32,10 @@
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   z-index: 0;
+  background-color: bg(surface, neutral);
 
-  &.lg {
-    max-width: fixed(40) !important;
-    max-height: fixed(40) !important;
-    padding: fixed(8) !important;
-    > i {
-      font-size: 1.5rem;
-    }
+  i::before {
+    color: icon(neutral);
   }
 
   &::before {
@@ -32,39 +47,29 @@
     z-index: -1;
   }
 
-  &.light {
-    &::before {
-      background-color: bg(surface, neutral);
+  &-- {
+    &lg {
+      max-width: $size-lg !important;
+      max-height: $size-lg !important;
+      padding: $gap-lg !important;
+      > i {
+        font-size: 1.5rem;
+      }
     }
 
-    i::before {
-      color: icon(neutral);
+    &md {
+      max-width: $size-md !important;
+      max-height: $size-md !important;
+      padding: $gap-md !important;
+      > i {
+        font-size: 1rem;
+      }
     }
-  }
-
-  &:hover::before {
-    opacity: 0.24;
-  }
-
-  &:active:not(:disabled)::before {
-    opacity: 0.4;
-  }
-
-  &:focus {
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
   }
 
   &:active:not(:disabled)::before, &:focus {
     border-radius: radius(lg);
   }
 
-  &:disabled {
-    cursor: not-allowed;
-    opacity: opacity(disabled);
-
-    &::before {
-      opacity: opacity(hidden);
-      filter: none;
-    }
-  }
+  @include states();
 }
