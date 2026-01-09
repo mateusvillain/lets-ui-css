@@ -1,3 +1,14 @@
+## 0.15.0
+
+### Added
+- Created the Tooltip component.
+- Added overlay color for interface overlays to the color map.
+- Created a new state mixin to standardize component states.
+- Applied the state mixin to Link and Icon Button components.
+
+### Removed
+- Removed the Header component.
+
 ## 0.14.0
 
 ### Added
