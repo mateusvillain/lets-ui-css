@@ -1,0 +1,33 @@
+import { Meta, Canvas, Controls, ArgTypes } from "@storybook/addon-docs/blocks";
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+Botões permitem que o usuário execute ações.
+Use para confirmar, enviar ou iniciar fluxos.
+
+<Canvas of={ButtonStories.Button} />
+<Controls of={ButtonStories.Button} />
+
+---
+
+## Quando usar
+- Ação principal da tela
+- Confirmação de formulários
+- Ações pontuais do usuário
+
+---
+
+## Quando não usar
+- Navegação principal
+- Ações destrutivas sem confirmação
+
+---
+
+## Primary
+<Canvas of={ButtonStories.Primary} />
+
+## Secondary
+<Canvas of={ButtonStories.Secondary} />
