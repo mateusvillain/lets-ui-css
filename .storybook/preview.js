@@ -8,6 +8,21 @@ const preview = {
       },
     },
 
+    options: {
+      storySort: {
+        order: [
+          'Get started', [
+            'Welcome',
+            'Designers',
+            'Developers',
+            'Changelog'
+          ],
+          'Foundations',
+          'Components'
+        ]
+      },
+    },
+
     a11y: {
       test: 'todo',
     },
@@ -16,7 +31,7 @@ const preview = {
   globalTypes: {
     theme: {
       name: 'Theme',
-      description: 'Tema visual',
+      description: 'Modo de cor',
       defaultValue: 'light',
       toolbar: {
         icon: 'circlehollow',
@@ -26,13 +41,26 @@ const preview = {
         ],
       },
     },
+    brand: {
+      name: 'Brand',
+      description: 'Marca',
+      defaultValue: 'lets-ui',
+      toolbar: {
+        icon: 'circlehollow',
+        items: [
+          { value: 'lets-ui', title: "Let's UI" },
+        ],
+      },
+    },
   },
 
   decorators: [
     (Story, context) => {
       const { theme } = context.globals;
+      const { brand } = context.globals;
 
       document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-brand', brand);
 
       return Story();
     },
