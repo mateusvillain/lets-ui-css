@@ -4,13 +4,6 @@ import '../../../../dist/letsui.css';
 export default {
   title: 'Components/Button',
   // tags: ['autodocs'],
-  parameters: {
-    docs: {
-      description: {
-        component: 'Olá'
-      }
-    }
-  },
   argTypes: {
     label: { 
       control: 'text'
