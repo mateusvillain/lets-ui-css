@@ -1,74 +1,53 @@
 @use '../utilities/functions' as *;
 
 .alert {
-  gap: fixed(16);
-  padding: fixed(16);
-  border-radius: radius(lg);
-  border-width: width(2);
-  border-style: solid;
-  background-color: bg(surface, neutral);
   color: text(body);
-
-  &.bc-caution {
-    border-color: stroke(caution);
-  }
-
-  &.bc-caution i.alert-icon {
-    color: icon(caution);
-  }
-
-  &.bc-danger {
-    border-color: stroke(danger);
-  }
-
-  &.bc-danger i.alert-icon {
-    color: icon(danger);
-  }
-
-  &.bc-info {
-    border-color: stroke(info);
-  }
-
-  &.bc-info i.alert-icon {
-    color: icon(info);
-  }
-
-  &.bc-success {
-    border-color: stroke(success);
-  }
-
-  &.bc-success i.alert-icon {
-    color: icon(success);
-  }
-}
-
-.alert-content, .alert-actions {
-  display: flex;
-}
-
-.alert-content {
+  background-color: bg(surface, neutral);
+  padding: fixed(16);
   gap: fixed(16);
-}
+  border-radius: radius(lg);
 
-.alert-text {
-  margin-bottom: fixed(24);
-  width: 100%;
+  &-content,
+  &-actions {
+    display: flex;
+  }
 
-  p {
-    &:first-child {
-      margin-bottom: fluid(2);
-    }
+  &-content {
+    gap: fixed(16);
+  }
 
-    &:first-of-type {
-      font-weight: weight(bold) !important;
+  &-text {
+    width: 100%;
+
+    p {
+      &:first-child {
+        margin-bottom: fluid(2);
+      }
+
+      &:first-of-type {
+        font-weight: weight(bold) !important;
+      }
     }
   }
-}
 
-.alert-actions {
-  justify-content: flex-end;
+  &-actions {
+    margin-top: fixed(24);
+    justify-content: flex-end;
 
-  button:first-child {
-    margin-right: fixed(16);
+    button:first-child {
+      margin-right: fixed(16);
+    }
+  }
+
+  $border-color: caution, danger, info, success;
+
+  @each $key in $border-color {
+    &.alert--#{$key} {
+      border: width(2) stroke(#{$key}) solid;
+
+      & i.alert-icon {
+        color: icon(#{$key});
+      }
+    }
   }
 }
