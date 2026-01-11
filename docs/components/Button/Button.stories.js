@@ -1,5 +1,5 @@
-import '../../../../dist/letsui.tokens.css';
-import '../../../../dist/letsui.css';
+import '../../../dist/letsui.tokens.css';
+import '../../../dist/letsui.css';
 
 export default {
   title: 'Components/Button',
