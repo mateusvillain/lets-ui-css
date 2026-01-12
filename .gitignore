@@ -22,9 +22,6 @@ Thumbs.db
 .env.test.local
 .env.production.local
 
-# VSCode settings
-.vscode/
-
 # Others
 *.local
 *.log
