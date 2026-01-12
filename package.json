@@ -72,6 +72,7 @@
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "globals": "^17.0.0",
+    "html-validate": "^10.5.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "modularscale-sass": "^3.0.10",
