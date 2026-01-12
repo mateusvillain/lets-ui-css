@@ -1,0 +1,28 @@
+{
+  "editor.tabSize": 2,
+  "editor.fontSize": 14,
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "css.validate": true,
+  "scss.validate": true,
+
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "mdx.trace.server.format": "text",
+  "figma.assetExportDirectory": "public/images",
+  "figma.autocompleteBlocks": false
+}
