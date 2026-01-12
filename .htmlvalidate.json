@@ -1,0 +1,54 @@
+{
+  "extends": [
+    "html-validate:recommended",
+    "html-validate:a11y"
+  ],
+
+  "rules": {
+    "void-style": "error",
+    "no-inline-style": "warn",
+    "no-implicit-close": "error",
+    "no-self-closing": "off",
+
+    "require-sri": "off",
+    "no-deprecated-attr": "error",
+    "no-deprecated-element": "error",
+
+    "attr-quotes": "error",
+    "attr-case": "error",
+    "tag-case": "error",
+    "id-pattern": [
+      "error",
+      {
+        "pattern": "^[a-z][a-z0-9\\-]*$"
+      }
+    ],
+
+    "class-pattern": [
+      "error",
+      {
+        "pattern": "^[a-z][a-z0-9\\-]*$"
+      }
+    ],
+
+    "heading-level": "error",
+    "empty-heading": "error",
+
+    "wcag/h37": "error",
+    "wcag/h32": "error",
+    "wcag/h36": "error",
+    "wcag/h67": "error",
+
+    "form-dup-name": "error",
+    "form-dup-id": "error",
+    "form-required-attr": "error",
+
+    "no-duplicate-id": "error",
+    "no-multiple-main": "error",
+
+    "require-li-container": "error",
+    "require-ul-ol": "error",
+
+    "valid-autocomplete": "warn"
+  }
+}
