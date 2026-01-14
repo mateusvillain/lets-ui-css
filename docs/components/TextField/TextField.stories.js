@@ -27,14 +27,3 @@ TextField.args = {
   label: 'Name',
   placeholder: 'Type here',
 };
-
-export const Primary = () => `
-  <div class="alert bc-caution>
-    <div class="alert-content">
-      <div class="alert-text">
-        <p class="body-lg">Title</p>
-        <p class="body-lg">Title</p>
-      </div>
-    </div>
-  </div>
-`;
