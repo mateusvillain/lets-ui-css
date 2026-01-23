@@ -12,7 +12,7 @@
 @function radius($size) {
   $value: map.get(tokens.$border, radius, $size);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid border-radius: "#{$size}"';
   }
 
@@ -24,7 +24,7 @@
 @function width($size) {
   $value: map.get(tokens.$border, width, $size);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid border-width: "#{$size}"';
   }
 
@@ -34,27 +34,27 @@
 // color($category, $scale)
 //  $category = brand, blue, green, gray, green, orange, red, violet
 //  $scale    = 1, 2, 3, 4, 5, 6, 7, 8, 9
-//
+
 // bg($category, $variant)
 //  $category = surface, container
-//  $variant  = accent, caution, danger, info, success, neutral, overlay
-//
+//  $variant  = primary, caution, danger, info, success, neutral, overlay
+
 // border($variant)
 //  $category = divisor
-//
+
 // stroke($variant)
-//  $category = neutral, accent, caution, danger, info, success
-//
-// border($variant)
+//  $category = neutral, primary, caution, danger, info, success
+
+// text($variant)
 //  $category = heading, body, inverse, error
-//
+
 // icon($variant)
-//  $category = accent, caution, danger, info, success, neutral, inverse
+//  $category = primary, caution, danger, info, success, neutral, inverse
 
 @function color($category, $scale) {
   $value: map.get(tokens.$color, primitive, $category, $scale);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid color: "#{$category}" | "#{$scale}"';
   }
 
@@ -64,7 +64,7 @@
 @function bg($category, $variant) {
   $value: map.get(tokens.$color, semantic, bg, $category, $variant);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid background color: "#{$category}" | "#{$variant}"';
   }
 
@@ -74,7 +74,7 @@
 @function border($variant) {
   $value: map.get(tokens.$color, semantic, border, $variant);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid border color: "#{$variant}"';
   }
 
@@ -84,7 +84,7 @@
 @function stroke($variant) {
   $value: map.get(tokens.$color, semantic, border, stroke, $variant);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid border color: "#{$variant}"';
   }
 
@@ -94,7 +94,7 @@
 @function text($variant) {
   $value: map.get(tokens.$color, semantic, text, $variant);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid text color: "#{$variant}"';
   }
 
@@ -104,7 +104,7 @@
 @function icon($variant) {
   $value: map.get(tokens.$color, semantic, icon, $variant);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid icon color: "#{$variant}"';
   }
 
@@ -114,7 +114,7 @@
 @function elevation($layer) {
   $value: map.get(tokens.$elevation, $layer);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid elevation: "#{$layer}"';
   }
 
@@ -124,7 +124,7 @@
 @function opacity($category) {
   $value: map.get(tokens.$opacity, $category);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid opacity: "#{$category}"';
   }
 
@@ -134,7 +134,7 @@
 @function fixed($size) {
   $value: map.get(tokens.$space, fixed, $size);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid fixed spacing: "#{$size}"';
   }
 
@@ -144,7 +144,7 @@
 @function fluid($size) {
   $value: map.get(tokens.$space, fluid, $size);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid fluid spacing: "#{$size}"';
   }
 
@@ -154,7 +154,7 @@
 @function font($font) {
   $value: map.get(tokens.$typography, font, $font);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid font-family: "#{$font}"';
   }
 
@@ -164,7 +164,7 @@
 @function line-height($line-height) {
   $value: map.get(tokens.$typography, line-height, $line-height);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid line-height: "#{$line-height}"';
   }
 
@@ -174,7 +174,7 @@
 @function weight($weight) {
   $value: map.get(tokens.$typography, weight, $weight);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid font-weight: "#{$weight}"';
   }
 
@@ -184,7 +184,7 @@
 @function case($case) {
   $value: map.get(tokens.$typography, case, $case);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid text-case: "#{$case}"';
   }
 
@@ -194,7 +194,7 @@
 @function decoration($decoration) {
   $value: map.get(tokens.$typography, decoration, $decoration);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid text-decoration: "#{$decoration}"';
   }
 
@@ -204,7 +204,7 @@
 @function size($size) {
   $value: map.get(tokens.$typography, size, $size);
 
-  @if $value == null {
+  @if not $value {
     @error 'Invalid font-size: "#{$size}"';
   }
 

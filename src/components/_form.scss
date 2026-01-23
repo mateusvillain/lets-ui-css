@@ -1,4 +1,4 @@
-@use "sass:list";
+@use 'sass:list';
 @use 'sass:map';
 @use '../utilities/functions' as *;
 @use '../utilities/tokens.map' as *;
@@ -18,13 +18,13 @@ $size: (
   lg: (
     padding: fluid(12),
     radius: radius(sm),
-    scale: body-lg
+    scale: body-lg,
   ),
   md: (
     padding: fixed(8),
-    radius: radius(1xs),
-    scale: body-md
-  )
+    radius: radius(xs),
+    scale: body-md,
+  ),
 );
 
 @each $type in $types {
@@ -44,8 +44,8 @@ $size: (
   }
 
   &:focus {
-    border: width(1) solid bg(container, accent);
-    box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44 / 0.32);
+    border: width(1) solid bg(container, primary);
+    box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44deg / 32%);
     outline: none;
   }
 }

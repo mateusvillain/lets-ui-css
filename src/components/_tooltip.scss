@@ -10,8 +10,10 @@ $background: bg(container, overlay);
   background: $background;
   color: text(inverse);
   padding: fluid(2) fixed(8);
-  border-radius: radius(1xs);
+  border-radius: radius(xs);
+
   @include font-scale(body-sm);
+
   white-space: nowrap;
 
   &::after {
@@ -27,7 +29,7 @@ $background: bg(container, overlay);
     left: 50%;
     transform: translateX(-50%);
     border-width: $arrow-size;
-    border-color: transparent transparent $background transparent;
+    border-color: transparent transparent $background;
   }
 
   &--bottom::after {

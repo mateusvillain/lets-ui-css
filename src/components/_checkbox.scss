@@ -4,7 +4,7 @@
 @use '../utilities/mixins' as *;
 
 .checkbox,
-input[type="checkbox"] {
+input[type='checkbox'] {
   display: flex;
   align-items: center;
   gap: fixed(8);
@@ -15,32 +15,32 @@ input[type="checkbox"] {
 }
 
 .checkbox {
-  &.check-size-lg input[type="checkbox"] {
+  &.check-size-lg input[type='checkbox'] {
     width: fixed(24);
     height: fixed(24);
   }
 
-  &.check-size-md input[type="checkbox"] {
+  &.check-size-md input[type='checkbox'] {
     width: fixed(16);
     height: fixed(16);
   }
 
   input {
     appearance: none;
-    -webkit-appearance: none;
+    appearance: none;
     background-color: bg(surface, neutral);
     border: width(1) solid border(divisor);
-    border-radius: radius(1xs);
+    border-radius: radius(xs);
     display: inline-block;
     position: relative;
     transition: all 0.2s ease;
 
     &:checked {
-      background-color: bg(container, accent);
-      border-color: bg(container, accent);
+      background-color: bg(container, primary);
+      border-color: bg(container, primary);
 
       &::after {
-        font-family: 'letsicons' !important;
+        // font-family: 'letsicons' !important;
         content: '\e902';
         color: bg(surface, neutral);
         font-weight: weight(bold);
@@ -52,12 +52,12 @@ input[type="checkbox"] {
     }
 
     &:hover {
-      border-color: bg(container, accent);
+      border-color: bg(container, primary);
     }
 
     &:focus {
-      border: width(1) solid bg(container, accent);
-      box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44 / 0.32);
+      border: width(1) solid bg(container, primary);
+      box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44deg / 32%);
       outline: none;
     }
 

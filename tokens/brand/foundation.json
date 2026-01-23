@@ -114,7 +114,7 @@
       "border": {
         "radius": {
           "$type": "dimension",
-          "1xs": {
+          "xs": {
             "$value": {
               "value": 4,
               "unit": "px"

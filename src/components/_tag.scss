@@ -19,7 +19,9 @@
 
 @mixin tag-size($py, $px, $font, $radius) {
   padding: $py $px;
+
   @include font-scale($font);
+
   border-radius: $radius;
 }
 
@@ -27,12 +29,15 @@
   &sm {
     @include tag-size(fluid(2), fluid(8), body-sm, radius(sm));
   }
+
   &md {
     @include tag-size(fluid(4), fluid(8), body-md, radius(md));
   }
+
   &lg {
     @include tag-size(fluid(8), fluid(12), body-lg, radius(lg));
   }
+
   &circle {
     border-radius: radius(circle) !important;
   }
@@ -42,47 +47,47 @@ $variants: (
   surface: (
     primary: (
       text: text(body),
-      bg: bg(surface, accent)
+      bg: bg(surface, primary),
     ),
     caution: (
       text: text(body),
-      bg: bg(surface, caution)
+      bg: bg(surface, caution),
     ),
-    danger:  (
+    danger: (
       text: text(body),
-      bg: bg(surface, danger)
+      bg: bg(surface, danger),
     ),
     success: (
       text: text(body),
-      bg: bg(surface, success)
+      bg: bg(surface, success),
     ),
     neutral: (
       text: text(body),
-      bg: bg(surface, neutral)
-    )
+      bg: bg(surface, neutral),
+    ),
   ),
   container: (
     primary: (
       text: text(inverse),
-      bg: bg(container, accent)
+      bg: bg(container, primary),
     ),
     caution: (
       text: text(inverse),
-      bg: bg(container, caution)
+      bg: bg(container, caution),
     ),
-    danger:  (
+    danger: (
       text: text(inverse),
-      bg: bg(container, danger)
+      bg: bg(container, danger),
     ),
     success: (
       text: text(inverse),
-      bg: bg(container, success)
+      bg: bg(container, success),
     ),
     neutral: (
       text: text(body),
-      bg: bg(container, neutral)
-    )
-  )
+      bg: bg(container, neutral),
+    ),
+  ),
 );
 
 @each $type in (surface, container) {

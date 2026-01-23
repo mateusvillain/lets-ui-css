@@ -1,124 +1,155 @@
-@use "sass:list";
+@use 'sass:list';
 @use '../utilities/functions' as *;
 @use '../utilities/mixins' as *;
 
 button {
-	&.btn {
-		position: relative;
-		overflow: hidden;
-		font-weight: weight(regular);
-		border: fixed(0);
-		outline: fixed(0);
-		background-color: transparent;
-		transition: all 0.2s ease-in-out;
-		z-index: 0;
-		&::before {
-			content: '';
-			position: absolute;
-			inset: 0;
-			background-color: inherit;
-			z-index: -1;
-			transition: filter 0.2s ease-in-out;
-		}
-		&:hover {
-			&::before {
-				filter: brightness(0.76);
-			}
-		}
-		&:active {
-			outline: width(2) solid transparent;
-			outline-offset: width(2);
-			&::before {
-				filter: brightness(0.6);
-			}
-			&:not(:disabled) {
-				transform: scale(0.98);
-			}
-		}
-		&:disabled {
-			cursor: not-allowed;
-			opacity: opacity(disabled);
-			&::before {
-				background-color: bg(container, accent);
-				filter: none;
-			}
-		}
-	}
-	&.btn-lg {
-		padding: fluid(12) fluid(16);
-		@include font-scale(body-lg);
-		border-radius: radius(lg);
-	}
-	&.btn-md {
-		padding: fluid(8) fluid(12);
-		@include font-scale(body-md);
-		border-radius: radius(md);
-	}
-	&.btn-primary {
-		color: text(inverse);
-		&::before {
-			background-color: bg(container, accent);
-		}
-		&:focus {
-			box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44 / 0.32);
-		}
-	}
-	&.btn-secondary {
-		color: text(body);
-		&::before {
-			background-color: bg(container, neutral)
-		}
-		&:focus {
-			box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
-		}
-	}
-	&.btn-tertiary {
-		color: text(inverse);
-		&::before {
-			content: '';
-			position: absolute;
-			background-color: bg(container, neutral);
-			inset: 0;
-			opacity: opacity(hidden);
-			transition: opacity 0.2s;
-			z-index: -1;
-		}
-		&:hover {
-			&::before {
-				opacity: 0.24;
-			}
-		}
-		&:active {
-			&::before {
-				opacity: 0.4;
-			}
-		}
-		&:focus {
-			box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
-		}
-	}
-	&.btn-danger {
-		color: text(inverse);
-		&::before {
-			background-color: bg(container, danger);
-		}
-		&:focus {
-			box-shadow: 0 0 0 3px rgba(238, 67, 67, 0.3);
-		}
-	}
-	&.btn-success {
-		color: text(inverse);
-		&::before {
-			background-color: bg(container, success);
-		}
-		&:focus {
-			box-shadow: 0 0 0 3px rgba(87, 238, 67, 0.3);
-		}
-	}
+  &.btn {
+    position: relative;
+    overflow: hidden;
+    font-weight: weight(regular);
+    border: fixed(0);
+    outline: fixed(0);
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+    z-index: 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: inherit;
+      z-index: -1;
+      transition: filter 0.2s ease-in-out;
+    }
+
+    &:hover {
+      &::before {
+        filter: brightness(0.76);
+      }
+    }
+
+    &:active {
+      outline: width(2) solid transparent;
+      outline-offset: width(2);
+
+      &::before {
+        filter: brightness(0.6);
+      }
+
+      // &:not(:disabled) {
+      //   transform: scale(0.98);
+      // }
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: opacity(disabled);
+
+      &::before {
+        background-color: bg(container, primary);
+        filter: none;
+      }
+    }
+  }
+
+  &.btn-lg {
+    padding: fluid(12) fluid(16);
+
+    @include font-scale(body-lg);
+
+    border-radius: radius(lg);
+  }
+
+  &.btn-md {
+    padding: fluid(8) fluid(12);
+
+    @include font-scale(body-md);
+
+    border-radius: radius(md);
+  }
+
+  &.btn-primary {
+    color: text(inverse);
+
+    &::before {
+      background-color: bg(container, primary);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44deg / 32%);
+    }
+  }
+
+  &.btn-secondary {
+    color: text(inverse);
+
+    &::before {
+      background-color: bg(container, secondary);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgb(0 0 0 / 30%);
+    }
+  }
+
+  &.btn-tertiary {
+    color: text(inverse);
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: bg(container, neutral);
+      inset: 0;
+      opacity: opacity(hidden);
+      transition: opacity 0.2s;
+      z-index: -1;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 0.24;
+      }
+    }
+
+    &:active {
+      &::before {
+        opacity: 0.4;
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgb(0 0 0 / 30%);
+    }
+  }
+
+  &.btn-danger {
+    color: text(inverse);
+
+    &::before {
+      background-color: bg(container, danger);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgb(238 67 67 / 30%);
+    }
+  }
+
+  &.btn-success {
+    color: text(inverse);
+
+    &::before {
+      background-color: bg(container, success);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgb(87 238 67 / 30%);
+    }
+  }
 }
-button.btn-primary, 
-button.btn-secondary, 
-button.btn-danger, 
-button.btn-success {
-	background-color: transparent;
-}
+
+// button.btn-primary,
+// button.btn-secondary,
+// button.btn-danger,
+// button.btn-success {
+//   background-color: transparent;
+// }

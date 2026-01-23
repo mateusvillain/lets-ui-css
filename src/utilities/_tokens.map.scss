@@ -6,37 +6,46 @@ $breakpoint: (
   sm: 768px,
   md: 1024px,
   lg: 1280px,
-  1xl: 1440px
+  1xl: 1440px,
 );
-
 $border: (
   radius: (
-    1xs: token('lui.border.radius.1xs'),
+    xs: token('lui.border.radius.xs'),
     sm: token('lui.border.radius.sm'),
     md: token('lui.border.radius.md'),
     lg: token('lui.border.radius.lg'),
     circle: token('lui.border.radius.circle'),
-    none: token('lui.border.radius.none')
+    none: token('lui.border.radius.none'),
   ),
   width: (
     0: token('lui.border.width.0'),
     1: token('lui.border.width.1'),
-    2: token('lui.border.width.2')
-  )
+    2: token('lui.border.width.2'),
+  ),
 );
-
 $color: (
   primitive: (
-    brand: (
-      1: token('lui.brand.color.1'),
-      2: token('lui.brand.color.2'),
-      3: token('lui.brand.color.3'),
-      4: token('lui.brand.color.4'),
-      5: token('lui.brand.color.5'),
-      6: token('lui.brand.color.6'),
-      7: token('lui.brand.color.7'),
-      8: token('lui.brand.color.8'),
-      9: token('lui.brand.color.9')
+    primary: (
+      1: token('lui.brand.color.primary.1'),
+      2: token('lui.brand.color.primary.2'),
+      3: token('lui.brand.color.primary.3'),
+      4: token('lui.brand.color.primary.4'),
+      5: token('lui.brand.color.primary.5'),
+      6: token('lui.brand.color.primary.6'),
+      7: token('lui.brand.color.primary.7'),
+      8: token('lui.brand.color.primary.8'),
+      9: token('lui.brand.color.primary.9'),
+    ),
+    secondary: (
+      1: token('lui.brand.color.secondary.1'),
+      2: token('lui.brand.color.secondary.2'),
+      3: token('lui.brand.color.secondary.3'),
+      4: token('lui.brand.color.secondary.4'),
+      5: token('lui.brand.color.secondary.5'),
+      6: token('lui.brand.color.secondary.6'),
+      7: token('lui.brand.color.secondary.7'),
+      8: token('lui.brand.color.secondary.8'),
+      9: token('lui.brand.color.secondary.9'),
     ),
     blue: (
       1: token('lui.color.blue.1'),
@@ -47,7 +56,7 @@ $color: (
       6: token('lui.color.blue.6'),
       7: token('lui.color.blue.7'),
       8: token('lui.color.blue.8'),
-      9: token('lui.color.blue.9')
+      9: token('lui.color.blue.9'),
     ),
     gray: (
       1: token('lui.color.gray.1'),
@@ -58,7 +67,7 @@ $color: (
       6: token('lui.color.gray.6'),
       7: token('lui.color.gray.7'),
       8: token('lui.color.gray.8'),
-      9: token('lui.color.gray.9')
+      9: token('lui.color.gray.9'),
     ),
     green: (
       1: token('lui.color.green.1'),
@@ -69,7 +78,7 @@ $color: (
       6: token('lui.color.green.6'),
       7: token('lui.color.green.7'),
       8: token('lui.color.green.8'),
-      9: token('lui.color.green.9')
+      9: token('lui.color.green.9'),
     ),
     orange: (
       1: token('lui.color.orange.1'),
@@ -80,7 +89,7 @@ $color: (
       6: token('lui.color.orange.6'),
       7: token('lui.color.orange.7'),
       8: token('lui.color.orange.8'),
-      9: token('lui.color.orange.9')
+      9: token('lui.color.orange.9'),
     ),
     red: (
       1: token('lui.color.red.1'),
@@ -91,7 +100,7 @@ $color: (
       6: token('lui.color.red.6'),
       7: token('lui.color.red.7'),
       8: token('lui.color.red.8'),
-      9: token('lui.color.red.9')
+      9: token('lui.color.red.9'),
     ),
     violet: (
       1: token('lui.color.violet.1'),
@@ -102,27 +111,29 @@ $color: (
       6: token('lui.color.violet.6'),
       7: token('lui.color.violet.7'),
       8: token('lui.color.violet.8'),
-      9: token('lui.color.violet.9')
-    )
+      9: token('lui.color.violet.9'),
+    ),
   ),
   semantic: (
     bg: (
       surface: (
-        accent: token('lui.color.accent.background.surface'),
+        primary: token('lui.color.primary.background.surface'),
+        secondary: token('lui.color.secondary.background.surface'),
         info: token('lui.color.info.background.surface'),
         danger: token('lui.color.danger.background.surface'),
         success: token('lui.color.success.background.surface'),
         caution: token('lui.color.caution.background.surface'),
-        neutral: token('lui.color.neutral.background.surface')
+        neutral: token('lui.color.neutral.background.surface'),
       ),
       container: (
-        accent: token('lui.color.accent.background.container'),
+        primary: token('lui.color.primary.background.container'),
+        secondary: token('lui.color.secondary.background.container'),
         info: token('lui.color.info.background.container'),
         danger: token('lui.color.danger.background.container'),
         success: token('lui.color.success.background.container'),
         caution: token('lui.color.caution.background.container'),
         neutral: token('lui.color.neutral.background.container'),
-        overlay: token('lui.color.neutral.background.overlay')
+        overlay: token('lui.color.neutral.background.overlay'),
       ),
     ),
 
@@ -130,48 +141,47 @@ $color: (
       divisor: token('lui.color.neutral.border.divisor'),
       stroke: (
         neutral: token('lui.color.neutral.border.stroke'),
-        accent: token('lui.color.accent.border.stroke'),
+        primary: token('lui.color.primary.border.stroke'),
+        secondary: token('lui.color.secondary.border.stroke'),
         info: token('lui.color.info.border.stroke'),
         danger: token('lui.color.danger.border.stroke'),
         success: token('lui.color.success.border.stroke'),
-        caution: token('lui.color.caution.border.stroke')
-      )
+        caution: token('lui.color.caution.border.stroke'),
+      ),
     ),
 
     text: (
-        heading: token('lui.color.neutral.text.heading'),
-        body: token('lui.color.neutral.text.body'),
-        inverse: token('lui.color.neutral.text.inverse'),
-        error: token('lui.color.danger.text.error'),
-        link: token('lui.color.link.default'),
-        link-visited: token('lui.color.link.visited')
+      heading: token('lui.color.neutral.text.heading'),
+      body: token('lui.color.neutral.text.body'),
+      inverse: token('lui.color.neutral.text.inverse'),
+      error: token('lui.color.danger.text.error'),
+      link: token('lui.color.link.default'),
+      link-visited: token('lui.color.link.visited'),
     ),
 
     icon: (
-      accent: token('lui.color.accent.icon.default'),
+      primary: token('lui.color.primary.icon.default'),
+      secondary: token('lui.color.secondary.icon.default'),
       info: token('lui.color.info.icon.default'),
       danger: token('lui.color.danger.icon.default'),
       success: token('lui.color.success.icon.default'),
       caution: token('lui.color.caution.icon.default'),
       neutral: token('lui.color.neutral.icon.default'),
-      inverse: token('lui.color.neutral.icon.inverse')
+      inverse: token('lui.color.neutral.icon.inverse'),
     ),
-  )
+  ),
 );
-
 $elevation: (
   base: token('lui.elevation.base'),
   hovered: token('lui.elevation.hovered'),
   floating: token('lui.elevation.floating'),
-  overlay: token('lui.elevation.overlay')
+  overlay: token('lui.elevation.overlay'),
 );
-
 $opacity: (
   disabled: token('lui.opacity.disabled'),
   hidden: token('lui.opacity.hidden'),
-  visible: token('lui.opacity.visible')
+  visible: token('lui.opacity.visible'),
 );
-
 $space: (
   fixed: (
     0: token('lui.spacing.fixed.0'),
@@ -179,7 +189,7 @@ $space: (
     16: token('lui.spacing.fixed.16'),
     24: token('lui.spacing.fixed.24'),
     32: token('lui.spacing.fixed.32'),
-    40: token('lui.spacing.fixed.40')
+    40: token('lui.spacing.fixed.40'),
   ),
   fluid: (
     2: token('lui.spacing.fluid.2'),
@@ -195,14 +205,13 @@ $space: (
     56: token('lui.spacing.fluid.56'),
     64: token('lui.spacing.fluid.64'),
     72: token('lui.spacing.fluid.72'),
-    80: token('lui.spacing.fluid.80')
-  )
+    80: token('lui.spacing.fluid.80'),
+  ),
 );
-
 $typography: (
   font: (
     heading: token('lui.brand.typography.font-family.heading'),
-    body: token('lui.brand.typography.font-family.body')
+    body: token('lui.brand.typography.font-family.body'),
   ),
 
   scales: (
@@ -210,81 +219,81 @@ $typography: (
       family: heading,
       size: 3xl,
       weight: regular,
-      case: none
+      case: none,
     ),
     title: (
       family: heading,
       size: 2xl,
       weight: bold,
-      case: none
+      case: none,
     ),
     headline: (
       family: heading,
       size: 1xl,
       weight: semibold,
-      case: none
+      case: none,
     ),
     subtitle: (
       family: heading,
       size: lg,
       weight: regular,
-      case: none
+      case: none,
     ),
     block-title: (
       family: heading,
       size: md,
       weight: medium,
-      case: none
+      case: none,
     ),
     subheadline: (
       family: heading,
       size: sm,
       weight: regular,
-      case: none
+      case: none,
     ),
     overtitle: (
       family: heading,
       size: 3xs,
       weight: medium,
-      case: uppercase
+      case: uppercase,
     ),
     body-lg: (
       family: body,
       size: 1xs,
       weight: regular,
-      case: none
+      case: none,
     ),
     body-md: (
       family: body,
       size: 2xs,
       weight: regular,
-      case: none
+      case: none,
     ),
     body-sm: (
       family: body,
       size: 3xs,
       weight: regular,
-      case: none
-    )
+      case: none,
+    ),
   ),
 
   weight: (
     regular: token('lui.typography.weight.regular'),
     medium: token('lui.typography.weight.medium'),
     semibold: token('lui.typography.weight.semibold'),
-    bold: token('lui.typography.weight.bold')
+    bold: token('lui.typography.weight.bold'),
   ),
 
   case: (
     none: token('lui.typography.case.none'),
     lowercase: token('lui.typography.case.lowercase'),
-    uppercase: token('lui.typography.case.uppercase')
+    uppercase: token('lui.typography.case.uppercase'),
   ),
 
   decoration: (
     none: token('lui.typography.decoration.none'),
     underline: token('lui.typography.decoration.underline'),
-    line-through: token('lui.typography.decoration.line-through')
+    line-through: token('lui.typography.decoration.line-through'),
   ),
 
   size: (
@@ -296,11 +305,11 @@ $typography: (
     sm: token('lui.brand.typography.font-size.sm'),
     1xs: token('lui.brand.typography.font-size.1xs'),
     2xs: token('lui.brand.typography.font-size.2xs'),
-    3xs: token('lui.brand.typography.font-size.3xs')
+    3xs: token('lui.brand.typography.font-size.3xs'),
   ),
 
   line-height: (
     heading: token('lui.brand.typography.line-height.heading'),
-    body: token('lui.brand.typography.line-height.body')
-  )
+    body: token('lui.brand.typography.line-height.body'),
+  ),
 );
