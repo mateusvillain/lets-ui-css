@@ -32,15 +32,15 @@ const Template = ({ title, body, size }) => {
 
   return `
       <div class="${dialogClasses}" tabindex="-1" role="dialog">
-        <div class="modal-header">
+        <div class="modal__header">
           ${title}
         </div>
-        <div class="modal-body">
+        <div class="modal__body">
           <p>${body}</p>
         </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary btn-lg">Cancel</button>
-          <button class="btn btn-primary btn-lg">Confirm</button>
+        <div class="modal__footer">
+          <button class="btn btn--secondary btn--lg">Cancel</button>
+          <button class="btn btn--primary btn--lg">Confirm</button>
         </div>
       </div>
   `;

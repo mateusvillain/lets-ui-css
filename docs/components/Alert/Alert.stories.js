@@ -6,42 +6,36 @@ export default {
   argTypes: {
     variant: {
       control: {
-        type: 'select'
+        type: 'select',
       },
-      options: [
-        'caution',
-        'danger',
-        'info',
-        'success'
-      ],
+      options: ['caution', 'danger', 'info', 'success'],
     },
-    title: { 
-      control: 'text'
+    title: {
+      control: 'text',
     },
-    content: { 
-      control: 'text'
+    content: {
+      control: 'text',
     },
     actions: {
-      control: 'boolean'
-    }
+      control: 'boolean',
+    },
   },
 };
 
 const Template = ({ variant, title, content, actions }) => {
-
   return `
     <div class="alert alert--${variant}" role="alert">
-      <div class="alert-content">
-        <div class="alert-text">
+      <div class="alert__content">
+        <div class="alert__text">
           <p class="body-lg">${title}</p>
           <p class="body-lg">${content}</p>
         </div>
       </div>
-      
+
       ${
         actions
           ? `
-            <div class="alert-actions">
+            <div class="alert__actions">
               <button class="btn btn-secondary btn-lg">Button</button>
               <button class="btn btn-primary btn-lg">Button</button>
             </div>
@@ -61,11 +55,11 @@ Alert.args = {
 };
 
 export const Primary = () => `
-  <div class="alert bc-caution>
-    <div class="alert-content">
-      <div class="alert-text">
-        <p class="body-lg">Title</p>
-        <p class="body-lg">Title</p>
+  <div class="alert alert--caution">
+    <div class="alert__content">
+      <div class="alert__text">
+        <p class="body--lg">Title</p>
+        <p class="body--lg">Title</p>
       </div>
     </div>
   </div>

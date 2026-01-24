@@ -5,41 +5,29 @@ export default {
   title: 'Components/Button',
   // tags: ['autodocs'],
   argTypes: {
-    label: { 
-      control: 'text'
+    label: {
+      control: 'text',
     },
-    variant: { 
+    variant: {
       control: {
-        type: 'select'
+        type: 'select',
       },
-      options: [
-        'primary',
-        'secondary',
-        'danger',
-        'success'
-      ],
+      options: ['primary', 'secondary', 'danger', 'success'],
     },
     size: {
-      control: { 
-        type: 'select' 
+      control: {
+        type: 'select',
       },
-        options: [
-          'lg',
-          'md'
-        ],
+      options: ['lg', 'md'],
     },
-    disabled: { 
-      control: 'boolean'
-    }
+    disabled: {
+      control: 'boolean',
+    },
   },
 };
 
 const Template = ({ label, variant, size, disabled }) => {
-  const classes = [
-    'btn',
-    variant && `btn-${variant}`,
-    size && `btn-${size}`,
-  ]
+  const classes = ['btn', variant && `btn--${variant}`, size && `btn--${size}`]
     .filter(Boolean)
     .join(' ');
 
@@ -59,17 +47,17 @@ Button.args = {
 };
 
 export const Primary = () => `
-  <button class="btn btn-primary btn-lg">Secondary Button</button>
+  <button class="btn btn--primary btn--lg">Secondary Button</button>
 `;
 
 export const Secondary = () => `
-  <button class="btn btn-secondary btn-lg">Secondary Button</button>
+  <button class="btn btn--secondary btn--lg">Secondary Button</button>
 `;
 
 export const Danger = () => `
-  <button class="btn btn-danger btn-lg">Danger Button</button>
+  <button class="btn btn--danger btn--lg">Danger Button</button>
 `;
 
 export const Success = () => `
-  <button class="btn btn-success btn-lg">Success Button</button>
+  <button class="btn btn--success btn--lg">Success Button</button>
 `;
