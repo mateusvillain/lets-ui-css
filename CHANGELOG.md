@@ -1,9 +1,17 @@
+## 0.17.1
+
+### Changed
+
+- Updated component semantics to follow the BEM methodology (`Alert`, `Button`, `Card`, `Checkbox`, `Text Field`, `Modal`, `Select`, and `Tag`).
+- Updated body text styles in the typography SCSS map to follow the BEM naming convention.
+- Updated documentation to reflect the new component and typography semantics.
+
 ## 0.17.0
 
 ### Added
 
-- Modal component
-- Modal documentation
+- `Modal` component
+- `Modal` documentation
 
 ## 0.16.0
 
@@ -16,14 +24,14 @@
 
 ### Added
 
-- Created the Tooltip component.
+- Created the `Tooltip` component.
 - Added overlay color for interface overlays to the color map.
 - Created a new state mixin to standardize component states.
-- Applied the state mixin to Link and Icon Button components.
+- Applied the state mixin to `Link` and `Icon Button` components.
 
 ### Removed
 
-- Removed the Header component.
+- Removed the `Header` component.
 
 ## 0.14.0
 
