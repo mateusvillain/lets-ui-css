@@ -1,3 +1,10 @@
+## 0.17.0
+
+### Added
+
+- Modal component
+- Modal documentation
+
 ## 0.16.0
 
 ### Refactor
