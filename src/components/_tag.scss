@@ -27,15 +27,15 @@
 
 .tag- {
   &sm {
-    @include tag-size(fluid(2), fluid(8), body-sm, radius(sm));
+    @include tag-size(fluid(2), fluid(8), body--sm, radius(sm));
   }
 
   &md {
-    @include tag-size(fluid(4), fluid(8), body-md, radius(md));
+    @include tag-size(fluid(4), fluid(8), body--md, radius(md));
   }
 
   &lg {
-    @include tag-size(fluid(8), fluid(12), body-lg, radius(lg));
+    @include tag-size(fluid(8), fluid(12), body--lg, radius(lg));
   }
 
   &circle {

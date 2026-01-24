@@ -47,7 +47,7 @@
     padding: fluid(24);
     padding-top: 0;
 
-    @include font-scale(body-lg);
+    @include font-scale(body--lg);
 
     color: text(body);
   }

@@ -1,6 +1,12 @@
 @use '../utilities/functions' as *;
 @use '../utilities/mixins' as *;
 
+@media (width <= 1279px) {
+  .navbar {
+    display: none;
+  }
+}
+
 .navbar {
   position: fixed;
   top: fixed(0);
@@ -14,25 +20,20 @@
   grid-area: sidebar;
 
   img {
-    padding: fixed(16) fixed(16) fixed(0) fixed(16);
+    padding: fixed(16) fixed(16) fixed(0);
   }
-}
 
-@media (max-width: 1279px) {
-  .navbar {
-    display: none;
-  }
-}
-
-.navbar {
   h6 {
     color: text(heading);
+
     @include font-scale(overtitle);
   }
 
   a {
     color: text(body);
-    @include font-scale(body-lg);
+
+    @include font-scale(body--lg);
+
     text-decoration: none;
   }
 
@@ -45,6 +46,7 @@
 
     ul {
       gap: fixed(24);
+
       li {
         display: flex;
       }
@@ -53,7 +55,7 @@
     a {
       position: relative;
       background-color: bg(surface, neutral);
-      padding: fixed(16) fixed(16);
+      padding: fixed(16);
       border-radius: radius(md);
       transition: all 0.1s ease-in-out;
       width: 100%;
@@ -81,7 +83,7 @@
 
 .menu-active {
   border-radius: radius(md);
-  padding: fixed(16) fixed(16);
+  padding: fixed(16);
   background-color: #8733ff;
   color: text(inverse);
   cursor: default;

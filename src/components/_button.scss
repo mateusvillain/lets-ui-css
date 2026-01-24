@@ -52,23 +52,23 @@ button {
     }
   }
 
-  &.btn-lg {
+  &.btn--lg {
     padding: fluid(12) fluid(16);
 
-    @include font-scale(body-lg);
+    @include font-scale(body--lg);
 
     border-radius: radius(lg);
   }
 
-  &.btn-md {
+  &.btn--md {
     padding: fluid(8) fluid(12);
 
-    @include font-scale(body-md);
+    @include font-scale(body--md);
 
     border-radius: radius(md);
   }
 
-  &.btn-primary {
+  &.btn--primary {
     color: text(inverse);
 
     &::before {
@@ -80,7 +80,7 @@ button {
     }
   }
 
-  &.btn-secondary {
+  &.btn--secondary {
     color: text(inverse);
 
     &::before {
@@ -92,7 +92,7 @@ button {
     }
   }
 
-  &.btn-tertiary {
+  &.btn--tertiary {
     color: text(inverse);
 
     &::before {
@@ -122,7 +122,7 @@ button {
     }
   }
 
-  &.btn-danger {
+  &.btn--danger {
     color: text(inverse);
 
     &::before {
@@ -134,7 +134,7 @@ button {
     }
   }
 
-  &.btn-success {
+  &.btn--success {
     color: text(inverse);
 
     &::before {
@@ -147,9 +147,9 @@ button {
   }
 }
 
-// button.btn-primary,
-// button.btn-secondary,
-// button.btn-danger,
-// button.btn-success {
+// button.btn--primary,
+// button.btn--secondary,
+// button.btn--danger,
+// button.btn--success {
 //   background-color: transparent;
 // }

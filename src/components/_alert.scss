@@ -7,16 +7,16 @@
   gap: fixed(16);
   border-radius: radius(lg);
 
-  &-content,
-  &-actions {
+  &__content,
+  &__actions {
     display: flex;
   }
 
-  &-content {
+  &__content {
     gap: fixed(16);
   }
 
-  &-text {
+  &__text {
     width: 100%;
 
     p {
@@ -30,7 +30,7 @@
     }
   }
 
-  &-actions {
+  &__actions {
     margin-top: fixed(24);
     justify-content: flex-end;
 
@@ -45,7 +45,7 @@
     &.alert--#{$key} {
       border: width(2) stroke(#{$key}) solid;
 
-      & i.alert-icon {
+      & i.alert__icon {
         color: icon(#{$key});
       }
     }
