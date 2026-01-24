@@ -1,0 +1,64 @@
+@use 'sass:list';
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1050;
+  background-color: bg(surface, neutral);
+  width: 100%;
+  margin: fluid(16);
+  box-shadow: elevation(overlay);
+  border-radius: radius(lg);
+  outline: 0;
+  overflow: hidden;
+  transition:
+    opacity 0.2s ease-in-out,
+    visibility 0.2s ease-in-out;
+
+  &--md {
+    max-width: 480px;
+  }
+
+  &--lg {
+    max-width: 640px;
+  }
+
+  &--sm {
+    max-width: 320px;
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: fluid(24);
+
+    @include font-scale(block-title);
+
+    color: text(heading);
+  }
+
+  &-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: fluid(24);
+    padding-top: 0;
+
+    @include font-scale(body-lg);
+
+    color: text(body);
+  }
+
+  &-footer {
+    display: flex;
+    padding: fixed(0) fluid(24) fluid(24);
+    gap: fluid(16);
+
+    button {
+      flex: 1;
+    }
+  }
+}
