@@ -1,0 +1,25 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as ModalStories from './Modal.stories';
+
+<Meta of={ModalStories} />
+
+# Modal
+
+Modals focus the user's attention exclusively on one task or piece of information via a window that sits on top of the page content.
+
+<Canvas of={ModalStories.Default} />
+<Controls of={ModalStories.Default} />
+
+## Sizes
+
+### Large
+
+<Canvas of={ModalStories.Large} />
+
+### Medium
+
+<Canvas of={ModalStories.Medium} />
+
+### Small
+
+<Canvas of={ModalStories.Small} />
