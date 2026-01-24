@@ -4,17 +4,24 @@
   background-color: bg(surface, neutral);
   border-radius: radius(lg);
   overflow: hidden;
-  &-cover {
+
+  &__cover {
     & img {
       width: 100%;
       object-fit: cover;
     }
+
+    > img {
+      max-height: 240px;
+    }
   }
-  &-body {
+
+  &__body {
     padding: fixed(24);
     display: flex;
     flex-direction: column;
     gap: fixed(8);
+
     > {
       .card-actions {
         margin-top: fixed(16);
@@ -24,13 +31,8 @@
       }
     }
   }
-  &-cover,
-  &-cover {
-    > img {
-      max-height: 240px;
-    }
-  }
-  &-border {
+
+  &__border {
     border: width(1) solid stroke(neutral);
   }
 }

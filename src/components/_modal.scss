@@ -30,7 +30,7 @@
     max-width: 320px;
   }
 
-  &-header {
+  &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -41,7 +41,7 @@
     color: text(heading);
   }
 
-  &-body {
+  &__body {
     position: relative;
     flex: 1 1 auto;
     padding: fluid(24);
@@ -52,7 +52,7 @@
     color: text(body);
   }
 
-  &-footer {
+  &__footer {
     display: flex;
     padding: fixed(0) fluid(24) fluid(24);
     gap: fluid(16);

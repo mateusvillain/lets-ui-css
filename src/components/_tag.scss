@@ -25,7 +25,7 @@
   border-radius: $radius;
 }
 
-.tag- {
+.tag-- {
   &sm {
     @include tag-size(fluid(2), fluid(8), body--sm, radius(sm));
   }
@@ -92,7 +92,8 @@ $variants: (
 
 @each $type in (surface, container) {
   @each $name, $colors in map.get($variants, $type) {
-    .tag-#{$type}-#{$name} {
+    .tag--#{$type}-#{$name} {
+      display: inline-flex;
       color: map.get($colors, text);
       background: map.get($colors, bg);
     }
