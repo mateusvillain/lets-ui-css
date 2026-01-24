@@ -4,28 +4,44 @@
 @use '../utilities/tokens.map' as *;
 @use '../utilities/mixins' as *;
 
-.form-group {
-  @include flex(column, stretch, flex-start, fixed(8), nowrap);
-}
-
-label {
-  color: text(heading);
-}
-
 $types: color, email, number, password, search, tel, text, time, url;
 $selectors: ();
 $size: (
   lg: (
     padding: fluid(12),
     radius: radius(sm),
-    scale: body-lg,
+    scale: body--lg,
   ),
   md: (
     padding: fixed(8),
     radius: radius(xs),
-    scale: body-md,
+    scale: body--md,
   ),
 );
+
+.form {
+  &__group {
+    @include flex(column, stretch, flex-start, fixed(8), nowrap);
+  }
+
+  @each $key, $props in $size {
+    &__#{$key} label {
+      @include font-scale(map.get($props, scale));
+    }
+
+    &__#{$key} input,
+    &__#{$key} select {
+      border-radius: map.get($props, radius);
+      padding: map.get($props, padding);
+
+      @include font-scale(map.get($props, scale));
+    }
+  }
+}
+
+label {
+  color: text(heading);
+}
 
 @each $type in $types {
   $selectors: list.append($selectors, 'input[type="#{$type}"]', comma);
@@ -47,21 +63,5 @@ $size: (
     border: width(1) solid bg(container, primary);
     box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44deg / 32%);
     outline: none;
-  }
-}
-
-@each $key, $props in $size {
-  input.form-size-#{$key},
-  select.form-size-#{$key} {
-    border-radius: map.get($props, radius);
-    padding: map.get($props, padding);
-  }
-
-  input.form-size-#{$key},
-  select.form-size-#{$key},
-  label.form-size-#{$key},
-  .check-size-#{$key},
-  .form-checkbox.check-size-#{$key} input:checked::after {
-    @include font-scale(map.get($props, scale));
   }
 }

@@ -3,6 +3,11 @@
 @use '../utilities/tokens.map' as *;
 @use '../utilities/mixins' as *;
 
+$size: (
+  lg: 24,
+  md: 16,
+);
+
 .checkbox,
 input[type='checkbox'] {
   display: flex;
@@ -15,18 +20,14 @@ input[type='checkbox'] {
 }
 
 .checkbox {
-  &.check-size-lg input[type='checkbox'] {
-    width: fixed(24);
-    height: fixed(24);
-  }
-
-  &.check-size-md input[type='checkbox'] {
-    width: fixed(16);
-    height: fixed(16);
+  @each $key, $value in $size {
+    &--#{$key} input[type='checkbox'] {
+      width: fixed($value);
+      height: fixed($value);
+    }
   }
 
   input {
-    appearance: none;
     appearance: none;
     background-color: bg(surface, neutral);
     border: width(1) solid border(divisor);
@@ -40,19 +41,16 @@ input[type='checkbox'] {
       border-color: bg(container, primary);
 
       &::after {
-        // font-family: 'letsicons' !important;
-        content: '\e902';
-        color: bg(surface, neutral);
-        font-weight: weight(bold);
+        content: '';
         position: absolute;
+        width: 6px;
+        height: 12px;
+        border-right: 2px solid bg(surface, neutral);
+        border-bottom: 2px solid bg(surface, neutral);
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -60%) rotate(45deg);
       }
-    }
-
-    &:hover {
-      border-color: bg(container, primary);
     }
 
     &:focus {
@@ -61,6 +59,6 @@ input[type='checkbox'] {
       outline: none;
     }
 
-    @include disabled;
+    @include states(0.76, 0.6, 3, lch(45.27% 113.1 310.44deg / 32%));
   }
 }
