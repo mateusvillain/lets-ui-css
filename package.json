@@ -37,9 +37,9 @@
   },
   "scripts": {
     "tokens": "tz build",
-    "tokens:css": "npm run tokens && npm run css && npm run css:minify",
     "css": "sass src/index.scss dist/letsui.css",
     "css:minify": "postcss dist/letsui.css --use cssnano --output dist/letsui.min.css",
+    "build:css": "npm run css && npm run css:minify && npm run tokens",
     "css:watch": "sass --watch src/index.scss dist/letsui.css --no-source-map",
     "lint": "npm run lint:html && npm run lint:css && npm run lint:md",
     "lint:html": "html-validate \"**/*.html\"",
