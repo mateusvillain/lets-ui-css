@@ -13,7 +13,20 @@ export default defineConfig({
         {
           mode: "light",
           selectors: [
-            "@media (prefers-color-scheme: light)",
+            "@media (prefers-color-scheme: light)"
+          ],
+          scheme: "light",
+        },
+        {
+          mode: "dark",
+          selectors: [
+            "@media (prefers-color-scheme: dark)"
+          ],
+          scheme: "dark",
+        },
+        {
+          mode: "light",
+          selectors: [
             '[data-theme="light"]'
           ],
           scheme: "light",
@@ -21,7 +34,6 @@ export default defineConfig({
         {
           mode: "dark",
           selectors: [
-            "@media (prefers-color-scheme: dark)",
             '[data-theme="dark"]'
           ],
           scheme: "dark",
