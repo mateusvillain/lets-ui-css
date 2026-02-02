@@ -4,48 +4,20 @@
 
 // Flexbox
 //  @include flex(direction, align, justify, gap, wrap);
-@mixin flex(
-  $direction: row,
-  $align: center,
-  $justify: flex-start,
-  $gap: null,
-  $wrap: nowrap
-) {
+@mixin flex($direction: row, $align: center, $justify: flex-start, $gap: 0, $wrap: nowrap) {
   display: flex;
-  flex-direction: $direction;
+  flex-flow: $direction $wrap;
   align-items: $align;
   justify-content: $justify;
-  flex-wrap: $wrap;
 
-  @if $gap != null {
+  @if $gap {
     gap: $gap;
   }
 }
 
 // States
 //  @include states(hover, active, size, color);
-@mixin states(
-  $hover: 0.76,
-  $active: 0.6,
-  $size: 3px,
-  $color: rgba(0, 0, 0, 0.3)
-) {
-  &:not([aria-disabled="true"]):not(.is-disabled) {
-    &:hover {
-      filter: brightness($hover);
-    }
-
-    &:active {
-      filter: brightness($active);
-    }
-    
-    &:focus,
-    &:focus-visible {
-      outline: 0;
-      box-shadow: 0 0 0 $size $color;
-    }
-  }
-
+@mixin states($hover: 0.76, $active: 0.6, $size: 3px, $color: rgba(0, 0, 0, 0.3)) {
   &:disabled,
   &.is-disabled,
   &[aria-disabled='true'] {
@@ -53,6 +25,22 @@
     cursor: not-allowed;
     opacity: opacity(disabled);
     text-decoration: none;
+  }
+
+  &:not([aria-disabled='true'], .is-disabled) {
+    &:hover {
+      filter: brightness($hover);
+    }
+
+    &:active {
+      filter: brightness($active);
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: 0;
+      box-shadow: 0 0 0 $size $color;
+    }
   }
 }
 
@@ -90,42 +78,14 @@
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
 }
 
-// Reduced Motion
-//  @include reduced-motion;
-@mixin reduced-motion {
-  @media (prefers-reduced-motion: reduce) {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
 // Responsive Utilities
-//  @include show($breakpoint);
-//  @include hide($breakpoint);
 //  @include media-up($breakpoint) { ... }
 //  @include media-down($breakpoint) { ... }
 //  $breakpoint = 1xs | sm | md | lg | 1xl
-@mixin show($breakpoint) {
-  display: none;
-
-  @media (min-width: breakpoint($breakpoint)) {
-    display: block;
-  }
-}
-
-@mixin hide($breakpoint) {
-  display: block;
-
-  @media (min-width: breakpoint($breakpoint)) {
-    display: none;
-  }
-}
-
 @mixin media-up($breakpoint) {
   @media (min-width: breakpoint($breakpoint)) {
     @content;
@@ -133,11 +93,10 @@
 }
 
 @mixin media-down($breakpoint) {
-  @media (max-width: calc(breakpoint($breakpoint) - 1px)) {
+  @media (width <= calc(breakpoint($breakpoint) - 1px)) {
     @content;
   }
 }
-
 
 // Focus Ring
 //  @include focus-ring($color, $offset);
@@ -145,7 +104,7 @@
 //  $offset = any valid CSS length value (default: 2px)
 @mixin focus-ring($color, $offset: 2px) {
   &:focus-visible {
-    outline: border(2) solid $color;
+    outline: width(2) solid $color;
     outline-offset: $offset;
   }
 }
@@ -153,10 +112,10 @@
 // Disable Text Selection
 //  @include no-select;
 @mixin no-select {
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none;    /* Firefox */
-  -ms-user-select: none;     /* IE10+/Edge */
-  user-select: none;         /* Standard */
+  user-select: none; /* Safari */
+  user-select: none; /* Firefox */
+  user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 // Font Scale
@@ -164,11 +123,7 @@
 @mixin font-scale($scale-name) {
   $scale: map.get($typography, scales, $scale-name);
 
-  font: weight(map.get($scale, weight))
-        size(map.get($scale, size)) /
-        line-height(map.get($scale, family))
-        font(map.get($scale, family));
-
+  font: weight(map.get($scale, weight)) size(map.get($scale, size)) / line-height(map.get($scale, family)) font(map.get($scale, family));
   text-transform: case(map.get($scale, case));
 }
 
