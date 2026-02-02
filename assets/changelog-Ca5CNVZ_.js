@@ -1,4 +1,4 @@
-import{j as n,M as l}from"./blocks-CXj4gyfy.js";import{useMDXComponents as s}from"./index-3OTgzB8b.js";import"./preload-helper-PPVm8Dsz.js";import"./_commonjsHelpers-CqkleIqs.js";import"./iframe-2JH_1bA1.js";function i(d){const e={a:"a",code:"code",h1:"h1",h2:"h2",h3:"h3",li:"li",strong:"strong",ul:"ul",...s(),...d.components};return n.jsxs(n.Fragment,{children:[n.jsx(l,{title:"Get started/Changelog"}),`
+import{j as n,M as l}from"./blocks-B3nMNj5c.js";import{useMDXComponents as s}from"./index-BhLDE9DN.js";import"./preload-helper-CEreSqEN.js";import"./_commonjsHelpers-CqkleIqs.js";import"./iframe-BBB6Ngfv.js";function i(d){const e={a:"a",code:"code",h1:"h1",h2:"h2",h3:"h3",li:"li",strong:"strong",ul:"ul",...s(),...d.components};return n.jsxs(n.Fragment,{children:[n.jsx(l,{title:"Get started/Changelog"}),`
 `,n.jsx(e.h1,{id:"changelog",children:"Changelog"}),`
 `,n.jsx(e.h2,{id:"0171",children:"0.17.1"}),`
 `,n.jsx(e.h3,{id:"changed",children:"Changed"}),`
