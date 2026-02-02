@@ -27,7 +27,8 @@
   "type": "module",
   "style": "dist/letsui.css",
   "files": [
-    "dist"
+    "dist/letsui.css",
+    "dist/letsui.min.css"
   ],
   "bugs": {
     "url": "https://github.com/mateusvillain/lets-ui-css/issues"
@@ -44,6 +45,7 @@
     "lint:md": "markdownlint-cli2 \"**/*.md\"",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "deploy-storybook": "npm run build-storybook && gh-pages -b storybook -d storybook-static",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -80,6 +82,7 @@
     "cssnano": "^7.1.2",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
+    "gh-pages": "^6.3.0",
     "globals": "^17.0.0",
     "html-validate": "^10.5.0",
     "husky": "^9.1.7",
