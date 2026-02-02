@@ -1,5 +1,5 @@
 {
-  "name": "lets-ui-css",
+  "name": "@lets-ui/css",
   "version": "0.17.1",
   "description": "A fluid and multi-brand design system for web projects.",
   "keywords": [
@@ -25,12 +25,9 @@
     "url": "https://mateusvillain.com"
   },
   "type": "module",
-  "main": "scss/letsui.scss",
-  "style": "src/letsui.css",
+  "style": "dist/letsui.css",
   "files": [
-    "scss/letsui.scss",
-    "src/letsui.css",
-    "src/letsui.min.css"
+    "dist"
   ],
   "bugs": {
     "url": "https://github.com/mateusvillain/lets-ui-css/issues"
