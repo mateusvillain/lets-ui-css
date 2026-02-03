@@ -1,0 +1,69 @@
+name: 🎨 Design token request
+description: Create or update a design token
+title: '[Token]: '
+labels: ['design-token']
+body:
+  - type: dropdown
+    id: action
+    attributes:
+      label: Type of request
+      options:
+        - Create new token
+        - Update existing token
+    validations:
+      required: true
+
+  - type: input
+    id: token_name
+    attributes:
+      label: Token name
+      description: Name of the token following the system naming convention
+      placeholder: e.g. color.primary.500, spacing.sm
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why is this change needed?
+      description: Explain the problem or need that justifies this token
+      placeholder: e.g. The current token does not meet contrast requirements in dark mode
+    validations:
+      required: true
+
+  - type: textarea
+    id: value
+    attributes:
+      label: Proposed value or change
+      description: Describe the value, scale, or logic of the token
+      placeholder: e.g. New color value for light and dark themes
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact analysis
+      description: Describe where this token is used or will be used
+      placeholder: e.g. Buttons, alerts, and form fields across multiple products
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Figma links, documentation, contrast checks, or related issues
+      placeholder: e.g. Figma file or WCAG contrast report
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: This token cannot be solved by reusing an existing one
+        - label: The change was evaluated across themes and brands
+        - label: The token follows the naming and structure conventions
+        - label: Accessibility impact was considered
