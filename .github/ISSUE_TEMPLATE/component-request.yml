@@ -1,0 +1,31 @@
+name: Component request
+description: Propose the creation of a new component for the design system
+title: '[Component]: '
+labels: ['component', 'request']
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this component solve?
+      description: Describe the context and the pain point that motivated this request
+      placeholder: e.g. We have multiple action buttons repeated with inconsistent variations
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References or examples
+      description: Figma links, screenshots, external references, or other design systems
+      placeholder: e.g. Figma link or Material Design example
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: Something similar already exists in the design system
+        - label: This could be a variation of an existing component
+        - label: This component will be reused across more than one product
