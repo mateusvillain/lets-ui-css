@@ -1,3 +1,9 @@
+## 0.17.2
+
+### Fixed
+
+- Corrected spacing variables generation
+
 ## 0.17.1
 
 ### Changed
