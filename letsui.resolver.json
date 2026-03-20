@@ -3,21 +3,22 @@
   "version": "2025.10",
   "sets": {
     "brand": {
-      "sources": [
-        { "$ref": "./tokens/brand/foundation.json" },
-        { "$ref": "./tokens/brand/colors.json" }
-      ]
+      "sources": [{ "$ref": "./tokens/brand/foundation.json" }, { "$ref": "./tokens/brand/colors.json#/themes/lets-ui-light" }]
     },
     "global": {
-      "sources": [
-        { "$ref": "./tokens/global/primitive.json" },
-        { "$ref": "./tokens/global/semantic.json" },
-        { "$ref": "./tokens/global/colors.json" }
-      ]
+      "sources": [{ "$ref": "./tokens/global/primitive.json" }, { "$ref": "./tokens/global/semantic.json" }, { "$ref": "./tokens/global/colors.json" }]
     }
   },
-  "resolutionOrder": [
-    { "$ref": "#/sets/brand" },
-    { "$ref": "#/sets/global" }
-  ]
+  "modifiers": {
+    "brandTheme": {
+      "default": "lets-ui-light",
+      "contexts": {
+        "lets-ui-light": [{ "$ref": "./tokens/brand/colors.json#/themes/lets-ui-light" }],
+        "lets-ui-dark": [{ "$ref": "./tokens/brand/colors.json#/themes/lets-ui-dark" }],
+        "nova-ui-light": [{ "$ref": "./tokens/brand/colors.json#/themes/nova-ui-light" }],
+        "nova-ui-dark": [{ "$ref": "./tokens/brand/colors.json#/themes/nova-ui-dark" }]
+      }
+    }
+  },
+  "resolutionOrder": [{ "$ref": "#/sets/brand" }, { "$ref": "#/sets/global" }, { "$ref": "#/modifiers/brandTheme" }]
 }
