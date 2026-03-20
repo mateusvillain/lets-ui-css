@@ -1,3 +1,11 @@
+## 0.17.3
+
+### Changed
+
+- Updated `terrazzo.config.mjs` to support data-theme and data-brand
+- Updated `letsui.resolver.json` to support data-theme and data-brand
+- Updated `colors.json` to support data-theme and data-brand
+
 ## 0.17.2
 
 ### Fixed
