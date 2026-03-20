@@ -4,39 +4,54 @@ import sass from "@terrazzo/plugin-sass";
 
 export default defineConfig({
   tokens: ["./letsui.resolver.json"],
-  outDir: './dist/',
+  outDir: "./dist/",
   plugins: [
     css({
       filename: "letsui.tokens.css",
-      baseScheme: "light dark",
-      modeSelectors: [
+      permutations: [
         {
-          mode: "light",
-          selectors: [
-            "@media (prefers-color-scheme: light)"
-          ],
-          scheme: "light",
+          input: {},
+          prepare: (cssOutput) => `:root {\n${cssOutput}\n}`,
         },
         {
-          mode: "dark",
-          selectors: [
-            "@media (prefers-color-scheme: dark)"
-          ],
-          scheme: "dark",
+          input: { brandTheme: "lets-ui-light" },
+          include: ["lui.brand.color.**"],
+          prepare: (cssOutput) => `[data-brand="lets-ui"][data-theme="light"] {\n  color-scheme: light;\n${cssOutput}\n}`,
         },
         {
-          mode: "light",
-          selectors: [
-            '[data-theme="light"]'
-          ],
-          scheme: "light",
+          input: { brandTheme: "lets-ui-light" },
+          include: ["lui.brand.color.**"],
+          prepare: (cssOutput) => `@media (prefers-color-scheme: light) {\n  [data-brand="lets-ui"] {\n    color-scheme: light;\n${cssOutput}\n  }\n}`,
         },
         {
-          mode: "dark",
-          selectors: [
-            '[data-theme="dark"]'
-          ],
-          scheme: "dark",
+          input: { brandTheme: "lets-ui-dark" },
+          include: ["lui.brand.color.**"],
+          prepare: (cssOutput) => `[data-brand="lets-ui"][data-theme="dark"] {\n  color-scheme: dark;\n${cssOutput}\n}`,
+        },
+        {
+          input: { brandTheme: "lets-ui-dark" },
+          include: ["lui.brand.color.**"],
+          prepare: (cssOutput) => `@media (prefers-color-scheme: dark) {\n  [data-brand="lets-ui"] {\n    color-scheme: dark;\n${cssOutput}\n  }\n}`,
+        },
+        {
+          input: { brandTheme: "nova-ui-light" },
+          include: ["lui.brand.color.**"],
+          prepare: (cssOutput) => `[data-brand="nova-ui"][data-theme="light"] {\n  color-scheme: light;\n${cssOutput}\n}`,
+        },
+        {
+          input: { brandTheme: "nova-ui-light" },
+          include: ["lui.brand.color.**"],
+          prepare: (cssOutput) => `@media (prefers-color-scheme: light) {\n  [data-brand="nova-ui"] {\n    color-scheme: light;\n${cssOutput}\n  }\n}`,
+        },
+        {
+          input: { brandTheme: "nova-ui-dark" },
+          include: ["lui.brand.color.**"],
+          prepare: (cssOutput) => `[data-brand="nova-ui"][data-theme="dark"] {\n  color-scheme: dark;\n${cssOutput}\n}`,
+        },
+        {
+          input: { brandTheme: "nova-ui-dark" },
+          include: ["lui.brand.color.**"],
+          prepare: (cssOutput) => `@media (prefers-color-scheme: dark) {\n  [data-brand="nova-ui"] {\n    color-scheme: dark;\n${cssOutput}\n  }\n}`,
         },
       ],
     }),
