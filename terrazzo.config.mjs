@@ -14,44 +14,56 @@ export default defineConfig({
           prepare: (cssOutput) => `:root {\n${cssOutput}\n}`,
         },
         {
-          input: { brandTheme: "lets-ui-light" },
+          input: { mode: "light" },
+          include: [
+            "lui.color.blue.**",
+            "lui.color.gray.**",
+            "lui.color.green.**",
+            "lui.color.orange.**",
+            "lui.color.red.**",
+            "lui.color.violet.**"
+          ],
+          prepare: (cssOutput) => `[data-theme="light"] {\n  color-scheme: light;\n${cssOutput}\n}`,
+        },
+        {
+          input: { mode: "dark" },
+          include: [
+            "lui.color.blue.**",
+            "lui.color.gray.**",
+            "lui.color.green.**",
+            "lui.color.orange.**",
+            "lui.color.red.**",
+            "lui.color.violet.**"
+          ],
+          prepare: (cssOutput) => `[data-theme="dark"] {\n  color-scheme: dark;\n${cssOutput}\n}`,
+        },
+        {
+          input: { brandColor: "lets-ui-light" },
           include: ["lui.brand.color.**"],
           prepare: (cssOutput) => `[data-brand="lets-ui"][data-theme="light"] {\n  color-scheme: light;\n${cssOutput}\n}`,
         },
         {
-          input: { brandTheme: "lets-ui-light" },
+          input: { brandColor: "lets-ui-light" },
           include: ["lui.brand.color.**"],
           prepare: (cssOutput) => `@media (prefers-color-scheme: light) {\n  [data-brand="lets-ui"] {\n    color-scheme: light;\n${cssOutput}\n  }\n}`,
         },
         {
-          input: { brandTheme: "lets-ui-dark" },
+          input: { brandColor: "lets-ui-dark" },
           include: ["lui.brand.color.**"],
           prepare: (cssOutput) => `[data-brand="lets-ui"][data-theme="dark"] {\n  color-scheme: dark;\n${cssOutput}\n}`,
         },
         {
-          input: { brandTheme: "lets-ui-dark" },
+          input: { brandColor: "lets-ui-dark" },
           include: ["lui.brand.color.**"],
           prepare: (cssOutput) => `@media (prefers-color-scheme: dark) {\n  [data-brand="lets-ui"] {\n    color-scheme: dark;\n${cssOutput}\n  }\n}`,
         },
         {
-          input: { brandTheme: "nova-ui-light" },
-          include: ["lui.brand.color.**"],
-          prepare: (cssOutput) => `[data-brand="nova-ui"][data-theme="light"] {\n  color-scheme: light;\n${cssOutput}\n}`,
-        },
-        {
-          input: { brandTheme: "nova-ui-light" },
-          include: ["lui.brand.color.**"],
-          prepare: (cssOutput) => `@media (prefers-color-scheme: light) {\n  [data-brand="nova-ui"] {\n    color-scheme: light;\n${cssOutput}\n  }\n}`,
-        },
-        {
-          input: { brandTheme: "nova-ui-dark" },
-          include: ["lui.brand.color.**"],
-          prepare: (cssOutput) => `[data-brand="nova-ui"][data-theme="dark"] {\n  color-scheme: dark;\n${cssOutput}\n}`,
-        },
-        {
-          input: { brandTheme: "nova-ui-dark" },
-          include: ["lui.brand.color.**"],
-          prepare: (cssOutput) => `@media (prefers-color-scheme: dark) {\n  [data-brand="nova-ui"] {\n    color-scheme: dark;\n${cssOutput}\n  }\n}`,
+          input: { brandFoundation: "lets-ui" },
+          include: [
+            "lui.brand.**"
+          ],
+          exclude: ["lui.brand.color.**"],
+          prepare: (cssOutput) => `[data-brand="lets-ui"] {\n${cssOutput}\n}`,
         },
       ],
     }),
