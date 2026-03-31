@@ -28,7 +28,13 @@
   "style": "dist/letsui.css",
   "files": [
     "dist/letsui.css",
-    "dist/letsui.min.css"
+    "dist/letsui.min.css",
+    "dist/letsui.tokens.css",
+    "dist/letsui.tokens.scss",
+    "src/components",
+    "src/foundations",
+    "src/utilities",
+    "src/index.scss"
   ],
   "bugs": {
     "url": "https://github.com/mateusvillain/lets-ui-css/issues"
