@@ -11,39 +11,11 @@
         "font-family": {
           "$type": "fontFamily",
           "heading": {
-            "$value": [
-              "-apple-system",
-              "BlinkMacSystemFont",
-              "Segoe UI",
-              "Roboto",
-              "Oxygen",
-              "Ubuntu",
-              "Cantarell",
-              "Helvetica Neue",
-              "Arial",
-              "sans-serif",
-              "Apple Color Emoji",
-              "Segoe UI Emoji",
-              "Segoe UI Symbol"
-            ],
+            "$value": ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"],
             "description": "Default font for heading texts"
           },
           "body": {
-            "$value": [
-              "-apple-system",
-              "BlinkMacSystemFont",
-              "Segoe UI",
-              "Roboto",
-              "Oxygen",
-              "Ubuntu",
-              "Cantarell",
-              "Helvetica Neue",
-              "Arial",
-              "sans-serif",
-              "Apple Color Emoji",
-              "Segoe UI Emoji",
-              "Segoe UI Symbol"
-            ],
+            "$value": ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"],
             "description": "Default font for body texts"
           }
         },
@@ -116,23 +88,29 @@
           "$type": "dimension",
           "xs": {
             "$value": {
-              "value": 4,
+              "value": 2,
               "unit": "px"
             }
           },
           "sm": {
             "$value": {
-              "value": 8,
+              "value": 4,
               "unit": "px"
             }
           },
           "md": {
             "$value": {
-              "value": 12,
+              "value": 8,
               "unit": "px"
             }
           },
           "lg": {
+            "$value": {
+              "value": 12,
+              "unit": "px"
+            }
+          },
+          "xl": {
             "$value": {
               "value": 16,
               "unit": "px"
