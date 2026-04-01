@@ -1,3 +1,20 @@
+## 0.19.0
+
+### Added
+
+- Added `xl` border-radius token
+- Added global color tokens for light and dark modes
+- Added brand color tokens for light and dark modes
+- Added brand foundation tokens
+- Added brand-based foundation separation to config
+- Included Sass files in package distribution
+
+### Changed
+
+- Updated light and dark color schemes
+- Reorganized token structure for themes
+- Updated resolver file structure
+
 ## 0.18.0
 
 ### Changed
