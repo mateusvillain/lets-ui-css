@@ -2,11 +2,11 @@
 @use 'lets-ui-tokens/dist/letsui.tokens.scss' as *;
 
 $breakpoint: (
-  1xs: 320px,
+  '1xs': 320px,
   sm: 768px,
   md: 1024px,
   lg: 1280px,
-  1xl: 1440px,
+  '1xl': 1440px,
 );
 $border: (
   radius: (
