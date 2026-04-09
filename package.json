@@ -1,19 +1,9 @@
 {
-  "name": "@lets-ui/css",
+  "name": "lets-ui",
+  "private": true,
   "version": "0.19.0",
-  "description": "A fluid and multi-brand design system for web projects.",
-  "keywords": [
-    "css",
-    "sass",
-    "scss",
-    "clamp",
-    "container",
-    "flexbox",
-    "responsive",
-    "design system",
-    "framework",
-    "figma"
-  ],
+  "description": "Let's UI monorepo",
+  "packageManager": "pnpm@10.8.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/mateusvillain/lets-ui-css.git"
@@ -25,41 +15,22 @@
     "url": "https://mateusvillain.com"
   },
   "type": "module",
-  "style": "dist/letsui.css",
-  "files": [
-    "dist/letsui.css",
-    "dist/letsui.min.css",
-    "dist/letsui.tokens.css",
-    "dist/letsui.tokens.scss",
-    "src/components",
-    "src/foundations",
-    "src/utilities",
-    "src/index.scss"
-  ],
   "bugs": {
     "url": "https://github.com/mateusvillain/lets-ui-css/issues"
   },
   "scripts": {
-    "tokens": "tz build",
-    "css": "sass src/index.scss dist/letsui.css",
-    "css:minify": "postcss dist/letsui.css --use cssnano --output dist/letsui.min.css",
-    "build:css": "npm run css && npm run css:minify && npm run tokens",
-    "css:watch": "sass --watch src/index.scss dist/letsui.css --no-source-map",
-    "lint": "npm run lint:html && npm run lint:css && npm run lint:md",
-    "lint:html": "html-validate \"**/*.html\"",
+    "build": "pnpm -r build",
+    "lint": "pnpm run lint:css && pnpm run lint:md",
     "lint:css": "stylelint \"**/*.{css,scss}\"",
     "lint:md": "markdownlint-cli2 \"**/*.md\"",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "deploy-storybook": "npm run build-storybook && gh-pages -b storybook -d storybook-static",
+    "deploy-storybook": "pnpm run build-storybook && gh-pages -b storybook -d storybook-static",
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,ts,css,scss,html,json,md}": [
+    "*.{js,ts,css,scss,json,md}": [
       "prettier --write"
-    ],
-    "*.html": [
-      "html-validate"
     ],
     "*.{css,scss}": [
       "stylelint --fix"
@@ -87,14 +58,11 @@
     "@vitest/coverage-v8": "^4.0.16",
     "cssnano": "^7.1.2",
     "eslint": "^9.39.2",
-    "eslint-config-prettier": "^10.1.8",
     "gh-pages": "^6.3.0",
     "globals": "^17.0.0",
-    "html-validate": "^10.5.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "markdownlint-cli2": "^0.20.0",
-    "modularscale-sass": "^3.0.10",
     "playwright": "^1.57.0",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
