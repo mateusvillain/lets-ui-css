@@ -1,0 +1,22 @@
+{
+  "name": "styles",
+  "version": "0.19.0",
+  "description": "Let's UI styles and components package",
+  "license": "MIT",
+  "type": "module",
+  "style": "dist/letsui.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "dependencies": {
+    "lets-ui-tokens": "workspace:*",
+    "utilities": "workspace:*"
+  },
+  "scripts": {
+    "build:css": "sass --load-path=.. src/index.scss dist/letsui.css --no-source-map",
+    "build:css:minify": "postcss dist/letsui.css --use cssnano --output dist/letsui.min.css",
+    "build": "pnpm run build:css && pnpm run build:css:minify",
+    "clean": "rm -rf dist"
+  }
+}

@@ -1,0 +1,9 @@
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/mixins' as *;
+
+a.link {
+  color: text(link);
+  transition: filter 0.3s ease;
+
+  @include states(0.76, 0.6, 2px, stroke(primary));
+}

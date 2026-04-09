@@ -1,0 +1,17 @@
+{
+  "name": "lets-ui-tokens",
+  "version": "0.19.0",
+  "description": "Let's UI design tokens package",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "dist",
+    "tokens",
+    "letsui.resolver.json",
+    "terrazzo.config.mjs"
+  ],
+  "scripts": {
+    "build": "tz build",
+    "clean": "rm -rf dist"
+  }
+}

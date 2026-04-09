@@ -1,0 +1,10 @@
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/tokens.map' as *;
+
+.elevation- {
+  @each $layers, $value in $elevation {
+    &#{$layers} {
+      box-shadow: elevation($layers);
+    }
+  }
+}

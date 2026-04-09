@@ -1,0 +1,64 @@
+@use 'sass:map';
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/tokens.map' as *;
+@use 'utilities/src/mixins' as *;
+
+$size: (
+  lg: 24,
+  md: 16,
+);
+
+.checkbox,
+input[type='checkbox'] {
+  display: flex;
+  align-items: center;
+  gap: fixed(8);
+  cursor: pointer;
+  user-select: none;
+  margin: fixed(0);
+  padding: fixed(0);
+}
+
+.checkbox {
+  @each $key, $value in $size {
+    &--#{$key} input[type='checkbox'] {
+      width: fixed($value);
+      height: fixed($value);
+    }
+  }
+
+  input {
+    appearance: none;
+    background-color: bg(surface, neutral);
+    border: width(1) solid border(divisor);
+    border-radius: radius(xs);
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s ease;
+
+    &:checked {
+      background-color: bg(container, primary);
+      border-color: bg(container, primary);
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 12px;
+        border-right: 2px solid bg(surface, neutral);
+        border-bottom: 2px solid bg(surface, neutral);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%) rotate(45deg);
+      }
+    }
+
+    &:focus {
+      border: width(1) solid bg(container, primary);
+      box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44deg / 32%);
+      outline: none;
+    }
+
+    @include states(0.76, 0.6, 3, lch(45.27% 113.1 310.44deg / 32%));
+  }
+}

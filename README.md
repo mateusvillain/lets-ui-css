@@ -1,9 +1,9 @@
 <div align="center">
    <h1>Let's UI</h1>
    <p>
-      **Let's UI** is an open-source design system built to be flexible, scalable, and easy to use.
+      <strong>Let's UI</strong> is an open-source design system built to be flexible, scalable, and easy to use.
       <br>
-      It supports features **well-structured design tokens** and provides **interactive and accessible components**.
+      It supports features <strong>well-structured design tokens</strong> and provides <strong>interactive and accessible components</strong>.
    </p>
 
 [![release](https://img.shields.io/github/v/release/mateusvillain/lets-ui-css?logo=github&logoColor=white)](https://github.com/mateusvillain/lets-ui-css/releases)
@@ -29,8 +29,14 @@ The design system includes a complete and compatible Figma library, enabling fas
 ```bash
 git clone https://github.com/mateusvillain/lets-ui-css.git
 cd lets-ui-css
-npm install
+pnpm install
 ```
+
+### Monorepo packages
+
+- `packages/lets-ui-tokens`: token source files, Terrazzo config and resolver
+- `packages/styles`: foundations, components and `reset.scss`
+- `packages/utilities`: utility SCSS files (`flex`, `functions`, `mixins`, `tokens.map`)
 
 ### npm
 

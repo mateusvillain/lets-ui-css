@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/tokens.map' as *;
+
+.radius- {
+  @each $border-radius, $value in map.get($border, radius) {
+    &#{$border-radius} {
+      border-radius: radius($border-radius);
+    }
+  }
+}
+
+.border- {
+  @for $i from 0 through 2 {
+    &#{$i} {
+      border-width: width($i);
+    }
+  }
+}
