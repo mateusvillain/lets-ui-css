@@ -38,6 +38,30 @@ export default defineConfig({
           prepare: (cssOutput) => `[data-theme="dark"] {\n  color-scheme: dark;\n${cssOutput}\n}`,
         },
         {
+          input: { mode: "light" },
+          include: [
+            "lui.color.blue.**",
+            "lui.color.gray.**",
+            "lui.color.green.**",
+            "lui.color.orange.**",
+            "lui.color.red.**",
+            "lui.color.violet.**"
+          ],
+          prepare: (cssOutput) => `@media (prefers-color-scheme: light) {\n  color-scheme: light;\n${cssOutput}\n}`,
+        },
+        {
+          input: { mode: "dark" },
+          include: [
+            "lui.color.blue.**",
+            "lui.color.gray.**",
+            "lui.color.green.**",
+            "lui.color.orange.**",
+            "lui.color.red.**",
+            "lui.color.violet.**"
+          ],
+          prepare: (cssOutput) => `@media (prefers-color-scheme: dark) {\n  color-scheme: dark;\n${cssOutput}\n}`,
+        },
+        {
           input: { brandColor: "lets-ui-light" },
           include: ["lui.brand.color.**"],
           prepare: (cssOutput) => `[data-brand="lets-ui"][data-theme="light"] {\n  color-scheme: light;\n${cssOutput}\n}`,
