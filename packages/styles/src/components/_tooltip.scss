@@ -25,14 +25,6 @@ $background: bg(container, overlay);
   }
 
   &--top::after {
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: $arrow-size;
-    border-color: transparent transparent $background;
-  }
-
-  &--bottom::after {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -40,19 +32,27 @@ $background: bg(container, overlay);
     border-color: $background transparent transparent transparent;
   }
 
-  &--left::after {
-    right: 100%;
-    top: 50%;
-    transform: translateY(-50%);
+  &--bottom::after {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     border-width: $arrow-size;
-    border-color: transparent $background transparent transparent;
+    border-color: transparent transparent $background;
   }
 
-  &--right::after {
+  &--left::after {
     left: 100%;
     top: 50%;
     transform: translateY(-50%);
     border-width: $arrow-size;
     border-color: transparent transparent transparent $background;
+  }
+
+  &--right::after {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: $arrow-size;
+    border-color: transparent $background transparent transparent;
   }
 }
