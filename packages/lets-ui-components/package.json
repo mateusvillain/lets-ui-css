@@ -1,0 +1,25 @@
+{
+  "name": "lets-ui-components",
+  "version": "0.19.0",
+  "description": "Let's UI Web Components package",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "src",
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "build": "node ./scripts/build-styles.mjs",
+    "clean": "rm -rf dist",
+    "prepack": "pnpm run build"
+  },
+  "dependencies": {
+    "lets-ui-tokens": "workspace:*",
+    "styles": "workspace:*",
+    "utilities": "workspace:*"
+  }
+}
