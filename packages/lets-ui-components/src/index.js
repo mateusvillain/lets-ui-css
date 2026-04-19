@@ -5,11 +5,11 @@ import { LuiButton } from './components/button.js';
 import { LuiCard } from './components/card.js';
 import { LuiCheckbox } from './components/checkbox.js';
 import { LuiIconButton } from './components/icon-button.js';
+import { LuiInput } from './components/input.js';
 import { LuiLink } from './components/link.js';
 import { LuiModal } from './components/modal.js';
-import { LuiSelect } from './components/select.js';
+import { LuiNativeSelect, LuiSelect } from './components/select.js';
 import { LuiTag } from './components/tag.js';
-import { LuiTextField } from './components/text-field.js';
 import { LuiTooltip } from './components/tooltip.js';
 
 function define(name, elementClass) {
@@ -25,11 +25,12 @@ define('lui-button', LuiButton);
 define('lui-card', LuiCard);
 define('lui-checkbox', LuiCheckbox);
 define('lui-icon-button', LuiIconButton);
+define('lui-input', LuiInput);
 define('lui-link', LuiLink);
 define('lui-modal', LuiModal);
 define('lui-select', LuiSelect);
+define('lui-native-select', LuiNativeSelect);
 define('lui-tag', LuiTag);
-define('lui-text-field', LuiTextField);
 define('lui-tooltip', LuiTooltip);
 
 export {
@@ -40,10 +41,11 @@ export {
   LuiCard,
   LuiCheckbox,
   LuiIconButton,
+  LuiInput,
   LuiLink,
   LuiModal,
+  LuiNativeSelect,
   LuiSelect,
   LuiTag,
-  LuiTextField,
   LuiTooltip,
 };
