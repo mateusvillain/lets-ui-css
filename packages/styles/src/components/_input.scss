@@ -152,14 +152,6 @@ lui-text-field {
 
   &__control--number {
     gap: 0;
-    padding: 0;
-
-    .input-field__step {
-      padding: fluid(12);
-      width: auto;
-      min-width: 48px;
-      height: auto;
-    }
 
     .input-field__input--number {
       text-align: center;
@@ -243,12 +235,6 @@ lui-text-field {
     .input-field__suffix,
     .input-field__input {
       @include font-scale(map.get($props, body));
-    }
-
-    .input-field__control--number {
-      .input-field__step {
-        padding: map.get($props, padding);
-      }
     }
   }
 }
