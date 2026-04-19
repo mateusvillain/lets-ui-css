@@ -1,54 +1,20 @@
-import {
-  ensureElementId,
-  hasBooleanAttribute,
-  mountMarkup,
-} from '../internal.js';
+import { ensureElementId, mountMarkup } from '../internal.js';
 
 export class LuiAlert extends HTMLElement {
-  static observedAttributes = ['variant', 'title', 'content', 'actions'];
+  static observedAttributes = [
+    'variant',
+    'title',
+    'content',
+    'primary-button',
+    'secondary-button',
+  ];
 
   connectedCallback() {
-    if (this._initialized) {
-      return;
-    }
-
-    this._initialized = true;
-    queueMicrotask(() => {
-      this.captureInitialActions();
-      this.render();
-    });
-  }
-
-  attributeChangedCallback() {
-    if (!this._initialized) {
-      return;
-    }
-
     this.render();
   }
 
-  captureInitialActions() {
-    if (this._actionsCaptured) {
-      return;
-    }
-
-    const actions = [];
-
-    Array.from(this.childNodes).forEach((node) => {
-      if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() === '') {
-        return;
-      }
-
-      if (
-        node.nodeType === Node.ELEMENT_NODE &&
-        node.getAttribute('slot') === 'actions'
-      ) {
-        actions.push(node.outerHTML);
-      }
-    });
-
-    this._actionsHtml = actions.join('');
-    this._actionsCaptured = true;
+  attributeChangedCallback() {
+    this.render();
   }
 
   render() {
@@ -56,10 +22,9 @@ export class LuiAlert extends HTMLElement {
     const variant = this.getAttribute('variant') ?? 'success';
     const title = this.getAttribute('title') ?? '';
     const content = this.getAttribute('content') ?? '';
-    const hasSlottedActions = Boolean(
-      this._actionsHtml && this._actionsHtml.trim()
-    );
-    const actions = hasSlottedActions || hasBooleanAttribute(this, 'actions');
+    const primaryButton = this.getAttribute('primary-button') ?? '';
+    const secondaryButton = this.getAttribute('secondary-button') ?? '';
+    const hasActions = primaryButton || secondaryButton;
 
     mountMarkup(
       this,
@@ -79,17 +44,11 @@ export class LuiAlert extends HTMLElement {
           </div>
         </div>
         ${
-          actions
+          hasActions
             ? `
           <div class="alert__actions">
-            ${
-              hasSlottedActions
-                ? this._actionsHtml
-                : `
-              <button class="btn btn--secondary btn--lg">Button</button>
-              <button class="btn btn--primary btn--lg">Button</button>
-            `
-            }
+            ${secondaryButton ? `<button class="btn btn--secondary btn--lg">${secondaryButton}</button>` : ''}
+            ${primaryButton ? `<button class="btn btn--primary btn--lg">${primaryButton}</button>` : ''}
           </div>
         `
             : ''
