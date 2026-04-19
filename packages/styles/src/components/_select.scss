@@ -3,38 +3,236 @@
 @use 'utilities/src/tokens.map' as *;
 @use 'utilities/src/mixins' as *;
 
-select {
-  color: text(heading);
-  background-color: bg(surface, neutral);
-  border: width(1) solid border(divisor);
-  transition: all 0.2s ease-in-out;
-  line-height: normal !important;
-  box-sizing: border-box;
-  background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M16%2019.5858L7.70711%2011.2929L6.29289%2012.7071L16%2022.4142L25.7071%2012.7071L24.2929%2011.2929L16%2019.5858Z%22%20fill%3D%22%23131519%22/%3E%3C/svg%3E');
-  background-repeat: no-repeat;
-  background-size: 1.25rem;
-  appearance: none;
-
-  &:hover {
-    border: width(1) solid stroke(neutral);
-  }
-
-  &:focus {
-    border: width(1) solid stroke(primary);
-    box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44deg / 32%);
-    outline: none;
-  }
-
-  @include disabled;
-}
-
 $size: (
-  lg: right fluid(12) center,
-  md: right fixed(8) center,
+  lg: (
+    padding: fluid(12),
+    radius: radius(lg),
+    focus-radius: radius(lg),
+    label: body--lg,
+    body: body--lg,
+    helper: body--md,
+  ),
+  md: (
+    padding: fixed(8),
+    radius: radius(md),
+    focus-radius: radius(md),
+    label: body--md,
+    body: body--md,
+    helper: body--sm,
+  ),
+  sm: (
+    padding: fixed(8),
+    radius: radius(sm),
+    focus-radius: radius(sm),
+    label: body--sm,
+    body: body--sm,
+    helper: body--sm,
+  ),
 );
 
-@each $key, $prop in $size {
-  .form__#{$key} select {
-    background-position: $prop;
+lui-select,
+lui-native-select {
+  display: block;
+}
+
+.native-select {
+  @include flex(column, stretch, flex-start, fluid(8), nowrap);
+
+  width: 100%;
+  box-sizing: border-box;
+
+  &__head {
+    @include flex(row, center, space-between, fluid(8), nowrap);
+
+    width: 100%;
+    color: text(body);
+    line-height: 1.5;
+  }
+
+  &__label-wrap {
+    @include flex(row, center, flex-start, fluid(4), nowrap);
+
+    min-width: 0;
+    color: text(body);
+
+    label {
+      color: text(body);
+      margin: 0;
+    }
+  }
+
+  &__optional {
+    color: text(body);
+    white-space: nowrap;
+  }
+
+  &__control {
+    @include flex(row, center, flex-start, fixed(8), nowrap);
+
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: bg(surface, neutral);
+    border: width(1) solid border(divisor);
+    cursor: pointer;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  &__input {
+    @include font-scale(body--lg);
+
+    flex: 1 1 auto;
+    align-self: stretch;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+    background-color: transparent;
+    color: text(body);
+    line-height: 1.5;
+    appearance: none;
+    cursor: pointer;
+
+    &,
+    &:hover,
+    &:focus,
+    &:focus-visible,
+    &:active {
+      border: 0;
+      outline: 0;
+      box-shadow: none;
+    }
+
+    option:disabled {
+      color: color(gray, 6);
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    width: 14px;
+    height: 7px;
+    color: icon(neutral);
+    pointer-events: none;
+    transform: translateY(-50%);
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      fill: none;
+      stroke: currentcolor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.5;
+    }
+  }
+
+  &__message {
+    margin: 0;
+    color: text(body);
+    line-height: 1.5;
+  }
+
+  &.native-select--placeholder .native-select__input {
+    color: color(gray, 6);
+  }
+
+  &.native-select--error .native-select__control {
+    border-color: stroke(danger);
+  }
+
+  &.native-select--error .native-select__message {
+    color: text(error);
+  }
+
+  &:not(.native-select--disabled, .native-select--error):hover
+    .native-select__control,
+  &.native-select--force-hover:not(
+      .native-select--disabled,
+      .native-select--error
+    )
+    .native-select__control {
+    border-color: stroke(neutral);
+  }
+
+  &:not(.native-select--disabled) .native-select__control:focus-within,
+  &.native-select--force-focus:not(.native-select--disabled)
+    .native-select__control {
+    border-color: stroke(primary);
+    box-shadow: focus-ring(primary);
+  }
+
+  &.native-select--error .native-select__control:focus-within,
+  &.native-select--error.native-select--force-focus .native-select__control {
+    border-color: stroke(danger);
+    box-shadow: focus-ring(danger);
+  }
+
+  &.native-select--disabled {
+    opacity: opacity(disabled);
+  }
+
+  &.native-select--disabled .native-select__input,
+  &.native-select--disabled .native-select__optional,
+  &.native-select--disabled .native-select__arrow {
+    color: color(gray, 6);
+    cursor: not-allowed;
+  }
+}
+
+@each $key, $props in $size {
+  .native-select--#{$key} {
+    .native-select__control {
+      border-radius: map.get($props, radius);
+      padding: map.get($props, padding);
+    }
+
+    .native-select__arrow {
+      right: map.get($props, padding);
+    }
+
+    .native-select__input {
+      @include font-scale(map.get($props, body));
+
+      // Pull the select into the control's full interior (including padding zones)
+      margin: calc(-1 * #{map.get($props, padding)});
+      padding-block: map.get($props, padding);
+      padding-inline: map.get($props, padding) calc(#{map.get($props, padding)} + 22px);
+
+      // Reserve space for the absolute-positioned arrow (14px) + original gap (8px)
+    }
+
+    &:not(.native-select--disabled) .native-select__control:focus-within,
+    &.native-select--force-focus:not(.native-select--disabled)
+      .native-select__control {
+      border-width: width(2);
+      border-radius: map.get($props, focus-radius);
+      padding: calc(#{map.get($props, padding)} - 1px);
+
+      .native-select__arrow {
+        right: calc(#{map.get($props, padding)} - 1px);
+      }
+
+      .native-select__input {
+        margin: calc(-1 * (#{map.get($props, padding)} - 1px));
+        padding-block: calc(#{map.get($props, padding)} - 1px);
+        padding-inline: calc(#{map.get($props, padding)} - 1px) calc(#{map.get($props, padding)} - 1px + 22px);
+      }
+    }
+
+    .native-select__label-wrap label {
+      @include font-scale(map.get($props, label));
+    }
+
+    .native-select__optional,
+    .native-select__message {
+      @include font-scale(map.get($props, helper));
+    }
   }
 }
