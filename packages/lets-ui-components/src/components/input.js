@@ -68,7 +68,6 @@ export class LuiInput extends HTMLElement {
     'error-text',
     'counter',
     'maxlength',
-    'icon',
     'prefix',
     'suffix',
     'force-state',
@@ -246,25 +245,13 @@ export class LuiInput extends HTMLElement {
     disabled,
     inputType,
     maxLength,
-    icon,
     prefix,
     suffix,
   }) {
     const isPassword = inputType === 'password';
 
     return `
-      <div class="input-field__control">
-        ${
-          !isPassword && icon
-            ? `
-              <span class="input-field__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" focusable="false">
-                  <path d="M12 2.25L14.78 7.88L21 8.79L16.5 13.18L17.56 19.38L12 16.46L6.44 19.38L7.5 13.18L3 8.79L9.22 7.88L12 2.25Z"></path>
-                </svg>
-              </span>
-            `
-            : ''
-        }
+      <label class="input-field__control" for="${baseId}-input">
         ${!isPassword && prefix ? `<span class="input-field__prefix">${prefix}</span>` : ''}
         <input
           class="input-field__input"
@@ -293,7 +280,7 @@ export class LuiInput extends HTMLElement {
             : ''
         }
         ${!isPassword && suffix ? `<span class="input-field__suffix">${suffix}</span>` : ''}
-      </div>
+      </label>
     `;
   }
 
@@ -303,7 +290,7 @@ export class LuiInput extends HTMLElement {
     const step = this.readStep();
 
     return `
-      <div class="input-field__control input-field__control--number">
+      <label class="input-field__control input-field__control--number" for="${baseId}-input">
         <button
           type="button"
           class="input-field__step"
@@ -334,7 +321,7 @@ export class LuiInput extends HTMLElement {
         >
           ${renderNumberStepIcon(true)}
         </button>
-      </div>
+      </label>
     `;
   }
 
@@ -361,7 +348,6 @@ export class LuiInput extends HTMLElement {
     const size = readSize(this, 'lg');
     const value = escapeAttribute(this.getAttribute('value') ?? '');
     const disabled = hasBooleanAttribute(this, 'disabled');
-    const icon = hasBooleanAttribute(this, 'icon');
     const maxLength = this.parseMaxLength();
     const counterEnabled =
       inputType !== 'number' &&
@@ -400,7 +386,6 @@ export class LuiInput extends HTMLElement {
             disabled,
             inputType,
             maxLength,
-            icon,
             prefix,
             suffix,
           });
@@ -408,7 +393,7 @@ export class LuiInput extends HTMLElement {
     mountMarkup(
       this,
       `
-      <div class="input-field input-field--${size}${typeClass}${disabled ? ' input-field--disabled' : ''}${error ? ' input-field--error' : ''}${icon ? ' input-field--with-icon' : ''}${prefix ? ' input-field--with-prefix' : ''}${suffix ? ' input-field--with-suffix' : ''}${forceStateClass}">
+      <div class="input-field input-field--${size}${typeClass}${disabled ? ' input-field--disabled' : ''}${error ? ' input-field--error' : ''}${prefix ? ' input-field--with-prefix' : ''}${suffix ? ' input-field--with-suffix' : ''}${forceStateClass}">
         <div class="input-field__head">
           <div class="input-field__label-wrap">
             <label for="${baseId}-input">${label}</label>
