@@ -3,8 +3,8 @@
 .alert {
   color: text(body);
   background-color: bg(surface, neutral);
-  padding: fixed(16);
-  gap: fixed(16);
+  padding: fluid(16);
+  gap: fluid(16);
   border-radius: radius(lg);
 
   &__content,
@@ -13,7 +13,7 @@
   }
 
   &__content {
-    gap: fixed(16);
+    gap: fluid(16);
   }
 
   &__text {
@@ -31,11 +31,11 @@
   }
 
   &__actions {
-    margin-top: fixed(24);
+    margin-top: fluid(24);
     justify-content: flex-end;
 
-    button:first-child {
-      margin-right: fixed(16);
+    button:last-child {
+      margin-left: fluid(16);
     }
   }
 
