@@ -107,11 +107,6 @@ lui-text-field {
       outline: 0;
       box-shadow: none;
     }
-
-    &::placeholder {
-      opacity: 1;
-      color: color(gray, 6);
-    }
   }
 
   &__action,
