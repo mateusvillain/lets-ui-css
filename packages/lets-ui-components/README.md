@@ -41,7 +41,8 @@ import 'lets-ui-components';
 - `lui-icon-button`
 - `lui-link`
 - `lui-modal`
+- `lui-input`
 - `lui-select`
 - `lui-tag`
-- `lui-text-field`
+- `lui-text-field` (legacy alias)
 - `lui-tooltip`
