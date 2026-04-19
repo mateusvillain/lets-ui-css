@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lets UI Component Creator"
+  short_description: "Cria componentes Lets UI com tokens e acessibilidade"
+  default_prompt: "Criar ou completar componentes no padrao Lets UI (SCSS e Web Component), sem valores brutos e com acessibilidade."
