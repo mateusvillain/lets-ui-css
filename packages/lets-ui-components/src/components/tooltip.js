@@ -1,97 +1,119 @@
 import { ensureElementId, mountMarkup } from '../internal.js';
 
+const VALID_POSITIONS = new Set(['top', 'bottom', 'left', 'right']);
+const FOCUSABLE_SELECTOR =
+  'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"]), lui-button, lui-icon-button, lui-link';
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
 export class LuiTooltip extends HTMLElement {
-  static observedAttributes = ['position', 'text', 'label'];
+  static observedAttributes = ['text', 'position', 'label', 'aria-label'];
 
   connectedCallback() {
-    this._isOpen = false;
-    this.render();
-    this.attachEvents();
-  }
-
-  attributeChangedCallback() {
-    this.render();
-    this.attachEvents();
-  }
-
-  getPositionStyle(position) {
-    if (position === 'bottom') {
-      return 'position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);z-index:12;';
-    }
-
-    if (position === 'left') {
-      return 'position:absolute;right:calc(100% + 8px);top:50%;transform:translateY(-50%);z-index:12;';
-    }
-
-    if (position === 'right') {
-      return 'position:absolute;left:calc(100% + 8px);top:50%;transform:translateY(-50%);z-index:12;';
-    }
-
-    return 'position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);z-index:12;';
-  }
-
-  attachEvents() {
-    const trigger = this.querySelector('[data-tooltip-trigger]');
-    const host = this.querySelector('[data-tooltip-host]');
-
-    if (!trigger || !host) {
+    if (this._initialized) {
       return;
     }
 
-    host.onmouseenter = null;
-    host.onmouseleave = null;
-    trigger.onfocus = null;
-    trigger.onblur = null;
-    host.onmouseenter = () => {
-      this._isOpen = true;
-      this.render();
-      this.attachEvents();
-    };
-    host.onmouseleave = () => {
-      this._isOpen = false;
-      this.render();
-      this.attachEvents();
-    };
-    trigger.onfocus = () => {
-      this._isOpen = true;
-      this.render();
-      this.attachEvents();
-    };
-    trigger.onblur = () => {
-      this._isOpen = false;
-      this.render();
-      this.attachEvents();
-    };
+    this._initialized = true;
+    this.captureInitialTrigger();
+    this.render();
+  }
+
+  attributeChangedCallback() {
+    if (!this._initialized) {
+      return;
+    }
+
+    this.render();
+  }
+
+  captureInitialTrigger() {
+    if (this._triggerCaptured) {
+      return;
+    }
+
+    const nodes = Array.from(this.childNodes).filter((node) => {
+      return !(
+        node.nodeType === Node.TEXT_NODE && node.textContent.trim() === ''
+      );
+    });
+
+    this._triggerHtml = nodes
+      .map((node) => node.outerHTML ?? node.textContent)
+      .join('');
+    this._triggerCaptured = true;
+  }
+
+  readPosition() {
+    const position = this.getAttribute('position') ?? 'top';
+    return VALID_POSITIONS.has(position) ? position : 'top';
   }
 
   render() {
     const baseId = ensureElementId(this, 'lui-tooltip');
-    const position = this.getAttribute('position') ?? 'top';
     const text = this.getAttribute('text') ?? 'Tooltip';
-    const label = this.getAttribute('label') ?? 'Info';
-    const open = this._isOpen === true;
+    const position = this.readPosition();
+    const label = this.getAttribute('label') ?? 'Mostrar tooltip';
+    const ariaLabel =
+      this.getAttribute('aria-label') ??
+      (this._triggerHtml ? null : `${label}: ${text}`);
+    const describedBy = `${baseId}-content`;
+    const hasCustomTrigger = Boolean(
+      this._triggerHtml && this._triggerHtml.trim()
+    );
+    const fallbackTrigger = `
+      <button
+        type="button"
+        class="tooltip__trigger"
+        data-tooltip-trigger
+        aria-label="${escapeHtml(ariaLabel)}"
+        aria-describedby="${describedBy}"
+      >
+        ${escapeHtml(label)}
+      </button>
+    `;
 
     mountMarkup(
       this,
       `
-      <span data-tooltip-host style="position:relative;display:inline-flex;align-items:center;">
-        <button
-          type="button"
-          data-tooltip-trigger
-          class="btn btn--secondary btn--md"
-          aria-describedby="${baseId}-content"
-          aria-expanded="${open ? 'true' : 'false'}"
-          style="cursor:help;"
-        >${label}</button>
-        <span
-          id="${baseId}-content"
-          class="tooltip tooltip--${position}"
-          role="tooltip"
-          aria-hidden="${open ? 'false' : 'true'}"
-          style="${this.getPositionStyle(position)}display:${open ? 'inline-block' : 'none'};"
-        >${text}</span>
+      <span class="tooltip tooltip--${position}">
+        ${
+          hasCustomTrigger
+            ? `<span class="tooltip__trigger" data-tooltip-trigger>${this._triggerHtml}</span>`
+            : fallbackTrigger
+        }
+        <span id="${describedBy}" class="tooltip__content" role="tooltip">${escapeHtml(text)}</span>
       </span>
       `
     );
+
+    if (hasCustomTrigger) {
+      this.connectCustomTrigger(describedBy);
+    }
+  }
+
+  connectCustomTrigger(describedBy) {
+    const trigger = this.querySelector('[data-tooltip-trigger]');
+    if (!trigger) {
+      return;
+    }
+
+    const focusables = Array.from(trigger.querySelectorAll(FOCUSABLE_SELECTOR));
+    if (focusables.length > 0) {
+      focusables.forEach((element) => {
+        element.setAttribute('aria-describedby', describedBy);
+      });
+      return;
+    }
+
+    trigger.setAttribute('tabindex', '0');
+    trigger.setAttribute('aria-describedby', describedBy);
   }
 }
