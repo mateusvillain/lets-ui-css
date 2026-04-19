@@ -55,13 +55,13 @@
 //  $category = divisor
 
 // stroke($variant)
-//  $category = neutral, primary, caution, danger, info, success
+//  $variant = neutral, primary, caution, danger, info, success
 
 // text($variant)
-//  $category = heading, body, inverse, error
+//  $variant = heading, body, inverse, error
 
 // icon($variant)
-//  $category = primary, caution, danger, info, success, neutral, inverse
+//  $variant = primary, caution, danger, info, success, neutral, inverse
 
 @function color($category, $scale) {
   $value: map.get(tokens.$color, primitive, $category, $scale);
@@ -123,6 +123,8 @@
   @return $value;
 }
 
+// elevation($layer)
+//  $layer = base, hovered, floating, overlay
 @function elevation($layer) {
   $value: map.get(tokens.$elevation, $layer);
 
