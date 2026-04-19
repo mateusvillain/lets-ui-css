@@ -1,6 +1,18 @@
 @use 'sass:map';
 @use './tokens.map' as tokens;
 
+// focus-ring($variant)
+//  $variant = primary, secondary, caution, danger, info, success, neutral
+@function focus-ring($variant) {
+  $value: map.get(tokens.$focus-ring, $variant);
+
+  @if not $value {
+    @error 'Invalid focus-ring: "#{$variant}"';
+  }
+
+  @return $value;
+}
+
 // breakpoint($name)
 //  $name = 1xs, sm, md, lg, 1xl
 @function breakpoint($name) {
