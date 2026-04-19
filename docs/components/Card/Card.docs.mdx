@@ -1,0 +1,21 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as CardStories from './Card.stories';
+
+<Meta of={CardStories} />
+
+# Card
+
+<Canvas of={CardStories.Card} />
+<Controls of={CardStories.Card} />
+
+## With Cover
+
+<Canvas of={CardStories.WithCover} />
+
+## With Actions
+
+<Canvas of={CardStories.WithActions} />
+
+## Full
+
+<Canvas of={CardStories.Full} />
