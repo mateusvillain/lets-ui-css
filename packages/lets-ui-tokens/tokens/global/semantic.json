@@ -28,6 +28,12 @@
           "default": {
             "$value": "{lui.brand.color.primary.4}"
           }
+        },
+        "state": {
+          "focus-ring": {
+            "$type": "color",
+            "$value": "{lui.brand.color.primary.1}"
+          }
         }
       },
       "secondary": {
@@ -50,6 +56,12 @@
           "$type": "color",
           "default": {
             "$value": "{lui.brand.color.secondary.4}"
+          }
+        },
+        "state": {
+          "focus-ring": {
+            "$type": "color",
+            "$value": "{lui.brand.color.secondary.1}"
           }
         }
       },
@@ -126,6 +138,12 @@
           "default": {
             "$value": "{lui.color.red.4}"
           }
+        },
+        "state": {
+          "focus-ring": {
+            "$type": "color",
+            "$value": "{lui.color.red.1}"
+          }
         }
       },
       "success": {
@@ -148,6 +166,12 @@
           "$type": "color",
           "default": {
             "$value": "{lui.color.green.4}"
+          }
+        },
+        "state": {
+          "focus-ring": {
+            "$type": "color",
+            "$value": "{lui.color.green.1}"
           }
         }
       },
@@ -192,6 +216,12 @@
           },
           "inverse": {
             "$value": "{lui.color.gray.1}"
+          }
+        },
+        "state": {
+          "focus-ring": {
+            "$type": "color",
+            "$value": "{lui.color.gray.3}"
           }
         }
       },
@@ -415,6 +445,123 @@
             }
           }
         ]
+      }
+    },
+    "focus-ring": {
+      "primary": {
+        "$type": "shadow",
+        "$value": {
+          "color": "{lui.color.primary.state.focus-ring}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 0,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 3,
+            "unit": "px"
+          },
+          "inset": false
+        }
+      },
+      "secondary": {
+        "$type": "shadow",
+        "$value": {
+          "color": "{lui.color.secondary.state.focus-ring}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 0,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 3,
+            "unit": "px"
+          },
+          "inset": false
+        }
+      },
+      "danger": {
+        "$type": "shadow",
+        "$value": {
+          "color": "{lui.color.danger.state.focus-ring}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 0,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 3,
+            "unit": "px"
+          },
+          "inset": false
+        }
+      },
+      "success": {
+        "$type": "shadow",
+        "$value": {
+          "color": "{lui.color.success.state.focus-ring}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 0,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 3,
+            "unit": "px"
+          },
+          "inset": false
+        }
+      },
+      "neutral": {
+        "$type": "shadow",
+        "$value": {
+          "color": "{lui.color.neutral.state.focus-ring}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 0,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 3,
+            "unit": "px"
+          },
+          "inset": false
+        }
       }
     }
   }
