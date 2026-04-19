@@ -169,6 +169,13 @@ $elevation: (
   floating: token('lui.elevation.floating'),
   overlay: token('lui.elevation.overlay'),
 );
+$focus-ring: (
+  primary: token('lui.focus-ring.primary'),
+  secondary: token('lui.focus-ring.secondary'),
+  danger: token('lui.focus-ring.danger'),
+  success: token('lui.focus-ring.success'),
+  neutral: token('lui.focus-ring.neutral'),
+);
 $opacity: (
   disabled: token('lui.opacity.disabled'),
   hidden: token('lui.opacity.hidden'),
