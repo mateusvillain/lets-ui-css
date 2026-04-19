@@ -1,22 +1,58 @@
 @use 'utilities/src/functions' as *;
 @use 'utilities/src/mixins' as *;
 
-$arrow-size: 4px;
+$arrow-size: fluid(4);
 $background: bg(container, overlay);
 
 .tooltip {
   position: relative;
-  display: inline-block;
-  background: $background;
-  color: text(inverse);
-  padding: fluid(2) fixed(8);
-  border-radius: radius(xs);
+  display: inline-flex;
+  align-items: center;
 
-  @include font-scale(body--sm);
+  &__trigger {
+    display: inline-flex;
+    align-items: center;
+    cursor: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
 
-  white-space: nowrap;
+    &:focus-within,
+    &:focus-visible {
+      outline: width(2) solid stroke(primary);
+      outline-offset: width(2);
+    }
+  }
 
-  &::after {
+  &__content {
+    position: absolute;
+    z-index: 1;
+    width: max-content;
+    max-width: fluid(80);
+    background: $background;
+    color: text(inverse);
+    padding: fluid(2) fixed(8);
+    border-radius: radius(xs);
+    box-shadow: elevation(floating);
+    opacity: opacity(hidden);
+    visibility: hidden;
+    pointer-events: none;
+    will-change: opacity, transform;
+    transition:
+      opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1) 0s,
+      transform 0.32s cubic-bezier(0.22, 1, 0.36, 1) 0s,
+      visibility 0s linear 0.32s;
+
+    @include font-scale(body--sm);
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  &__content::after {
     content: '';
     position: absolute;
     width: fixed(0);
@@ -24,7 +60,13 @@ $background: bg(container, overlay);
     border-style: solid;
   }
 
-  &--top::after {
+  &--top &__content {
+    left: 50%;
+    bottom: calc(100% + fixed(8));
+    transform: translate(-50%, fixed(8));
+  }
+
+  &--top &__content::after {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -32,7 +74,13 @@ $background: bg(container, overlay);
     border-color: $background transparent transparent transparent;
   }
 
-  &--bottom::after {
+  &--bottom &__content {
+    left: 50%;
+    top: calc(100% + fixed(8));
+    transform: translate(-50%, calc(fixed(8) * -1));
+  }
+
+  &--bottom &__content::after {
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -40,7 +88,13 @@ $background: bg(container, overlay);
     border-color: transparent transparent $background;
   }
 
-  &--left::after {
+  &--left &__content {
+    right: calc(100% + fixed(8));
+    top: 50%;
+    transform: translate(fixed(8), -50%);
+  }
+
+  &--left &__content::after {
     left: 100%;
     top: 50%;
     transform: translateY(-50%);
@@ -48,11 +102,50 @@ $background: bg(container, overlay);
     border-color: transparent transparent transparent $background;
   }
 
-  &--right::after {
+  &--right &__content {
+    left: calc(100% + fixed(8));
+    top: 50%;
+    transform: translate(calc(fixed(8) * -1), -50%);
+  }
+
+  &--right &__content::after {
     right: 100%;
     top: 50%;
     transform: translateY(-50%);
     border-width: $arrow-size;
     border-color: transparent $background transparent transparent;
+  }
+
+  &--top:hover &__content,
+  &--top:focus-within &__content {
+    transform: translate(-50%, fixed(0));
+  }
+
+  &--bottom:hover &__content,
+  &--bottom:focus-within &__content {
+    transform: translate(-50%, fixed(0));
+  }
+
+  &--left:hover &__content,
+  &--left:focus-within &__content {
+    transform: translate(fixed(0), -50%);
+  }
+
+  &--right:hover &__content,
+  &--right:focus-within &__content {
+    transform: translate(fixed(0), -50%);
+  }
+
+  &--top:hover &__content,
+  &--top:focus-within &__content,
+  &--bottom:hover &__content,
+  &--bottom:focus-within &__content,
+  &--left:hover &__content,
+  &--left:focus-within &__content,
+  &--right:hover &__content,
+  &--right:focus-within &__content {
+    opacity: opacity(visible);
+    visibility: visible;
+    transition-delay: 0s, 0s, 0s;
   }
 }
