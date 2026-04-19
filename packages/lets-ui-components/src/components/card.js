@@ -67,7 +67,7 @@ export class LuiCard extends HTMLElement {
     mountMarkup(
       this,
       `
-      <article class="card card__border" aria-label="${ariaLabel}" id="${baseId}">
+      <article class="card card--border" aria-label="${ariaLabel}" id="${baseId}">
         ${
           hasCover
             ? `<div class="card__cover">${this._cardCoverHtml ?? ''}</div>`
@@ -77,7 +77,7 @@ export class LuiCard extends HTMLElement {
           ${this._cardContentHtml ?? ''}
           <div
             data-card-actions
-            class="card-actions"
+            class="card__actions"
             role="group"
             aria-label="Card actions"
             style="display:${hasActions ? 'flex' : 'none'}"

@@ -2,7 +2,7 @@
 
 .card {
   background-color: bg(surface, neutral);
-  border-radius: radius(lg);
+  border-radius: radius(xl);
   overflow: hidden;
 
   &__cover {
@@ -17,33 +17,34 @@
   }
 
   &__body {
-    padding: fixed(24);
+    padding: fluid(16);
     display: flex;
     flex-direction: column;
-    gap: fixed(8);
+    gap: fluid(8);
 
     > {
-      .card-actions {
-        margin-top: fixed(16);
+      .card__actions {
+        margin-top: fluid(16);
         display: flex;
         flex-direction: row-reverse;
-        gap: fixed(16);
+        gap: fluid(16);
       }
     }
   }
 
-  &__border {
-    border: width(1) solid stroke(neutral);
+  &--border {
+    border: width(1) solid border(divisor);
+  }
+
+  &--elevation {
+    box-shadow: elevation(base);
+
+    &.card--interaction {
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        box-shadow: elevation(hovered);
+      }
+    }
   }
 }
-
-// .card-elevation {
-//   box-shadow: $lui-elevation-base
-// }
-
-// .card-interaction {
-//   transition: all 0.2s ease-in-out;
-//   &:hover {
-//     box-shadow: $lui-elevation-hovered
-//   }
-// }
