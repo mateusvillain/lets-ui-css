@@ -66,7 +66,6 @@ export class LuiInput extends HTMLElement {
     'hint',
     'error',
     'error-text',
-    'counter',
     'maxlength',
     'prefix',
     'suffix',
@@ -134,8 +133,7 @@ export class LuiInput extends HTMLElement {
     const valueLength = this.readValueLength();
     const maxLength = this.parseMaxLength();
 
-    counter.textContent =
-      maxLength === null ? String(valueLength) : `${valueLength}/${maxLength}`;
+    counter.textContent = `${valueLength}/${maxLength}`;
   }
 
   updatePasswordVisualState() {
@@ -349,9 +347,7 @@ export class LuiInput extends HTMLElement {
     const value = escapeAttribute(this.getAttribute('value') ?? '');
     const disabled = hasBooleanAttribute(this, 'disabled');
     const maxLength = this.parseMaxLength();
-    const counterEnabled =
-      inputType !== 'number' &&
-      (hasBooleanAttribute(this, 'counter') || maxLength !== null);
+    const counterEnabled = inputType !== 'number' && maxLength !== null;
     const message = error ? errorText : hint;
     const forceState = this.getAttribute('force-state');
     const forceStateClass =
