@@ -2,6 +2,7 @@
   "lui": {
     "color": {
       "primary": {
+        "$type": "color",
         "background": {
           "$type": "color",
           "surface": {
@@ -9,11 +10,20 @@
           },
           "container": {
             "$value": "{lui.brand.color.primary.4}"
+          },
+          "hover": {
+            "$value": "{lui.brand.color.primary.5}"
+          },
+          "pressed": {
+            "$value": "{lui.brand.color.primary.6}"
           }
         },
         "border": {
           "$type": "color",
           "stroke": {
+            "$value": "{lui.brand.color.primary.4}"
+          },
+          "focus": {
             "$value": "{lui.brand.color.primary.4}"
           }
         },
@@ -29,11 +39,8 @@
             "$value": "{lui.brand.color.primary.4}"
           }
         },
-        "state": {
-          "focus-ring": {
-            "$type": "color",
-            "$value": "{lui.brand.color.primary.1}"
-          }
+        "focus-ring": {
+          "$value": "{lui.brand.color.primary.1}"
         }
       },
       "secondary": {
@@ -44,24 +51,27 @@
           },
           "container": {
             "$value": "{lui.brand.color.secondary.4}"
+          },
+          "hover": {
+            "$value": "{lui.brand.color.secondary.5}"
+          },
+          "pressed": {
+            "$value": "{lui.brand.color.secondary.6}"
           }
         },
         "border": {
           "$type": "color",
           "stroke": {
             "$value": "{lui.brand.color.secondary.4}"
+          },
+          "focus": {
+            "$value": "{lui.brand.color.secondary.1}"
           }
         },
         "icon": {
           "$type": "color",
           "default": {
             "$value": "{lui.brand.color.secondary.4}"
-          }
-        },
-        "state": {
-          "focus-ring": {
-            "$type": "color",
-            "$value": "{lui.brand.color.secondary.1}"
           }
         }
       },
@@ -112,6 +122,10 @@
         }
       },
       "danger": {
+        "$type": "color",
+        "focus-ring": {
+          "$value": "{lui.color.red.1}"
+        },
         "background": {
           "$type": "color",
           "surface": {
@@ -119,11 +133,20 @@
           },
           "container": {
             "$value": "{lui.color.red.4}"
+          },
+          "hover": {
+            "$value": "{lui.color.red.5}"
+          },
+          "pressed": {
+            "$value": "{lui.color.red.6}"
           }
         },
         "border": {
           "$type": "color",
           "stroke": {
+            "$value": "{lui.color.red.4}"
+          },
+          "focus": {
             "$value": "{lui.color.red.4}"
           }
         },
@@ -138,12 +161,6 @@
           "default": {
             "$value": "{lui.color.red.4}"
           }
-        },
-        "state": {
-          "focus-ring": {
-            "$type": "color",
-            "$value": "{lui.color.red.1}"
-          }
         }
       },
       "success": {
@@ -154,24 +171,30 @@
           },
           "container": {
             "$value": "{lui.color.green.4}"
+          },
+          "hover": {
+            "$value": "{lui.color.green.5}"
+          },
+          "pressed": {
+            "$value": "{lui.color.green.6}"
           }
         },
         "border": {
           "$type": "color",
           "stroke": {
             "$value": "{lui.color.green.4}"
+          },
+          "focus": {
+            "$value": "{lui.color.green.4}"
+          },
+          "focus-ring": {
+            "$value": "{lui.color.green.1}"
           }
         },
         "icon": {
           "$type": "color",
           "default": {
             "$value": "{lui.color.green.4}"
-          }
-        },
-        "state": {
-          "focus-ring": {
-            "$type": "color",
-            "$value": "{lui.color.green.1}"
           }
         }
       },
@@ -186,6 +209,12 @@
           },
           "overlay": {
             "$value": "{lui.color.gray.8}"
+          },
+          "hover": {
+            "$value": "{lui.color.black.alpha.2}"
+          },
+          "pressed": {
+            "$value": "{lui.color.black.alpha.3}"
           }
         },
         "border": {
@@ -195,6 +224,9 @@
           },
           "stroke": {
             "$value": "{lui.color.gray.4}"
+          },
+          "focus-ring": {
+            "$value": "{lui.color.gray.3}"
           }
         },
         "text": {
@@ -216,12 +248,6 @@
           },
           "inverse": {
             "$value": "{lui.color.gray.1}"
-          }
-        },
-        "state": {
-          "focus-ring": {
-            "$type": "color",
-            "$value": "{lui.color.gray.3}"
           }
         }
       },
@@ -448,10 +474,10 @@
       }
     },
     "focus-ring": {
+      "$type": "shadow",
       "primary": {
-        "$type": "shadow",
         "$value": {
-          "color": "{lui.color.primary.state.focus-ring}",
+          "color": "{lui.color.primary.focus-ring}",
           "offsetX": {
             "value": 0,
             "unit": "px"
@@ -467,14 +493,12 @@
           "spread": {
             "value": 3,
             "unit": "px"
-          },
-          "inset": false
+          }
         }
       },
       "secondary": {
-        "$type": "shadow",
         "$value": {
-          "color": "{lui.color.secondary.state.focus-ring}",
+          "color": "{lui.color.secondary.border.focus}",
           "offsetX": {
             "value": 0,
             "unit": "px"
@@ -490,14 +514,12 @@
           "spread": {
             "value": 3,
             "unit": "px"
-          },
-          "inset": false
+          }
         }
       },
       "danger": {
-        "$type": "shadow",
         "$value": {
-          "color": "{lui.color.danger.state.focus-ring}",
+          "color": "{lui.color.danger.focus-ring}",
           "offsetX": {
             "value": 0,
             "unit": "px"
@@ -513,14 +535,12 @@
           "spread": {
             "value": 3,
             "unit": "px"
-          },
-          "inset": false
+          }
         }
       },
       "success": {
-        "$type": "shadow",
         "$value": {
-          "color": "{lui.color.success.state.focus-ring}",
+          "color": "{lui.color.success.border.focus-ring}",
           "offsetX": {
             "value": 0,
             "unit": "px"
@@ -536,14 +556,12 @@
           "spread": {
             "value": 3,
             "unit": "px"
-          },
-          "inset": false
+          }
         }
       },
       "neutral": {
-        "$type": "shadow",
         "$value": {
-          "color": "{lui.color.neutral.state.focus-ring}",
+          "color": "{lui.color.neutral.border.focus-ring}",
           "offsetX": {
             "value": 0,
             "unit": "px"
@@ -559,8 +577,7 @@
           "spread": {
             "value": 3,
             "unit": "px"
-          },
-          "inset": false
+          }
         }
       }
     }
