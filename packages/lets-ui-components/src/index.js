@@ -9,6 +9,7 @@ import { LuiInput } from './components/input.js';
 import { LuiLink } from './components/link.js';
 import { LuiModal } from './components/modal.js';
 import { LuiNativeSelect, LuiSelect } from './components/select.js';
+import { LuiShortcut } from './components/shortcut.js';
 import { LuiTag } from './components/tag.js';
 import { LuiTooltip } from './components/tooltip.js';
 
@@ -30,6 +31,7 @@ define('lui-link', LuiLink);
 define('lui-modal', LuiModal);
 define('lui-select', LuiSelect);
 define('lui-native-select', LuiNativeSelect);
+define('lui-shortcut', LuiShortcut);
 define('lui-tag', LuiTag);
 define('lui-tooltip', LuiTooltip);
 
@@ -46,6 +48,7 @@ export {
   LuiModal,
   LuiNativeSelect,
   LuiSelect,
+  LuiShortcut,
   LuiTag,
   LuiTooltip,
 };
