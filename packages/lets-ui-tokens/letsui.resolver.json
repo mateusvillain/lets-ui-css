@@ -3,7 +3,10 @@
   "version": "2025.10",
   "sets": {
     "global": {
-      "sources": [{ "$ref": "./tokens/global/primitive.json" }, { "$ref": "./tokens/global/semantic.json" }]
+      "sources": [
+        { "$ref": "./tokens/global/primitive.json" },
+        { "$ref": "./tokens/global/semantic.json" }
+      ]
     }
   },
   "modifiers": {
@@ -17,7 +20,9 @@
     "brandColor": {
       "default": "lets-ui-light",
       "contexts": {
-        "lets-ui-light": [{ "$ref": "./tokens/brand/lets-ui/colors.light.json" }],
+        "lets-ui-light": [
+          { "$ref": "./tokens/brand/lets-ui/colors.light.json" }
+        ],
         "lets-ui-dark": [{ "$ref": "./tokens/brand/lets-ui/colors.dark.json" }]
       }
     },
@@ -28,5 +33,10 @@
       }
     }
   },
-  "resolutionOrder": [{ "$ref": "#/sets/global" }, { "$ref": "#/modifiers/mode" }, { "$ref": "#/modifiers/brandFoundation" }, { "$ref": "#/modifiers/brandColor" }]
+  "resolutionOrder": [
+    { "$ref": "#/sets/global" },
+    { "$ref": "#/modifiers/mode" },
+    { "$ref": "#/modifiers/brandFoundation" },
+    { "$ref": "#/modifiers/brandColor" }
+  ]
 }
