@@ -130,6 +130,22 @@ $color: (
       ),
     ),
 
+    bg-hover: (
+      primary: token('lui.color.primary.background.hover'),
+      secondary: token('lui.color.secondary.background.hover'),
+      danger: token('lui.color.danger.background.hover'),
+      success: token('lui.color.success.background.hover'),
+      neutral: token('lui.color.neutral.background.hover'),
+    ),
+
+    bg-pressed: (
+      primary: token('lui.color.primary.background.pressed'),
+      secondary: token('lui.color.secondary.background.pressed'),
+      danger: token('lui.color.danger.background.pressed'),
+      success: token('lui.color.success.background.pressed'),
+      neutral: token('lui.color.neutral.background.pressed'),
+    ),
+
     border: (
       divisor: token('lui.color.neutral.border.divisor'),
       stroke: (
