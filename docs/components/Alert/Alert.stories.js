@@ -1,87 +1,60 @@
 import '../../../packages/lets-ui-tokens/dist/letsui.tokens.css';
 import '../../../packages/styles/dist/letsui.css';
+import '../../../packages/lets-ui-components/src/index.js';
 
 export default {
   title: 'Components/Alert',
   argTypes: {
     variant: {
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
       options: ['caution', 'danger', 'info', 'success'],
     },
-    title: {
-      control: 'text',
-    },
-    content: {
-      control: 'text',
-    },
-    actions: {
-      control: 'boolean',
-    },
+    title: { control: 'text' },
+    content: { control: 'text' },
+    primaryButton: { control: 'text' },
+    secondaryButton: { control: 'text' },
   },
 };
 
-const Template = ({ variant, title, content, actions }) => {
-  return `
-    <div class="alert alert--${variant}" role="alert">
-      <div class="alert__content">
-        <div class="alert__text">
-          <p class="body--lg">${title}</p>
-          <p class="body--lg">${content}</p>
-        </div>
-      </div>
+const Template = ({
+  variant,
+  title,
+  content,
+  primaryButton,
+  secondaryButton,
+}) => {
+  const attrs = [
+    `variant="${variant ?? 'success'}"`,
+    `title="${title ?? ''}"`,
+    `content="${content ?? ''}"`,
+    primaryButton ? `primary-button="${primaryButton}"` : '',
+    secondaryButton ? `secondary-button="${secondaryButton}"` : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
 
-      ${
-        actions
-          ? `
-            <div class="alert__actions">
-              <button class="btn btn--secondary btn--lg">Button</button>
-              <button class="btn btn--primary btn--lg">Button</button>
-            </div>
-          `
-          : ''
-      }
-    </div>
-  `;
+  return `<lui-alert ${attrs}></lui-alert>`;
+};
+
+const baseArgs = {
+  variant: 'success',
+  title: 'Alert title',
+  content: 'Description',
+  primaryButton: 'Button',
+  secondaryButton: 'Button',
 };
 
 export const Alert = Template.bind({});
-Alert.args = {
-  variant: 'success',
-  title: 'Alert title',
-  content: 'Description',
-  actions: true,
-};
+Alert.args = { ...baseArgs };
 
 export const Success = Template.bind({});
-Success.args = {
-  variant: 'success',
-  title: 'Alert title',
-  content: 'Description',
-  actions: true,
-};
+Success.args = { ...baseArgs, variant: 'success' };
 
 export const Caution = Template.bind({});
-Caution.args = {
-  variant: 'caution',
-  title: 'Alert title',
-  content: 'Description',
-  actions: true,
-};
+Caution.args = { ...baseArgs, variant: 'caution' };
 
 export const Danger = Template.bind({});
-Danger.args = {
-  variant: 'danger',
-  title: 'Alert title',
-  content: 'Description',
-  actions: true,
-};
+Danger.args = { ...baseArgs, variant: 'danger' };
 
 export const Info = Template.bind({});
-Info.args = {
-  variant: 'info',
-  title: 'Alert title',
-  content: 'Description',
-  actions: true,
-};
+Info.args = { ...baseArgs, variant: 'info' };
