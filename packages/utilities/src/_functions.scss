@@ -2,7 +2,7 @@
 @use './tokens.map' as tokens;
 
 // focus-ring($variant)
-//  $variant = primary, secondary, caution, danger, info, success, neutral
+//  $variant = primary, secondary, danger, success, neutral
 @function focus-ring($variant) {
   $value: map.get(tokens.$focus-ring, $variant);
 
@@ -46,23 +46,6 @@
 // color($category, $scale)
 //  $category = brand, blue, green, gray, green, orange, red, violet
 //  $scale    = 1, 2, 3, 4, 5, 6, 7, 8, 9
-
-// bg($category, $variant)
-//  $category = surface, container
-//  $variant  = primary, caution, danger, info, success, neutral, overlay
-
-// border($variant)
-//  $category = divisor
-
-// stroke($variant)
-//  $variant = neutral, primary, caution, danger, info, success
-
-// text($variant)
-//  $variant = heading, body, inverse, error
-
-// icon($variant)
-//  $variant = primary, caution, danger, info, success, neutral, inverse
-
 @function color($category, $scale) {
   $value: map.get(tokens.$color, primitive, $category, $scale);
 
@@ -73,6 +56,9 @@
   @return $value;
 }
 
+// bg($category, $variant)
+//  $category = surface, container
+//  $variant  = primary, caution, danger, info, success, neutral, overlay
 @function bg($category, $variant) {
   $value: map.get(tokens.$color, semantic, bg, $category, $variant);
 
@@ -83,6 +69,32 @@
   @return $value;
 }
 
+// bg-hover($variant)
+//  $variant  = primary, danger, success, neutral
+@function bg-hover($variant) {
+  $value: map.get(tokens.$color, semantic, bg-hover, $variant);
+
+  @if not $value {
+    @error 'Invalid background hover color: "#{$variant}"';
+  }
+
+  @return $value;
+}
+
+// bg-pressed($variant)
+//  $variant  = primary, danger, success, neutral
+@function bg-pressed($variant) {
+  $value: map.get(tokens.$color, semantic, bg-pressed, $variant);
+
+  @if not $value {
+    @error 'Invalid background pressed color: "#{$variant}"';
+  }
+
+  @return $value;
+}
+
+// border($variant)
+//  $category = divisor
 @function border($variant) {
   $value: map.get(tokens.$color, semantic, border, $variant);
 
@@ -93,6 +105,8 @@
   @return $value;
 }
 
+// stroke($variant)
+//  $variant = neutral, primary, caution, danger, info, success
 @function stroke($variant) {
   $value: map.get(tokens.$color, semantic, border, stroke, $variant);
 
@@ -103,6 +117,8 @@
   @return $value;
 }
 
+// text($variant)
+//  $variant = heading, body, inverse, error
 @function text($variant) {
   $value: map.get(tokens.$color, semantic, text, $variant);
 
@@ -113,6 +129,8 @@
   @return $value;
 }
 
+// icon($variant)
+//  $variant = primary, caution, danger, info, success, neutral, inverse
 @function icon($variant) {
   $value: map.get(tokens.$color, semantic, icon, $variant);
 
