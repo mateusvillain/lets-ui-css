@@ -33,10 +33,22 @@ lui-menu-divider {
     padding: fluid(8);
     list-style: none;
     margin: 0;
-    display: none;
+    opacity: opacity(hidden);
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(calc(fluid(4) * -1));
+    will-change: opacity, transform;
+    transition:
+      opacity 0.15s cubic-bezier(0.22, 1, 0.36, 1) 0s,
+      transform 0.2s cubic-bezier(0.22, 1, 0.36, 1) 0s,
+      visibility 0s linear 0.2s;
 
     &.is-open {
-      display: block;
+      opacity: opacity(visible);
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+      transition-delay: 0s, 0s, 0s;
     }
   }
 }
@@ -97,11 +109,16 @@ lui-menu-divider {
   > .dropdown-menu__panel {
     top: 0;
     left: calc(100% + fluid(2));
+    transform: translateX(calc(fluid(4) * -1));
   }
 
   &:hover > .dropdown-menu__panel,
   &:focus-within > .dropdown-menu__panel {
-    display: block;
+    opacity: opacity(visible);
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(0);
+    transition-delay: 0s, 0s, 0s;
   }
 }
 
