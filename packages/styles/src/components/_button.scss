@@ -3,32 +3,32 @@
 @use 'utilities/src/functions' as *;
 @use 'utilities/src/mixins' as *;
 
-$variants: primary, secondary, tertiary, danger, success;
+$variants: primary, secondary, neutral, danger, success;
 $colors: (
   primary: bg(container, primary),
   secondary: bg(container, secondary),
-  tertiary: bg(container, neutral),
+  neutral: bg(container, neutral),
   danger: bg(container, danger),
   success: bg(container, success),
 );
 $hover-colors: (
   primary: bg-hover(primary),
   secondary: bg-hover(secondary),
-  tertiary: bg-hover(neutral),
+  neutral: bg-hover(neutral),
   danger: bg-hover(danger),
   success: bg-hover(success),
 );
 $pressed-colors: (
   primary: bg-pressed(primary),
   secondary: bg-pressed(secondary),
-  tertiary: bg-pressed(neutral),
+  neutral: bg-pressed(neutral),
   danger: bg-pressed(danger),
   success: bg-pressed(success),
 );
 $focus-rings: (
   primary: focus-ring(primary),
   secondary: focus-ring(secondary),
-  tertiary: focus-ring(neutral),
+  neutral: focus-ring(neutral),
   danger: focus-ring(danger),
   success: focus-ring(success),
 );
@@ -85,17 +85,19 @@ button {
       color: text(inverse);
       background-color: map.get($colors, $variant);
 
-      &:hover {
-        background-color: map.get($hover-colors, $variant);
-      }
+      @include states($variant, $variant, $variant);
 
-      &:active {
-        background-color: map.get($pressed-colors, $variant);
-      }
+      // &:hover {
+      //   background-color: map.get($hover-colors, $variant);
+      // }
 
-      &:focus {
-        box-shadow: map.get($focus-rings, $variant);
-      }
+      // &:active {
+      //   background-color: map.get($pressed-colors, $variant);
+      // }
+
+      // &:focus {
+      //   box-shadow: map.get($focus-rings, $variant);
+      // }
     }
   }
 }
