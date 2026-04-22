@@ -122,9 +122,7 @@ lui-menu-divider {
   }
 }
 
-.menu-divider {
-  height: width(1);
-  background: border(divisor);
+.dropdown-menu__panel [role='separator'].divider {
   margin: fluid(8) fluid(12);
 }
 
