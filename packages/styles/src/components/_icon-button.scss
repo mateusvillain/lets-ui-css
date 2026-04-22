@@ -1,4 +1,4 @@
-@use "sass:list";
+@use 'sass:list';
 @use 'sass:map';
 @use 'utilities/src/functions' as *;
 @use 'utilities/src/mixins' as *;
@@ -6,14 +6,13 @@
 $icon-button-size: (
   lg: (
     fixed(40),
-    fixed(8)
+    fixed(8),
   ),
   md: (
     fixed(32),
-    fixed(8)
-  )
+    fixed(8),
+  ),
 );
-
 $size-lg: list.nth(map.get($icon-button-size, lg), 1);
 $gap-lg: list.nth(map.get($icon-button-size, lg), 2);
 $size-md: list.nth(map.get($icon-button-size, md), 1);
@@ -52,6 +51,7 @@ $gap-md: list.nth(map.get($icon-button-size, md), 2);
       max-width: $size-lg !important;
       max-height: $size-lg !important;
       padding: $gap-lg !important;
+
       > i {
         font-size: 1.5rem;
       }
@@ -61,15 +61,17 @@ $gap-md: list.nth(map.get($icon-button-size, md), 2);
       max-width: $size-md !important;
       max-height: $size-md !important;
       padding: $gap-md !important;
+
       > i {
         font-size: 1rem;
       }
     }
   }
 
-  &:active:not(:disabled)::before, &:focus {
+  &:active:not(:disabled)::before,
+  &:focus {
     border-radius: radius(lg);
   }
 
-  @include states();
+  @include states(neutral, primary, primary);
 }
