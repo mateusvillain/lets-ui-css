@@ -66,18 +66,10 @@ lui-menu-divider {
   color: text(body);
   cursor: pointer;
   text-align: left;
+  transition: background-color 0.2s;
 
   @include font-scale(body--lg);
-
-  &:hover {
-    background: bg-hover(neutral);
-  }
-
-  &:active {
-    background: bg-pressed(neutral);
-  }
-
-  @include focus-ring(stroke(primary), -2px);
+  @include states(neutral, primary);
 
   &[aria-disabled='true'],
   &:disabled {
