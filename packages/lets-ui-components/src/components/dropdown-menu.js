@@ -39,15 +39,15 @@ function buildShortcutHtml(shortcut) {
   return `<span class="menu-item__shortcut shortcut" aria-label="${escapeHtml(keys.join(' + '))}" role="group">${keysHtml}</span>`;
 }
 
+const DIVIDER_TAGS = new Set(['lui-divider', 'lui-menu-divider']);
+const ITEM_TAGS = new Set(['lui-menu-item', ...DIVIDER_TAGS]);
+
 function buildItemsHtml(items) {
   return Array.from(items)
-    .filter((child) => {
-      const tag = child.tagName?.toLowerCase();
-      return tag === 'lui-menu-item' || tag === 'lui-menu-divider';
-    })
+    .filter((child) => ITEM_TAGS.has(child.tagName?.toLowerCase()))
     .map((child) => {
-      if (child.tagName.toLowerCase() === 'lui-menu-divider') {
-        return `<li role="separator" class="menu-divider"></li>`;
+      if (DIVIDER_TAGS.has(child.tagName.toLowerCase())) {
+        return `<li role="separator" class="divider"></li>`;
       }
 
       const label = escapeHtml(child.getAttribute('label') ?? '');
@@ -55,10 +55,9 @@ function buildItemsHtml(items) {
       const disabled = hasBooleanAttribute(child, 'disabled');
       const variant = child.getAttribute('variant') ?? '';
 
-      const submenuChildren = Array.from(child.children).filter((c) => {
-        const tag = c.tagName.toLowerCase();
-        return tag === 'lui-menu-item' || tag === 'lui-menu-divider';
-      });
+      const submenuChildren = Array.from(child.children).filter((c) =>
+        ITEM_TAGS.has(c.tagName.toLowerCase())
+      );
       const hasSubmenu = submenuChildren.length > 0;
 
       const itemClasses = [
@@ -148,7 +147,7 @@ export class LuiDropdownMenu extends HTMLElement {
         return;
 
       const tag = node.tagName?.toLowerCase();
-      if (tag === 'lui-menu-item' || tag === 'lui-menu-divider') {
+      if (ITEM_TAGS.has(tag)) {
         itemNodes.push(node);
       } else {
         triggerNodes.push(node.outerHTML ?? node.textContent ?? '');
