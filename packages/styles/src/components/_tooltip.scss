@@ -19,12 +19,6 @@ $background: bg(container, overlay);
     background: transparent;
     color: inherit;
     font: inherit;
-
-    &:focus-within,
-    &:focus-visible {
-      outline: width(2) solid stroke(primary);
-      outline-offset: width(2);
-    }
   }
 
   &__content {
