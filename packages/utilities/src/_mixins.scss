@@ -4,7 +4,13 @@
 
 // Flexbox
 //  @include flex(direction, align, justify, gap, wrap);
-@mixin flex($direction: row, $align: center, $justify: flex-start, $gap: 0, $wrap: nowrap) {
+@mixin flex(
+  $direction: row,
+  $align: center,
+  $justify: flex-start,
+  $gap: 0,
+  $wrap: nowrap
+) {
   display: flex;
   flex-flow: $direction $wrap;
   align-items: $align;
@@ -17,7 +23,7 @@
 
 // States
 //  @include states(hover, active, size, color);
-@mixin states($hover: 0.76, $active: 0.6, $size: 3px, $color: rgba(0, 0, 0, 0.3)) {
+@mixin states($variant, $focus-visible, $focus: null) {
   &:disabled,
   &.is-disabled,
   &[aria-disabled='true'] {
@@ -29,17 +35,27 @@
 
   &:not([aria-disabled='true'], .is-disabled) {
     &:hover {
-      filter: brightness($hover);
+      background-color: hover($variant);
     }
 
     &:active {
-      filter: brightness($active);
+      background-color: pressed($variant);
+    }
+
+    &:focus-visible {
+      box-shadow: focus-ring($focus-visible);
+    }
+
+    @if $focus {
+      &:focus {
+        box-shadow: focus-ring($focus);
+      }
     }
 
     &:focus,
-    &:focus-visible {
-      outline: 0;
-      box-shadow: 0 0 0 $size $color;
+    &:focus-within {
+      outline: none;
+      outline-offset: 3px;
     }
   }
 }
@@ -99,22 +115,17 @@
 }
 
 // Focus Ring
-//  @include focus-ring($color, $offset);
-//  $color  = any valid color value
-//  $offset = any valid CSS length value (default: 2px)
-@mixin focus-ring($color, $offset: 2px) {
+@mixin focus-ring($variant) {
   &:focus-visible {
-    outline: width(2) solid $color;
-    outline-offset: $offset;
+    box-shadow: focus-ring($variant);
+    outline: none;
+    outline-offset: 3px;
   }
 }
 
 // Disable Text Selection
 //  @include no-select;
-@mixin no-select {
-  user-select: none; /* Safari */
-  user-select: none; /* Firefox */
-  user-select: none; /* IE10+/Edge */
+@mixin no-select { /* Safari */ /* Firefox */ /* IE10+/Edge */
   user-select: none; /* Standard */
 }
 
@@ -123,7 +134,9 @@
 @mixin font-scale($scale-name) {
   $scale: map.get($typography, scales, $scale-name);
 
-  font: weight(map.get($scale, weight)) size(map.get($scale, size)) / line-height(map.get($scale, family)) font(map.get($scale, family));
+  /* stylelint-disable-next-line scss/operator-no-newline-after */
+  font: weight(map.get($scale, weight)) size(map.get($scale, size)) /
+    line-height(map.get($scale, family)) font(map.get($scale, family));
   text-transform: case(map.get($scale, case));
 }
 
