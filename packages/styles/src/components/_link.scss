@@ -3,7 +3,15 @@
 
 a.link {
   color: text(link);
-  transition: filter 0.3s ease;
+  text-decoration: none;
 
-  @include states(0.76, 0.6, 2px, stroke(primary));
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: text(link-visited);
+  }
+
+  @include focus-ring(primary);
 }
