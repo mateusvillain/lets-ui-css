@@ -23,6 +23,7 @@ Usar este mapa para decidir se o componente já existe e em qual formato.
 | modal         | `_modal.scss`         | `modal.js`         | cobertura completa                                            |
 | select        | `_select.scss`        | `select.js`        | cobertura completa                                            |
 | shortcut      | `_shortcut.scss`      | `shortcut.js`      | cobertura completa                                            |
+| tabs          | `_tabs.scss`          | `tabs.js`          | inclui `lui-tab`; suporta Line, Card e prop expand            |
 | tag           | `_tag.scss`           | `tag.js`           | cobertura completa                                            |
 | tooltip       | `_tooltip.scss`       | `tooltip.js`       | cobertura completa                                            |
 | text-field    | `_form.scss`          | `text-field.js`    | mapeamento indireto via estilos de formulário                 |
