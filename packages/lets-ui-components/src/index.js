@@ -1,4 +1,5 @@
 import { LuiAlert } from './components/alert.js';
+import { LuiTabs, LuiTab } from './components/tabs.js';
 import { LuiDivider } from './components/divider.js';
 import {
   LuiDropdownMenu,
@@ -26,6 +27,8 @@ function define(name, elementClass) {
 }
 
 define('lui-alert', LuiAlert);
+define('lui-tabs', LuiTabs);
+define('lui-tab', LuiTab);
 define('lui-divider', LuiDivider);
 define('lui-dropdown-menu', LuiDropdownMenu);
 define('lui-menu-item', LuiMenuItem);
@@ -47,6 +50,8 @@ define('lui-tooltip', LuiTooltip);
 
 export {
   LuiAlert,
+  LuiTabs,
+  LuiTab,
   LuiDivider,
   LuiDropdownMenu,
   LuiMenuItem,
