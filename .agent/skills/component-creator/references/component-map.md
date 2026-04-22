@@ -9,23 +9,24 @@ Usar este mapa para decidir se o componente já existe e em qual formato.
 
 ## Componentes Mapeados
 
-| Base name     | SCSS                  | Web Component      | Observação                                                                         |
-| ------------- | --------------------- | ------------------ | ---------------------------------------------------------------------------------- |
-| alert         | `_alert.scss`         | `alert.js`         | cobertura completa                                                                 |
-| breadcrumb    | `_breadcrumb.scss`    | `breadcrumb.js`    | `breadcrumb-item.js` existe como suporte                                           |
-| button        | `_button.scss`        | `button.js`        | cobertura completa                                                                 |
-| card          | `_card.scss`          | `card.js`          | cobertura completa                                                                 |
-| checkbox      | `_checkbox.scss`      | `checkbox.js`      | cobertura completa                                                                 |
-| icon-button   | `_icon-button.scss`   | `icon-button.js`   | cobertura completa                                                                 |
-| link          | `_link.scss`          | `link.js`          | cobertura completa                                                                 |
-| modal         | `_modal.scss`         | `modal.js`         | cobertura completa                                                                 |
-| select        | `_select.scss`        | `select.js`        | cobertura completa                                                                 |
-| shortcut      | `_shortcut.scss`      | `shortcut.js`      | cobertura completa                                                                 |
-| tag           | `_tag.scss`           | `tag.js`           | cobertura completa                                                                 |
-| tooltip       | `_tooltip.scss`       | `tooltip.js`       | cobertura completa                                                                 |
-| text-field    | `_form.scss`          | `text-field.js`    | mapeamento indireto via estilos de formulário                                      |
-| dropdown-menu | `_dropdown-menu.scss` | `dropdown-menu.js` | inclui `lui-menu-item` e `lui-menu-divider`; suporte a shortcut, submenu e divisor |
-| navbar        | `_navbar.scss`        | não existe         | formato web component ausente                                                      |
+| Base name     | SCSS                  | Web Component      | Observação                                                    |
+| ------------- | --------------------- | ------------------ | ------------------------------------------------------------- |
+| alert         | `_alert.scss`         | `alert.js`         | cobertura completa                                            |
+| breadcrumb    | `_breadcrumb.scss`    | `breadcrumb.js`    | `breadcrumb-item.js` existe como suporte                      |
+| button        | `_button.scss`        | `button.js`        | cobertura completa                                            |
+| card          | `_card.scss`          | `card.js`          | cobertura completa                                            |
+| checkbox      | `_checkbox.scss`      | `checkbox.js`      | cobertura completa                                            |
+| divider       | `_divider.scss`       | `divider.js`       | cobertura completa                                            |
+| dropdown-menu | `_dropdown-menu.scss` | `dropdown-menu.js` | inclui `lui-menu-item`; suporte a shortcut, submenu e divisor |
+| icon-button   | `_icon-button.scss`   | `icon-button.js`   | cobertura completa                                            |
+| link          | `_link.scss`          | `link.js`          | cobertura completa                                            |
+| modal         | `_modal.scss`         | `modal.js`         | cobertura completa                                            |
+| select        | `_select.scss`        | `select.js`        | cobertura completa                                            |
+| shortcut      | `_shortcut.scss`      | `shortcut.js`      | cobertura completa                                            |
+| tag           | `_tag.scss`           | `tag.js`           | cobertura completa                                            |
+| tooltip       | `_tooltip.scss`       | `tooltip.js`       | cobertura completa                                            |
+| text-field    | `_form.scss`          | `text-field.js`    | mapeamento indireto via estilos de formulário                 |
+| navbar        | `_navbar.scss`        | não existe         | formato web component ausente                                 |
 
 ## Arquivos de Apoio Obrigatórios
 

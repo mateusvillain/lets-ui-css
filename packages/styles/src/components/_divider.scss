@@ -1,0 +1,62 @@
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/mixins' as *;
+
+lui-divider {
+  display: block;
+
+  &[orientation='vertical'] {
+    display: inline-flex;
+    align-self: stretch;
+  }
+}
+
+.divider {
+  display: block;
+  height: width(1);
+  background: border(divisor);
+  border: none;
+  margin: 0;
+
+  &--vertical {
+    width: width(1);
+    height: auto;
+    align-self: stretch;
+  }
+
+  &--labeled {
+    display: flex;
+    align-items: center;
+    gap: fluid(12);
+    height: auto;
+    background: none;
+
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      height: width(1);
+      background: border(divisor);
+    }
+
+    &.divider--vertical {
+      flex-direction: column;
+      width: auto;
+      align-self: stretch;
+
+      &::before,
+      &::after {
+        width: width(1);
+        height: auto;
+        flex: 1;
+      }
+    }
+  }
+
+  &__label {
+    color: text(body);
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    @include font-scale(body--md);
+  }
+}
