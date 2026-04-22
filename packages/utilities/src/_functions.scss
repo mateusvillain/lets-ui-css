@@ -1,6 +1,26 @@
 @use 'sass:map';
 @use './tokens.map' as tokens;
 
+@function hover($variant) {
+  $value: map.get(tokens.$color, semantic, bg-hover, $variant);
+
+  @if not $value {
+    @error 'Invalid background hover color: "#{$variant}"';
+  }
+
+  @return $value;
+}
+
+@function pressed($variant) {
+  $value: map.get(tokens.$color, semantic, bg-pressed, $variant);
+
+  @if not $value {
+    @error 'Invalid background pressed color: "#{$variant}"';
+  }
+
+  @return $value;
+}
+
 // focus-ring($variant)
 //  $variant = primary, secondary, danger, success, neutral
 @function focus-ring($variant) {
