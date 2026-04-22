@@ -36,14 +36,8 @@ lui-tab {
   flex-shrink: 0;
 
   @include font-scale(body--lg);
-  @include focus-ring(stroke(primary));
-
-  &:disabled,
-  &[aria-disabled='true'] {
-    opacity: opacity(disabled);
-    pointer-events: none;
-    cursor: not-allowed;
-  }
+  @include focus-ring(primary);
+  @include disabled;
 }
 
 // Expand modifier — specificity 0,2,0
