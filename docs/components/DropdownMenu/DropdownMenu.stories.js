@@ -47,7 +47,7 @@ export const Default = () => `
           </span>
         </button>
       </li>
-      <li role="separator" class="menu-divider"></li>
+      <li role="separator" class="divider"></li>
       <li role="presentation" class="menu-item--has-submenu">
         <button class="menu-item" role="menuitem" type="button" aria-haspopup="menu">
           <span class="menu-item__label">Compartilhar</span>
@@ -73,7 +73,7 @@ export const Default = () => `
           </li>
         </ul>
       </li>
-      <li role="separator" class="menu-divider"></li>
+      <li role="separator" class="divider"></li>
       <li role="presentation">
         <button class="menu-item menu-item--danger" role="menuitem" type="button">
           <span class="menu-item__label">Excluir</span>
@@ -114,7 +114,7 @@ export const WithShortcuts = () => `
           </span>
         </button>
       </li>
-      <li role="separator" class="menu-divider"></li>
+      <li role="separator" class="divider"></li>
       <li role="presentation">
         <button class="menu-item" role="menuitem" type="button">
           <span class="menu-item__label">Salvar</span>
@@ -228,7 +228,7 @@ export const WithDivider = () => `
           <span class="menu-item__label">Configurações</span>
         </button>
       </li>
-      <li role="separator" class="menu-divider"></li>
+      <li role="separator" class="divider"></li>
       <li role="presentation">
         <button class="menu-item" role="menuitem" type="button">
           <span class="menu-item__label">Ajuda</span>
@@ -239,7 +239,7 @@ export const WithDivider = () => `
           <span class="menu-item__label">Novidades</span>
         </button>
       </li>
-      <li role="separator" class="menu-divider"></li>
+      <li role="separator" class="divider"></li>
       <li role="presentation">
         <button class="menu-item menu-item--danger" role="menuitem" type="button">
           <span class="menu-item__label">Sair</span>
@@ -316,7 +316,7 @@ export const TriggerWithIconButton = () => `
           <span class="menu-item__label">Mover</span>
         </button>
       </li>
-      <li role="separator" class="menu-divider"></li>
+      <li role="separator" class="divider"></li>
       <li role="presentation">
         <button class="menu-item menu-item--danger" role="menuitem" type="button">
           <span class="menu-item__label">Excluir</span>
