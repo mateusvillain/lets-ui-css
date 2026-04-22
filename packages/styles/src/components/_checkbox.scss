@@ -36,6 +36,16 @@ input[type='checkbox'] {
     position: relative;
     transition: all 0.2s ease;
 
+    &:hover {
+      border-color: stroke(neutral);
+    }
+
+    &:focus {
+      box-shadow: focus-ring(primary);
+      outline: none;
+      outline-offset: 3px;
+    }
+
     &:checked {
       background-color: bg(container, primary);
       border-color: bg(container, primary);
@@ -51,14 +61,8 @@ input[type='checkbox'] {
         left: 50%;
         transform: translate(-50%, -60%) rotate(45deg);
       }
-    }
 
-    &:focus {
-      border: width(1) solid bg(container, primary);
-      box-shadow: 0 0 0 3px lch(45.27% 113.1 310.44deg / 32%);
-      outline: none;
+      @include states(primary, primary, primary);
     }
-
-    @include states(0.76, 0.6, 3, lch(45.27% 113.1 310.44deg / 32%));
   }
 }
