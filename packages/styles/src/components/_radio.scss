@@ -1,0 +1,93 @@
+@use 'sass:map';
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/tokens.map' as *;
+@use 'utilities/src/mixins' as *;
+
+$sizes: (
+  lg: (
+    outer: 24,
+    dot: 10,
+  ),
+  md: (
+    outer: 16,
+    dot: 6,
+  ),
+);
+
+.radio,
+input[type='radio'] {
+  display: flex;
+  align-items: center;
+  gap: fixed(8);
+  user-select: none;
+  margin: fixed(0);
+  padding: fixed(0);
+}
+
+.radio {
+  @each $key, $values in $sizes {
+    $outer: map.get($values, outer);
+    $dot: map.get($values, dot);
+
+    &--#{$key} input[type='radio'] {
+      width: fixed($outer);
+      height: fixed($outer);
+
+      &:checked::after {
+        width: #{$dot}px;
+        height: #{$dot}px;
+      }
+    }
+
+    &:not(:has(input:disabled)) {
+      cursor: pointer;
+    }
+
+    &:has(input:disabled) * {
+      cursor: not-allowed;
+      opacity: opacity(disabled);
+    }
+
+    &:not(
+        :has(input:disabled, input[aria-disabled='true'], input.is-disabled)
+      ):hover {
+      border-color: stroke(neutral);
+    }
+
+    @include disabled;
+  }
+
+  input {
+    appearance: none;
+    background-color: bg(surface, neutral);
+    border: width(1) solid border(divisor);
+    border-radius: radius(circle);
+    display: inline-block;
+    position: relative;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+
+    &:focus {
+      box-shadow: focus-ring(primary);
+      outline: none;
+      outline-offset: 3px;
+    }
+
+    &:checked {
+      background-color: bg(container, primary);
+      border-color: bg(container, primary);
+
+      &::after {
+        content: '';
+        position: absolute;
+        background-color: bg(surface, neutral);
+        border-radius: radius(circle);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      @include states(primary, primary, primary);
+    }
+  }
+}

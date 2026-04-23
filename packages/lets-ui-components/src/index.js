@@ -11,6 +11,7 @@ import { LuiBreadcrumbItem } from './components/breadcrumb-item.js';
 import { LuiButton } from './components/button.js';
 import { LuiCard } from './components/card.js';
 import { LuiCheckbox } from './components/checkbox.js';
+import { LuiRadio } from './components/radio.js';
 import { LuiIconButton } from './components/icon-button.js';
 import { LuiInput } from './components/input.js';
 import { LuiLink } from './components/link.js';
@@ -38,6 +39,7 @@ define('lui-breadcrumb-item', LuiBreadcrumbItem);
 define('lui-button', LuiButton);
 define('lui-card', LuiCard);
 define('lui-checkbox', LuiCheckbox);
+define('lui-radio', LuiRadio);
 define('lui-icon-button', LuiIconButton);
 define('lui-input', LuiInput);
 define('lui-link', LuiLink);
@@ -61,6 +63,7 @@ export {
   LuiButton,
   LuiCard,
   LuiCheckbox,
+  LuiRadio,
   LuiIconButton,
   LuiInput,
   LuiLink,
