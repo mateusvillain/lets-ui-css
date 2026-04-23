@@ -27,17 +27,12 @@
   &:disabled,
   &.is-disabled,
   &[aria-disabled='true'] {
-    pointer-events: none;
     cursor: not-allowed;
     opacity: opacity(disabled);
     text-decoration: none;
   }
 
   &:not([aria-disabled='true'], .is-disabled) {
-    &:hover {
-      background-color: hover($variant);
-    }
-
     &:active {
       background-color: pressed($variant);
     }
@@ -57,6 +52,10 @@
       outline: none;
       outline-offset: 3px;
     }
+  }
+
+  &:not([aria-disabled='true'], .is-disabled, :disabled):hover {
+    background-color: hover($variant);
   }
 }
 
@@ -144,7 +143,6 @@
   &:disabled,
   &.disabled,
   &[aria-disabled='true'] {
-    pointer-events: none;
     cursor: not-allowed;
     opacity: opacity(disabled);
     text-decoration: none;
