@@ -13,7 +13,6 @@ input[type='checkbox'] {
   display: flex;
   align-items: center;
   gap: fixed(8);
-  cursor: pointer;
   user-select: none;
   margin: fixed(0);
   padding: fixed(0);
@@ -25,6 +24,15 @@ input[type='checkbox'] {
       width: fixed($value);
       height: fixed($value);
     }
+
+    &:not(:has(input:disabled)) {
+      cursor: pointer;
+    }
+
+    &:has(input:disabled) * {
+      cursor: not-allowed;
+      opacity: opacity(disabled);
+    }
   }
 
   input {
@@ -35,10 +43,6 @@ input[type='checkbox'] {
     display: inline-block;
     position: relative;
     transition: all 0.2s ease;
-
-    &:hover {
-      border-color: stroke(neutral);
-    }
 
     &:focus {
       box-shadow: focus-ring(primary);
