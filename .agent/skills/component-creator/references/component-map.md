@@ -21,6 +21,7 @@ Usar este mapa para decidir se o componente já existe e em qual formato.
 | icon-button   | `_icon-button.scss`   | `icon-button.js`   | cobertura completa                                            |
 | link          | `_link.scss`          | `link.js`          | cobertura completa                                            |
 | modal         | `_modal.scss`         | `modal.js`         | cobertura completa                                            |
+| radio         | `_radio.scss`         | `radio.js`         | cobertura completa                                            |
 | select        | `_select.scss`        | `select.js`        | cobertura completa                                            |
 | shortcut      | `_shortcut.scss`      | `shortcut.js`      | cobertura completa                                            |
 | tabs          | `_tabs.scss`          | `tabs.js`          | inclui `lui-tab`; suporta Line, Card e prop expand            |
