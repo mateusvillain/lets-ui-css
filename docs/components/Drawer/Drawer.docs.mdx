@@ -1,0 +1,30 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as DrawerStories from './Drawer.stories';
+
+<Meta of={DrawerStories} />
+
+# Drawer
+
+Painel deslizante que emerge pela direita da tela sobre um backdrop escuro. Use para exibir detalhes, formulários ou configurações contextuais sem remover o usuário da página atual. Fecha via botão X no cabeçalho, botão Cancelar no rodapé, tecla Escape, ou clique no backdrop (opcional).
+
+<Canvas of={DrawerStories.Drawer} />
+<Controls of={DrawerStories.Drawer} />
+
+## Tamanhos
+
+Três tamanhos disponíveis — os mesmos da Modal. Use `sm` para painéis simples, `md` (padrão) para a maioria dos casos e `lg` para conteúdo com mais informação.
+
+<Canvas of={DrawerStories.Small} />
+<Canvas of={DrawerStories.Large} />
+
+## Sem ações
+
+Omita `primary-button` e `secondary-button` quando o drawer for apenas informativo ou quando as ações forem parte do conteúdo interno (slot).
+
+<Canvas of={DrawerStories.WithoutActions} />
+
+## close-on-backdrop: false
+
+Por padrão o backdrop não fecha o drawer. Ative `close-on-backdrop` quando o fluxo permitir descarte acidental. Desative em formulários ou fluxos onde o usuário deve tomar uma decisão explícita.
+
+<Canvas of={DrawerStories.CloseOnBackdropOff} />

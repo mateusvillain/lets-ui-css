@@ -1,0 +1,90 @@
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/mixins' as *;
+
+lui-drawer {
+  display: contents;
+}
+
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1040;
+  background-color: rgb(0 0 0 / 40%);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0s linear 0.3s;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: bg(surface, neutral);
+  border-radius: radius(xl) radius(none) radius(none) radius(xl);
+  box-shadow: elevation(overlay);
+  outline: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.is-open {
+    transform: translateX(0);
+  }
+
+  &--sm {
+    max-width: 320px;
+  }
+
+  &--md {
+    max-width: 480px;
+  }
+
+  &--lg {
+    max-width: 640px;
+  }
+
+  &__header {
+    @include flex(row, center, space-between, fluid(16), nowrap);
+    @include font-scale(block-title);
+
+    flex-shrink: 0;
+    padding: fluid(24);
+    color: text(heading);
+  }
+
+  &__title {
+    flex: 1;
+  }
+
+  &__body {
+    @include font-scale(body--lg);
+
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: fixed(0) fluid(24) fluid(24);
+    color: text(body);
+  }
+
+  &__footer {
+    @include flex(row, center, flex-end, fluid(16), nowrap);
+
+    flex-shrink: 0;
+    padding: fixed(0) fluid(24) fluid(24);
+
+    button {
+      flex: 1;
+    }
+  }
+}

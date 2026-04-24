@@ -1,8 +1,10 @@
 import {
   ensureElementId,
   hasBooleanAttribute,
+  lockBodyScroll,
   mountMarkup,
   readSize,
+  unlockBodyScroll,
 } from '../internal.js';
 
 export class LuiModal extends HTMLElement {
@@ -55,6 +57,9 @@ export class LuiModal extends HTMLElement {
 
   disconnectedCallback() {
     document.removeEventListener('keydown', this.handleDocumentKeydown);
+    if (hasBooleanAttribute(this, 'open')) {
+      unlockBodyScroll();
+    }
   }
 
   captureInitialActions() {
@@ -95,10 +100,12 @@ export class LuiModal extends HTMLElement {
     });
 
     this.setAttribute('open', '');
+    lockBodyScroll();
   }
 
   close() {
     this.removeAttribute('open');
+    unlockBodyScroll();
   }
 
   trapFocus(event) {
