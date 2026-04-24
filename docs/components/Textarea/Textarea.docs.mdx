@@ -1,0 +1,35 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as TextareaStories from './Textarea.stories';
+
+<Meta of={TextareaStories} />
+
+# Textarea
+
+Campo de texto multilinha para entradas longas como descrições, comentários e observações. Segue o mesmo modelo visual do Input — com suporte a label, hint, contador de caracteres, estados de erro e disabled.
+
+<Canvas of={TextareaStories.Textarea} />
+<Controls of={TextareaStories.Textarea} />
+
+## Com contador
+
+Use o atributo `maxlength` para ativar o contador de caracteres. Ideal quando há um limite explícito de entrada, como bio de perfil ou campo de descrição.
+
+<Canvas of={TextareaStories.WithCounter} />
+
+## Error
+
+Use o estado de erro para indicar que o campo não passou na validação. O `error-text` substitui o hint e é lido por leitores de tela via `aria-describedby`.
+
+<Canvas of={TextareaStories.Error} />
+
+## Disabled
+
+Use quando o conteúdo deve ser exibido mas não editado no contexto atual.
+
+<Canvas of={TextareaStories.Disabled} />
+
+## Resize: None
+
+Use `resize="none"` quando o layout não deve ser perturbado pelo redimensionamento — como em caixas de mensagem embutidas em formulários fixos.
+
+<Canvas of={TextareaStories.NoResize} />

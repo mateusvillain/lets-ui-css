@@ -19,6 +19,7 @@ import { LuiModal } from './components/modal.js';
 import { LuiNativeSelect, LuiSelect } from './components/select.js';
 import { LuiShortcut } from './components/shortcut.js';
 import { LuiTag } from './components/tag.js';
+import { LuiTextarea } from './components/textarea.js';
 import { LuiTooltip } from './components/tooltip.js';
 
 function define(name, elementClass) {
@@ -48,6 +49,7 @@ define('lui-select', LuiSelect);
 define('lui-native-select', LuiNativeSelect);
 define('lui-shortcut', LuiShortcut);
 define('lui-tag', LuiTag);
+define('lui-textarea', LuiTextarea);
 define('lui-tooltip', LuiTooltip);
 
 export {
@@ -72,5 +74,6 @@ export {
   LuiSelect,
   LuiShortcut,
   LuiTag,
+  LuiTextarea,
   LuiTooltip,
 };
