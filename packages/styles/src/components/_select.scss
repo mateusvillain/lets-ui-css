@@ -20,14 +20,6 @@ $size: (
     body: body--md,
     helper: body--sm,
   ),
-  sm: (
-    padding: fixed(8),
-    radius: radius(sm),
-    focus-radius: radius(sm),
-    label: body--sm,
-    body: body--sm,
-    helper: body--sm,
-  ),
 );
 
 lui-select,
@@ -203,7 +195,8 @@ lui-native-select {
       // Pull the select into the control's full interior (including padding zones)
       margin: calc(-1 * #{map.get($props, padding)});
       padding-block: map.get($props, padding);
-      padding-inline: map.get($props, padding) calc(#{map.get($props, padding)} + 22px);
+      padding-inline: map.get($props, padding)
+        calc(#{map.get($props, padding)} + 22px);
 
       // Reserve space for the absolute-positioned arrow (14px) + original gap (8px)
     }
@@ -222,7 +215,8 @@ lui-native-select {
       .native-select__input {
         margin: calc(-1 * (#{map.get($props, padding)} - 1px));
         padding-block: calc(#{map.get($props, padding)} - 1px);
-        padding-inline: calc(#{map.get($props, padding)} - 1px) calc(#{map.get($props, padding)} - 1px + 22px);
+        padding-inline: calc(#{map.get($props, padding)} - 1px)
+          calc(#{map.get($props, padding)} - 1px + 22px);
       }
     }
 
