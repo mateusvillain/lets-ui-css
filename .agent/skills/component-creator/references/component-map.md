@@ -17,6 +17,7 @@ Usar este mapa para decidir se o componente já existe e em qual formato.
 | card          | `_card.scss`          | `card.js`          | cobertura completa                                            |
 | checkbox      | `_checkbox.scss`      | `checkbox.js`      | cobertura completa                                            |
 | divider       | `_divider.scss`       | `divider.js`       | cobertura completa                                            |
+| drawer        | `_drawer.scss`        | `drawer.js`        | cobertura completa; slide-in da direita; backdrop animado     |
 | dropdown-menu | `_dropdown-menu.scss` | `dropdown-menu.js` | inclui `lui-menu-item`; suporte a shortcut, submenu e divisor |
 | icon-button   | `_icon-button.scss`   | `icon-button.js`   | cobertura completa                                            |
 | input         | `_input.scss`         | `input.js`         | cobertura completa                                            |
