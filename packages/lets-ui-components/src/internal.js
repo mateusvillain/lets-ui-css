@@ -36,3 +36,20 @@ export function ensureElementId(element, prefix) {
 
   return element.__luiId;
 }
+
+export function lockBodyScroll() {
+  const count = parseInt(document.body.dataset.luiLockCount || '0', 10);
+  document.body.dataset.luiLockCount = count + 1;
+  document.body.style.overflow = 'hidden';
+}
+
+export function unlockBodyScroll() {
+  const count = Math.max(
+    0,
+    parseInt(document.body.dataset.luiLockCount || '0', 10) - 1
+  );
+  document.body.dataset.luiLockCount = count;
+  if (count === 0) {
+    document.body.style.overflow = '';
+  }
+}
