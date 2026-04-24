@@ -1,5 +1,6 @@
 import '../../../packages/lets-ui-tokens/dist/letsui.tokens.css';
 import '../../../packages/styles/dist/letsui.css';
+import 'lets-ui-icons/dist/lets-ui-icons.css';
 
 export default {
   title: 'Components/Dropdown Menu',
@@ -303,7 +304,7 @@ export const TriggerWithIconButton = () => `
       aria-haspopup="menu"
       aria-expanded="true"
     >
-      <i class="material-symbols-rounded" aria-hidden="true">more_vert</i>
+      <i class="lui lui-dots-three" aria-hidden="true"></i>
     </button>
     <ul class="dropdown-menu__panel is-open" role="menu">
       <li role="presentation">

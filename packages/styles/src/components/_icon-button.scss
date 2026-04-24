@@ -33,7 +33,7 @@ $gap-md: list.nth(map.get($icon-button-size, md), 2);
   z-index: 0;
   background-color: bg(surface, neutral);
 
-  i::before {
+  i {
     color: icon(neutral);
   }
 
