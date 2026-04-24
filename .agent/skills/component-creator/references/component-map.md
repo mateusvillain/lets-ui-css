@@ -19,16 +19,17 @@ Usar este mapa para decidir se o componente já existe e em qual formato.
 | divider       | `_divider.scss`       | `divider.js`       | cobertura completa                                            |
 | dropdown-menu | `_dropdown-menu.scss` | `dropdown-menu.js` | inclui `lui-menu-item`; suporte a shortcut, submenu e divisor |
 | icon-button   | `_icon-button.scss`   | `icon-button.js`   | cobertura completa                                            |
+| input         | `_input.scss`         | `input.js`         | cobertura completa                                            |
 | link          | `_link.scss`          | `link.js`          | cobertura completa                                            |
 | modal         | `_modal.scss`         | `modal.js`         | cobertura completa                                            |
+| navbar        | `_navbar.scss`        | não existe         | formato web component ausente                                 |
 | radio         | `_radio.scss`         | `radio.js`         | cobertura completa                                            |
 | select        | `_select.scss`        | `select.js`        | cobertura completa                                            |
 | shortcut      | `_shortcut.scss`      | `shortcut.js`      | cobertura completa                                            |
-| tabs          | `_tabs.scss`          | `tabs.js`          | inclui `lui-tab`; suporta Line, Card e prop expand            |
 | tag           | `_tag.scss`           | `tag.js`           | cobertura completa                                            |
+| tabs          | `_tabs.scss`          | `tabs.js`          | inclui `lui-tab`; suporta Line, Card e prop expand            |
+| textarea      | `_textarea.scss`      | `textarea.js`      | cobertura completa                                            |
 | tooltip       | `_tooltip.scss`       | `tooltip.js`       | cobertura completa                                            |
-| text-field    | `_form.scss`          | `text-field.js`    | mapeamento indireto via estilos de formulário                 |
-| navbar        | `_navbar.scss`        | não existe         | formato web component ausente                                 |
 
 ## Arquivos de Apoio Obrigatórios
 
