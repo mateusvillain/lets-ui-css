@@ -18,6 +18,7 @@ $border: (
     circle: token('lui.border.radius.circle'),
     none: token('lui.border.radius.none'),
   ),
+
   width: (
     0: token('lui.border.width.0'),
     1: token('lui.border.width.1'),
@@ -107,6 +108,7 @@ $color: (
       8: token('lui.color.violet.8'),
     ),
   ),
+
   semantic: (
     bg: (
       surface: (
@@ -128,34 +130,42 @@ $color: (
         neutral: token('lui.color.neutral.background.container'),
         overlay: token('lui.color.neutral.background.overlay'),
       ),
-    ),
-
-    bg-hover: (
-      primary: token('lui.color.primary.background.hover'),
-      secondary: token('lui.color.secondary.background.hover'),
-      danger: token('lui.color.danger.background.hover'),
-      success: token('lui.color.success.background.hover'),
-      neutral: token('lui.color.neutral.background.hover'),
-    ),
-
-    bg-pressed: (
-      primary: token('lui.color.primary.background.pressed'),
-      secondary: token('lui.color.secondary.background.pressed'),
-      danger: token('lui.color.danger.background.pressed'),
-      success: token('lui.color.success.background.pressed'),
-      neutral: token('lui.color.neutral.background.pressed'),
+      hover: (
+        primary: token('lui.color.primary.background.hover'),
+        secondary: token('lui.color.secondary.background.hover'),
+        danger: token('lui.color.danger.background.hover'),
+        success: token('lui.color.success.background.hover'),
+        neutral: token('lui.color.neutral.background.hover'),
+      ),
+      pressed: (
+        primary: token('lui.color.primary.background.pressed'),
+        secondary: token('lui.color.secondary.background.pressed'),
+        danger: token('lui.color.danger.background.pressed'),
+        success: token('lui.color.success.background.pressed'),
+        neutral: token('lui.color.neutral.background.pressed'),
+      ),
     ),
 
     border: (
-      divisor: token('lui.color.neutral.border.divisor'),
-      stroke: (
-        neutral: token('lui.color.neutral.border.stroke'),
-        primary: token('lui.color.primary.border.stroke'),
-        secondary: token('lui.color.secondary.border.stroke'),
-        info: token('lui.color.info.border.stroke'),
-        danger: token('lui.color.danger.border.stroke'),
-        success: token('lui.color.success.border.stroke'),
-        caution: token('lui.color.caution.border.stroke'),
+      default: (
+        primary: token('lui.color.primary.border.default'),
+        secondary: token('lui.color.secondary.border.default'),
+        caution: token('lui.color.caution.border.default'),
+        danger: token('lui.color.danger.border.default'),
+        info: token('lui.color.info.border.default'),
+        success: token('lui.color.success.border.default'),
+        neutral: token('lui.color.neutral.border.default'),
+      ),
+      subtle: (
+        neutral: token('lui.color.neutral.border.subtle'),
+      ),
+      hover: (
+        danger: token('lui.color.danger.border.hover'),
+        neutral: token('lui.color.neutral.border.hover'),
+      ),
+      pressed: (
+        danger: token('lui.color.danger.border.pressed'),
+        neutral: token('lui.color.neutral.border.pressed'),
       ),
     ),
 
@@ -164,8 +174,8 @@ $color: (
       body: token('lui.color.neutral.text.body'),
       inverse: token('lui.color.neutral.text.inverse'),
       error: token('lui.color.danger.text.error'),
-      link: token('lui.color.link.default'),
-      link-visited: token('lui.color.link.visited'),
+      link: token('lui.link.color.text.default'),
+      link-visited: token('lui.link.color.text.visited'),
     ),
 
     icon: (
