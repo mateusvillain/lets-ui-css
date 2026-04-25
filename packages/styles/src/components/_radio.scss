@@ -39,28 +39,24 @@ input[type='radio'] {
       }
     }
 
-    &:not(:has(input:disabled)) {
+    &:not(:has(input[type='radio']:disabled)) {
       cursor: pointer;
+
+      input {
+        cursor: pointer;
+      }
     }
 
-    &:has(input:disabled) * {
+    &:has(input[type='radio']:disabled) {
       cursor: not-allowed;
       opacity: opacity(disabled);
     }
-
-    &:not(
-        :has(input:disabled, input[aria-disabled='true'], input.is-disabled)
-      ):hover {
-      border-color: stroke(neutral);
-    }
-
-    @include disabled;
   }
 
   input {
     appearance: none;
     background-color: bg(surface, neutral);
-    border: width(1) solid border(divisor);
+    border: width(1) solid stroke(neutral, subtle);
     border-radius: radius(circle);
     display: inline-block;
     position: relative;
@@ -75,7 +71,7 @@ input[type='radio'] {
 
     &:checked {
       background-color: bg(container, primary);
-      border-color: bg(container, primary);
+      border: none;
 
       &::after {
         content: '';
@@ -88,6 +84,10 @@ input[type='radio'] {
       }
 
       @include states(primary, primary, primary);
+    }
+
+    &:not(:disabled):hover {
+      border-color: stroke(neutral, default);
     }
   }
 }

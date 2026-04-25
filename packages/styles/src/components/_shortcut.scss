@@ -20,7 +20,7 @@ lui-shortcut {
 
     background: bg(surface, neutral);
     color: text(body);
-    border: width(1) solid border(divisor);
+    border: width(1) solid stroke(neutral, subtle);
     border-radius: radius(sm);
     white-space: nowrap;
     user-select: none;

@@ -33,7 +33,7 @@
   }
 
   &--border {
-    border: width(1) solid border(divisor);
+    border: width(1) solid stroke(neutral, subtle);
   }
 
   &--elevation {

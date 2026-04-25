@@ -62,8 +62,7 @@ lui-textarea {
     width: 100%;
     box-sizing: border-box;
     background-color: bg(surface, neutral);
-    border: width(1) solid border(divisor);
-    cursor: text;
+    border: width(1) solid stroke(neutral, subtle);
     transition:
       border-color 0.2s ease,
       box-shadow 0.2s ease;
@@ -123,26 +122,23 @@ lui-textarea {
   &.textarea-field--force-focus:not(.textarea-field--disabled)
     .textarea-field__control {
     border-color: stroke(primary);
-    box-shadow:
-      inset 0 0 0 width(1) stroke(primary),
-      0 0 0 3px lch(45.27% 113.1 310.44deg / 32%);
+    box-shadow: focus-ring(primary);
   }
 
   &.textarea-field--error .textarea-field__control:focus-within,
   &.textarea-field--error .textarea-field__control:focus-visible {
     border-color: stroke(danger);
-    box-shadow:
-      inset 0 0 0 width(1) stroke(danger),
-      0 0 0 3px rgb(255 219 219 / 100%);
+    box-shadow: focus-ring(danger);
   }
 
-  &.textarea-field--disabled {
+  &:has(textarea:disabled) {
+    cursor: not-allowed;
     opacity: opacity(disabled);
-  }
 
-  &.textarea-field--disabled .textarea-field__input,
-  &.textarea-field--disabled .textarea-field__optional {
-    color: color(gray, 6);
+    textarea,
+    label {
+      cursor: not-allowed;
+    }
   }
 }
 

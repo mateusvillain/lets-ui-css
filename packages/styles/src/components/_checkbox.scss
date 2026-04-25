@@ -25,11 +25,15 @@ input[type='checkbox'] {
       height: fixed($value);
     }
 
-    &:not(:has(input:disabled)) {
+    &:not(:has(input[type='checkbox']:disabled)) {
       cursor: pointer;
+
+      input {
+        cursor: pointer;
+      }
     }
 
-    &:has(input:disabled) * {
+    &:has(input[type='checkbox']:disabled) {
       cursor: not-allowed;
       opacity: opacity(disabled);
     }
@@ -38,7 +42,7 @@ input[type='checkbox'] {
   input {
     appearance: none;
     background-color: bg(surface, neutral);
-    border: width(1) solid border(divisor);
+    border: width(1) solid stroke(neutral, subtle);
     border-radius: radius(xs);
     display: inline-block;
     position: relative;
@@ -52,7 +56,7 @@ input[type='checkbox'] {
 
     &:checked {
       background-color: bg(container, primary);
-      border-color: bg(container, primary);
+      border: none;
 
       &::after {
         content: '';
@@ -67,6 +71,10 @@ input[type='checkbox'] {
       }
 
       @include states(primary, primary, primary);
+    }
+
+    &:not(:disabled):hover {
+      border-color: stroke(neutral, default);
     }
   }
 }

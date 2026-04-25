@@ -65,7 +65,7 @@ lui-native-select {
     width: 100%;
     box-sizing: border-box;
     background-color: bg(surface, neutral);
-    border: width(1) solid border(divisor);
+    border: width(1) solid stroke(neutral, subtle);
     cursor: pointer;
     transition:
       border-color 0.2s ease,
