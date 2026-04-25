@@ -25,6 +25,7 @@ Usar este mapa para decidir se o componente já existe e em qual formato.
 | modal         | `_modal.scss`         | `modal.js`         | cobertura completa                                            |
 | navbar        | `_navbar.scss`        | não existe         | formato web component ausente                                 |
 | radio         | `_radio.scss`         | `radio.js`         | cobertura completa                                            |
+| switch        | `_switch.scss`        | `switch.js`        | cobertura completa; tamanhos lg e md; role="switch"           |
 | select        | `_select.scss`        | `select.js`        | cobertura completa                                            |
 | shortcut      | `_shortcut.scss`      | `shortcut.js`      | cobertura completa                                            |
 | tag           | `_tag.scss`           | `tag.js`           | cobertura completa                                            |

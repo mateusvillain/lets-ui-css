@@ -1,0 +1,93 @@
+@use 'sass:map';
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/mixins' as *;
+
+$sizes: (
+  lg: (
+    track-w: 48px,
+    track-h: 28px,
+    thumb: 20px,
+    offset: 4px,
+    translate: 20px,
+  ),
+  md: (
+    track-w: 36px,
+    track-h: 20px,
+    thumb: 12px,
+    offset: 4px,
+    translate: 16px,
+  ),
+);
+
+.switch {
+  display: flex;
+  align-items: center;
+  gap: fixed(8);
+  user-select: none;
+  margin: fixed(0);
+  padding: fixed(0);
+
+  input {
+    appearance: none;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: radius(circle);
+    background-color: bg(container, neutral);
+    transition: background-color 0.2s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      border-radius: radius(circle);
+      background-color: bg(surface, neutral);
+      transition: transform 0.2s ease;
+    }
+
+    &:focus {
+      box-shadow: focus-ring(primary);
+      outline: none;
+      outline-offset: 3px;
+    }
+
+    &:checked {
+      background-color: bg(container, primary);
+
+      @include states(primary, primary, primary);
+    }
+
+    &:not(:disabled, :checked):hover {
+      background-color: hover(neutral);
+    }
+  }
+
+  @each $key, $values in $sizes {
+    &--#{$key} input[type='checkbox'] {
+      width: map.get($values, track-w);
+      height: map.get($values, track-h);
+
+      &::after {
+        width: map.get($values, thumb);
+        height: map.get($values, thumb);
+        top: map.get($values, offset);
+        left: map.get($values, offset);
+      }
+
+      &:checked::after {
+        transform: translateX(map.get($values, translate));
+      }
+    }
+  }
+
+  &:not(:has(input[type='checkbox']:disabled)) {
+    cursor: pointer;
+
+    input {
+      cursor: pointer;
+    }
+  }
+
+  &:has(input[type='checkbox']:disabled) {
+    cursor: not-allowed;
+    opacity: opacity(disabled);
+  }
+}
