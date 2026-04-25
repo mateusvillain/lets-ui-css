@@ -5,7 +5,8 @@
     "global": {
       "sources": [
         { "$ref": "./tokens/global/primitive.json" },
-        { "$ref": "./tokens/global/semantic.json" }
+        { "$ref": "./tokens/global/semantic.json" },
+        { "$ref": "./tokens/global/component.json" }
       ]
     }
   },
