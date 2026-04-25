@@ -12,18 +12,18 @@ $colors: (
   success: bg(container, success),
 );
 $hover-colors: (
-  primary: bg-hover(primary),
-  secondary: bg-hover(secondary),
-  neutral: bg-hover(neutral),
-  danger: bg-hover(danger),
-  success: bg-hover(success),
+  primary: hover(primary),
+  secondary: hover(secondary),
+  neutral: hover(neutral),
+  danger: hover(danger),
+  success: hover(success),
 );
 $pressed-colors: (
-  primary: bg-pressed(primary),
-  secondary: bg-pressed(secondary),
-  neutral: bg-pressed(neutral),
-  danger: bg-pressed(danger),
-  success: bg-pressed(success),
+  primary: pressed(primary),
+  secondary: pressed(secondary),
+  neutral: pressed(neutral),
+  danger: pressed(danger),
+  success: pressed(success),
 );
 $focus-rings: (
   primary: focus-ring(primary),
