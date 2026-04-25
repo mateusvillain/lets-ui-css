@@ -19,7 +19,16 @@ export class LuiSwitch extends HTMLElement {
     this.attachEvents();
   }
 
-  attributeChangedCallback() {
+  attributeChangedCallback(name) {
+    if (name === 'checked') {
+      const input = this.querySelector('input[type="checkbox"]');
+      if (input) {
+        const isChecked = hasBooleanAttribute(this, 'checked');
+        input.checked = isChecked;
+        input.setAttribute('aria-checked', String(isChecked));
+        return;
+      }
+    }
     this.render();
     this.attachEvents();
   }

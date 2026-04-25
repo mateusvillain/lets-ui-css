@@ -33,14 +33,14 @@ $sizes: (
     position: relative;
     border-radius: radius(circle);
     background-color: bg(container, neutral);
-    transition: background-color 0.2s ease;
+    transition: background-color 0.25s ease-in-out;
 
     &::after {
       content: '';
       position: absolute;
       border-radius: radius(circle);
       background-color: bg(surface, neutral);
-      transition: transform 0.2s ease;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     &:focus {
