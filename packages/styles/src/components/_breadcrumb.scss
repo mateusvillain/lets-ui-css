@@ -13,14 +13,14 @@
     }
 
     &::after {
-      content: "/";
+      content: '/';
       margin: fixed(0) fixed(8);
-      color: text(body);
+      color: stroke(neutral, subtle);
     }
 
     &:last-child {
       &::after {
-        content: "";
+        content: '';
       }
 
       color: text(body);
