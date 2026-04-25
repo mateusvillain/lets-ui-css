@@ -32,6 +32,10 @@
     text-decoration: none;
   }
 
+  &:not([aria-disabled='true'], .is-disabled, :disabled):hover {
+    background-color: hover($variant);
+  }
+
   &:not([aria-disabled='true'], .is-disabled) {
     &:active {
       background-color: pressed($variant);
@@ -52,10 +56,6 @@
       outline: none;
       outline-offset: 3px;
     }
-  }
-
-  &:not([aria-disabled='true'], .is-disabled, :disabled):hover {
-    background-color: hover($variant);
   }
 }
 
@@ -124,7 +124,12 @@
 
 // Disable Text Selection
 //  @include no-select;
-@mixin no-select { /* Safari */ /* Firefox */ /* IE10+/Edge */
+@mixin no-select {
+  /* Safari */
+
+ /* Firefox */
+
+ /* IE10+/Edge */
   user-select: none; /* Standard */
 }
 
