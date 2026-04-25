@@ -20,10 +20,7 @@
         },
         "border": {
           "$type": "color",
-          "stroke": {
-            "$value": "{lui.brand.color.primary.4}"
-          },
-          "focus": {
+          "default": {
             "$value": "{lui.brand.color.primary.4}"
           }
         },
@@ -61,11 +58,8 @@
         },
         "border": {
           "$type": "color",
-          "stroke": {
+          "default": {
             "$value": "{lui.brand.color.secondary.4}"
-          },
-          "focus": {
-            "$value": "{lui.brand.color.secondary.1}"
           }
         },
         "icon": {
@@ -73,6 +67,9 @@
           "default": {
             "$value": "{lui.brand.color.secondary.4}"
           }
+        },
+        "focus-ring": {
+          "$value": "{lui.brand.color.secondary.1}"
         }
       },
       "caution": {
@@ -87,7 +84,7 @@
         },
         "border": {
           "$type": "color",
-          "stroke": {
+          "default": {
             "$value": "{lui.color.orange.4}"
           }
         },
@@ -110,7 +107,7 @@
         },
         "border": {
           "$type": "color",
-          "stroke": {
+          "default": {
             "$value": "{lui.color.blue.4}"
           }
         },
@@ -123,9 +120,6 @@
       },
       "danger": {
         "$type": "color",
-        "focus-ring": {
-          "$value": "{lui.color.red.1}"
-        },
         "background": {
           "$type": "color",
           "surface": {
@@ -143,11 +137,14 @@
         },
         "border": {
           "$type": "color",
-          "stroke": {
+          "default": {
             "$value": "{lui.color.red.4}"
           },
-          "focus": {
-            "$value": "{lui.color.red.4}"
+          "hover": {
+            "$value": "{lui.color.red.5}"
+          },
+          "pressed": {
+            "$value": "{lui.color.red.6}"
           }
         },
         "text": {
@@ -161,6 +158,9 @@
           "default": {
             "$value": "{lui.color.red.4}"
           }
+        },
+        "focus-ring": {
+          "$value": "{lui.color.red.1}"
         }
       },
       "success": {
@@ -181,14 +181,8 @@
         },
         "border": {
           "$type": "color",
-          "stroke": {
+          "default": {
             "$value": "{lui.color.green.4}"
-          },
-          "focus": {
-            "$value": "{lui.color.green.4}"
-          },
-          "focus-ring": {
-            "$value": "{lui.color.green.1}"
           }
         },
         "icon": {
@@ -196,6 +190,9 @@
           "default": {
             "$value": "{lui.color.green.4}"
           }
+        },
+        "focus-ring": {
+          "$value": "{lui.color.green.1}"
         }
       },
       "neutral": {
@@ -219,14 +216,17 @@
         },
         "border": {
           "$type": "color",
-          "divisor": {
+          "subtle": {
             "$value": "{lui.color.gray.2}"
           },
-          "stroke": {
+          "default": {
             "$value": "{lui.color.gray.4}"
           },
-          "focus-ring": {
-            "$value": "{lui.color.gray.3}"
+          "hover": {
+            "$value": "{lui.color.gray.4}"
+          },
+          "pressed": {
+            "$value": "{lui.color.gray.5}"
           }
         },
         "text": {
@@ -236,6 +236,9 @@
           },
           "body": {
             "$value": "{lui.color.gray.7}"
+          },
+          "caption": {
+            "$value": "{lui.color.gray.4}"
           },
           "inverse": {
             "$value": "{lui.color.gray.1}"
@@ -249,6 +252,9 @@
           "inverse": {
             "$value": "{lui.color.gray.1}"
           }
+        },
+        "focus-ring": {
+          "$value": "{lui.color.gray.3}"
         }
       },
       "link": {
@@ -498,7 +504,7 @@
       },
       "secondary": {
         "$value": {
-          "color": "{lui.color.secondary.border.focus}",
+          "color": "{lui.color.secondary.focus-ring}",
           "offsetX": {
             "value": 0,
             "unit": "px"
@@ -540,7 +546,7 @@
       },
       "success": {
         "$value": {
-          "color": "{lui.color.success.border.focus-ring}",
+          "color": "{lui.color.success.focus-ring}",
           "offsetX": {
             "value": 0,
             "unit": "px"
@@ -561,7 +567,7 @@
       },
       "neutral": {
         "$value": {
-          "color": "{lui.color.neutral.border.focus-ring}",
+          "color": "{lui.color.neutral.focus-ring}",
           "offsetX": {
             "value": 0,
             "unit": "px"
