@@ -34,6 +34,7 @@ lui-tab {
   cursor: pointer;
   white-space: nowrap;
   flex-shrink: 0;
+  transition: all 0.2s ease-in-out;
 
   @include font-scale(body--lg);
   @include focus-ring(primary);
@@ -55,7 +56,7 @@ lui-tab {
 
   .tabs__list {
     width: 100%;
-    border-bottom: width(1) solid border(divisor);
+    border-bottom: width(1) solid stroke(neutral, subtle);
   }
 
   .tab {
@@ -73,7 +74,7 @@ lui-tab {
   .tabs__list {
     align-self: flex-start;
     background: bg(surface, neutral);
-    border: width(1) solid border(divisor);
+    border: width(1) solid stroke(neutral, subtle);
     border-radius: radius(lg);
     padding: fluid(8);
     gap: fluid(4);
@@ -103,36 +104,36 @@ lui-tab {
 
 // --- Hover states ---
 .tabs--line .tab:hover:not(:disabled, [aria-disabled='true']) {
-  background: bg-hover(neutral);
+  background: hover(neutral);
 }
 
 .tabs--card .tab:hover:not(:disabled, [aria-disabled='true']) {
-  background: bg-hover(primary);
+  background: hover(primary);
 }
 
 .tabs--card .tab:hover[aria-selected='true'] {
-  background: bg-hover(primary);
+  background: hover(primary);
 }
 
 .tabs--card .tab:hover:not([aria-selected='true']) {
-  background: bg-hover(neutral);
+  background: hover(neutral);
 }
 
 // --- Active states ---
 .tabs--line .tab:active:not(:disabled, [aria-disabled='true']) {
-  background: bg-pressed(neutral);
+  background: pressed(neutral);
 }
 
 .tabs--card .tab:active:not(:disabled, [aria-disabled='true']) {
-  background: bg-pressed(primary);
+  background: pressed(primary);
 }
 
 .tabs--card .tab:active[aria-selected='true'] {
-  background: bg-pressed(primary);
+  background: pressed(primary);
 }
 
 .tabs--card .tab:active:not([aria-selected='true']) {
-  background: bg-pressed(neutral);
+  background: pressed(neutral);
 }
 
 .tabs__panel {
