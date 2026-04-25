@@ -25,11 +25,11 @@ $background: bg(container, overlay);
     position: absolute;
     z-index: 1;
     width: max-content;
-    max-width: fluid(80);
+    max-width: calc(fluid(80) * 2);
     background: $background;
     color: text(inverse);
     padding: fluid(2) fixed(8);
-    border-radius: radius(xs);
+    border-radius: radius(sm);
     box-shadow: elevation(floating);
     opacity: opacity(hidden);
     visibility: hidden;
@@ -55,6 +55,7 @@ $background: bg(container, overlay);
   }
 
   &--top &__content {
+    text-align: center;
     left: 50%;
     bottom: calc(100% + fixed(8));
     transform: translate(-50%, fixed(8));
@@ -69,6 +70,7 @@ $background: bg(container, overlay);
   }
 
   &--bottom &__content {
+    text-align: center;
     left: 50%;
     top: calc(100% + fixed(8));
     transform: translate(-50%, calc(fixed(8) * -1));
@@ -83,6 +85,7 @@ $background: bg(container, overlay);
   }
 
   &--left &__content {
+    text-align: left;
     right: calc(100% + fixed(8));
     top: 50%;
     transform: translate(fixed(8), -50%);
@@ -97,6 +100,7 @@ $background: bg(container, overlay);
   }
 
   &--right &__content {
+    text-align: left;
     left: calc(100% + fixed(8));
     top: 50%;
     transform: translate(calc(fixed(8) * -1), -50%);
