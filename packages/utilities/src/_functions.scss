@@ -2,7 +2,7 @@
 @use './tokens.map' as tokens;
 
 @function hover($variant) {
-  $value: map.get(tokens.$color, semantic, bg-hover, $variant);
+  $value: map.get(tokens.$color, semantic, bg, hover, $variant);
 
   @if not $value {
     @error 'Invalid background hover color: "#{$variant}"';
@@ -12,7 +12,7 @@
 }
 
 @function pressed($variant) {
-  $value: map.get(tokens.$color, semantic, bg-pressed, $variant);
+  $value: map.get(tokens.$color, semantic, bg, pressed, $variant);
 
   @if not $value {
     @error 'Invalid background pressed color: "#{$variant}"';
@@ -89,49 +89,13 @@
   @return $value;
 }
 
-// bg-hover($variant)
-//  $variant  = primary, danger, success, neutral
-@function bg-hover($variant) {
-  $value: map.get(tokens.$color, semantic, bg-hover, $variant);
-
-  @if not $value {
-    @error 'Invalid background hover color: "#{$variant}"';
-  }
-
-  @return $value;
-}
-
-// bg-pressed($variant)
-//  $variant  = primary, danger, success, neutral
-@function bg-pressed($variant) {
-  $value: map.get(tokens.$color, semantic, bg-pressed, $variant);
-
-  @if not $value {
-    @error 'Invalid background pressed color: "#{$variant}"';
-  }
-
-  @return $value;
-}
-
-// border($variant)
-//  $category = divisor
-@function border($variant) {
-  $value: map.get(tokens.$color, semantic, border, $variant);
-
-  @if not $value {
-    @error 'Invalid border color: "#{$variant}"';
-  }
-
-  @return $value;
-}
-
 // stroke($variant)
 //  $variant = neutral, primary, caution, danger, info, success
-@function stroke($variant) {
-  $value: map.get(tokens.$color, semantic, border, stroke, $variant);
+@function stroke($variant, $category: default) {
+  $value: map.get(tokens.$color, semantic, border, $category, $variant);
 
   @if not $value {
-    @error 'Invalid border color: "#{$variant}"';
+    @error 'Invalid border color: "#{category}-#{$variant}"';
   }
 
   @return $value;
