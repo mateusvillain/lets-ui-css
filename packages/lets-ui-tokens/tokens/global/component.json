@@ -1,0 +1,27 @@
+{
+  "lui": {
+    "link": {
+      "color": {
+        "$type": "color",
+        "text": {
+          "default": {
+            "$value": "{lui.brand.color.primary.4}"
+          },
+          "visited": {
+            "$value": "{lui.brand.color.primary.6}"
+          }
+        }
+      }
+    },
+    "divider": {
+      "color": {
+        "$type": "color",
+        "border": {
+          "default": {
+            "$value": "{lui.color.neutral.border.subtle}"
+          }
+        }
+      }
+    }
+  }
+}
