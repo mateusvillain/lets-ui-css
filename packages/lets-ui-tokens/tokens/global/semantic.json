@@ -69,7 +69,7 @@
           }
         },
         "focus-ring": {
-          "$value": "{lui.brand.color.secondary.1}"
+          "$value": "{lui.brand.color.secondary.2}"
         }
       },
       "caution": {
