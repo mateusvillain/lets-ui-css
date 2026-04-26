@@ -2,25 +2,7 @@
 @use 'utilities/src/functions' as *;
 @use 'utilities/src/tokens.map' as *;
 @use 'utilities/src/mixins' as *;
-
-$size: (
-  lg: (
-    padding: fluid(12),
-    radius: radius(lg),
-    focus-radius: radius(lg),
-    label: body--lg,
-    body: body--lg,
-    helper: body--md,
-  ),
-  md: (
-    padding: fixed(8),
-    radius: radius(md),
-    focus-radius: radius(md),
-    label: body--md,
-    body: body--md,
-    helper: body--sm,
-  ),
-);
+@use 'field';
 
 lui-select,
 lui-native-select {
@@ -28,47 +10,25 @@ lui-native-select {
 }
 
 .native-select {
-  @include flex(column, stretch, flex-start, fluid(8), nowrap);
-
-  width: 100%;
-  box-sizing: border-box;
+  @include field.wrapper;
 
   &__head {
-    @include flex(row, center, space-between, fluid(8), nowrap);
-
-    width: 100%;
-    color: text(body);
-    line-height: 1.5;
+    @include field.head;
   }
 
   &__label-wrap {
-    @include flex(row, center, flex-start, fluid(4), nowrap);
-
-    min-width: 0;
-    color: text(body);
-
-    label {
-      color: text(body);
-      margin: 0;
-    }
+    @include field.label-wrap;
   }
 
-  &__optional {
-    color: text(body);
-    white-space: nowrap;
+  &__optional,
+  &__message {
+    @include field.secondary-text;
   }
 
   &__control {
-    @include flex(row, center, flex-start, fixed(8), nowrap);
+    @include field.control;
 
     position: relative;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: bg(surface, neutral);
-    border: width(1) solid stroke(neutral, subtle);
-    transition:
-      border-color 0.2s ease,
-      box-shadow 0.2s ease;
 
     &:not(:has(select:disabled)) {
       cursor: pointer;
@@ -80,30 +40,9 @@ lui-native-select {
   }
 
   &__input {
-    @include font-scale(body--lg);
+    @include field.input-element;
 
-    flex: 1 1 auto;
-    align-self: stretch;
-    min-width: 0;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    outline: 0;
-    box-shadow: none;
-    background-color: transparent;
-    color: text(body);
-    line-height: 1.5;
     appearance: none;
-
-    &,
-    &:hover,
-    &:focus,
-    &:focus-visible,
-    &:active {
-      border: 0;
-      outline: 0;
-      box-shadow: none;
-    }
   }
 
   &__arrow {
@@ -116,78 +55,27 @@ lui-native-select {
     transform: translateY(-50%);
 
     svg {
+      display: block;
       width: 100%;
       height: 100%;
-      display: block;
       fill: none;
       stroke: currentcolor;
+      stroke-width: 1.5;
       stroke-linecap: round;
       stroke-linejoin: round;
-      stroke-width: 1.5;
     }
-  }
-
-  &__message {
-    margin: 0;
-    color: text(body);
-    line-height: 1.5;
   }
 
   &.native-select--placeholder .native-select__input {
     color: color(gray, 6);
   }
 
-  &.native-select--error .native-select__control {
-    border-color: stroke(danger);
-  }
-
-  &.native-select--error .native-select__message {
-    color: text(error);
-  }
-
-  &:has(select:disabled) {
-    cursor: not-allowed;
-    opacity: opacity(disabled);
-
-    .native-select__label-wrap label,
-    .native-select__control,
-    .native-select__input,
-    .native-select__prefix,
-    .native-select__suffix {
-      cursor: not-allowed;
-    }
-  }
-
-  &:not(.native-select--disabled, .native-select--error):hover
-    .native-select__control,
-  &.native-select--force-hover:not(
-      .native-select--disabled,
-      .native-select--error
-    )
-    .native-select__control {
-    border-color: stroke(neutral);
-  }
-
-  &:not(.native-select--disabled) .native-select__control:focus-within,
-  &.native-select--force-focus:not(.native-select--disabled)
-    .native-select__control {
-    border-color: stroke(primary);
-    box-shadow: focus-ring(primary);
-  }
-
-  &.native-select--error .native-select__control:focus-within,
-  &.native-select--error.native-select--force-focus .native-select__control {
-    border-color: stroke(danger);
-    box-shadow: focus-ring(danger);
-  }
+  @include field.states('native-select', 'select');
 }
 
-@each $key, $props in $size {
+@each $key, $props in field.$size {
   .native-select--#{$key} {
-    .native-select__control {
-      border-radius: map.get($props, radius);
-      padding: map.get($props, padding);
-    }
+    @include field.size-body('native-select', $props);
 
     .native-select__arrow {
       right: map.get($props, padding);
@@ -209,7 +97,7 @@ lui-native-select {
     &.native-select--force-focus:not(.native-select--disabled)
       .native-select__control {
       border-width: width(2);
-      border-radius: map.get($props, focus-radius);
+      border-radius: map.get($props, radius);
       padding: calc(#{map.get($props, padding)} - 1px);
 
       .native-select__arrow {
@@ -222,15 +110,6 @@ lui-native-select {
         padding-inline: calc(#{map.get($props, padding)} - 1px)
           calc(#{map.get($props, padding)} - 1px + 22px);
       }
-    }
-
-    .native-select__label-wrap label {
-      @include font-scale(map.get($props, label));
-    }
-
-    .native-select__optional,
-    .native-select__message {
-      @include font-scale(map.get($props, helper));
     }
   }
 }
