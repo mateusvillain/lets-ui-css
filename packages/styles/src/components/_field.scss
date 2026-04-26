@@ -50,8 +50,8 @@ $size: (
   }
 }
 
-@mixin control {
-  @include flex(row, center, flex-start, fixed(8), nowrap);
+@mixin control($align: center) {
+  @include flex(row, $align, flex-start, fixed(8), nowrap);
 
   width: 100%;
   box-sizing: border-box;
