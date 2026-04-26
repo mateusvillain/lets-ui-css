@@ -4,18 +4,18 @@
 
 $sizes: (
   lg: (
-    track-w: 48px,
-    track-h: 28px,
-    thumb: 20px,
-    offset: 4px,
-    translate: 20px,
+    track-w: 40px,
+    track-h: 24px,
+    thumb: 16px,
+    offset: 3px,
+    translate: 16px,
   ),
   md: (
-    track-w: 36px,
-    track-h: 20px,
-    thumb: 12px,
-    offset: 4px,
-    translate: 16px,
+    track-w: 26px,
+    track-h: 16px,
+    thumb: 10px,
+    offset: 2px,
+    translate: 10px,
   ),
 );
 
@@ -32,14 +32,15 @@ $sizes: (
     flex-shrink: 0;
     position: relative;
     border-radius: radius(circle);
-    background-color: bg(container, neutral);
-    transition: background-color 0.25s ease-in-out;
+    background-color: bg(surface, neutral);
+    border: width(1) solid stroke(neutral, subtle);
+    transition: all 0.2s ease;
 
     &::after {
       content: '';
       position: absolute;
       border-radius: radius(circle);
-      background-color: bg(surface, neutral);
+      background-color: bg(container, neutral);
       transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -51,12 +52,17 @@ $sizes: (
 
     &:checked {
       background-color: bg(container, primary);
+      border: width(1) solid transparent;
 
       @include states(primary, primary, primary);
+
+      &::after {
+        background-color: bg(surface, neutral);
+      }
     }
 
     &:not(:disabled, :checked):hover {
-      background-color: hover(neutral);
+      border-color: stroke(neutral, default);
     }
   }
 
