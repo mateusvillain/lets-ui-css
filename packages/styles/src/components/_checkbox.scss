@@ -2,6 +2,7 @@
 @use 'utilities/src/functions' as *;
 @use 'utilities/src/tokens.map' as *;
 @use 'utilities/src/mixins' as *;
+@use 'selection';
 
 $size: (
   lg: 24,
@@ -10,12 +11,7 @@ $size: (
 
 .checkbox,
 input[type='checkbox'] {
-  display: flex;
-  align-items: center;
-  gap: fixed(8);
-  user-select: none;
-  margin: fixed(0);
-  padding: fixed(0);
+  @include selection.wrapper;
 }
 
 .checkbox {
@@ -24,38 +20,23 @@ input[type='checkbox'] {
       width: fixed($value);
       height: fixed($value);
     }
-
-    &:not(:has(input[type='checkbox']:disabled)) {
-      cursor: pointer;
-
-      input {
-        cursor: pointer;
-      }
-    }
-
-    &:has(input[type='checkbox']:disabled) {
-      cursor: not-allowed;
-      opacity: opacity(disabled);
-    }
   }
 
+  @include selection.cursor-states("input[type='checkbox']");
+
   input {
-    appearance: none;
-    background-color: bg(surface, neutral);
-    border: width(1) solid stroke(neutral, subtle);
+    @include selection.input-base;
+
     border-radius: radius(xs);
     display: inline-block;
-    position: relative;
-    transition: all 0.2s ease;
 
     &:focus {
-      box-shadow: focus-ring(primary);
-      outline: none;
-      outline-offset: 3px;
+      @include selection.focus;
     }
 
     &:checked {
-      background-color: bg(container, primary);
+      @include selection.checked-base;
+
       border: none;
 
       &::after {
@@ -69,8 +50,6 @@ input[type='checkbox'] {
         left: 50%;
         transform: translate(-50%, -60%) rotate(45deg);
       }
-
-      @include states(primary, primary, primary);
     }
 
     &:not(:disabled):hover {

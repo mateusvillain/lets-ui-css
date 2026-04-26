@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use 'utilities/src/functions' as *;
 @use 'utilities/src/mixins' as *;
+@use 'selection';
 
 $sizes: (
   lg: (
@@ -20,21 +21,13 @@ $sizes: (
 );
 
 .switch {
-  display: flex;
-  align-items: center;
-  gap: fixed(8);
-  user-select: none;
-  margin: fixed(0);
-  padding: fixed(0);
+  @include selection.wrapper;
 
   input {
-    appearance: none;
+    @include selection.input-base;
+
     flex-shrink: 0;
-    position: relative;
     border-radius: radius(circle);
-    background-color: bg(surface, neutral);
-    border: width(1) solid stroke(neutral, subtle);
-    transition: all 0.2s ease;
 
     &::after {
       content: '';
@@ -45,16 +38,13 @@ $sizes: (
     }
 
     &:focus {
-      box-shadow: focus-ring(primary);
-      outline: none;
-      outline-offset: 3px;
+      @include selection.focus;
     }
 
     &:checked {
-      background-color: bg(container, primary);
-      border: width(1) solid transparent;
+      @include selection.checked-base;
 
-      @include states(primary, primary, primary);
+      border: width(1) solid transparent;
 
       &::after {
         background-color: bg(surface, neutral);
@@ -84,16 +74,5 @@ $sizes: (
     }
   }
 
-  &:not(:has(input[type='checkbox']:disabled)) {
-    cursor: pointer;
-
-    input {
-      cursor: pointer;
-    }
-  }
-
-  &:has(input[type='checkbox']:disabled) {
-    cursor: not-allowed;
-    opacity: opacity(disabled);
-  }
+  @include selection.cursor-states("input[type='checkbox']");
 }

@@ -2,6 +2,7 @@
 @use 'utilities/src/functions' as *;
 @use 'utilities/src/tokens.map' as *;
 @use 'utilities/src/mixins' as *;
+@use 'selection';
 
 $sizes: (
   lg: (
@@ -16,12 +17,7 @@ $sizes: (
 
 .radio,
 input[type='radio'] {
-  display: flex;
-  align-items: center;
-  gap: fixed(8);
-  user-select: none;
-  margin: fixed(0);
-  padding: fixed(0);
+  @include selection.wrapper;
 }
 
 .radio {
@@ -38,39 +34,24 @@ input[type='radio'] {
         height: #{$dot}px;
       }
     }
-
-    &:not(:has(input[type='radio']:disabled)) {
-      cursor: pointer;
-
-      input {
-        cursor: pointer;
-      }
-    }
-
-    &:has(input[type='radio']:disabled) {
-      cursor: not-allowed;
-      opacity: opacity(disabled);
-    }
   }
 
+  @include selection.cursor-states("input[type='radio']");
+
   input {
-    appearance: none;
-    background-color: bg(surface, neutral);
-    border: width(1) solid stroke(neutral, subtle);
+    @include selection.input-base;
+
     border-radius: radius(circle);
     display: inline-block;
-    position: relative;
     flex-shrink: 0;
-    transition: all 0.2s ease;
 
     &:focus {
-      box-shadow: focus-ring(primary);
-      outline: none;
-      outline-offset: 3px;
+      @include selection.focus;
     }
 
     &:checked {
-      background-color: bg(container, primary);
+      @include selection.checked-base;
+
       border: none;
 
       &::after {
@@ -82,8 +63,6 @@ input[type='radio'] {
         left: 50%;
         transform: translate(-50%, -50%);
       }
-
-      @include states(primary, primary, primary);
     }
 
     &:not(:disabled):hover {
