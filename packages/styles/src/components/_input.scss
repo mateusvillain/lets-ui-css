@@ -35,25 +35,22 @@ lui-text-field {
     @include flex(row, center, space-between, fluid(8), nowrap);
 
     width: 100%;
-    color: text(body);
-    line-height: 1.5;
   }
 
   &__label-wrap {
     @include flex(row, center, flex-start, fluid(4), nowrap);
 
     min-width: 0;
-    color: text(body);
 
     label {
       color: text(body);
-      margin: 0;
     }
   }
 
   &__optional,
-  &__counter {
-    color: text(body);
+  &__counter,
+  &__message {
+    color: text(caption);
     white-space: nowrap;
   }
 
@@ -64,7 +61,6 @@ lui-text-field {
     box-sizing: border-box;
     background-color: bg(surface, neutral);
     border: width(1) solid stroke(neutral, subtle);
-    cursor: text;
     transition:
       border-color 0.2s ease,
       box-shadow 0.2s ease;
@@ -131,13 +127,6 @@ lui-text-field {
     color: icon(neutral);
   }
 
-  &__action:disabled,
-  &__action[aria-disabled='true'],
-  &__step:disabled,
-  &__step[aria-disabled='true'] {
-    cursor: not-allowed;
-  }
-
   &__control--number {
     gap: 0;
 
@@ -153,18 +142,25 @@ lui-text-field {
     }
   }
 
-  &__message {
-    margin: 0;
-    color: text(body);
-    line-height: 1.5;
-  }
-
   &.input-field--error .input-field__control {
     border-color: stroke(danger);
   }
 
   &.input-field--error .input-field__message {
     color: text(error);
+  }
+
+  &:has(input:disabled) {
+    opacity: opacity(disabled);
+    cursor: not-allowed;
+
+    .input-field__label-wrap label,
+    .input-field__control,
+    .input-field__input,
+    .input-field__prefix,
+    .input-field__suffix {
+      cursor: not-allowed;
+    }
   }
 
   &:not(.input-field--disabled, .input-field--error):hover
@@ -188,17 +184,6 @@ lui-text-field {
     box-shadow:
       inset 0 0 0 width(1) stroke(danger),
       0 0 0 3px rgb(255 219 219 / 100%);
-  }
-
-  &.input-field--disabled {
-    opacity: opacity(disabled);
-  }
-
-  &.input-field--disabled .input-field__input,
-  &.input-field--disabled .input-field__prefix,
-  &.input-field--disabled .input-field__suffix,
-  &.input-field--disabled .input-field__optional {
-    color: color(gray, 6);
   }
 }
 

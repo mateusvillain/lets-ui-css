@@ -66,10 +66,17 @@ lui-native-select {
     box-sizing: border-box;
     background-color: bg(surface, neutral);
     border: width(1) solid stroke(neutral, subtle);
-    cursor: pointer;
     transition:
       border-color 0.2s ease,
       box-shadow 0.2s ease;
+
+    &:not(:has(select:disabled)) {
+      cursor: pointer;
+
+      select {
+        cursor: pointer;
+      }
+    }
   }
 
   &__input {
@@ -87,7 +94,6 @@ lui-native-select {
     color: text(body);
     line-height: 1.5;
     appearance: none;
-    cursor: pointer;
 
     &,
     &:hover,
@@ -97,10 +103,6 @@ lui-native-select {
       border: 0;
       outline: 0;
       box-shadow: none;
-    }
-
-    option:disabled {
-      color: color(gray, 6);
     }
   }
 
@@ -143,6 +145,19 @@ lui-native-select {
     color: text(error);
   }
 
+  &:has(select:disabled) {
+    cursor: not-allowed;
+    opacity: opacity(disabled);
+
+    .native-select__label-wrap label,
+    .native-select__control,
+    .native-select__input,
+    .native-select__prefix,
+    .native-select__suffix {
+      cursor: not-allowed;
+    }
+  }
+
   &:not(.native-select--disabled, .native-select--error):hover
     .native-select__control,
   &.native-select--force-hover:not(
@@ -164,17 +179,6 @@ lui-native-select {
   &.native-select--error.native-select--force-focus .native-select__control {
     border-color: stroke(danger);
     box-shadow: focus-ring(danger);
-  }
-
-  &.native-select--disabled {
-    opacity: opacity(disabled);
-  }
-
-  &.native-select--disabled .native-select__input,
-  &.native-select--disabled .native-select__optional,
-  &.native-select--disabled .native-select__arrow {
-    color: color(gray, 6);
-    cursor: not-allowed;
   }
 }
 
