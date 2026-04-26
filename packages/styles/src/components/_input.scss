@@ -2,23 +2,7 @@
 @use 'utilities/src/functions' as *;
 @use 'utilities/src/tokens.map' as *;
 @use 'utilities/src/mixins' as *;
-
-$size: (
-  lg: (
-    padding: fluid(12),
-    radius: radius(lg),
-    label: body--lg,
-    body: body--lg,
-    helper: body--md,
-  ),
-  md: (
-    padding: fixed(8),
-    radius: radius(md),
-    label: body--md,
-    body: body--md,
-    helper: body--sm,
-  ),
-);
+@use 'field';
 
 lui-input,
 lui-text-field {
@@ -26,44 +10,24 @@ lui-text-field {
 }
 
 .input-field {
-  @include flex(column, stretch, flex-start, fluid(8), nowrap);
-
-  width: 100%;
-  box-sizing: border-box;
+  @include field.wrapper;
 
   &__head {
-    @include flex(row, center, space-between, fluid(8), nowrap);
-
-    width: 100%;
+    @include field.head;
   }
 
   &__label-wrap {
-    @include flex(row, center, flex-start, fluid(4), nowrap);
-
-    min-width: 0;
-
-    label {
-      color: text(body);
-    }
+    @include field.label-wrap;
   }
 
   &__optional,
   &__counter,
   &__message {
-    color: text(caption);
-    white-space: nowrap;
+    @include field.secondary-text;
   }
 
   &__control {
-    @include flex(row, center, flex-start, fixed(8), nowrap);
-
-    width: 100%;
-    box-sizing: border-box;
-    background-color: bg(surface, neutral);
-    border: width(1) solid stroke(neutral, subtle);
-    transition:
-      border-color 0.2s ease,
-      box-shadow 0.2s ease;
+    @include field.control;
   }
 
   &__prefix,
@@ -73,29 +37,7 @@ lui-text-field {
   }
 
   &__input {
-    @include font-scale(body--lg);
-
-    flex: 1 1 auto;
-    align-self: stretch;
-    min-width: 0;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    outline: 0;
-    box-shadow: none;
-    background: transparent;
-    color: text(body);
-    line-height: 1.5;
-
-    &,
-    &:hover,
-    &:focus,
-    &:focus-visible {
-      border: 0;
-      outline: 0;
-      box-shadow: none;
-    }
+    @include field.input-element;
   }
 
   &__action,
@@ -142,65 +84,14 @@ lui-text-field {
     }
   }
 
-  &.input-field--error .input-field__control {
-    border-color: stroke(danger);
-  }
-
-  &.input-field--error .input-field__message {
-    color: text(error);
-  }
-
-  &:has(input:disabled) {
-    opacity: opacity(disabled);
-    cursor: not-allowed;
-
-    .input-field__label-wrap label,
-    .input-field__control,
-    .input-field__input,
-    .input-field__prefix,
-    .input-field__suffix {
-      cursor: not-allowed;
-    }
-  }
-
-  &:not(.input-field--disabled, .input-field--error):hover
-    .input-field__control,
-  &.input-field--force-hover:not(.input-field--disabled, .input-field--error)
-    .input-field__control {
-    border-color: stroke(neutral);
-  }
-
-  &:not(.input-field--disabled) .input-field__control:focus-within,
-  &.input-field--force-focus:not(.input-field--disabled) .input-field__control {
-    border-color: stroke(primary);
-    box-shadow:
-      inset 0 0 0 width(1) stroke(primary),
-      0 0 0 3px lch(45.27% 113.1 310.44deg / 32%);
-  }
-
-  &.input-field--error .input-field__control:focus-within,
-  &.input-field--error .input-field__control:focus-visible {
-    border-color: stroke(danger);
-    box-shadow:
-      inset 0 0 0 width(1) stroke(danger),
-      0 0 0 3px rgb(255 219 219 / 100%);
-  }
+  @include field.states('input-field', 'input');
 }
 
-@each $key, $props in $size {
+@each $key, $props in field.$size {
   .input-field--#{$key} {
-    .input-field__control {
-      border-radius: map.get($props, radius);
-      padding: map.get($props, padding);
-    }
+    @include field.size-body('input-field', $props);
 
-    .input-field__label-wrap label {
-      @include font-scale(map.get($props, label));
-    }
-
-    .input-field__optional,
-    .input-field__counter,
-    .input-field__message {
+    .input-field__counter {
       @include font-scale(map.get($props, helper));
     }
 
