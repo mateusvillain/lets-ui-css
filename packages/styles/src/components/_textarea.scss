@@ -2,147 +2,60 @@
 @use 'utilities/src/functions' as *;
 @use 'utilities/src/tokens.map' as *;
 @use 'utilities/src/mixins' as *;
-
-$size: (
-  lg: (
-    padding: fluid(12),
-    radius: radius(lg),
-    label: body--lg,
-    body: body--lg,
-    helper: body--md,
-  ),
-  md: (
-    padding: fixed(8),
-    radius: radius(md),
-    label: body--md,
-    body: body--md,
-    helper: body--sm,
-  ),
-);
+@use 'field';
 
 lui-textarea {
   display: block;
 }
 
 .textarea-field {
-  @include flex(column, stretch, flex-start, fluid(8), nowrap);
-
-  width: 100%;
-  box-sizing: border-box;
+  @include field.wrapper;
 
   &__head {
-    @include flex(row, center, space-between, fluid(8), nowrap);
+    @include field.head;
 
-    width: 100%;
     color: text(body);
     line-height: 1.5;
   }
 
   &__label-wrap {
-    @include flex(row, center, flex-start, fluid(4), nowrap);
+    @include field.label-wrap;
 
-    min-width: 0;
     color: text(body);
 
     label {
-      color: text(body);
       margin: 0;
     }
   }
 
   &__optional,
   &__counter {
-    color: text(body);
-    white-space: nowrap;
+    @include field.secondary-text;
   }
 
   &__control {
-    @include flex(row, flex-start, flex-start, fixed(8), nowrap);
-
-    width: 100%;
-    box-sizing: border-box;
-    background-color: bg(surface, neutral);
-    border: width(1) solid stroke(neutral, subtle);
-    transition:
-      border-color 0.2s ease,
-      box-shadow 0.2s ease;
+    @include field.control(flex-start);
   }
 
   &__input {
-    @include font-scale(body--lg);
+    @include field.input-element;
 
-    flex: 1 1 auto;
-    min-width: 0;
+    align-self: auto;
     width: 100%;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    outline: 0;
-    box-shadow: none;
-    background: transparent;
-    color: text(body);
-    line-height: 1.5;
     resize: vertical;
-
-    &,
-    &:hover,
-    &:focus,
-    &:focus-visible {
-      border: 0;
-      outline: 0;
-      box-shadow: none;
-    }
   }
 
   &__message {
+    @include field.secondary-text;
+
     margin: 0;
-    color: text(body);
     line-height: 1.5;
   }
 
-  &.textarea-field--error .textarea-field__control {
-    border-color: stroke(danger);
-  }
-
-  &.textarea-field--error .textarea-field__message {
-    color: text(error);
-  }
-
-  &:not(.textarea-field--disabled, .textarea-field--error):hover
-    .textarea-field__control,
-  &.textarea-field--force-hover:not(
-      .textarea-field--disabled,
-      .textarea-field--error
-    )
-    .textarea-field__control {
-    border-color: stroke(neutral);
-  }
-
-  &:not(.textarea-field--disabled) .textarea-field__control:focus-within,
-  &.textarea-field--force-focus:not(.textarea-field--disabled)
-    .textarea-field__control {
-    border-color: stroke(primary);
-    box-shadow: focus-ring(primary);
-  }
-
-  &.textarea-field--error .textarea-field__control:focus-within,
-  &.textarea-field--error .textarea-field__control:focus-visible {
-    border-color: stroke(danger);
-    box-shadow: focus-ring(danger);
-  }
-
-  &:has(textarea:disabled) {
-    cursor: not-allowed;
-    opacity: opacity(disabled);
-
-    textarea,
-    label {
-      cursor: not-allowed;
-    }
-  }
+  @include field.states('textarea-field', 'textarea');
 }
 
-@each $key, $props in $size {
+@each $key, $props in field.$size {
   .textarea-field--#{$key} {
     .textarea-field__control {
       border-radius: map.get($props, radius);
