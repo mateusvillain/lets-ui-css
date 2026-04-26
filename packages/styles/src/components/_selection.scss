@@ -1,0 +1,47 @@
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/mixins' as *;
+
+@mixin wrapper {
+  display: flex;
+  align-items: center;
+  gap: fixed(8);
+  user-select: none;
+  margin: fixed(0);
+  padding: fixed(0);
+}
+
+@mixin input-base {
+  appearance: none;
+  position: relative;
+  background-color: bg(surface, neutral);
+  border: width(1) solid stroke(neutral, subtle);
+  transition: all 0.2s ease;
+}
+
+@mixin focus {
+  box-shadow: focus-ring(primary);
+  outline: none;
+  outline-offset: 3px;
+}
+
+@mixin checked-base {
+  background-color: bg(container, primary);
+
+  @include states(primary, primary, primary);
+}
+
+// $input-type-sel = full native input selector, e.g. "input[type='checkbox']"
+@mixin cursor-states($input-type-sel) {
+  &:not(:has(#{$input-type-sel}:disabled)) {
+    cursor: pointer;
+
+    input {
+      cursor: pointer;
+    }
+  }
+
+  &:has(#{$input-type-sel}:disabled) {
+    cursor: not-allowed;
+    opacity: opacity(disabled);
+  }
+}
