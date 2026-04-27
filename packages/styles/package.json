@@ -4,6 +4,19 @@
   "description": "Let's UI styles and components package",
   "license": "MIT",
   "type": "module",
+  "homepage": "https://github.com/mateusvillain/lets-ui-css#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mateusvillain/lets-ui-css.git",
+    "directory": "packages/styles"
+  },
+  "keywords": [
+    "css",
+    "stylesheet",
+    "design-system",
+    "ui-components",
+    "lets-ui"
+  ],
   "style": "dist/letsui.min.css",
   "exports": {
     ".": "./dist/letsui.min.css"

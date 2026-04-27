@@ -4,6 +4,19 @@
   "description": "Let's UI Web Components package",
   "license": "MIT",
   "type": "module",
+  "homepage": "https://github.com/mateusvillain/lets-ui-css#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mateusvillain/lets-ui-css.git",
+    "directory": "packages/lets-ui-components"
+  },
+  "keywords": [
+    "web-components",
+    "custom-elements",
+    "design-system",
+    "ui-components",
+    "lets-ui"
+  ],
   "files": [
     "dist",
     "src"

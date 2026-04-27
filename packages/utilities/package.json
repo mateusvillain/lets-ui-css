@@ -4,6 +4,20 @@
   "description": "Let's UI utility SCSS package",
   "license": "MIT",
   "type": "module",
+  "homepage": "https://github.com/mateusvillain/lets-ui-css#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mateusvillain/lets-ui-css.git",
+    "directory": "packages/utilities"
+  },
+  "keywords": [
+    "scss",
+    "sass",
+    "mixins",
+    "utilities",
+    "design-system",
+    "lets-ui"
+  ],
   "files": [
     "src",
     "dist"

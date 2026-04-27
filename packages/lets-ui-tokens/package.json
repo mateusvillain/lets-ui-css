@@ -4,6 +4,19 @@
   "description": "Let's UI design tokens package",
   "license": "MIT",
   "type": "module",
+  "homepage": "https://github.com/mateusvillain/lets-ui-css#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mateusvillain/lets-ui-css.git",
+    "directory": "packages/lets-ui-tokens"
+  },
+  "keywords": [
+    "design-tokens",
+    "css-variables",
+    "css-custom-properties",
+    "design-system",
+    "lets-ui"
+  ],
   "files": [
     "dist"
   ],
