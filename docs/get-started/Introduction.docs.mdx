@@ -138,29 +138,6 @@ Os componentes se registram automaticamente como custom elements e ficam dispon�
 
 ---
 
-### Com Tokens SCSS
-
-Para projetos que precisam dos tokens de design nas suas próprias folhas de estilo SCSS (usando as funções `bg()`, `text()`, `radius()`, etc.):
-
-```bash
-npm install @lets-ui/tokens utilities
-```
-
-Configure o `@use` no topo dos seus arquivos SCSS (requer `--load-path=node_modules` no Sass):
-
-```scss
-@use '@lets-ui/tokens/dist/letsui.tokens.scss' as *;
-@use 'utilities/src/functions' as *;
-
-.my-component {
-  background: bg(container, primary);
-  color: text(body);
-  border-radius: radius(md);
-}
-```
-
----
-
 ## Temas e marcas
 
 O Let's UI suporta modo claro/escuro e múltiplas marcas via atributos HTML, sem JavaScript adicional.
