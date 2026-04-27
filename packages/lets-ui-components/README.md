@@ -1,17 +1,17 @@
-# lets-ui-components
+# @lets-ui/components
 
-Web Components package based on existing Let`s UI components and SCSS styles.
+Web Components package for the Let's UI design system. Styles are injected automatically — no separate CSS import needed.
 
 ## Install
 
 ```bash
-pnpm add lets-ui-components
+npm install @lets-ui/components
 ```
 
 ## Usage
 
 ```js
-import 'lets-ui-components';
+import '@lets-ui/components';
 ```
 
 ```html
@@ -44,5 +44,4 @@ import 'lets-ui-components';
 - `lui-input`
 - `lui-select`
 - `lui-tag`
-- `lui-text-field` (legacy alias)
 - `lui-tooltip`
