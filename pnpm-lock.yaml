@@ -113,13 +113,13 @@ importers:
         version: 4.1.4(@types/node@25.5.2)(@vitest/browser-playwright@4.1.4)(@vitest/coverage-v8@4.1.4)(vite@8.0.0-beta.16(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/node@25.5.2)(esbuild@0.27.7)(jiti@2.6.1)(sass@1.99.0)(yaml@2.8.3))
 
   packages/lets-ui-components:
-    dependencies:
-      lets-ui-tokens:
-        specifier: workspace:*
-        version: link:../lets-ui-tokens
-      styles:
+    devDependencies:
+      '@lets-ui/styles':
         specifier: workspace:*
         version: link:../styles
+      '@lets-ui/tokens':
+        specifier: workspace:*
+        version: link:../lets-ui-tokens
       utilities:
         specifier: workspace:*
         version: link:../utilities
@@ -128,7 +128,7 @@ importers:
 
   packages/styles:
     dependencies:
-      lets-ui-tokens:
+      '@lets-ui/tokens':
         specifier: workspace:*
         version: link:../lets-ui-tokens
       utilities:
@@ -137,7 +137,7 @@ importers:
 
   packages/utilities:
     dependencies:
-      lets-ui-tokens:
+      '@lets-ui/tokens':
         specifier: workspace:*
         version: link:../lets-ui-tokens
 
