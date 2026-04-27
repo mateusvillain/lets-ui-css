@@ -1,22 +1,14 @@
-import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { compile } from 'sass';
 
 const __filename = fileURLToPath(import.meta.url);
 const packageDir = resolve(dirname(__filename), '..');
-const repoRoot = resolve(packageDir, '..', '..');
-const scssEntry = resolve(repoRoot, 'packages/styles/src/index.scss');
 const distDir = resolve(packageDir, 'dist');
-const generatedFile = resolve(
-  distDir,
-  'generated/lets-ui-styles.js',
-);
+const generatedFile = resolve(distDir, 'generated/lets-ui-styles.js');
 
-const { css } = compile(scssEntry, {
-  loadPaths: [repoRoot, resolve(repoRoot, 'packages')],
-  style: 'expanded',
-});
+const cssPath = fileURLToPath(import.meta.resolve('@lets-ui/styles'));
+const css = readFileSync(cssPath, 'utf-8');
 
 rmSync(distDir, { recursive: true, force: true });
 mkdirSync(dirname(generatedFile), { recursive: true });
