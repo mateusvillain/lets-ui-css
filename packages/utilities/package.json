@@ -1,6 +1,6 @@
 {
   "name": "utilities",
-  "version": "0.19.0",
+  "version": "1.0.0",
   "description": "Let's UI utility SCSS package",
   "license": "MIT",
   "type": "module",
@@ -9,7 +9,7 @@
     "dist"
   ],
   "dependencies": {
-    "lets-ui-tokens": "workspace:*"
+    "@lets-ui/tokens": "workspace:*"
   },
   "scripts": {
     "build": "sass src/_flex.scss dist/letsui.utilities.css --no-source-map",
