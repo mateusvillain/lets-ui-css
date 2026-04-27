@@ -1,5 +1,5 @@
-import '../../../dist/letsui.tokens.css';
-import '../../../dist/letsui.css';
+import '../../../packages/lets-ui-tokens/dist/letsui.tokens.css';
+import '../../../packages/styles/dist/letsui.css';
 
 export default {
   title: 'Components/Breadcrumb',

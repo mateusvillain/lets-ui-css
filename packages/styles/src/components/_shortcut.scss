@@ -1,0 +1,34 @@
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/mixins' as *;
+
+lui-shortcut {
+  display: inline-flex;
+  align-items: center;
+}
+
+.shortcut {
+  display: inline-flex;
+  align-items: center;
+  gap: fluid(4);
+
+  &__key {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    @include font-scale(body--sm);
+
+    background: bg(surface, neutral);
+    color: text(body);
+    border: width(1) solid stroke(neutral, subtle);
+    border-radius: radius(sm);
+    white-space: nowrap;
+    user-select: none;
+    padding: fluid(2) fluid(4);
+  }
+
+  &__sep {
+    color: text(body);
+    line-height: 1;
+  }
+}

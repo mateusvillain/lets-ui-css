@@ -1,0 +1,228 @@
+@use 'sass:map';
+@use './tokens.map' as tokens;
+
+@function hover($variant) {
+  $value: map.get(tokens.$color, semantic, bg, hover, $variant);
+
+  @if not $value {
+    @error 'Invalid background hover color: "#{$variant}"';
+  }
+
+  @return $value;
+}
+
+@function pressed($variant) {
+  $value: map.get(tokens.$color, semantic, bg, pressed, $variant);
+
+  @if not $value {
+    @error 'Invalid background pressed color: "#{$variant}"';
+  }
+
+  @return $value;
+}
+
+// focus-ring($variant)
+//  $variant = primary, secondary, danger, success, neutral
+@function focus-ring($variant) {
+  $value: map.get(tokens.$focus-ring, $variant);
+
+  @if not $value {
+    @error 'Invalid focus-ring: "#{$variant}"';
+  }
+
+  @return $value;
+}
+
+// breakpoint($name)
+//  $name = 1xs, sm, md, lg, 1xl
+@function breakpoint($name) {
+  @return map.get(tokens.$breakpoint, $name);
+}
+
+// radius($size)
+//  $size = 1xs, sm, md, lg, circle, none
+@function radius($size) {
+  $value: map.get(tokens.$border, radius, $size);
+
+  @if not $value {
+    @error 'Invalid border-radius: "#{$size}"';
+  }
+
+  @return $value;
+}
+
+// width($size)
+//  $size = 0, 1, 2
+@function width($size) {
+  $value: map.get(tokens.$border, width, $size);
+
+  @if not $value {
+    @error 'Invalid border-width: "#{$size}"';
+  }
+
+  @return $value;
+}
+
+// color($category, $scale)
+//  $category = brand, blue, green, gray, green, orange, red, violet
+//  $scale    = 1, 2, 3, 4, 5, 6, 7, 8, 9
+@function color($category, $scale) {
+  $value: map.get(tokens.$color, primitive, $category, $scale);
+
+  @if not $value {
+    @error 'Invalid color: "#{$category}" | "#{$scale}"';
+  }
+
+  @return $value;
+}
+
+// bg($category, $variant)
+//  $category = surface, container
+//  $variant  = primary, caution, danger, info, success, neutral, overlay
+@function bg($category, $variant) {
+  $value: map.get(tokens.$color, semantic, bg, $category, $variant);
+
+  @if not $value {
+    @error 'Invalid background color: "#{$category}" | "#{$variant}"';
+  }
+
+  @return $value;
+}
+
+// stroke($variant)
+//  $variant = neutral, primary, caution, danger, info, success
+@function stroke($variant, $category: default) {
+  $value: map.get(tokens.$color, semantic, border, $category, $variant);
+
+  @if not $value {
+    @error 'Invalid border color: "#{category}-#{$variant}"';
+  }
+
+  @return $value;
+}
+
+// text($variant)
+//  $variant = heading, body, inverse, error
+@function text($variant) {
+  $value: map.get(tokens.$color, semantic, text, $variant);
+
+  @if not $value {
+    @error 'Invalid text color: "#{$variant}"';
+  }
+
+  @return $value;
+}
+
+// icon($variant)
+//  $variant = primary, caution, danger, info, success, neutral, inverse
+@function icon($variant) {
+  $value: map.get(tokens.$color, semantic, icon, $variant);
+
+  @if not $value {
+    @error 'Invalid icon color: "#{$variant}"';
+  }
+
+  @return $value;
+}
+
+// elevation($layer)
+//  $layer = base, hovered, floating, overlay
+@function elevation($layer) {
+  $value: map.get(tokens.$elevation, $layer);
+
+  @if not $value {
+    @error 'Invalid elevation: "#{$layer}"';
+  }
+
+  @return $value;
+}
+
+@function opacity($category) {
+  $value: map.get(tokens.$opacity, $category);
+
+  @if not $value {
+    @error 'Invalid opacity: "#{$category}"';
+  }
+
+  @return $value;
+}
+
+@function fixed($size) {
+  $value: map.get(tokens.$space, fixed, $size);
+
+  @if not $value {
+    @error 'Invalid fixed spacing: "#{$size}"';
+  }
+
+  @return $value;
+}
+
+@function fluid($size) {
+  $value: map.get(tokens.$space, fluid, $size);
+
+  @if not $value {
+    @error 'Invalid fluid spacing: "#{$size}"';
+  }
+
+  @return $value;
+}
+
+@function font($font) {
+  $value: map.get(tokens.$typography, font, $font);
+
+  @if not $value {
+    @error 'Invalid font-family: "#{$font}"';
+  }
+
+  @return $value;
+}
+
+@function line-height($line-height) {
+  $value: map.get(tokens.$typography, line-height, $line-height);
+
+  @if not $value {
+    @error 'Invalid line-height: "#{$line-height}"';
+  }
+
+  @return $value;
+}
+
+@function weight($weight) {
+  $value: map.get(tokens.$typography, weight, $weight);
+
+  @if not $value {
+    @error 'Invalid font-weight: "#{$weight}"';
+  }
+
+  @return $value;
+}
+
+@function case($case) {
+  $value: map.get(tokens.$typography, case, $case);
+
+  @if not $value {
+    @error 'Invalid text-case: "#{$case}"';
+  }
+
+  @return $value;
+}
+
+@function decoration($decoration) {
+  $value: map.get(tokens.$typography, decoration, $decoration);
+
+  @if not $value {
+    @error 'Invalid text-decoration: "#{$decoration}"';
+  }
+
+  @return $value;
+}
+
+@function size($size) {
+  $value: map.get(tokens.$typography, size, $size);
+
+  @if not $value {
+    @error 'Invalid font-size: "#{$size}"';
+  }
+
+  @return $value;
+}

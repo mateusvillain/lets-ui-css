@@ -1,0 +1,30 @@
+@use 'utilities/src/functions' as *;
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: fixed(0);
+  margin: fixed(0);
+
+  li {
+    a {
+      text-decoration: none;
+    }
+
+    &::after {
+      content: '/';
+      margin: fixed(0) fixed(8);
+      color: stroke(neutral, subtle);
+    }
+
+    &:last-child {
+      &::after {
+        content: '';
+      }
+
+      color: text(body);
+      cursor: default;
+    }
+  }
+}

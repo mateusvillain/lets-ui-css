@@ -1,0 +1,103 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/mixins' as *;
+
+$variants: primary, secondary, neutral, danger, success;
+$colors: (
+  primary: bg(container, primary),
+  secondary: bg(container, secondary),
+  neutral: bg(container, neutral),
+  danger: bg(container, danger),
+  success: bg(container, success),
+);
+$hover-colors: (
+  primary: hover(primary),
+  secondary: hover(secondary),
+  neutral: hover(neutral),
+  danger: hover(danger),
+  success: hover(success),
+);
+$pressed-colors: (
+  primary: pressed(primary),
+  secondary: pressed(secondary),
+  neutral: pressed(neutral),
+  danger: pressed(danger),
+  success: pressed(success),
+);
+$focus-rings: (
+  primary: focus-ring(primary),
+  secondary: focus-ring(secondary),
+  neutral: focus-ring(neutral),
+  danger: focus-ring(danger),
+  success: focus-ring(success),
+);
+$size: (
+  lg: (
+    padding: fluid(12) fluid(16),
+    radius: radius(lg),
+    scale: body--lg,
+  ),
+  md: (
+    padding: fluid(8) fluid(12),
+    radius: radius(md),
+    scale: body--md,
+  ),
+);
+
+button {
+  &.btn {
+    position: relative;
+    overflow: hidden;
+    font-weight: weight(regular);
+    border: fixed(0);
+    outline: fixed(0);
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+    z-index: 0;
+
+    &:active {
+      outline: width(2) solid transparent;
+      outline-offset: width(2);
+
+      // &:not(:disabled) {
+      //   transform: scale(0.98);
+      // }
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: opacity(disabled);
+    }
+  }
+
+  @each $key, $props in $size {
+    &.btn--#{$key} {
+      padding: map.get($props, padding);
+      border-radius: map.get($props, radius);
+
+      @include font-scale(map.get($props, scale));
+    }
+  }
+
+  @each $variant in $variants {
+    &.btn--#{$variant} {
+      color: text(inverse);
+      background-color: map.get($colors, $variant);
+
+      @include states($variant, $variant, $variant);
+
+      // &:hover {
+      //   background-color: map.get($hover-colors, $variant);
+      // }
+
+      // &:active {
+      //   background-color: map.get($pressed-colors, $variant);
+      // }
+
+      // &:focus {
+      //   box-shadow: map.get($focus-rings, $variant);
+      // }
+    }
+  }
+}

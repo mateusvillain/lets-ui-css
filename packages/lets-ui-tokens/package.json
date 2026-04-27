@@ -1,0 +1,33 @@
+{
+  "name": "@lets-ui/tokens",
+  "version": "1.0.0",
+  "description": "Let's UI design tokens package",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://github.com/mateusvillain/lets-ui-css#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mateusvillain/lets-ui-css.git",
+    "directory": "packages/lets-ui-tokens"
+  },
+  "keywords": [
+    "design-tokens",
+    "css-variables",
+    "css-custom-properties",
+    "design-system",
+    "lets-ui"
+  ],
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/letsui.tokens.css",
+    "./css": "./dist/letsui.tokens.css",
+    "./scss": "./dist/letsui.tokens.scss"
+  },
+  "scripts": {
+    "build": "tz build",
+    "prepack": "pnpm run build",
+    "clean": "rm -rf dist"
+  }
+}

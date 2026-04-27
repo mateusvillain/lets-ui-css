@@ -1,0 +1,38 @@
+{
+  "name": "@lets-ui/styles",
+  "version": "1.0.0",
+  "description": "Let's UI styles and components package",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://github.com/mateusvillain/lets-ui-css#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mateusvillain/lets-ui-css.git",
+    "directory": "packages/styles"
+  },
+  "keywords": [
+    "css",
+    "stylesheet",
+    "design-system",
+    "ui-components",
+    "lets-ui"
+  ],
+  "style": "dist/letsui.min.css",
+  "exports": {
+    ".": "./dist/letsui.min.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@lets-ui/tokens": "workspace:*",
+    "utilities": "workspace:*"
+  },
+  "scripts": {
+    "build:css": "sass --load-path=node_modules src/index.scss dist/letsui.css --no-source-map",
+    "build:css:minify": "postcss dist/letsui.css --use cssnano --output dist/letsui.min.css",
+    "build": "pnpm run build:css && pnpm run build:css:minify",
+    "prepack": "pnpm run build",
+    "clean": "rm -rf dist"
+  }
+}

@@ -1,0 +1,20 @@
+@use 'sass:list';
+@use 'sass:map';
+@use '@lets-ui/tokens/dist/letsui.tokens.scss' as *;
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/tokens.map' as *;
+@use 'utilities/src/mixins' as *;
+
+@each $name, $values in map.get($typography, scales) {
+  .#{$name} {
+    @include font-scale($name);
+  }
+}
+
+.text- {
+  @each $weights, $value in map.get($typography, weight) {
+    &#{$weights} {
+      font-weight: weight($weights);
+    }
+  }
+}

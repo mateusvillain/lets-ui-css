@@ -1,0 +1,115 @@
+@use 'sass:map';
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/tokens.map' as *;
+@use 'utilities/src/mixins' as *;
+@use 'field';
+
+lui-select,
+lui-native-select {
+  display: block;
+}
+
+.native-select {
+  @include field.wrapper;
+
+  &__head {
+    @include field.head;
+  }
+
+  &__label-wrap {
+    @include field.label-wrap;
+  }
+
+  &__optional,
+  &__message {
+    @include field.secondary-text;
+  }
+
+  &__control {
+    @include field.control;
+
+    position: relative;
+
+    &:not(:has(select:disabled)) {
+      cursor: pointer;
+
+      select {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__input {
+    @include field.input-element;
+
+    appearance: none;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    width: 14px;
+    height: 7px;
+    color: icon(neutral);
+    pointer-events: none;
+    transform: translateY(-50%);
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: currentcolor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  }
+
+  &.native-select--placeholder .native-select__input {
+    color: color(gray, 6);
+  }
+
+  @include field.states('native-select', 'select');
+}
+
+@each $key, $props in field.$size {
+  .native-select--#{$key} {
+    @include field.size-body('native-select', $props);
+
+    .native-select__arrow {
+      right: map.get($props, padding);
+    }
+
+    .native-select__input {
+      @include font-scale(map.get($props, body));
+
+      // Pull the select into the control's full interior (including padding zones)
+      margin: calc(-1 * #{map.get($props, padding)});
+      padding-block: map.get($props, padding);
+      padding-inline: map.get($props, padding)
+        calc(#{map.get($props, padding)} + 22px);
+
+      // Reserve space for the absolute-positioned arrow (14px) + original gap (8px)
+    }
+
+    &:not(.native-select--disabled) .native-select__control:focus-within,
+    &.native-select--force-focus:not(.native-select--disabled)
+      .native-select__control {
+      border-width: width(2);
+      border-radius: map.get($props, radius);
+      padding: calc(#{map.get($props, padding)} - 1px);
+
+      .native-select__arrow {
+        right: calc(#{map.get($props, padding)} - 1px);
+      }
+
+      .native-select__input {
+        margin: calc(-1 * (#{map.get($props, padding)} - 1px));
+        padding-block: calc(#{map.get($props, padding)} - 1px);
+        padding-inline: calc(#{map.get($props, padding)} - 1px)
+          calc(#{map.get($props, padding)} - 1px + 22px);
+      }
+    }
+  }
+}

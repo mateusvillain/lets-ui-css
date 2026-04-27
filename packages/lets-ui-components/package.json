@@ -1,0 +1,58 @@
+{
+  "name": "@lets-ui/components",
+  "version": "1.0.0",
+  "description": "Let's UI Web Components package",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://github.com/mateusvillain/lets-ui-css#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mateusvillain/lets-ui-css.git",
+    "directory": "packages/lets-ui-components"
+  },
+  "keywords": [
+    "web-components",
+    "custom-elements",
+    "design-system",
+    "ui-components",
+    "lets-ui"
+  ],
+  "files": [
+    "dist",
+    "src"
+  ],
+  "exports": {
+    ".": "./src/index.js",
+    "./alert": "./src/components/alert.js",
+    "./breadcrumb": "./src/components/breadcrumb.js",
+    "./breadcrumb-item": "./src/components/breadcrumb-item.js",
+    "./button": "./src/components/button.js",
+    "./card": "./src/components/card.js",
+    "./checkbox": "./src/components/checkbox.js",
+    "./drawer": "./src/components/drawer.js",
+    "./dropdown-menu": "./src/components/dropdown-menu.js",
+    "./divider": "./src/components/divider.js",
+    "./icon-button": "./src/components/icon-button.js",
+    "./input": "./src/components/input.js",
+    "./link": "./src/components/link.js",
+    "./modal": "./src/components/modal.js",
+    "./radio": "./src/components/radio.js",
+    "./select": "./src/components/select.js",
+    "./shortcut": "./src/components/shortcut.js",
+    "./switch": "./src/components/switch.js",
+    "./tabs": "./src/components/tabs.js",
+    "./tag": "./src/components/tag.js",
+    "./tooltip": "./src/components/tooltip.js",
+    "./textarea": "./src/components/textarea.js"
+  },
+  "scripts": {
+    "build": "node ./scripts/build-styles.mjs",
+    "clean": "rm -rf dist",
+    "prepack": "pnpm run build"
+  },
+  "devDependencies": {
+    "@lets-ui/tokens": "workspace:*",
+    "@lets-ui/styles": "workspace:*",
+    "utilities": "workspace:*"
+  }
+}

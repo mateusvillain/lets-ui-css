@@ -1,0 +1,125 @@
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/mixins' as *;
+
+lui-dropdown-menu {
+  display: inline-flex;
+  position: relative;
+}
+
+lui-menu-item,
+lui-menu-divider {
+  display: none;
+}
+
+.dropdown-menu {
+  display: inline-flex;
+  position: relative;
+
+  &__trigger {
+    display: contents;
+  }
+
+  &__panel {
+    position: absolute;
+    top: calc(100% + fluid(4));
+    left: 0;
+    z-index: 100;
+    min-width: 200px;
+    max-width: max-content;
+    background: bg(surface, neutral);
+    border: width(1) solid border(divisor);
+    border-radius: radius(lg);
+    box-shadow: elevation(floating);
+    padding: fluid(8);
+    list-style: none;
+    margin: 0;
+    opacity: opacity(hidden);
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(calc(fluid(4) * -1));
+    will-change: opacity, transform;
+    transition:
+      opacity 0.15s cubic-bezier(0.22, 1, 0.36, 1) 0s,
+      transform 0.2s cubic-bezier(0.22, 1, 0.36, 1) 0s,
+      visibility 0s linear 0.2s;
+
+    &.is-open {
+      opacity: opacity(visible);
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+      transition-delay: 0s, 0s, 0s;
+    }
+  }
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: fluid(8);
+  padding: fluid(12);
+  border-radius: radius(md);
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  background: transparent;
+  color: text(body);
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s;
+
+  @include font-scale(body--lg);
+  @include states(neutral, primary);
+
+  &:not(:has(:disabled), [aria-disabled='true']) {
+    cursor: pointer;
+
+    button,
+    span {
+      cursor: pointer;
+    }
+  }
+
+  &__label {
+    flex: 1;
+    white-space: nowrap;
+  }
+
+  &__shortcut {
+    flex-shrink: 0;
+  }
+
+  &__chevron {
+    display: inline-flex;
+    align-items: center;
+    color: icon(neutral);
+    flex-shrink: 0;
+  }
+}
+
+.menu-item--has-submenu {
+  position: relative;
+
+  > .dropdown-menu__panel {
+    top: 0;
+    left: calc(100% + fluid(2));
+    transform: translateX(calc(fluid(4) * -1));
+  }
+
+  &:hover > .dropdown-menu__panel,
+  &:focus-within > .dropdown-menu__panel {
+    opacity: opacity(visible);
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(0);
+    transition-delay: 0s, 0s, 0s;
+  }
+}
+
+.dropdown-menu__panel [role='separator'].divider {
+  margin: fluid(8) fluid(12);
+}
+
+.menu-item--danger {
+  color: text(error);
+}

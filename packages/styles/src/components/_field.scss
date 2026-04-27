@@ -1,0 +1,150 @@
+@use 'sass:map';
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/tokens.map' as *;
+@use 'utilities/src/mixins' as *;
+
+$size: (
+  lg: (
+    padding: fluid(12),
+    radius: radius(lg),
+    label: body--lg,
+    body: body--lg,
+    helper: body--md,
+  ),
+  md: (
+    padding: fixed(8),
+    radius: radius(md),
+    label: body--md,
+    body: body--md,
+    helper: body--sm,
+  ),
+);
+
+@mixin secondary-text {
+  @include font-scale(body--md);
+
+  color: text(caption);
+  white-space: nowrap;
+}
+
+@mixin wrapper {
+  @include flex(column, stretch, flex-start, fluid(8), nowrap);
+
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@mixin head {
+  @include flex(row, center, space-between, fluid(8), nowrap);
+
+  width: 100%;
+}
+
+@mixin label-wrap {
+  @include flex(row, center, flex-start, fluid(4), nowrap);
+
+  min-width: 0;
+
+  label {
+    color: text(body);
+  }
+}
+
+@mixin control($align: center) {
+  @include flex(row, $align, flex-start, fixed(8), nowrap);
+
+  width: 100%;
+  box-sizing: border-box;
+  background-color: bg(surface, neutral);
+  border: width(1) solid stroke(neutral, subtle);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+@mixin input-element {
+  @include font-scale(body--lg);
+
+  flex: 1 1 auto;
+  align-self: stretch;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  background: transparent;
+  color: text(body);
+  line-height: 1.5;
+
+  &,
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:active {
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+// $block    = BEM block name (e.g. 'input-field', 'native-select')
+// $native-el = native form element selector (e.g. 'input', 'select')
+@mixin states($block, $native-el) {
+  &.#{$block}--error .#{$block}__control {
+    border-color: stroke(danger);
+  }
+
+  &.#{$block}--error .#{$block}__message {
+    color: text(error);
+  }
+
+  &:has(#{$native-el}:disabled) {
+    opacity: opacity(disabled);
+    cursor: not-allowed;
+
+    .#{$block}__label-wrap label,
+    .#{$block}__control,
+    .#{$block}__input,
+    .#{$block}__prefix,
+    .#{$block}__suffix {
+      cursor: not-allowed;
+    }
+  }
+
+  &:not(.#{$block}--disabled, .#{$block}--error):hover .#{$block}__control,
+  &.#{$block}--force-hover:not(.#{$block}--disabled, .#{$block}--error)
+    .#{$block}__control {
+    border-color: stroke(neutral);
+  }
+
+  &:not(.#{$block}--disabled) .#{$block}__control:focus-within,
+  &.#{$block}--force-focus:not(.#{$block}--disabled) .#{$block}__control {
+    border-color: stroke(primary);
+    box-shadow: focus-ring(primary);
+  }
+
+  &.#{$block}--error .#{$block}__control:focus-within,
+  &.#{$block}--error .#{$block}__control:focus-visible,
+  &.#{$block}--error.#{$block}--force-focus .#{$block}__control {
+    border-color: stroke(danger);
+    box-shadow: focus-ring(danger);
+  }
+}
+
+// Shared per-size declarations — call inside your own @each loop over field.$size.
+@mixin size-body($block, $props) {
+  .#{$block}__control {
+    border-radius: map.get($props, radius);
+    padding: map.get($props, padding);
+  }
+
+  .#{$block}__label-wrap label {
+    @include font-scale(map.get($props, label));
+  }
+
+  .#{$block}__optional,
+  .#{$block}__message {
+    @include font-scale(map.get($props, helper));
+  }
+}

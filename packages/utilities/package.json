@@ -1,0 +1,33 @@
+{
+  "name": "utilities",
+  "version": "1.0.0",
+  "description": "Let's UI utility SCSS package",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://github.com/mateusvillain/lets-ui-css#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mateusvillain/lets-ui-css.git",
+    "directory": "packages/utilities"
+  },
+  "keywords": [
+    "scss",
+    "sass",
+    "mixins",
+    "utilities",
+    "design-system",
+    "lets-ui"
+  ],
+  "files": [
+    "src",
+    "dist"
+  ],
+  "dependencies": {
+    "@lets-ui/tokens": "workspace:*"
+  },
+  "scripts": {
+    "build": "sass src/_flex.scss dist/letsui.utilities.css --no-source-map",
+    "prepack": "pnpm run build",
+    "clean": "rm -rf dist"
+  }
+}

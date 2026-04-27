@@ -1,0 +1,27 @@
+import { Meta, Canvas, Controls, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as DividerStories from './Divider.stories';
+
+<Meta of={DividerStories} />
+
+# Divider
+
+Separador visual para dividir seções de conteúdo. Suporta orientação horizontal (padrão) e vertical, com ou sem label. Pode ser usado standalone em layouts ou dentro de menus para agrupar itens relacionados.
+
+<Canvas of={DividerStories.Divider} />
+<Controls of={DividerStories.Divider} />
+
+## Com label
+
+Use quando precisar de um separador textual entre seções — comum em fluxos de autenticação (ex.: "ou") ou para nomear grupos de conteúdo.
+
+<Canvas of={DividerStories.WithLabel} />
+
+## Vertical
+
+Use `orientation="vertical"` (web component) ou a classe `.divider--vertical` (HTML) para separar itens em layouts horizontais como toolbars e grupos de ações inline.
+
+<Canvas of={DividerStories.Vertical} />
+
+## Vertical com label
+
+<Canvas of={DividerStories.VerticalWithLabel} />

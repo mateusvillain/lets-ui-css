@@ -1,0 +1,36 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as IconButtonStories from './IconButton.stories';
+
+<Meta of={IconButtonStories} />
+
+# Icon Button
+
+Botão compacto que exibe apenas um ícone, sem rótulo de texto. Use quando o espaço é limitado e a ação é reconhecível pelo ícone — como fechar, excluir ou navegar. Sempre forneça um `aria-label` descritivo para garantir acessibilidade.
+
+<Canvas of={IconButtonStories.IconButton} />
+<Controls of={IconButtonStories.IconButton} />
+
+## Solid
+
+Use o weight `solid` para dar maior destaque visual ao ícone, em contextos onde o botão precisa de mais ênfase ou contraste.
+
+<Canvas of={IconButtonStories.Solid} />
+
+## Tamanhos
+
+O Icon Button está disponível em dois tamanhos: `lg` (40px) para áreas com mais espaço e `md` (32px) para layouts mais compactos como toolbars e tabelas.
+
+<Canvas of={IconButtonStories.SizeLg} />
+<Canvas of={IconButtonStories.SizeMd} />
+
+## Disabled
+
+Use o estado desabilitado quando a ação não está disponível no contexto atual. O botão fica visualmente inativo e não responde a interações.
+
+<Canvas of={IconButtonStories.Disabled} />
+
+## Todos os ícones
+
+Catálogo completo dos ícones disponíveis na biblioteca `lets-ui-icons`.
+
+<Canvas of={IconButtonStories.AllIcons} />

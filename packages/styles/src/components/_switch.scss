@@ -1,0 +1,78 @@
+@use 'sass:map';
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/mixins' as *;
+@use 'selection';
+
+$sizes: (
+  lg: (
+    track-w: 40px,
+    track-h: 24px,
+    thumb: 16px,
+    offset: 3px,
+    translate: 16px,
+  ),
+  md: (
+    track-w: 26px,
+    track-h: 16px,
+    thumb: 10px,
+    offset: 2px,
+    translate: 10px,
+  ),
+);
+
+.switch {
+  @include selection.wrapper;
+
+  input {
+    @include selection.input-base;
+
+    flex-shrink: 0;
+    border-radius: radius(circle);
+
+    &::after {
+      content: '';
+      position: absolute;
+      border-radius: radius(circle);
+      background-color: bg(container, neutral);
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:focus {
+      @include selection.focus;
+    }
+
+    &:checked {
+      @include selection.checked-base;
+
+      border: width(1) solid transparent;
+
+      &::after {
+        background-color: bg(surface, neutral);
+      }
+    }
+
+    &:not(:disabled, :checked):hover {
+      border-color: stroke(neutral, default);
+    }
+  }
+
+  @each $key, $values in $sizes {
+    &--#{$key} input[type='checkbox'] {
+      width: map.get($values, track-w);
+      height: map.get($values, track-h);
+
+      &::after {
+        width: map.get($values, thumb);
+        height: map.get($values, thumb);
+        top: map.get($values, offset);
+        left: map.get($values, offset);
+      }
+
+      &:checked::after {
+        transform: translateX(map.get($values, translate));
+      }
+    }
+  }
+
+  @include selection.cursor-states("input[type='checkbox']");
+}

@@ -1,0 +1,17 @@
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/mixins' as *;
+
+a.link {
+  color: text(link);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: text(link-visited);
+  }
+
+  @include focus-ring(primary);
+}

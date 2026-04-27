@@ -1,0 +1,50 @@
+@use 'utilities/src/functions' as *;
+
+.card {
+  background-color: bg(surface, neutral);
+  border-radius: radius(xl);
+  overflow: hidden;
+
+  &__cover {
+    & img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    > img {
+      max-height: 240px;
+    }
+  }
+
+  &__body {
+    padding: fluid(16);
+    display: flex;
+    flex-direction: column;
+    gap: fluid(8);
+
+    > {
+      .card__actions {
+        margin-top: fluid(16);
+        display: flex;
+        flex-direction: row-reverse;
+        gap: fluid(16);
+      }
+    }
+  }
+
+  &--border {
+    border: width(1) solid stroke(neutral, subtle);
+  }
+
+  &--elevation {
+    box-shadow: elevation(base);
+
+    &.card--interaction {
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        box-shadow: elevation(hovered);
+      }
+    }
+  }
+}

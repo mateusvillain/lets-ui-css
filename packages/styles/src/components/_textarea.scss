@@ -1,0 +1,80 @@
+@use 'sass:map';
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/tokens.map' as *;
+@use 'utilities/src/mixins' as *;
+@use 'field';
+
+lui-textarea {
+  display: block;
+}
+
+.textarea-field {
+  @include field.wrapper;
+
+  &__head {
+    @include field.head;
+
+    color: text(body);
+    line-height: 1.5;
+  }
+
+  &__label-wrap {
+    @include field.label-wrap;
+
+    color: text(body);
+
+    label {
+      margin: 0;
+    }
+  }
+
+  &__optional,
+  &__counter {
+    @include field.secondary-text;
+  }
+
+  &__control {
+    @include field.control(flex-start);
+  }
+
+  &__input {
+    @include field.input-element;
+
+    align-self: auto;
+    width: 100%;
+    resize: vertical;
+  }
+
+  &__message {
+    @include field.secondary-text;
+
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  @include field.states('textarea-field', 'textarea');
+}
+
+@each $key, $props in field.$size {
+  .textarea-field--#{$key} {
+    .textarea-field__control {
+      border-radius: map.get($props, radius);
+    }
+
+    .textarea-field__label-wrap label {
+      @include font-scale(map.get($props, label));
+    }
+
+    .textarea-field__optional,
+    .textarea-field__counter,
+    .textarea-field__message {
+      @include font-scale(map.get($props, helper));
+    }
+
+    .textarea-field__input {
+      padding: map.get($props, padding);
+
+      @include font-scale(map.get($props, body));
+    }
+  }
+}

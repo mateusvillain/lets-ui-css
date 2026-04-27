@@ -1,0 +1,72 @@
+@use 'sass:map';
+@use 'utilities/src/functions' as *;
+@use 'utilities/src/tokens.map' as *;
+@use 'utilities/src/mixins' as *;
+@use 'selection';
+
+$sizes: (
+  lg: (
+    outer: 24,
+    dot: 10,
+  ),
+  md: (
+    outer: 16,
+    dot: 6,
+  ),
+);
+
+.radio,
+input[type='radio'] {
+  @include selection.wrapper;
+}
+
+.radio {
+  @each $key, $values in $sizes {
+    $outer: map.get($values, outer);
+    $dot: map.get($values, dot);
+
+    &--#{$key} input[type='radio'] {
+      width: fixed($outer);
+      height: fixed($outer);
+
+      &:checked::after {
+        width: #{$dot}px;
+        height: #{$dot}px;
+      }
+    }
+  }
+
+  @include selection.cursor-states("input[type='radio']");
+
+  input {
+    @include selection.input-base;
+
+    border-radius: radius(circle);
+    display: inline-block;
+    flex-shrink: 0;
+
+    &:focus {
+      @include selection.focus;
+    }
+
+    &:checked {
+      @include selection.checked-base;
+
+      border: none;
+
+      &::after {
+        content: '';
+        position: absolute;
+        background-color: bg(surface, neutral);
+        border-radius: radius(circle);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &:not(:disabled):hover {
+      border-color: stroke(neutral, default);
+    }
+  }
+}

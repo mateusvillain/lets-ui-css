@@ -1,0 +1,4 @@
+interface:
+  display_name: "Documentation"
+  short_description: "Documenta componentes e stories no Storybook"
+  default_prompt: "Documentar componente no Storybook, criar stories de variants e descrever caso de uso por variante."

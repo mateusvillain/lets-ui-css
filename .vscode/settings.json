@@ -21,7 +21,7 @@
   "scss.validate": true,
 
   "editor.wordWrap": "on",
-  "editor.minimap.enabled": false,
+  "editor.minimap.enabled": true,
   "mdx.trace.server.format": "text",
   "figma.assetExportDirectory": "public/images",
   "figma.autocompleteBlocks": false
