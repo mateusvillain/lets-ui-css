@@ -16,9 +16,10 @@
     "utilities": "workspace:*"
   },
   "scripts": {
-    "build:css": "sass --load-path=.. src/index.scss dist/letsui.css --no-source-map",
+    "build:css": "sass --load-path=node_modules src/index.scss dist/letsui.css --no-source-map",
     "build:css:minify": "postcss dist/letsui.css --use cssnano --output dist/letsui.min.css",
     "build": "pnpm run build:css && pnpm run build:css:minify",
+    "prepack": "pnpm run build",
     "clean": "rm -rf dist"
   }
 }

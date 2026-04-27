@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use 'lets-ui-tokens/dist/letsui.tokens.scss' as *;
+@use '@lets-ui/tokens/dist/letsui.tokens.scss' as *;
 
 $breakpoint: (
   '1xs': 320px,

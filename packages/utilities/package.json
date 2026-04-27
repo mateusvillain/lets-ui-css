@@ -13,6 +13,7 @@
   },
   "scripts": {
     "build": "sass src/_flex.scss dist/letsui.utilities.css --no-source-map",
+    "prepack": "pnpm run build",
     "clean": "rm -rf dist"
   }
 }
