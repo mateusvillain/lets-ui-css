@@ -1,0 +1,38 @@
+name: Question
+description: Ask a question about usage, architecture, or decisions in the design system
+title: '[Question]: '
+labels: ['question']
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Topic
+      description: What is your question about?
+      options:
+        - Component usage
+        - Design tokens
+        - Theming and branding
+        - CSS / SCSS
+        - Web Components
+        - Storybook / documentation
+        - Contributing
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: Be as specific as possible — include the context that led to the question
+      placeholder: e.g. What is the recommended way to override a token value for a specific brand without affecting the global theme?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and discussions before asking
+        - label: I checked the documentation and Storybook

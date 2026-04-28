@@ -1,0 +1,86 @@
+name: Bug report
+description: Report a problem with a component, token, or style
+title: '[Bug]: '
+labels: ['bug']
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      description: Which part of the design system is affected?
+      options:
+        - Component (Web Component / SCSS)
+        - Design token
+        - CSS output / build
+        - Storybook / documentation
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: affected
+    attributes:
+      label: Component or token name
+      description: If applicable, which specific component or token is affected?
+      placeholder: e.g. Button, color.primary.500
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the bug clearly and objectively
+      placeholder: e.g. The Button component ignores the `disabled` attribute when used inside a form
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened instead?
+      placeholder: e.g. The button should be visually disabled and not trigger the click event
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps to reproduce the issue consistently
+      placeholder: |
+        1. Add `<lets-button disabled>Save</lets-button>` inside a `<form>`
+        2. Click the button
+        3. The form is submitted regardless
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, OS, package version, and any other relevant context
+      placeholder: |
+        - Package version: 1.2.0
+        - Browser: Chrome 124
+        - OS: macOS 14
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Screenshots, recordings, Figma links, or related issues
+      placeholder: e.g. Screenshot or link to a playground reproduction
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched for existing issues before opening this one
+        - label: I can reproduce this consistently
+        - label: This happens in the latest version of the package
+        - label: Accessibility is impacted by this bug

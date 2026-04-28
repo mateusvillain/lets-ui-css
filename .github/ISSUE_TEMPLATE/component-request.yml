@@ -1,14 +1,43 @@
 name: Component request
-description: Propose the creation of a new component for the design system
+description: Propose the creation or update of a component in the design system
 title: '[Component]: '
 labels: ['component', 'request']
 body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Request type
+      description: Are you requesting a new component or an update to an existing one?
+      options:
+        - New component
+        - Update existing component
+    validations:
+      required: true
+
+  - type: input
+    id: component_name
+    attributes:
+      label: Component name
+      description: For updates, which component? For new components, what would you call it?
+      placeholder: e.g. Button, Badge, Modal
+
   - type: textarea
     id: problem
     attributes:
-      label: What problem does this component solve?
-      description: Describe the context and the pain point that motivated this request
+      label: What problem does this solve?
+      description: Describe the context and pain point that motivated this request
       placeholder: e.g. We have multiple action buttons repeated with inconsistent variations
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_changes
+    attributes:
+      label: Proposed changes
+      description: >
+        **New component:** describe what it should do and how it should look.
+        **Update:** describe what needs to change and why.
+      placeholder: e.g. Add a `loading` state with a spinner inside the button
     validations:
       required: true
 
@@ -29,3 +58,4 @@ body:
         - label: Something similar already exists in the design system
         - label: This could be a variation of an existing component
         - label: This component will be reused across more than one product
+        - label: This change is backwards compatible (for updates only)
