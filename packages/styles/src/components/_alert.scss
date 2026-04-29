@@ -14,6 +14,12 @@
 
   &__content {
     gap: fluid(16);
+    align-items: flex-start;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    font-size: fluid(24);
   }
 
   &__text {
