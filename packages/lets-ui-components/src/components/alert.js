@@ -26,13 +26,14 @@ export class LuiAlert extends HTMLElement {
 
   render() {
     const baseId = ensureElementId(this, 'lui-alert');
-    const variant = this.getAttribute('variant') ?? 'success';
+    const rawVariant = this.getAttribute('variant') ?? 'success';
+    const variant = VARIANT_ICONS[rawVariant] ? rawVariant : 'success';
     const title = this.getAttribute('title') ?? '';
     const content = this.getAttribute('content') ?? '';
     const primaryButton = this.getAttribute('primary-button') ?? '';
     const secondaryButton = this.getAttribute('secondary-button') ?? '';
     const hasActions = primaryButton || secondaryButton;
-    const iconName = VARIANT_ICONS[variant] ?? VARIANT_ICONS.success;
+    const iconName = VARIANT_ICONS[variant];
 
     mountMarkup(
       this,
