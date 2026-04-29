@@ -127,7 +127,7 @@ importers:
   packages/lets-ui-tokens: {}
 
   packages/styles:
-    dependencies:
+    devDependencies:
       '@lets-ui/tokens':
         specifier: workspace:*
         version: link:../lets-ui-tokens
