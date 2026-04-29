@@ -85,3 +85,15 @@ CloseOnBackdropOff.args = {
   closeOnBackdrop: false,
 };
 CloseOnBackdropOff.storyName = 'close-on-backdrop: false';
+
+export const CustomTrigger = () => `
+  <lui-drawer title="Drawer com trigger customizado" primary-button="Confirmar" secondary-button="Cancelar" close-on-backdrop>
+    <button slot="trigger" class="btn btn--secondary btn--lg">
+      <i class="lui lui-settings" aria-hidden="true"></i>
+      Configurações
+    </button>
+    <p>Conteúdo do drawer com trigger totalmente customizado via <code>slot="trigger"</code>.</p>
+    <p style="margin-top: 12px;">Qualquer elemento ou componente pode ser o trigger — basta adicionar o atributo <code>slot="trigger"</code>.</p>
+  </lui-drawer>
+`;
+CustomTrigger.storyName = 'Trigger customizado (slot)';
