@@ -67,6 +67,7 @@ export class LuiModal extends HTMLElement {
       return;
     }
 
+    const triggers = [];
     const actions = [];
 
     Array.from(this.childNodes).forEach((node) => {
@@ -74,14 +75,20 @@ export class LuiModal extends HTMLElement {
         return;
       }
 
-      if (
-        node.nodeType === Node.ELEMENT_NODE &&
-        node.getAttribute('slot') === 'actions'
-      ) {
+      if (node.nodeType !== Node.ELEMENT_NODE) {
+        return;
+      }
+
+      const slot = node.getAttribute('slot');
+
+      if (slot === 'trigger') {
+        triggers.push(node.outerHTML);
+      } else if (slot === 'actions') {
         actions.push(node.outerHTML);
       }
     });
 
+    this._triggerHtml = triggers.join('');
     this._actionsHtml = actions.join('');
     this._actionsCaptured = true;
   }
@@ -138,7 +145,9 @@ export class LuiModal extends HTMLElement {
   }
 
   attachEvents() {
-    const trigger = this.querySelector('[data-modal-trigger]');
+    const trigger =
+      this.querySelector('[data-modal-trigger]') ??
+      this.querySelector('[slot="trigger"]');
     const backdrop = this.querySelector('[data-modal-backdrop]');
     const dialog = this.querySelector('[data-modal-dialog]');
     const closeButtons = this.querySelectorAll('[data-modal-close]');
@@ -146,6 +155,14 @@ export class LuiModal extends HTMLElement {
 
     if (trigger) {
       trigger.onclick = () => this.open();
+
+      if (!trigger.hasAttribute('data-modal-trigger')) {
+        trigger.setAttribute('aria-haspopup', 'dialog');
+        trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (dialog) {
+          trigger.setAttribute('aria-controls', dialog.id);
+        }
+      }
     }
 
     closeButtons.forEach((button) => {
@@ -175,6 +192,7 @@ export class LuiModal extends HTMLElement {
     const open = hasBooleanAttribute(this, 'open');
     const hideTrigger = hasBooleanAttribute(this, 'hide-trigger');
     const triggerLabel = this.getAttribute('trigger-label') ?? 'Open modal';
+    const hasSlottedTrigger = Boolean(this._triggerHtml?.trim());
     const hasSlottedActions = Boolean(
       this._actionsHtml && this._actionsHtml.trim()
     );
@@ -183,9 +201,11 @@ export class LuiModal extends HTMLElement {
       this,
       `
       ${
-        hideTrigger
-          ? ''
-          : `<button
+        hasSlottedTrigger
+          ? this._triggerHtml
+          : hideTrigger
+            ? ''
+            : `<button
           type="button"
           data-modal-trigger
           class="btn btn--primary btn--lg"
