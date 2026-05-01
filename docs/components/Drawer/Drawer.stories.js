@@ -12,26 +12,15 @@ export default {
       options: ['sm', 'md', 'lg'],
     },
     triggerLabel: { control: 'text' },
-    primaryButton: { control: 'text' },
-    secondaryButton: { control: 'text' },
     closeOnBackdrop: { control: 'boolean' },
   },
 };
 
-const Template = ({
-  title,
-  size,
-  triggerLabel,
-  primaryButton,
-  secondaryButton,
-  closeOnBackdrop,
-}) => {
+const Template = ({ title, size, triggerLabel, closeOnBackdrop }) => {
   const attrs = [
     `title="${title ?? 'Drawer title'}"`,
     `size="${size ?? 'md'}"`,
     `trigger-label="${triggerLabel ?? 'Abrir drawer'}"`,
-    primaryButton ? `primary-button="${primaryButton}"` : '',
-    secondaryButton ? `secondary-button="${secondaryButton}"` : '',
     closeOnBackdrop ? 'close-on-backdrop' : '',
   ]
     .filter(Boolean)
@@ -41,6 +30,8 @@ const Template = ({
     <lui-drawer ${attrs}>
       <p>Conteúdo do drawer. Pode ser qualquer elemento HTML ou componente.</p>
       <p style="margin-top: 12px;">Use o drawer para exibir detalhes, configurações ou ações secundárias sem sair do contexto da página principal.</p>
+      <button slot="actions" data-drawer-close class="btn btn--secondary btn--lg">Cancelar</button>
+      <button slot="actions" class="btn btn--primary btn--lg">Confirmar</button>
     </lui-drawer>
   `;
 };
@@ -50,8 +41,6 @@ Drawer.args = {
   title: 'Título do drawer',
   size: 'md',
   triggerLabel: 'Abrir drawer',
-  primaryButton: 'Confirmar',
-  secondaryButton: 'Cancelar',
   closeOnBackdrop: true,
 };
 
@@ -69,13 +58,11 @@ Large.args = {
   size: 'lg',
 };
 
-export const WithoutActions = Template.bind({});
-WithoutActions.args = {
-  ...Drawer.args,
-  title: 'Drawer sem ações',
-  primaryButton: '',
-  secondaryButton: '',
-};
+export const WithoutActions = () => `
+  <lui-drawer title="Drawer sem ações" trigger-label="Abrir drawer" close-on-backdrop>
+    <p>Este drawer não possui botões de ação no rodapé.</p>
+  </lui-drawer>
+`;
 WithoutActions.storyName = 'Sem ações';
 
 export const CloseOnBackdropOff = Template.bind({});
@@ -87,13 +74,15 @@ CloseOnBackdropOff.args = {
 CloseOnBackdropOff.storyName = 'close-on-backdrop: false';
 
 export const CustomTrigger = () => `
-  <lui-drawer title="Drawer com trigger customizado" primary-button="Confirmar" secondary-button="Cancelar" close-on-backdrop>
+  <lui-drawer title="Drawer com trigger customizado" close-on-backdrop>
     <button slot="trigger" class="btn btn--secondary btn--lg">
       <i class="lui lui-settings" aria-hidden="true"></i>
       Configurações
     </button>
     <p>Conteúdo do drawer com trigger totalmente customizado via <code>slot="trigger"</code>.</p>
     <p style="margin-top: 12px;">Qualquer elemento ou componente pode ser o trigger — basta adicionar o atributo <code>slot="trigger"</code>.</p>
+    <button slot="actions" data-drawer-close class="btn btn--secondary btn--lg">Cancelar</button>
+    <button slot="actions" class="btn btn--primary btn--lg">Confirmar</button>
   </lui-drawer>
 `;
 CustomTrigger.storyName = 'Trigger customizado (slot)';

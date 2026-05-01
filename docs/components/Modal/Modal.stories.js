@@ -1,19 +1,17 @@
 import '../../../packages/lets-ui-tokens/dist/letsui.tokens.css';
 import '../../../packages/styles/dist/letsui.css';
+import 'lets-ui-icons/dist/lets-ui-icons.css';
+import '../../../packages/lets-ui-components/src/index.js';
 
 export default {
   title: 'Components/Modal',
   argTypes: {
-    title: {
-      control: 'text',
-    },
-    body: {
-      control: 'text',
-    },
+    title: { control: 'text' },
     size: {
       control: { type: 'select' },
-      options: ['lg', 'md', 'sm'],
+      options: ['sm', 'md', 'lg'],
     },
+    triggerLabel: { control: 'text' },
   },
   parameters: {
     docs: {
@@ -25,51 +23,59 @@ export default {
   },
 };
 
-const Template = ({ title, body, size }) => {
-  const dialogClasses = ['modal', size && `modal--${size}`]
-    .filter(Boolean)
-    .join(' ');
+const Template = ({ title, size, triggerLabel }) => {
+  const attrs = [
+    `title="${title ?? 'Modal title'}"`,
+    `size="${size ?? 'md'}"`,
+    `trigger-label="${triggerLabel ?? 'Open modal'}"`,
+  ].join(' ');
 
   return `
-      <div class="${dialogClasses}" tabindex="-1" role="dialog">
-        <div class="modal__header">
-          ${title}
-        </div>
-        <div class="modal__body">
-          <p>${body}</p>
-        </div>
-        <div class="modal__footer">
-          <button class="btn btn--secondary btn--lg">Cancel</button>
-          <button class="btn btn--primary btn--lg">Confirm</button>
-        </div>
-      </div>
+    <lui-modal ${attrs}>
+      <p>This is the modal body text. It defines the main content of the modal.</p>
+      <button slot="actions" data-modal-close class="btn btn--secondary btn--lg">Cancel</button>
+      <button slot="actions" class="btn btn--primary btn--lg">Confirm</button>
+    </lui-modal>
   `;
 };
 
 export const Default = Template.bind({});
 Default.args = {
   title: 'Modal title',
-  body: 'This is the modal body text. It defines the main content of the modal.',
   size: 'md',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  ...Default.args,
-  size: 'lg',
-  title: 'Large Modal',
-};
-
-export const Medium = Template.bind({});
-Medium.args = {
-  ...Default.args,
-  size: 'md',
-  title: 'Medium Modal',
+  triggerLabel: 'Open modal',
 };
 
 export const Small = Template.bind({});
 Small.args = {
   ...Default.args,
-  size: 'sm',
   title: 'Small Modal',
+  size: 'sm',
 };
+
+export const Large = Template.bind({});
+Large.args = {
+  ...Default.args,
+  title: 'Large Modal',
+  size: 'lg',
+};
+
+export const WithoutActions = () => `
+  <lui-modal title="Modal without actions" trigger-label="Open modal">
+    <p>This modal has no footer actions.</p>
+  </lui-modal>
+`;
+WithoutActions.storyName = 'Without actions';
+
+export const CustomTrigger = () => `
+  <lui-modal title="Modal with custom trigger">
+    <button slot="trigger" class="btn btn--secondary btn--lg">
+      <i class="lui lui-settings" aria-hidden="true"></i>
+      Settings
+    </button>
+    <p>This modal uses a fully custom trigger via <code>slot="trigger"</code>.</p>
+    <button slot="actions" data-modal-close class="btn btn--secondary btn--lg">Cancel</button>
+    <button slot="actions" class="btn btn--primary btn--lg">Confirm</button>
+  </lui-modal>
+`;
+CustomTrigger.storyName = 'Custom trigger (slot)';
