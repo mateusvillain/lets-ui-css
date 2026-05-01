@@ -10,7 +10,6 @@ import {
 export class LuiModal extends HTMLElement {
   static observedAttributes = [
     'title',
-    'body',
     'size',
     'open',
     'trigger-label',
@@ -40,7 +39,7 @@ export class LuiModal extends HTMLElement {
 
     document.addEventListener('keydown', this.handleDocumentKeydown);
     queueMicrotask(() => {
-      this.captureInitialActions();
+      this.captureInitialContent();
       this.render();
       this.attachEvents();
     });
@@ -62,13 +61,14 @@ export class LuiModal extends HTMLElement {
     }
   }
 
-  captureInitialActions() {
-    if (this._actionsCaptured) {
+  captureInitialContent() {
+    if (this._contentCaptured) {
       return;
     }
 
     const triggers = [];
     const actions = [];
+    const bodyNodes = [];
 
     Array.from(this.childNodes).forEach((node) => {
       if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() === '') {
@@ -85,12 +85,15 @@ export class LuiModal extends HTMLElement {
         triggers.push(node.outerHTML);
       } else if (slot === 'actions') {
         actions.push(node.outerHTML);
+      } else {
+        bodyNodes.push(node.outerHTML);
       }
     });
 
     this._triggerHtml = triggers.join('');
     this._actionsHtml = actions.join('');
-    this._actionsCaptured = true;
+    this._bodyHtml = bodyNodes.join('');
+    this._contentCaptured = true;
   }
 
   open() {
@@ -185,17 +188,12 @@ export class LuiModal extends HTMLElement {
   render() {
     const baseId = ensureElementId(this, 'lui-modal');
     const title = this.getAttribute('title') ?? 'Modal title';
-    const body =
-      this.getAttribute('body') ??
-      'This is the modal body text. It defines the main content of the modal.';
     const size = readSize(this, 'md');
     const open = hasBooleanAttribute(this, 'open');
     const hideTrigger = hasBooleanAttribute(this, 'hide-trigger');
     const triggerLabel = this.getAttribute('trigger-label') ?? 'Open modal';
     const hasSlottedTrigger = Boolean(this._triggerHtml?.trim());
-    const hasSlottedActions = Boolean(
-      this._actionsHtml && this._actionsHtml.trim()
-    );
+    const hasActions = Boolean(this._actionsHtml?.trim());
 
     mountMarkup(
       this,
@@ -241,18 +239,9 @@ export class LuiModal extends HTMLElement {
         >
           <div id="${baseId}-title" class="modal__header">${title}</div>
           <div id="${baseId}-body" class="modal__body">
-            <p>${body}</p>
+            ${this._bodyHtml ?? ''}
           </div>
-          <div class="modal__footer">
-            ${
-              hasSlottedActions
-                ? this._actionsHtml
-                : `
-              <button type="button" data-modal-close class="btn btn--secondary btn--lg">Cancel</button>
-              <button type="button" data-modal-close class="btn btn--primary btn--lg">Confirm</button>
-            `
-            }
-          </div>
+          ${hasActions ? `<div class="modal__footer">${this._actionsHtml}</div>` : ''}
         </div>
       </div>
       `

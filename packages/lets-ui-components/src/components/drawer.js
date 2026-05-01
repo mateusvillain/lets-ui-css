@@ -23,8 +23,6 @@ export class LuiDrawer extends HTMLElement {
     'open',
     'trigger-label',
     'hide-trigger',
-    'primary-button',
-    'secondary-button',
     'close-on-backdrop',
   ];
 
@@ -95,6 +93,7 @@ export class LuiDrawer extends HTMLElement {
     }
 
     const triggerNodes = [];
+    const actionNodes = [];
     const bodyNodes = [];
 
     Array.from(this.childNodes).forEach((node) => {
@@ -102,21 +101,23 @@ export class LuiDrawer extends HTMLElement {
         return;
       }
 
-      if (
-        node.nodeType === Node.ELEMENT_NODE &&
-        node.getAttribute('slot') === 'trigger'
-      ) {
-        triggerNodes.push(node.outerHTML);
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        const slot = node.getAttribute('slot');
+
+        if (slot === 'trigger') {
+          triggerNodes.push(node.outerHTML);
+        } else if (slot === 'actions') {
+          actionNodes.push(node.outerHTML);
+        } else {
+          bodyNodes.push(node.outerHTML);
+        }
       } else {
-        bodyNodes.push(
-          node.nodeType === Node.ELEMENT_NODE
-            ? node.outerHTML
-            : node.textContent
-        );
+        bodyNodes.push(node.textContent);
       }
     });
 
     this._triggerHtml = triggerNodes.join('');
+    this._actionsHtml = actionNodes.join('');
     this._bodyHtml = bodyNodes.join('');
     this._contentCaptured = true;
   }
@@ -264,9 +265,7 @@ export class LuiDrawer extends HTMLElement {
     const open = hasBooleanAttribute(this, 'open');
     const hideTrigger = hasBooleanAttribute(this, 'hide-trigger');
     const triggerLabel = this.getAttribute('trigger-label') ?? 'Abrir drawer';
-    const primaryButton = this.getAttribute('primary-button') ?? '';
-    const secondaryButton = this.getAttribute('secondary-button') ?? '';
-    const hasActions = primaryButton || secondaryButton;
+    const hasActions = Boolean(this._actionsHtml?.trim());
     const hasSlottedTrigger = Boolean(this._triggerHtml?.trim());
 
     mountMarkup(
@@ -320,16 +319,7 @@ export class LuiDrawer extends HTMLElement {
           ${this._bodyHtml ?? ''}
         </div>
 
-        ${
-          hasActions
-            ? `
-          <div class="drawer__footer">
-            ${secondaryButton ? `<button type="button" data-drawer-close class="btn btn--secondary btn--lg">${secondaryButton}</button>` : ''}
-            ${primaryButton ? `<button type="button" class="btn btn--primary btn--lg">${primaryButton}</button>` : ''}
-          </div>
-        `
-            : ''
-        }
+        ${hasActions ? `<div class="drawer__footer">${this._actionsHtml}</div>` : ''}
       </div>
       `
     );
