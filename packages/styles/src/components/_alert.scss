@@ -39,10 +39,7 @@
   &__actions {
     margin-top: fluid(24);
     justify-content: flex-end;
-
-    button:last-child {
-      margin-left: fluid(16);
-    }
+    gap: fluid(16);
   }
 
   $border-color: caution, danger, info, success;
