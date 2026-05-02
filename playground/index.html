@@ -53,16 +53,6 @@
       <div class="row">
         <lui-modal title="Modal padrão" trigger-label="Abrir modal">
           <p>Este modal usa o trigger interno gerado pelo componente.</p>
-          <button
-            slot="actions"
-            data-modal-close
-            class="btn btn--secondary btn--lg"
-          >
-            Cancelar
-          </button>
-          <button slot="actions" class="btn btn--primary btn--lg">
-            Salvar
-          </button>
         </lui-modal>
       </div>
     </section>
@@ -170,7 +160,7 @@
     <section>
       <h2>Drawer — slot="trigger" customizado</h2>
       <div class="row">
-        <lui-drawer title="Filtros" close-on-backdrop>
+        <lui-drawer title="Filtros" close-on-backdrop size="sm">
           <button slot="trigger" class="btn btn--secondary btn--lg">
             <i class="lui lui-filter" aria-hidden="true"></i>
             Filtros
@@ -188,18 +178,7 @@
           </button>
         </lui-drawer>
 
-        <lui-drawer title="Notificações" close-on-backdrop>
-          <button
-            slot="trigger"
-            class="icon-button icon-button--md"
-            aria-label="Abrir notificações"
-          >
-            <i class="lui lui-bell" aria-hidden="true"></i>
-          </button>
-          <p>Você não tem notificações no momento.</p>
-        </lui-drawer>
-
-        <lui-drawer title="Editar perfil" close-on-backdrop>
+        <lui-drawer title="Editar perfil" close-on-backdrop size="xl">
           <lui-icon-button
             slot="trigger"
             label="Editar perfil"
