@@ -4,10 +4,10 @@
   "description": "Let's UI styles and components package",
   "license": "MIT",
   "type": "module",
-  "homepage": "https://github.com/mateusvillain/lets-ui-css#readme",
+  "homepage": "https://github.com/mateusvillain/lets-ui#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mateusvillain/lets-ui-css.git",
+    "url": "https://github.com/mateusvillain/lets-ui.git",
     "directory": "packages/styles"
   },
   "keywords": [

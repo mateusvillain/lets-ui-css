@@ -4,7 +4,7 @@
   "packageManager": "pnpm@10.8.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mateusvillain/lets-ui-css.git"
+    "url": "https://github.com/mateusvillain/lets-ui.git"
   },
   "license": "MIT",
   "author": {
@@ -14,7 +14,7 @@
   },
   "type": "module",
   "bugs": {
-    "url": "https://github.com/mateusvillain/lets-ui-css/issues"
+    "url": "https://github.com/mateusvillain/lets-ui/issues"
   },
   "scripts": {
     "build": "pnpm -r build",
