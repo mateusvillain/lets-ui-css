@@ -1,15 +1,16 @@
 <div align="center">
-  <h1>Let's UI</h1>
+  <a href="https://mateusvillain.github.io/lets-ui/?path=/docs/get-started-introduction--docs">
+    <img width="382" height="130" alt="lets-ui" src="https://github.com/user-attachments/assets/2c816cc7-e418-4a23-81b3-ffe088eb1636" />
+  </a>
+  
   <p>
-    An open-source, framework-agnostic design system built with well-structured design tokens
-    and accessible Web Components.
+    An open-source, framework-agnostic design system built with well-structured design tokens and accessible Web Components.
   </p>
-
-[![release](https://img.shields.io/github/v/release/mateusvillain/lets-ui?logo=github&logoColor=white)](https://github.com/mateusvillain/lets-ui/releases)
-[![npm](https://img.shields.io/npm/v/@lets-ui/styles?label=npm&logo=npm)](https://www.npmjs.com/package/@lets-ui/styles)
-[![jsDelivr](https://img.shields.io/jsdelivr/npm/hm/@lets-ui/styles?logo=jsdelivr&logoColor=white)](https://www.jsdelivr.com/package/npm/@lets-ui/styles)
-[![Figma](https://img.shields.io/badge/figma-library-F24E1E?logo=figma&logoColor=white)](https://www.figma.com/community/file/1535276013550483080/lets-ui)
-[![license](https://img.shields.io/npm/l/@lets-ui/styles)](LICENSE)
+  
+  [![release](https://img.shields.io/github/v/release/mateusvillain/lets-ui?logo=github&logoColor=white)](https://github.com/mateusvillain/lets-ui/releases)
+  [![npm](https://img.shields.io/npm/v/@lets-ui/styles?label=npm&logo=npm)](https://www.npmjs.com/package/@lets-ui/styles)
+  [![Figma](https://img.shields.io/badge/figma-library-F24E1E?logo=figma&logoColor=white)](https://www.figma.com/community/file/1535276013550483080/lets-ui)
+  [![license](https://img.shields.io/npm/l/@lets-ui/styles)](LICENSE)
 
 </div>
 
