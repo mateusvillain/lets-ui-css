@@ -1,0 +1,219 @@
+---
+import "@lets-ui/tokens";
+import "@lets-ui/styles";
+import "lets-ui-icons/dist/lets-ui-icons.css";
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playground — Let's UI</title>
+  </head>
+  <body>
+    <header class="pg-header">
+      <span class="pg-header__logo">Let's UI</span>
+      <span class="pg-header__label">Playground</span>
+    </header>
+
+    <main class="pg-main">
+
+      <!-- ── Buttons ─────────────────────────────────────────── -->
+      <section class="pg-section">
+        <h2 class="pg-section__title">Button</h2>
+        <div class="pg-row">
+          <lui-button label="Primary"></lui-button>
+          <lui-button label="Secondary" variant="secondary"></lui-button>
+          <lui-button label="Ghost" variant="ghost"></lui-button>
+          <lui-button label="Danger" variant="danger"></lui-button>
+          <lui-button label="Disabled" disabled></lui-button>
+        </div>
+        <div class="pg-row">
+          <lui-button label="Small" size="sm"></lui-button>
+          <lui-button label="Medium" size="md"></lui-button>
+          <lui-button label="Large" size="lg"></lui-button>
+        </div>
+      </section>
+
+      <!-- ── Alerts ─────────────────────────────────────────── -->
+      <section class="pg-section">
+        <h2 class="pg-section__title">Alert</h2>
+        <div class="pg-col">
+          <lui-alert variant="info" message="This is an informational alert."></lui-alert>
+          <lui-alert variant="success" message="Changes saved successfully."></lui-alert>
+          <lui-alert variant="warning" message="Please review before continuing."></lui-alert>
+          <lui-alert variant="danger" message="Something went wrong."></lui-alert>
+        </div>
+      </section>
+
+      <!-- ── Tags ───────────────────────────────────────────── -->
+      <section class="pg-section">
+        <h2 class="pg-section__title">Tag</h2>
+        <div class="pg-row">
+          <lui-tag label="Default"></lui-tag>
+          <lui-tag label="Primary" variant="primary"></lui-tag>
+          <lui-tag label="Success" variant="success"></lui-tag>
+          <lui-tag label="Danger" variant="danger"></lui-tag>
+          <lui-tag label="Warning" variant="warning"></lui-tag>
+          <lui-tag label="Neutral" variant="neutral"></lui-tag>
+        </div>
+      </section>
+
+      <!-- ── Modal ─────────────────────────────────────────── -->
+      <section class="pg-section">
+        <h2 class="pg-section__title">Modal — trigger interno</h2>
+        <div class="pg-row">
+          <lui-modal title="Modal padrão" trigger-label="Abrir modal">
+            <p>Este modal usa o trigger interno gerado pelo componente.</p>
+          </lui-modal>
+        </div>
+      </section>
+
+      <section class="pg-section">
+        <h2 class="pg-section__title">Modal — com ações</h2>
+        <div class="pg-row">
+          <lui-modal title="Confirmar ação" trigger-label="Abrir modal">
+            <p>Tem certeza que deseja continuar?</p>
+            <lui-button slot="actions" data-modal-close label="Cancelar" variant="secondary"></lui-button>
+            <lui-button slot="actions" label="Confirmar"></lui-button>
+          </lui-modal>
+        </div>
+      </section>
+
+      <section class="pg-section">
+        <h2 class="pg-section__title">Modal — slot="trigger" customizado</h2>
+        <div class="pg-row">
+          <lui-modal title="Modal com trigger customizado">
+            <lui-button label="Configurar" size="lg" variant="secondary" slot="trigger"></lui-button>
+            <p>O trigger é qualquer elemento com <code>slot="trigger"</code>.</p>
+            <lui-button slot="actions" data-modal-close label="Cancelar" variant="secondary"></lui-button>
+            <lui-button slot="actions" label="Salvar"></lui-button>
+          </lui-modal>
+
+          <lui-modal title="Informações">
+            <lui-icon-button slot="trigger" label="Ver informações" icon="info-circle"></lui-icon-button>
+            <p>Acesse os detalhes do item selecionado.</p>
+          </lui-modal>
+        </div>
+      </section>
+
+      <!-- ── Drawer ────────────────────────────────────────── -->
+      <section class="pg-section">
+        <h2 class="pg-section__title">Drawer — trigger interno</h2>
+        <div class="pg-row">
+          <lui-drawer title="Drawer padrão" trigger-label="Abrir drawer" close-on-backdrop>
+            <p>Conteúdo do drawer com trigger interno.</p>
+            <lui-button slot="actions" data-drawer-close label="Cancelar" variant="secondary"></lui-button>
+            <lui-button slot="actions" label="Confirmar"></lui-button>
+          </lui-drawer>
+        </div>
+      </section>
+
+      <section class="pg-section">
+        <h2 class="pg-section__title">Drawer — slot="trigger" customizado</h2>
+        <div class="pg-row">
+          <lui-drawer title="Filtros" close-on-backdrop size="sm">
+            <lui-button slot="trigger" label="Filtros" variant="secondary" icon-left="filter"></lui-button>
+            <p>Defina os filtros para refinar os resultados.</p>
+            <lui-button slot="actions" data-drawer-close label="Limpar" variant="secondary"></lui-button>
+            <lui-button slot="actions" label="Aplicar"></lui-button>
+          </lui-drawer>
+
+          <lui-drawer title="Editar perfil" close-on-backdrop size="xl">
+            <lui-icon-button slot="trigger" label="Editar perfil" icon="pencil"></lui-icon-button>
+            <p>Edite as informações do seu perfil.</p>
+            <lui-button slot="actions" data-drawer-close label="Cancelar" variant="secondary"></lui-button>
+            <lui-button slot="actions" label="Salvar"></lui-button>
+          </lui-drawer>
+        </div>
+      </section>
+
+    </main>
+
+    <script>
+      import "@lets-ui/components";
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    background: var(--color-bg-surface-neutral, #f5f5f5);
+    color: var(--color-text-body, #1a1a1a);
+  }
+
+  code {
+    font-family: monospace;
+    background: var(--color-bg-container-neutral, #e8e8e8);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.875em;
+  }
+
+  .pg-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    border-bottom: 1px solid var(--color-border-neutral, #e0e0e0);
+    background: var(--color-bg-surface-primary, #fff);
+  }
+
+  .pg-header__logo {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .pg-header__label {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .pg-main {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding: 48px 32px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .pg-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .pg-section__title {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.5;
+  }
+
+  .pg-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .pg-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+</style>

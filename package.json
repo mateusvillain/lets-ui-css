@@ -27,7 +27,8 @@
     "prepare": "husky",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "playground": "pnpm --filter @lets-ui/playground dev"
   },
   "lint-staged": {
     "*.{js,ts,css,scss,json,md}": [
