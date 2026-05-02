@@ -1,3 +1,22 @@
+# Changelog
+
+## [v1.0.0] - 02-05-2026
+
+### Added
+
+- `@lets-ui/tokens` — Design tokens as CSS custom properties and SCSS variables with light/dark theme support and multi-brand via `data-theme` / `data-brand` attributes.
+- `@lets-ui/styles` — Component SCSS compiled to `letsui.min.css`, covering all design system components.
+- `@lets-ui/components` — Vanilla JS Web Components (custom elements, no framework) for all design system components: Alert, Breadcrumb, Button, Card, Checkbox, Divider, Drawer, Dropdown Menu, Icon Button, Input, Link, Modal, Radio, Select, Shortcut, Switch, Tabs, Tag, Textarea, Tooltip.
+
+### Changed
+
+- Migrated monorepo to fixed versioning via Changesets — all packages share a unified version number.
+- Replaced tag-based release workflow with Changesets GitHub Action (automated "Version Packages" PR flow).
+
+---
+
+<!-- Historical entries below are from the pre-monorepo era (single package, versions 0.x). -->
+
 ## 0.19.0
 
 ### Added
@@ -46,7 +65,7 @@
 
 ## 0.16.0
 
-### Refactor
+### Changed
 
 - Renamed `accent` token to `primary`
 - Renamed `border-radius-1xs` token to `border-radius-xs`
@@ -137,21 +156,14 @@
 
 ### Added
 
-- Elevation tokens:
-  - Base
-  - Floating
-  - Overlay
-- Card
+- Elevation tokens (Base, Floating, Overlay)
+- Card component
 
 ## 0.9.0
 
 ### Added
 
-- New variants for tag:
-  - Primary
-  - Danger
-  - Success
-  - Neutral
+- New variants for tag: Primary, Danger, Success, Neutral
 
 ## 0.8.2
 
@@ -161,13 +173,9 @@
 
 ## 0.8.1
 
-### New
+### Added
 
-- Brand design tokens structure:
-  - Primary and secondary color (light and dark)
-  - Font-family for heading and body texts
-  - Font-size for desktop and mobile devices
-  - Border-radius default for brand interfaces
+- Brand design tokens structure: primary and secondary colors (light/dark), font-family for headings and body, font-size for desktop and mobile, default border-radius.
 
 ### Removed
 
@@ -175,37 +183,27 @@
 
 ## 0.8.0
 
-### New
+### Added
 
 - Style Dictionary + Tokens Studio + GitHub connections
-
-### Added
-
 - All tokens in `.json` files
-
-## 0.8.0
-
-### Added
-
-- Header
+- Header component
 
 ## 0.7.0
 
-### Improvement
+### Changed
 
-- Grid structure:
-  - Now grid have 12 columns by default
-  - New classes for large, medium and small devices.
+- Grid structure now has 12 columns by default with new classes for large, medium, and small devices.
 
 ## 0.6.0
 
-### Improvement
+### Changed
 
 - Hover, active and focus microinteraction
 
 ## 0.5.0
 
-### New
+### Added
 
 - Baseline file to import all styles and components
 
@@ -227,32 +225,10 @@
 
 ### Added
 
-- 2 base components
-  - Breadcrumb
-  - Checkbox
-  - Radio Button
-
-## 0.2.0
-
-### Added
-
-- 2 base components
-  - Text field
-  - Select
+- Breadcrumb, Checkbox, Radio Button, Text field, Select
 
 ## 0.1.0
 
 ### Added
 
-- Initial project structure for the design system
-- Components:
-  - Button
-  - Link
-  - Tag
-- Design tokens:
-  - Primitive spacing tokens and styles
-  - Primitive color tokens and styles
-  - Primitive border tokens and styles
-  - Primitive typography tokens and styles
-  - Semantic color tokens
-- Reset CSS and Flexbox styles included
+- Initial project structure: Button, Link, Tag components; primitive spacing, color, border, and typography tokens; reset CSS and flexbox styles.
