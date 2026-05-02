@@ -123,23 +123,11 @@ importers:
       '@lets-ui/tokens':
         specifier: workspace:*
         version: link:../lets-ui-tokens
-      utilities:
-        specifier: workspace:*
-        version: link:../utilities
 
   packages/lets-ui-tokens: {}
 
   packages/styles:
     devDependencies:
-      '@lets-ui/tokens':
-        specifier: workspace:*
-        version: link:../lets-ui-tokens
-      utilities:
-        specifier: workspace:*
-        version: link:../utilities
-
-  packages/utilities:
-    dependencies:
       '@lets-ui/tokens':
         specifier: workspace:*
         version: link:../lets-ui-tokens

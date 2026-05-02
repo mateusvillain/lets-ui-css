@@ -1,7 +1,7 @@
 @use 'sass:map';
-@use 'utilities/src/functions' as *;
-@use 'utilities/src/tokens.map' as *;
-@use 'utilities/src/mixins' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/tokens.map' as *;
+@use '../utilities/mixins' as *;
 @use 'field';
 
 lui-textarea {

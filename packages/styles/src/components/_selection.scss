@@ -1,5 +1,5 @@
-@use 'utilities/src/functions' as *;
-@use 'utilities/src/mixins' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
 
 @mixin wrapper {
   display: flex;

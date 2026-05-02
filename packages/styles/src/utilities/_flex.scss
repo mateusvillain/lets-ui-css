@@ -1,6 +1,6 @@
 $flex-display: (
   flex: flex,
-  inline-flex: inline-flex
+  inline-flex: inline-flex,
 );
 
 @each $class, $value in $flex-display {
@@ -13,7 +13,7 @@ $flex-direction: (
   row: row,
   row-reverse: row-reverse,
   col: column,
-  col-reverse: column-reverse
+  col-reverse: column-reverse,
 );
 
 @each $name, $value in $flex-direction {
@@ -25,7 +25,7 @@ $flex-direction: (
 $flex-wrap: (
   wrap: wrap,
   nowrap: nowrap,
-  wrap-reverse: wrap-reverse
+  wrap-reverse: wrap-reverse,
 );
 
 @each $name, $value in $flex-wrap {
@@ -40,7 +40,7 @@ $justify: (
   end: flex-end,
   between: space-between,
   around: space-around,
-  evenly: space-evenly
+  evenly: space-evenly,
 );
 
 @each $name, $value in $justify {
@@ -54,7 +54,7 @@ $items: (
   center: center,
   end: flex-end,
   stretch: stretch,
-  baseline: baseline
+  baseline: baseline,
 );
 
 @each $name, $value in $items {
@@ -68,7 +68,7 @@ $content: (
   center: center,
   end: flex-end,
   between: space-between,
-  around: space-around
+  around: space-around,
 );
 
 @each $name, $value in $content {
@@ -81,7 +81,7 @@ $self: (
   start: flex-start,
   center: center,
   end: flex-end,
-  stretch: stretch
+  stretch: stretch,
 );
 
 @each $name, $value in $self {
@@ -92,7 +92,7 @@ $self: (
 
 $grow: (
   0: 0,
-  1: 1
+  1: 1,
 );
 
 @each $name, $value in $grow {
@@ -103,7 +103,7 @@ $grow: (
 
 $shrink: (
   0: 0,
-  1: 1
+  1: 1,
 );
 
 @each $name, $value in $shrink {

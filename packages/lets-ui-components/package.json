@@ -55,7 +55,6 @@
   },
   "devDependencies": {
     "@lets-ui/tokens": "workspace:*",
-    "@lets-ui/styles": "workspace:*",
-    "utilities": "workspace:*"
+    "@lets-ui/styles": "workspace:*"
   }
 }

@@ -1,4 +1,4 @@
-@use 'utilities/src/functions' as *;
+@use '../utilities/functions' as *;
 
 .alert {
   color: text(body);

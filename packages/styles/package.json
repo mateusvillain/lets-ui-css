@@ -25,8 +25,7 @@
     "dist"
   ],
   "devDependencies": {
-    "@lets-ui/tokens": "workspace:*",
-    "utilities": "workspace:*"
+    "@lets-ui/tokens": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

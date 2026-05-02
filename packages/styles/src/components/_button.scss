@@ -1,7 +1,7 @@
 @use 'sass:list';
 @use 'sass:map';
-@use 'utilities/src/functions' as *;
-@use 'utilities/src/mixins' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
 
 $variants: primary, secondary, neutral, danger, success;
 $colors: (

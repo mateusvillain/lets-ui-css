@@ -1,6 +1,6 @@
 @use 'sass:map';
-@use 'utilities/src/functions' as *;
-@use 'utilities/src/tokens.map' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/tokens.map' as *;
 
 .radius- {
   @each $border-radius, $value in map.get($border, radius) {
