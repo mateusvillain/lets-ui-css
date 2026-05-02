@@ -307,7 +307,7 @@ export class LuiDrawer extends HTMLElement {
           <span id="${baseId}-title" class="drawer__title">${title}</span>
           <button
             type="button"
-            class="icon-button icon-button--md"
+            class="icon-button icon-button--lg"
             data-drawer-close
             aria-label="Fechar drawer"
           >
