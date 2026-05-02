@@ -28,6 +28,9 @@
     "@lets-ui/tokens": "workspace:*",
     "utilities": "workspace:*"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build:css": "sass --load-path=node_modules src/index.scss dist/letsui.css --no-source-map",
     "build:css:minify": "postcss dist/letsui.css --use cssnano --output dist/letsui.min.css",

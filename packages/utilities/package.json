@@ -1,6 +1,7 @@
 {
   "name": "utilities",
   "version": "1.0.0",
+  "private": true,
   "description": "Let's UI utility SCSS package",
   "license": "MIT",
   "type": "module",

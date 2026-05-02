@@ -45,6 +45,9 @@
     "./tooltip": "./src/components/tooltip.js",
     "./textarea": "./src/components/textarea.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "node ./scripts/build-styles.mjs",
     "clean": "rm -rf dist",

@@ -25,6 +25,9 @@
     "./css": "./dist/letsui.tokens.css",
     "./scss": "./dist/letsui.tokens.scss"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tz build",
     "prepack": "pnpm run build",
