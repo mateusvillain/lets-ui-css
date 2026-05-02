@@ -237,7 +237,17 @@ export class LuiModal extends HTMLElement {
           aria-labelledby="${baseId}-title"
           aria-describedby="${baseId}-body"
         >
-          <div id="${baseId}-title" class="modal__header">${title}</div>
+          <div class="modal__header">
+            <span id="${baseId}-title" class="modal__title">${title}</span>
+            <button
+              type="button"
+              class="icon-button icon-button--lg"
+              data-modal-close
+              aria-label="Fechar modal"
+            >
+              <i class="lui lui-x" aria-hidden="true"></i>
+            </button>
+          </div>
           <div id="${baseId}-body" class="modal__body">
             ${this._bodyHtml ?? ''}
           </div>

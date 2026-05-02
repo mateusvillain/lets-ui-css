@@ -31,14 +31,16 @@
   }
 
   &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: fluid(24);
-
+    @include flex(row, center, space-between, fluid(16), nowrap);
     @include font-scale(block-title);
 
+    flex-shrink: 0;
+    padding: fluid(24) fluid(24) fluid(8);
     color: text(heading);
+  }
+
+  &__title {
+    flex: 1;
   }
 
   &__body {
