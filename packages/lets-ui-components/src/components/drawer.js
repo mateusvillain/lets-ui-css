@@ -23,8 +23,6 @@ export class LuiDrawer extends HTMLElement {
     'open',
     'trigger-label',
     'hide-trigger',
-    'primary-button',
-    'secondary-button',
     'close-on-backdrop',
   ];
 
@@ -94,19 +92,33 @@ export class LuiDrawer extends HTMLElement {
       return;
     }
 
-    const nodes = [];
+    const triggerNodes = [];
+    const actionNodes = [];
+    const bodyNodes = [];
 
     Array.from(this.childNodes).forEach((node) => {
       if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() === '') {
         return;
       }
 
-      nodes.push(
-        node.nodeType === Node.ELEMENT_NODE ? node.outerHTML : node.textContent
-      );
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        const slot = node.getAttribute('slot');
+
+        if (slot === 'trigger') {
+          triggerNodes.push(node.outerHTML);
+        } else if (slot === 'actions') {
+          actionNodes.push(node.outerHTML);
+        } else {
+          bodyNodes.push(node.outerHTML);
+        }
+      } else {
+        bodyNodes.push(node.textContent);
+      }
     });
 
-    this._bodyHtml = nodes.join('');
+    this._triggerHtml = triggerNodes.join('');
+    this._actionsHtml = actionNodes.join('');
+    this._bodyHtml = bodyNodes.join('');
     this._contentCaptured = true;
   }
 
@@ -130,7 +142,9 @@ export class LuiDrawer extends HTMLElement {
     const isOpen = hasBooleanAttribute(this, 'open');
     const backdrop = this.querySelector('[data-drawer-backdrop]');
     const panel = this.querySelector('[data-drawer-panel]');
-    const trigger = this.querySelector('[data-drawer-trigger]');
+    const trigger =
+      this.querySelector('[data-drawer-trigger]') ??
+      this.querySelector('[slot="trigger"]');
 
     if (!panel || !backdrop) {
       return;
@@ -212,13 +226,23 @@ export class LuiDrawer extends HTMLElement {
   }
 
   attachEvents() {
-    const trigger = this.querySelector('[data-drawer-trigger]');
+    const trigger =
+      this.querySelector('[data-drawer-trigger]') ??
+      this.querySelector('[slot="trigger"]');
     const backdrop = this.querySelector('[data-drawer-backdrop]');
     const closeButtons = this.querySelectorAll('[data-drawer-close]');
     const closeOnBackdrop = hasBooleanAttribute(this, 'close-on-backdrop');
 
     if (trigger) {
       trigger.onclick = () => this.open();
+
+      if (!trigger.hasAttribute('data-drawer-trigger')) {
+        const panel = this.querySelector('[data-drawer-panel]');
+        trigger.setAttribute('aria-haspopup', 'dialog');
+        if (panel) {
+          trigger.setAttribute('aria-controls', panel.id);
+        }
+      }
     }
 
     closeButtons.forEach((btn) => {
@@ -241,17 +265,18 @@ export class LuiDrawer extends HTMLElement {
     const open = hasBooleanAttribute(this, 'open');
     const hideTrigger = hasBooleanAttribute(this, 'hide-trigger');
     const triggerLabel = this.getAttribute('trigger-label') ?? 'Abrir drawer';
-    const primaryButton = this.getAttribute('primary-button') ?? '';
-    const secondaryButton = this.getAttribute('secondary-button') ?? '';
-    const hasActions = primaryButton || secondaryButton;
+    const hasActions = Boolean(this._actionsHtml?.trim());
+    const hasSlottedTrigger = Boolean(this._triggerHtml?.trim());
 
     mountMarkup(
       this,
       `
       ${
-        hideTrigger
-          ? ''
-          : `<button
+        hasSlottedTrigger
+          ? this._triggerHtml
+          : hideTrigger
+            ? ''
+            : `<button
           type="button"
           data-drawer-trigger
           class="btn btn--primary btn--lg"
@@ -282,7 +307,7 @@ export class LuiDrawer extends HTMLElement {
           <span id="${baseId}-title" class="drawer__title">${title}</span>
           <button
             type="button"
-            class="icon-button icon-button--md"
+            class="icon-button icon-button--lg"
             data-drawer-close
             aria-label="Fechar drawer"
           >
@@ -294,16 +319,7 @@ export class LuiDrawer extends HTMLElement {
           ${this._bodyHtml ?? ''}
         </div>
 
-        ${
-          hasActions
-            ? `
-          <div class="drawer__footer">
-            ${secondaryButton ? `<button type="button" data-drawer-close class="btn btn--secondary btn--lg">${secondaryButton}</button>` : ''}
-            ${primaryButton ? `<button type="button" class="btn btn--primary btn--lg">${primaryButton}</button>` : ''}
-          </div>
-        `
-            : ''
-        }
+        ${hasActions ? `<div class="drawer__footer">${this._actionsHtml}</div>` : ''}
       </div>
       `
     );

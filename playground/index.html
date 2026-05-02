@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playground — Let's UI</title>
+    <link
+      rel="stylesheet"
+      href="../packages/lets-ui-tokens/dist/letsui.tokens.css"
+    />
+    <link rel="stylesheet" href="../packages/styles/dist/letsui.css" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/lets-ui-icons/dist/lets-ui-icons.css"
+    />
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 48px 32px;
+        background: var(--color-bg-surface-neutral, #f5f5f5);
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+      }
+
+      section {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        opacity: 0.5;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Modal: trigger padrão + slot="actions" com <button> -->
+    <section>
+      <h2>Modal — slot="actions" com &lt;button&gt;</h2>
+      <div class="row">
+        <lui-modal title="Modal padrão" trigger-label="Abrir modal">
+          <p>Este modal usa o trigger interno gerado pelo componente.</p>
+        </lui-modal>
+      </div>
+    </section>
+
+    <!-- Modal: slot="actions" com <lui-button> -->
+    <section>
+      <h2>Modal — slot="actions" com &lt;lui-button&gt;</h2>
+      <div class="row">
+        <lui-modal title="Modal com lui-button" trigger-label="Abrir modal">
+          <p>As ações usam o componente <code>&lt;lui-button&gt;</code>.</p>
+          <lui-button
+            slot="actions"
+            data-modal-close
+            label="Cancelar"
+            variant="secondary"
+          ></lui-button>
+          <lui-button slot="actions" label="Salvar"></lui-button>
+        </lui-modal>
+      </div>
+    </section>
+
+    <!-- Modal: slot="trigger" customizado -->
+    <section>
+      <h2>Modal — slot="trigger" customizado</h2>
+      <div class="row">
+        <lui-modal title="Modal com trigger customizado">
+          <lui-button
+            label="Configurar tudo"
+            size="lg"
+            variant="secondary"
+            slot="trigger"
+          ></lui-button>
+          <p>O trigger é qualquer elemento definido com slot="trigger".</p>
+          <button
+            slot="actions"
+            data-modal-close
+            class="btn btn--secondary btn--lg"
+          >
+            Cancelar
+          </button>
+          <button slot="actions" class="btn btn--primary btn--lg">
+            Salvar
+          </button>
+        </lui-modal>
+
+        <lui-modal title="Informações">
+          <button
+            slot="trigger"
+            class="icon-button icon-button--md"
+            aria-label="Ver informações"
+          >
+            <i class="lui lui-info-circle" aria-hidden="true"></i>
+          </button>
+          <p>Acesse os detalhes do item selecionado.</p>
+        </lui-modal>
+      </div>
+    </section>
+
+    <!-- Drawer: trigger padrão + slot="actions" com <button> -->
+    <section>
+      <h2>Drawer — slot="actions" com &lt;button&gt;</h2>
+      <div class="row">
+        <lui-drawer
+          title="Drawer padrão"
+          trigger-label="Abrir drawer"
+          close-on-backdrop
+        >
+          <p>Conteúdo do drawer com trigger interno gerado pelo componente.</p>
+          <button
+            slot="actions"
+            data-drawer-close
+            class="btn btn--secondary btn--lg"
+          >
+            Cancelar
+          </button>
+          <button slot="actions" class="btn btn--primary btn--lg">
+            Confirmar
+          </button>
+        </lui-drawer>
+      </div>
+    </section>
+
+    <!-- Drawer: slot="actions" com <lui-button> -->
+    <section>
+      <h2>Drawer — slot="actions" com &lt;lui-button&gt;</h2>
+      <div class="row">
+        <lui-drawer
+          title="Drawer com lui-button"
+          trigger-label="Abrir drawer"
+          close-on-backdrop
+        >
+          <p>As ações usam o componente <code>&lt;lui-button&gt;</code>.</p>
+          <lui-button
+            slot="actions"
+            data-drawer-close
+            label="Cancelar"
+            variant="secondary"
+          ></lui-button>
+          <lui-button slot="actions" label="Confirmar"></lui-button>
+        </lui-drawer>
+      </div>
+    </section>
+
+    <!-- Drawer: slot="trigger" customizado -->
+    <section>
+      <h2>Drawer — slot="trigger" customizado</h2>
+      <div class="row">
+        <lui-drawer title="Filtros" close-on-backdrop size="sm">
+          <button slot="trigger" class="btn btn--secondary btn--lg">
+            <i class="lui lui-filter" aria-hidden="true"></i>
+            Filtros
+          </button>
+          <p>Defina os filtros para refinar os resultados.</p>
+          <button
+            slot="actions"
+            data-drawer-close
+            class="btn btn--secondary btn--lg"
+          >
+            Limpar
+          </button>
+          <button slot="actions" class="btn btn--primary btn--lg">
+            Aplicar
+          </button>
+        </lui-drawer>
+
+        <lui-drawer title="Editar perfil" close-on-backdrop size="xl">
+          <lui-icon-button
+            slot="trigger"
+            label="Editar perfil"
+            icon="pencil"
+          ></lui-icon-button>
+          <p>Edite as informações do seu perfil.</p>
+          <button
+            slot="actions"
+            data-drawer-close
+            class="btn btn--secondary btn--lg"
+          >
+            Cancelar
+          </button>
+          <button slot="actions" class="btn btn--primary btn--lg">
+            Salvar
+          </button>
+        </lui-drawer>
+      </div>
+    </section>
+
+    <script
+      type="module"
+      src="../packages/lets-ui-components/src/index.js"
+    ></script>
+  </body>
+</html>

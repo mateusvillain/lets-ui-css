@@ -12,37 +12,24 @@ export default {
     },
     title: { control: 'text' },
     content: { control: 'text' },
-    primaryButton: { control: 'text' },
-    secondaryButton: { control: 'text' },
   },
 };
 
-const Template = ({
-  variant,
-  title,
-  content,
-  primaryButton,
-  secondaryButton,
-}) => {
-  const attrs = [
-    `variant="${variant ?? 'success'}"`,
-    `title="${title ?? ''}"`,
-    `content="${content ?? ''}"`,
-    primaryButton ? `primary-button="${primaryButton}"` : '',
-    secondaryButton ? `secondary-button="${secondaryButton}"` : '',
-  ]
-    .filter(Boolean)
-    .join(' ');
-
-  return `<lui-alert ${attrs}></lui-alert>`;
-};
+const Template = ({ variant, title, content }) => `
+  <lui-alert
+    variant="${variant ?? 'success'}"
+    title="${title ?? ''}"
+    content="${content ?? ''}"
+  >
+    <button slot="actions" class="btn btn--secondary btn--lg">Dismiss</button>
+    <button slot="actions" class="btn btn--primary btn--lg">Action</button>
+  </lui-alert>
+`;
 
 const baseArgs = {
   variant: 'success',
   title: 'Alert title',
   content: 'Description',
-  primaryButton: 'Button',
-  secondaryButton: 'Button',
 };
 
 export const Alert = Template.bind({});
@@ -59,3 +46,12 @@ Danger.args = { ...baseArgs, variant: 'danger' };
 
 export const Info = Template.bind({});
 Info.args = { ...baseArgs, variant: 'info' };
+
+export const WithoutActions = () => `
+  <lui-alert
+    variant="success"
+    title="Alert sem ações"
+    content="Este alert não possui botões de ação."
+  ></lui-alert>
+`;
+WithoutActions.storyName = 'Without actions';

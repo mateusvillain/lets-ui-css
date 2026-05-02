@@ -8,20 +8,52 @@ const VARIANT_ICONS = {
 };
 
 export class LuiAlert extends HTMLElement {
-  static observedAttributes = [
-    'variant',
-    'title',
-    'content',
-    'primary-button',
-    'secondary-button',
-  ];
+  static observedAttributes = ['variant', 'title', 'content'];
 
   connectedCallback() {
-    this.render();
+    if (this._initialized) {
+      return;
+    }
+
+    this._initialized = true;
+
+    queueMicrotask(() => {
+      this.captureInitialContent();
+      this.render();
+    });
   }
 
   attributeChangedCallback() {
+    if (!this._initialized) {
+      return;
+    }
+
     this.render();
+  }
+
+  captureInitialContent() {
+    if (this._contentCaptured) {
+      return;
+    }
+
+    const actions = [];
+
+    Array.from(this.childNodes).forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() === '') {
+        return;
+      }
+
+      if (node.nodeType !== Node.ELEMENT_NODE) {
+        return;
+      }
+
+      if (node.getAttribute('slot') === 'actions') {
+        actions.push(node.outerHTML);
+      }
+    });
+
+    this._actionsHtml = actions.join('');
+    this._contentCaptured = true;
   }
 
   render() {
@@ -30,10 +62,8 @@ export class LuiAlert extends HTMLElement {
     const variant = VARIANT_ICONS[rawVariant] ? rawVariant : 'success';
     const title = this.getAttribute('title') ?? '';
     const content = this.getAttribute('content') ?? '';
-    const primaryButton = this.getAttribute('primary-button') ?? '';
-    const secondaryButton = this.getAttribute('secondary-button') ?? '';
-    const hasActions = primaryButton || secondaryButton;
     const iconName = VARIANT_ICONS[variant];
+    const hasActions = Boolean(this._actionsHtml?.trim());
 
     mountMarkup(
       this,
@@ -53,16 +83,7 @@ export class LuiAlert extends HTMLElement {
             <p id="${baseId}-content" class="body--lg">${content}</p>
           </div>
         </div>
-        ${
-          hasActions
-            ? `
-          <div class="alert__actions">
-            ${secondaryButton ? `<button class="btn btn--secondary btn--lg">${secondaryButton}</button>` : ''}
-            ${primaryButton ? `<button class="btn btn--primary btn--lg">${primaryButton}</button>` : ''}
-          </div>
-        `
-            : ''
-        }
+        ${hasActions ? `<div class="alert__actions">${this._actionsHtml}</div>` : ''}
       </div>
       `
     );

@@ -45,6 +45,10 @@ $size: (
   ),
 );
 
+lui-button {
+  display: contents;
+}
+
 button {
   &.btn {
     position: relative;

@@ -25,7 +25,9 @@ export function mountMarkup(host, markup) {
 
 export function readSize(element, fallback = 'md') {
   const size = element.getAttribute('size') ?? fallback;
-  return size === 'lg' || size === 'md' || size === 'sm' ? size : fallback;
+  return size === 'xl' || size === 'lg' || size === 'md' || size === 'sm'
+    ? size
+    : fallback;
 }
 
 export function ensureElementId(element, prefix) {
