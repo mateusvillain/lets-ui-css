@@ -9,7 +9,7 @@ export default {
     title: { control: 'text' },
     size: {
       control: { type: 'select' },
-      options: ['sm', 'md', 'lg'],
+      options: ['sm', 'md', 'lg', 'xl'],
     },
     triggerLabel: { control: 'text' },
     closeOnBackdrop: { control: 'boolean' },
@@ -72,6 +72,14 @@ CloseOnBackdropOff.args = {
   closeOnBackdrop: false,
 };
 CloseOnBackdropOff.storyName = 'close-on-backdrop: false';
+
+export const XLarge = Template.bind({});
+XLarge.args = {
+  ...Drawer.args,
+  title: 'Drawer extra grande',
+  size: 'xl',
+};
+XLarge.storyName = 'Extra Large (xl)';
 
 export const CustomTrigger = () => `
   <lui-drawer title="Drawer com trigger customizado" close-on-backdrop>
