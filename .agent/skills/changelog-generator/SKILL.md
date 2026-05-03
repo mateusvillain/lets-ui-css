@@ -1,22 +1,29 @@
 ---
 name: changelog-generator
-description: Gerar e publicar releases de forma consistente a partir do histórico de commits. Usar esta skill quando for necessário atualizar `CHANGELOG.md`, definir próxima versão SemVer, criar tag Git, dar push da tag e criar release no GitHub. Aplicar em pedidos como “gerar changelog”, “preparar release”, “versionar projeto”, “criar tag/release”, ou quando houver necessidade de consolidar os últimos commits em notas de versão.
+description: Gerar e publicar releases de forma consistente a partir do histórico de commits. Usar esta skill quando for necessário atualizar `CHANGELOG.md`, definir próxima versão SemVer, criar tag Git, dar push da tag e criar release no GitHub. Aplicar em pedidos como "gerar changelog", "preparar release", "versionar projeto", "criar tag/release", ou quando houver necessidade de consolidar os últimos commits em notas de versão.
 ---
 
 # Changelog Generator
 
 Conduzir o fluxo completo de release com rastreabilidade: commits recentes -> entrada de changelog -> versão -> tag -> release no GitHub.
 
+## Modelo de Versionamento
+
+Este projeto usa **lockstep versioning**: todos os packages (`@lets-ui/tokens`, `@lets-ui/styles`, `@lets-ui/components`) compartilham **sempre a mesma versão**. A tag canônica é `vX.Y.Z` (na raiz). Não existem tags por package.
+
+O único `CHANGELOG.md` relevante é o da raiz do monorepo. Os arquivos em cada package são stubs que apontam para ele.
+
 ## Fluxo Obrigatório
 
 1. Verificar branch atual, árvore limpa e sincronismo com remoto.
 2. Levantar commits desde a última tag.
 3. Definir bump de versão (SemVer).
-4. Atualizar `CHANGELOG.md`.
-5. Criar commit de release.
-6. Criar tag anotada da versão.
-7. Dar push da branch e da tag.
-8. Criar release no GitHub usando as notas do changelog.
+4. Atualizar `CHANGELOG.md` (raiz).
+5. Atualizar `version` nos três `package.json` publicáveis para o mesmo valor.
+6. Criar commit de release.
+7. Criar tag anotada da versão.
+8. Dar push da branch e da tag.
+9. Criar release no GitHub usando as notas do changelog.
 
 ## Pré-checks (Bloqueantes)
 
@@ -25,7 +32,7 @@ Executar antes de editar arquivos:
 - Confirmar `git status --porcelain` vazio.
 - Confirmar branch de release (normalmente `main`).
 - Confirmar que a branch local está atualizada (`git fetch --tags` e comparação com remoto).
-- Identificar última tag com `git describe --tags --abbrev=0` (quando existir).
+- Identificar última tag com `git describe --tags --abbrev=0` (formato `vX.Y.Z`).
 - Interromper se a nova versão já existir em tag remota/local.
 
 ## Coletar Commits
@@ -50,7 +57,7 @@ Se a versão não vier no pedido:
 - Inferir pelos commits.
 - Explicar a inferência na saída.
 
-## Atualizar `CHANGELOG.md`
+## Atualizar `CHANGELOG.md` (raiz)
 
 Seguir o padrão em `references/changelog-format.md`.
 Incluir:
@@ -61,11 +68,21 @@ Incluir:
 
 Não inventar mudanças: usar apenas commits reais.
 
+## Atualizar `package.json` dos packages publicáveis
+
+Alterar o campo `version` em:
+
+- `packages/lets-ui-tokens/package.json`
+- `packages/styles/package.json`
+- `packages/lets-ui-components/package.json`
+
+Todos devem receber o mesmo valor.
+
 ## Publicação (Tag + GitHub Release)
 
 Executar nesta ordem:
 
-1. Commitar changelog e bump de versão (se houver arquivo de versão).
+1. Commitar `CHANGELOG.md` e os três `package.json` com a nova versão.
 2. Criar tag anotada: `git tag -a vX.Y.Z -m "vX.Y.Z"`.
 3. Dar push da branch.
 4. Dar push da tag: `git push origin vX.Y.Z`.
@@ -90,7 +107,7 @@ Sempre informar:
 - Última tag encontrada.
 - Intervalo de commits usado.
 - Versão escolhida e justificativa (`major`/`minor`/`patch`).
-- Arquivos alterados (ex.: `CHANGELOG.md`, `package.json`).
+- Arquivos alterados (`CHANGELOG.md`, três `package.json`).
 - Status de commit, tag, push e release GitHub.
 - Pendências ou falhas, com comando recomendado para recuperação.
 
