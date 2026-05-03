@@ -1,7 +1,7 @@
 ---
-import "@lets-ui/tokens";
-import "@lets-ui/styles";
-import "lets-ui-icons/dist/lets-ui-icons.css";
+import '@lets-ui/tokens';
+import '@lets-ui/styles';
+import 'lets-ui-icons/dist/lets-ui-icons.css';
 ---
 
 <!doctype html>
@@ -18,7 +18,6 @@ import "lets-ui-icons/dist/lets-ui-icons.css";
     </header>
 
     <main class="pg-main">
-
       <!-- ── Buttons ─────────────────────────────────────────── -->
       <section class="pg-section">
         <h2 class="pg-section__title">Button</h2>
@@ -30,7 +29,6 @@ import "lets-ui-icons/dist/lets-ui-icons.css";
           <lui-button label="Disabled" disabled></lui-button>
         </div>
         <div class="pg-row">
-          <lui-button label="Small" size="sm"></lui-button>
           <lui-button label="Medium" size="md"></lui-button>
           <lui-button label="Large" size="lg"></lui-button>
         </div>
@@ -40,10 +38,15 @@ import "lets-ui-icons/dist/lets-ui-icons.css";
       <section class="pg-section">
         <h2 class="pg-section__title">Alert</h2>
         <div class="pg-col">
-          <lui-alert variant="info" message="This is an informational alert."></lui-alert>
-          <lui-alert variant="success" message="Changes saved successfully."></lui-alert>
-          <lui-alert variant="warning" message="Please review before continuing."></lui-alert>
-          <lui-alert variant="danger" message="Something went wrong."></lui-alert>
+          <lui-alert variant="info" content="This is an informational alert."
+          ></lui-alert>
+          <lui-alert variant="success" content="Changes saved successfully."
+          ></lui-alert>
+          <lui-alert
+            variant="caution"
+            content="Please review before continuing."></lui-alert>
+          <lui-alert variant="danger" content="Something went wrong."
+          ></lui-alert>
         </div>
       </section>
 
@@ -55,44 +58,76 @@ import "lets-ui-icons/dist/lets-ui-icons.css";
           <lui-tag label="Primary" variant="primary"></lui-tag>
           <lui-tag label="Success" variant="success"></lui-tag>
           <lui-tag label="Danger" variant="danger"></lui-tag>
-          <lui-tag label="Warning" variant="warning"></lui-tag>
+          <lui-tag label="Caution" variant="caution"></lui-tag>
           <lui-tag label="Neutral" variant="neutral"></lui-tag>
+        </div>
+        <div class="pg-row">
+          <lui-tag label="Default"></lui-tag>
+          <lui-tag label="Primary" style="container" variant="primary"
+          ></lui-tag>
+          <lui-tag label="Success" style="container" variant="success"
+          ></lui-tag>
+          <lui-tag label="Danger" style="container" variant="danger"></lui-tag>
+          <lui-tag label="Caution" style="container" variant="caution"
+          ></lui-tag>
+          <lui-tag label="Neutral" style="container" variant="neutral"
+          ></lui-tag>
+        </div>
+        <div class="pg-row">
+          <lui-tag label="Default" size="sm"></lui-tag>
+          <lui-tag label="Primary" variant="primary" size="sm"></lui-tag>
+          <lui-tag label="Success" variant="success" size="sm"></lui-tag>
+          <lui-tag label="Danger" variant="danger" size="sm"></lui-tag>
+          <lui-tag label="Caution" variant="caution" size="sm"></lui-tag>
+          <lui-tag label="Neutral" variant="neutral" size="sm"></lui-tag>
         </div>
       </section>
 
       <!-- ── Modal ─────────────────────────────────────────── -->
       <section class="pg-section">
-        <h2 class="pg-section__title">Modal — trigger interno</h2>
         <div class="pg-row">
-          <lui-modal title="Modal padrão" trigger-label="Abrir modal">
+          <lui-modal
+            title="Modal padrão"
+            trigger-label="Modal — trigger interno"
+          >
             <p>Este modal usa o trigger interno gerado pelo componente.</p>
           </lui-modal>
-        </div>
-      </section>
 
-      <section class="pg-section">
-        <h2 class="pg-section__title">Modal — com ações</h2>
-        <div class="pg-row">
-          <lui-modal title="Confirmar ação" trigger-label="Abrir modal">
+          <lui-modal title="Confirmar ação" trigger-label="Modal — com ações">
             <p>Tem certeza que deseja continuar?</p>
-            <lui-button slot="actions" data-modal-close label="Cancelar" variant="secondary"></lui-button>
+            <lui-button
+              slot="actions"
+              data-modal-close
+              label="Cancelar"
+              variant="secondary"></lui-button>
             <lui-button slot="actions" label="Confirmar"></lui-button>
           </lui-modal>
-        </div>
-      </section>
 
-      <section class="pg-section">
-        <h2 class="pg-section__title">Modal — slot="trigger" customizado</h2>
-        <div class="pg-row">
           <lui-modal title="Modal com trigger customizado">
-            <lui-button label="Configurar" size="lg" variant="secondary" slot="trigger"></lui-button>
-            <p>O trigger é qualquer elemento com <code>slot="trigger"</code>.</p>
-            <lui-button slot="actions" data-modal-close label="Cancelar" variant="secondary"></lui-button>
+            <lui-button
+              label="Configurar"
+              size="lg"
+              variant="secondary"
+              slot="trigger"></lui-button>
+            <p>
+              O trigger é qualquer elemento com <code>slot="trigger"</code>.
+            </p>
+            <lui-button
+              slot="actions"
+              data-modal-close
+              label="Cancelar"
+              variant="secondary"></lui-button>
             <lui-button slot="actions" label="Salvar"></lui-button>
           </lui-modal>
 
           <lui-modal title="Informações">
-            <lui-icon-button slot="trigger" label="Ver informações" icon="info-circle"></lui-icon-button>
+            <lui-icon-button
+              slot="trigger"
+              label="Ver informações"
+              icon="info-circle"
+              size="lg"
+            >
+            </lui-icon-button>
             <p>Acesse os detalhes do item selecionado.</p>
           </lui-modal>
         </div>
@@ -102,37 +137,59 @@ import "lets-ui-icons/dist/lets-ui-icons.css";
       <section class="pg-section">
         <h2 class="pg-section__title">Drawer — trigger interno</h2>
         <div class="pg-row">
-          <lui-drawer title="Drawer padrão" trigger-label="Abrir drawer" close-on-backdrop>
+          <lui-drawer
+            title="Drawer padrão"
+            trigger-label="Abrir drawer"
+            close-on-backdrop
+          >
             <p>Conteúdo do drawer com trigger interno.</p>
-            <lui-button slot="actions" data-drawer-close label="Cancelar" variant="secondary"></lui-button>
+            <lui-button
+              slot="actions"
+              data-drawer-close
+              label="Cancelar"
+              variant="secondary"
+            >
+            </lui-button>
             <lui-button slot="actions" label="Confirmar"></lui-button>
           </lui-drawer>
-        </div>
-      </section>
 
-      <section class="pg-section">
-        <h2 class="pg-section__title">Drawer — slot="trigger" customizado</h2>
-        <div class="pg-row">
           <lui-drawer title="Filtros" close-on-backdrop size="sm">
-            <lui-button slot="trigger" label="Filtros" variant="secondary" icon-left="filter"></lui-button>
+            <lui-button
+              slot="trigger"
+              label="Drawer — trigger customizado"
+              variant="secondary"
+              icon-left="filter"></lui-button>
             <p>Defina os filtros para refinar os resultados.</p>
-            <lui-button slot="actions" data-drawer-close label="Limpar" variant="secondary"></lui-button>
+            <lui-button
+              slot="actions"
+              data-drawer-close
+              label="Limpar"
+              variant="secondary"></lui-button>
             <lui-button slot="actions" label="Aplicar"></lui-button>
           </lui-drawer>
 
           <lui-drawer title="Editar perfil" close-on-backdrop size="xl">
-            <lui-icon-button slot="trigger" label="Editar perfil" icon="pencil"></lui-icon-button>
+            <lui-icon-button
+              slot="trigger"
+              label="Editar perfil"
+              icon="check"
+              size="lg"
+            >
+            </lui-icon-button>
             <p>Edite as informações do seu perfil.</p>
-            <lui-button slot="actions" data-drawer-close label="Cancelar" variant="secondary"></lui-button>
+            <lui-button
+              slot="actions"
+              data-drawer-close
+              label="Cancelar"
+              variant="secondary"></lui-button>
             <lui-button slot="actions" label="Salvar"></lui-button>
           </lui-drawer>
         </div>
       </section>
-
     </main>
 
     <script>
-      import "@lets-ui/components";
+      import '@lets-ui/components';
     </script>
   </body>
 </html>
